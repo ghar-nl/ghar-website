@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your Bag — Ghar</title>
+<meta name="description" content="Review your bag and place a pre-order for hand block printed Ghar cushion covers.">
+<meta name="robots" content="noindex">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath d='M6 26 L24 8 L42 26 M11 22 V44 H37 V22 M20 44 V37 A4 4 0 0 1 28 37 V44' fill='none' stroke='%23143659' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&family=Noto+Serif+Devanagari:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<script src="cart.js" defer></script>
+</head>
+<body>
+
+<!-- ── NAV ──────────────────────────────────────────────────── -->
+<nav>
+  <a href="index.html" class="logo-mark" aria-label="Ghar home">
+    <svg class="logo-svg" viewBox="0 0 192 54" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M4 28 L20 12 L36 28" stroke="#143659" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M8 25 V47 H32 V25" stroke="#143659" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M16 47 V41 A4 4 0 0 1 24 41 V47" stroke="#143659" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+      <line x1="75" y1="28" x2="119" y2="28" stroke="#143659" stroke-width="2.2" stroke-linecap="round"/>
+      <text x="48" y="48" font-family="'Playfair Display',serif" font-size="38" fill="#143659" font-weight="400">G</text>
+      <text x="75" y="48" font-family="'Playfair Display',serif" font-size="27" fill="#143659" font-weight="400" font-style="italic">har</text>
+    </svg>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="shop.html">Shop</a></li>
+    <li><a href="about.html">Our Story</a></li>
+    <li><a href="about.html#craft">The Craft</a></li>
+    <li><a href="about.html#care">Care</a></li>
+  </ul>
+  <a href="cart.html" class="nav-cart" id="nav-bag">Bag</a>
+</nav>
+
+<!-- ── PAGE HERO ──────────────────────────────────────────────── -->
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <p class="s-tag">Pre-order</p>
+    <h1>Your <em>bag.</em></h1>
+    <p>No payment now — we'll email you with payment and delivery details when your cushions are ready.</p>
+  </div>
+</div>
+
+<!-- ── CART ───────────────────────────────────────────────────── -->
+<section class="cart-section">
+  <div class="container" style="max-width:760px;">
+
+    <div id="cart-empty" style="display:none;text-align:center;padding:40px 0 20px;">
+      <p style="color:var(--text-mid);font-weight:300;margin-bottom:24px;">Your bag is empty.</p>
+      <a href="shop.html" class="btn-dark">Browse the collection</a>
+    </div>
+
+    <div id="cart-content">
+      <div id="cart-items" class="cart-list"></div>
+      <div class="cart-total">
+        <span>Total</span>
+        <span class="price" id="cart-total">€0</span>
+      </div>
+
+      <!-- ── PRE-ORDER FORM ── -->
+      <div class="po-wrap">
+        <h2 class="s-h" style="font-size:1.6rem;margin-bottom:8px;">Delivery details</h2>
+        <p style="color:var(--text-mid);font-weight:300;font-size:0.92rem;margin-bottom:28px;">We currently deliver within the EU only.</p>
+
+        <form id="preorder-form" class="po-form" novalidate>
+          <input class="po-full" name="name" placeholder="Full name *" required autocomplete="name">
+          <input name="email" type="email" placeholder="Email *" required autocomplete="email">
+          <input name="phone" type="tel" placeholder="Phone (optional)" autocomplete="tel">
+
+          <select class="po-full" name="country" required autocomplete="country-name">
+            <option value="" disabled selected>Country *</option>
+            <option>Austria</option><option>Belgium</option><option>Bulgaria</option>
+            <option>Croatia</option><option>Cyprus</option><option>Czechia</option>
+            <option>Denmark</option><option>Estonia</option><option>Finland</option>
+            <option>France</option><option>Germany</option><option>Greece</option>
+            <option>Hungary</option><option>Ireland</option><option>Italy</option>
+            <option>Latvia</option><option>Lithuania</option><option>Luxembourg</option>
+            <option>Malta</option><option>Netherlands</option><option>Poland</option>
+            <option>Portugal</option><option>Romania</option><option>Slovakia</option>
+            <option>Slovenia</option><option>Spain</option><option>Sweden</option>
+          </select>
+
+          <input class="po-full" name="address1" placeholder="Address line 1 (street and number) *" required autocomplete="address-line1">
+          <input class="po-full" name="address2" placeholder="Address line 2 (apt, unit — optional)" autocomplete="address-line2">
+          <input name="city" placeholder="City / Town *" required autocomplete="address-level2">
+          <input name="region" placeholder="State / Region (optional)" autocomplete="address-level1">
+          <input name="postal" placeholder="Postal code *" required autocomplete="postal-code">
+
+          <!-- Honeypot: hidden from users, catches bots -->
+          <input name="company" style="display:none" tabindex="-1" autocomplete="off">
+
+          <button type="submit" class="btn-pri po-full" id="po-submit" style="border:none;cursor:pointer;font-family:'Jost',sans-serif;">Place pre-order</button>
+          <p id="po-status" class="po-full" role="status"></p>
+        </form>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── FOOTER ─────────────────────────────────────────────────── -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <svg viewBox="0 0 192 54" fill="none" style="height:44px;width:auto;" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4 28 L20 12 L36 28" stroke="white" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M8 25 V47 H32 V25" stroke="white" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M16 47 V41 A4 4 0 0 1 24 41 V47" stroke="white" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+            <line x1="75" y1="28" x2="119" y2="28" stroke="white" stroke-width="2.2" stroke-linecap="round"/>
+            <text x="48" y="48" font-family="'Playfair Display',serif" font-size="38" fill="white" font-weight="400">G</text>
+            <text x="75" y="48" font-family="'Playfair Display',serif" font-size="27" fill="white" font-weight="400" font-style="italic">har</text>
+          </svg>
+        </div>
+        <p>Crafted by artisans in Jaipur. Made for homes in Amsterdam and beyond. Slow living, honest things.</p>
+        <p style="margin-top:14px;color:rgba(255,255,255,0.25);font-size:0.78rem;">Dim in Dam · KVK 92764350<br>Amsterdam, Netherlands</p>
+      </div>
+      <div class="f-col">
+        <h4>Shop</h4>
+        <ul>
+          <li><a href="shop.html">Cushion Covers</a></li>
+          <li><a href="shop.html#soon">Coming Soon</a></li>
+          <li><a href="cart.html">Your Bag</a></li>
+        </ul>
+      </div>
+      <div class="f-col">
+        <h4>Story</h4>
+        <ul>
+          <li><a href="about.html">About Ghar</a></li>
+          <li><a href="about.html#karghewale">Our Makers</a></li>
+          <li><a href="about.html#craft">The Craft</a></li>
+          <li><a href="about.html#care">Care Guide</a></li>
+        </ul>
+      </div>
+      <div class="f-col">
+        <h4>Help</h4>
+        <ul>
+          <li><a href="#">Shipping info</a></li>
+          <li><a href="#">Returns</a></li>
+          <li><a href="#">Contact us</a></li>
+          <li><a href="https://instagram.com/ghar_dam">@ghar_dam</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Dim in Dam · Ghar™ · All rights reserved · ghar.nl</p>
+      <div class="footer-socials">
+        <a href="https://instagram.com/ghar_dam">@ghar_dam</a>
+        <a href="#">Pinterest</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwPyxknSnMjppLX_leBgCdiEBlrzqYHj98iEMJHjgbmeNtes_BQjEHx3Pa51t-MuOEdDw/exec';
+const FORM_SECRET = '47d80edaf79922927989f72c'; // must match Apps Script
+
+function renderCart() {
+  const cart = gharCart();
+  const ids = Object.keys(cart);
+  const empty = document.getElementById('cart-empty');
+  const content = document.getElementById('cart-content');
+  if (ids.length === 0) { empty.style.display = 'block'; content.style.display = 'none'; return; }
+  empty.style.display = 'none'; content.style.display = 'block';
+
+  const list = document.getElementById('cart-items');
+  list.innerHTML = '';
+  ids.forEach(function (id) {
+    const p = GHAR_PRODUCTS[id];
+    const qty = cart[id];
+    const row = document.createElement('div');
+    row.className = 'cart-item';
+    row.innerHTML =
+      '<div class="cart-thumb"><img src="' + p.img + '" alt="' + p.name + '"></div>' +
+      '<div class="cart-info"><h3>' + p.name + '</h3><p>' + p.size + ' · €' + p.price + ' each</p></div>' +
+      '<div class="cart-qty">' +
+        '<button type="button" aria-label="Decrease quantity">−</button>' +
+        '<span>' + qty + '</span>' +
+        '<button type="button" aria-label="Increase quantity">+</button>' +
+      '</div>' +
+      '<div class="cart-line-price price">€' + (p.price * qty) + '</div>' +
+      '<button type="button" class="cart-remove" aria-label="Remove">×</button>';
+    const btns = row.querySelectorAll('button');
+    btns[0].onclick = function () { gharSetQty(id, qty - 1); renderCart(); };
+    btns[1].onclick = function () { gharSetQty(id, qty + 1); renderCart(); };
+    btns[2].onclick = function () { gharSetQty(id, 0); renderCart(); };
+    list.appendChild(row);
+  });
+  document.getElementById('cart-total').textContent = '€' + gharCartTotal();
+}
+document.addEventListener('DOMContentLoaded', renderCart);
+
+document.getElementById('preorder-form').addEventListener('submit', async function (ev) {
+  ev.preventDefault();
+  const form = ev.target;
+  const status = document.getElementById('po-status');
+  const submitBtn = document.getElementById('po-submit');
+
+  if (gharCartCount() === 0) { status.textContent = 'Your bag is empty — add a cushion first.'; return; }
+  if (!form.checkValidity()) { form.reportValidity(); return; }
+
+  const cart = gharCart();
+  const items = Object.keys(cart).map(function (id) {
+    return cart[id] + '× ' + GHAR_PRODUCTS[id].name;
+  }).join('; ');
+
+  const fd = new FormData(form);
+  const payload = Object.fromEntries(fd.entries());
+  payload.secret = FORM_SECRET;
+  payload.items = items;
+  payload.total = gharCartTotal();
+
+  status.textContent = 'Placing your pre-order…';
+  submitBtn.disabled = true;
+  try {
+    await fetch(SCRIPT_URL, {
+      method: 'POST',
+      body: JSON.stringify(payload)
+      // no custom headers → avoids CORS preflight with Apps Script
+    });
+    status.textContent = 'Thank you! Your pre-order is in — we\'ll email you with payment and delivery details when your cushions are ready.';
+    form.reset();
+    gharClearCart();
+    document.getElementById('cart-items').innerHTML = '';
+    document.getElementById('cart-total').textContent = '€0';
+  } catch (err) {
+    status.textContent = 'Something went wrong — please try again.';
+    submitBtn.disabled = false;
+  }
+});
+</script>
+
+</body>
+</html>
