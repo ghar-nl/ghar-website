@@ -38,8 +38,8 @@ nav{
   background:rgba(244,239,234,0.94);backdrop-filter:blur(14px);
   border-bottom:1px solid rgba(20,54,89,0.08);
 }
-.logo-mark{display:flex;align-items:baseline;gap:0;text-decoration:none;}
-.logo-svg{height:38px;width:auto;}
+.logo-mark{display:flex;align-items:center;gap:0;text-decoration:none;}
+.logo-svg{height:54px;width:auto;object-fit:contain;}
 .nav-links{display:flex;gap:32px;list-style:none;}
 .nav-links a{font-size:0.8rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-mid);text-decoration:none;transition:color .2s;}
 .nav-links a:hover{color:var(--terra);}
@@ -81,6 +81,7 @@ nav{
 .hero-eyebrow::before{content:'';display:inline-block;width:28px;height:1px;background:var(--terra);}
 .ghar-wordmark{margin-bottom:32px;line-height:1;}
 .ghar-wordmark svg{width:auto;height:clamp(80px,12vw,130px);}
+.ghar-wordmark img{width:auto;height:clamp(150px,20vw,230px);object-fit:contain;}
 .hero-tagline-main{
   font-family:'Playfair Display',serif;
   font-size:clamp(1.1rem,1.8vw,1.5rem);
