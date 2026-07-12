@@ -194,7 +194,9 @@ function renderCart() {
   });
   document.getElementById('cart-total').textContent = '€' + gharCartTotal();
 }
-document.addEventListener('DOMContentLoaded', renderCart);
+if (document.readyState !== 'loading') renderCart();
+else document.addEventListener('DOMContentLoaded', renderCart);
+window.addEventListener('pageshow', renderCart); // covers back/forward cache restores
 
 document.getElementById('preorder-form').addEventListener('submit', async function (ev) {
   ev.preventDefault();

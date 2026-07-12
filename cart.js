@@ -66,4 +66,6 @@ function gharClearCart() {
   gharUpdateBadge();
 }
 
-document.addEventListener('DOMContentLoaded', gharUpdateBadge);
+if (document.readyState !== 'loading') gharUpdateBadge();
+else document.addEventListener('DOMContentLoaded', gharUpdateBadge);
+window.addEventListener('pageshow', gharUpdateBadge); // covers back/forward cache restores
