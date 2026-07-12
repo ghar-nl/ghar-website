@@ -36,35 +36,32 @@
   <a href="cart.html" class="nav-cart" id="nav-bag">Bag</a>
 </nav>
 
-<!-- ── PAGE HERO ──────────────────────────────────────────────── -->
-<div class="page-hero">
-  <div class="page-hero-inner">
-    <p class="s-tag">Pre-order</p>
-    <h1>Your <em>bag.</em></h1>
-    <p>No payment now — we'll email you with payment and delivery details when your cushions are ready.</p>
-  </div>
-</div>
-
 <!-- ── CART ───────────────────────────────────────────────────── -->
-<section class="cart-section">
-  <div class="container" style="max-width:760px;">
+<section class="cart-section" style="padding-top:112px;min-height:70vh;">
+  <div>
 
     <div id="cart-empty" style="display:none;text-align:center;padding:40px 0 20px;">
       <p style="color:var(--text-mid);font-weight:300;margin-bottom:24px;">Your bag is empty.</p>
       <a href="shop.html" class="btn-dark">Browse the collection</a>
     </div>
 
-    <div id="cart-content">
-      <div id="cart-items" class="cart-list"></div>
-      <div class="cart-total">
-        <span>Total</span>
-        <span class="price" id="cart-total">€0</span>
+    <div id="cart-content" class="cart-grid">
+
+      <!-- LEFT: items -->
+      <div class="cart-card">
+        <h2>Your bag</h2>
+        <p class="card-sub">Price</p>
+        <div id="cart-items" class="cart-list"></div>
+        <div class="cart-total">
+          <span>Subtotal (<span id="cart-count">0</span> items):</span>
+          <span class="price" id="cart-total">€0</span>
+        </div>
       </div>
 
-      <!-- ── PRE-ORDER FORM ── -->
-      <div class="po-wrap">
-        <h2 class="s-h" style="font-size:1.6rem;margin-bottom:8px;">Delivery details</h2>
-        <p style="color:var(--text-mid);font-weight:300;font-size:0.92rem;margin-bottom:28px;">We currently deliver within the EU only.</p>
+      <!-- RIGHT: delivery details / checkout -->
+      <aside class="cart-card">
+        <h2>Delivery details</h2>
+        <p class="card-sub">EU only · no payment now — we'll email you when your cushions are ready</p>
 
         <form id="preorder-form" class="po-form" novalidate>
           <input class="po-full" name="name" placeholder="Full name *" required autocomplete="name">
@@ -96,7 +93,8 @@
           <button type="submit" class="btn-pri po-full" id="po-submit" style="border:none;cursor:pointer;font-family:'Jost',sans-serif;">Place pre-order</button>
           <p id="po-status" class="po-full" role="status"></p>
         </form>
-      </div>
+      </aside>
+
     </div>
 
   </div>
@@ -167,7 +165,7 @@ function renderCart() {
   const empty = document.getElementById('cart-empty');
   const content = document.getElementById('cart-content');
   if (ids.length === 0) { empty.style.display = 'block'; content.style.display = 'none'; return; }
-  empty.style.display = 'none'; content.style.display = 'block';
+  empty.style.display = 'none'; content.style.display = 'grid';
 
   const list = document.getElementById('cart-items');
   list.innerHTML = '';
@@ -178,14 +176,19 @@ function renderCart() {
     row.className = 'cart-item';
     row.innerHTML =
       '<div class="cart-thumb"><img src="' + p.img + '" alt="' + p.name + '"></div>' +
-      '<div class="cart-info"><h3>' + p.name + '</h3><p>' + p.size + ' · €' + p.price + ' each</p></div>' +
-      '<div class="cart-qty">' +
-        '<button type="button" aria-label="Decrease quantity">−</button>' +
-        '<span>' + qty + '</span>' +
-        '<button type="button" aria-label="Increase quantity">+</button>' +
+      '<div class="cart-info">' +
+        '<h3>' + p.name + '</h3>' +
+        '<p>' + p.size + ' · €' + p.price + ' each</p>' +
+        '<div class="cart-item-actions">' +
+          '<div class="cart-qty">' +
+            '<button type="button" aria-label="Decrease quantity">−</button>' +
+            '<span>' + qty + '</span>' +
+            '<button type="button" aria-label="Increase quantity">+</button>' +
+          '</div>' +
+          '<button type="button" class="cart-remove">Remove</button>' +
+        '</div>' +
       '</div>' +
-      '<div class="cart-line-price price">€' + (p.price * qty) + '</div>' +
-      '<button type="button" class="cart-remove" aria-label="Remove">×</button>';
+      '<div class="cart-line-price price">€' + (p.price * qty) + '</div>';
     const btns = row.querySelectorAll('button');
     btns[0].onclick = function () { gharSetQty(id, qty - 1); renderCart(); };
     btns[1].onclick = function () { gharSetQty(id, qty + 1); renderCart(); };
@@ -193,6 +196,7 @@ function renderCart() {
     list.appendChild(row);
   });
   document.getElementById('cart-total').textContent = '€' + gharCartTotal();
+  document.getElementById('cart-count').textContent = gharCartCount();
 }
 if (document.readyState !== 'loading') renderCart();
 else document.addEventListener('DOMContentLoaded', renderCart);
