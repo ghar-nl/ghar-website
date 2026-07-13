@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ghar — Crafted by Artisans, Made for Your Home</title>
-<meta name="description" content="Hand block printed home textiles from Jaipur, made for homes in Amsterdam and beyond.">
+<meta name="description" content="Hand block printed home textiles from India, made for homes in Amsterdam and beyond.">
 <link rel="icon" type="image/png" href="images/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&family=Noto+Serif+Devanagari:wght@400;500&display=swap" rel="stylesheet">
@@ -32,7 +32,7 @@
 <div class="hero">
   <div class="hero-left">
     <div class="hero-texture"></div>
-    <p class="hero-eyebrow">Amsterdam × Jaipur</p>
+    <p class="hero-eyebrow">Amsterdam × India</p>
 
     <div class="ghar-wordmark">
       <img src="images/logo-white.png" alt="Ghar — hand block printed home textiles">
@@ -48,7 +48,7 @@
   </div>
   <div class="hero-right">
     <div class="photo" style="height:100%;">
-      <img src="images/founders.jpeg" alt="Dimple and Akkriti, founders of Ghar, by an Amsterdam canal">
+      <img src="images/founders-sketch.png" alt="Hand-drawn sketch of Dimple and Akkriti, founders of Ghar, by an Amsterdam canal">
     </div>
   </div>
 </div>
@@ -59,13 +59,13 @@
     <span class="ticker-item">Hand Block Printed</span><span class="ticker-dot"> · </span>
     <span class="ticker-item">100% Cotton Canvas</span><span class="ticker-dot"> · </span>
     <span class="ticker-item">Karghewale Artisans</span><span class="ticker-dot"> · </span>
-    <span class="ticker-item">Jaipur to Amsterdam</span><span class="ticker-dot"> · </span>
+    <span class="ticker-item">India to Amsterdam</span><span class="ticker-dot"> · </span>
     <span class="ticker-item">Fair Wages Always</span><span class="ticker-dot"> · </span>
     <span class="ticker-item">Slow Living</span><span class="ticker-dot"> · </span>
     <span class="ticker-item">Hand Block Printed</span><span class="ticker-dot"> · </span>
     <span class="ticker-item">100% Cotton Canvas</span><span class="ticker-dot"> · </span>
     <span class="ticker-item">Karghewale Artisans</span><span class="ticker-dot"> · </span>
-    <span class="ticker-item">Jaipur to Amsterdam</span><span class="ticker-dot"> · </span>
+    <span class="ticker-item">India to Amsterdam</span><span class="ticker-dot"> · </span>
     <span class="ticker-item">Fair Wages Always</span><span class="ticker-dot"> · </span>
     <span class="ticker-item">Slow Living</span><span class="ticker-dot"> · </span>
   </div>
@@ -95,8 +95,8 @@
       </div>
       <div class="teaser-text">
         <p class="s-tag">The story</p>
-        <h2 class="s-h">We started Ghar because <em>home</em> deserved better.</h2>
-        <p>Two colleagues at AMI in Amsterdam, one shared obsession: bringing hand block printed textiles from Rajasthan into everyday slow living. We work directly with the Karghewale artisan community — fair wages, real craft, no shortcuts.</p>
+        <h2 class="s-h">We started Ghar to bring <em>intention</em> home.</h2>
+        <p>Two Indian colleagues in Amsterdam, one shared love: bringing hand block printed textiles from India into everyday slow living. We work directly with the Karghewale artisan community — makers with a stake in what they create.</p>
         <a href="about.html" class="btn-dark">Read our story</a>
       </div>
     </div>
@@ -129,6 +129,7 @@
       <p>New collections, Amsterdam market dates, and stories from India.</p>
     </div>
     <div class="nl-form">
+      <input type="text" placeholder="Your name">
       <input type="email" placeholder="your@email.com">
       <button>Subscribe</button>
     </div>
@@ -166,9 +167,9 @@
       <div class="f-col">
         <h4>Help</h4>
         <ul>
-          <li><a href="#">Shipping info</a></li>
-          <li><a href="#">Returns</a></li>
-          <li><a href="#">Contact us</a></li>
+          <li><a href="#" class="ghar-wip">Shipping info</a></li>
+          <li><a href="#" class="ghar-wip">Returns</a></li>
+          <li><a href="#" class="ghar-contact">Contact us</a></li>
           <li><a href="https://instagram.com/ghar_dam">@ghar_dam</a></li>
         </ul>
       </div>
@@ -182,6 +183,51 @@
     </div>
   </div>
 </footer>
+
+
+<!-- ── BE THE FIRST TO KNOW POPUP ─────────────────────────────── -->
+<div id="ghar-sub-popup" class="gpop-overlay" hidden>
+  <div class="gpop gpop-wide" role="dialog" aria-modal="true" aria-labelledby="gs-title">
+    <button class="gpop-close" aria-label="Close" type="button">×</button>
+    <div class="gpop-cols">
+      <div class="gpop-art"><img src="images/founders-sketch.png" alt="Hand-drawn sketch of Dimple and Akkriti"></div>
+      <div class="gpop-body">
+        <p class="s-tag">Namaste</p>
+        <h3 id="gs-title">Be the first to know.</h3>
+        <p>New collections, Amsterdam market dates, and stories from India.</p>
+        <div class="gform">
+          <input id="gs-name" placeholder="Your name" autocomplete="name">
+          <input id="gs-email" type="email" placeholder="your@email.com" autocomplete="email">
+          <button id="gs-send" type="button" class="gform-btn">Subscribe</button>
+          <p id="gs-status" role="status"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  if (localStorage.getItem('gharSubscribeSeen')) return;
+  const pop = document.getElementById('ghar-sub-popup');
+  setTimeout(function () { pop.hidden = false; }, 1800);
+  function close() { pop.hidden = true; localStorage.setItem('gharSubscribeSeen', '1'); }
+  pop.querySelector('.gpop-close').onclick = close;
+  pop.addEventListener('click', function (e) { if (e.target === pop) close(); });
+  document.getElementById('gs-send').onclick = async function () {
+    const name = document.getElementById('gs-name').value.trim();
+    const email = document.getElementById('gs-email').value.trim();
+    const st = document.getElementById('gs-status');
+    if (!gharEmailOk(email)) { st.textContent = 'Please enter a valid email address.'; return; }
+    this.disabled = true;
+    try {
+      await fetch(GHAR_API, { method: 'POST', body: JSON.stringify({ type: 'subscribe', name: name, email: email, secret: GHAR_SECRET }) });
+    } catch (e) { /* optimistic */ }
+    st.textContent = 'Thank you — we will reach out to you shortly!';
+    setTimeout(close, 1800);
+  };
+});
+</script>
 
 </body>
 </html>

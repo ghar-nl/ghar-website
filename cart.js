@@ -135,9 +135,102 @@ function gharAdd(id, btn) {
   }
 }
 
+/* ── site-wide modal ── */
+function gharModalOpen(html) {
+  let ov = document.getElementById('ghar-modal');
+  if (!ov) {
+    ov = document.createElement('div');
+    ov.id = 'ghar-modal';
+    ov.className = 'gpop-overlay';
+    ov.innerHTML = '<div class="gpop"><button class="gpop-close" aria-label="Close" type="button">×</button><div id="ghar-modal-body"></div></div>';
+    document.body.appendChild(ov);
+    ov.querySelector('.gpop-close').onclick = gharModalClose;
+    ov.addEventListener('click', function (e) { if (e.target === ov) gharModalClose(); });
+  }
+  ov.querySelector('#ghar-modal-body').innerHTML = html;
+  ov.hidden = false;
+}
+function gharModalClose() {
+  const ov = document.getElementById('ghar-modal');
+  if (ov) ov.hidden = true;
+}
+function gharEmailOk(email) { return /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email); }
+
+/* ── footer links + newsletter wiring (runs on every page) ── */
+function gharWireSite() {
+  // Shipping info / Returns: work-in-progress notice
+  document.querySelectorAll('a.ghar-wip').forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      e.preventDefault();
+      const topic = a.textContent.toLowerCase().indexOf('return') !== -1 ? 'returns policy' : 'shipping policy';
+      gharModalOpen(
+        '<p class="s-tag">' + a.textContent.trim() + '</p>' +
+        '<h3>We are still building the website.</h3>' +
+        '<p>You will see more information about our ' + topic + ' shortly. Thank you for your patience!</p>'
+      );
+    });
+  });
+
+  // Contact us: form popup
+  document.querySelectorAll('a.ghar-contact').forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      e.preventDefault();
+      gharModalOpen(
+        '<p class="s-tag">Contact us</p>' +
+        '<h3>We would love to hear from you.</h3>' +
+        '<p>Please reach out to us using this form:</p>' +
+        '<div class="gform">' +
+          '<input id="gc-name" placeholder="Full name" autocomplete="name">' +
+          '<input id="gc-email" type="email" placeholder="Email address" autocomplete="email">' +
+          '<textarea id="gc-msg" rows="4" placeholder="Message"></textarea>' +
+          '<button id="gc-send" type="button" class="gform-btn">Send message</button>' +
+          '<p id="gc-status" role="status"></p>' +
+        '</div>' +
+        '<p class="gpop-foot">You can also write to us at <a href="mailto:dimple@ghar.nl">dimple@ghar.nl</a> or find us on <a href="https://instagram.com/ghar_dam" target="_blank" rel="noopener">Instagram</a>.</p>'
+      );
+      document.getElementById('gc-send').onclick = async function () {
+        const name = document.getElementById('gc-name').value.trim();
+        const email = document.getElementById('gc-email').value.trim();
+        const msg = document.getElementById('gc-msg').value.trim();
+        const st = document.getElementById('gc-status');
+        if (!name || !msg || !gharEmailOk(email)) { st.textContent = 'Please fill in your name, a valid email, and a message.'; return; }
+        this.disabled = true;
+        try {
+          await fetch(GHAR_API, { method: 'POST', body: JSON.stringify({ type: 'contact', name: name, email: email, message: msg, secret: GHAR_SECRET }) });
+        } catch (err) { /* optimistic */ }
+        st.textContent = 'Thank you — we will reach out to you shortly!';
+      };
+    });
+  });
+
+  // Newsletter subscribe (all "Be the first to know" forms)
+  document.querySelectorAll('.nl-form').forEach(function (f) {
+    const btn = f.querySelector('button');
+    if (!btn) return;
+    btn.addEventListener('click', async function () {
+      const nameInput = f.querySelector('input[type="text"]');
+      const emailInput = f.querySelector('input[type="email"]');
+      const name = nameInput ? nameInput.value.trim() : '';
+      const email = emailInput ? emailInput.value.trim() : '';
+      let st = f.querySelector('.nl-status') || f.parentElement.querySelector('.nl-status');
+      if (!st) { st = document.createElement('p'); st.className = 'nl-status'; f.appendChild(st); }
+      if (!gharEmailOk(email)) { st.textContent = 'Please enter a valid email address.'; return; }
+      btn.disabled = true;
+      try {
+        await fetch(GHAR_API, { method: 'POST', body: JSON.stringify({ type: 'subscribe', name: name, email: email, secret: GHAR_SECRET }) });
+      } catch (err) { /* optimistic */ }
+      st.textContent = 'Thank you — we will reach out to you shortly!';
+      if (nameInput) nameInput.value = '';
+      if (emailInput) emailInput.value = '';
+      setTimeout(function () { btn.disabled = false; }, 2000);
+    });
+  });
+}
+
 /* ── init ── */
 function gharInit() {
   gharUpdateBadge();
+  gharWireSite();
   if (document.querySelector('.btn-add') || document.getElementById('cart-items')) {
     gharLoadStock(function () {
       if (typeof renderCart === 'function') renderCart();
