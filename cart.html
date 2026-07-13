@@ -6,7 +6,7 @@
 <title>Your Bag — Ghar</title>
 <meta name="description" content="Review your bag and place a pre-order for hand block printed Ghar cushion covers.">
 <meta name="robots" content="noindex">
-<link rel="icon" type="image/png" href="images/logo-white.png">
+<link rel="icon" type="image/png" href="images/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&family=Noto+Serif+Devanagari:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
@@ -17,14 +17,14 @@
 <!-- ── NAV ──────────────────────────────────────────────────── -->
 <nav>
   <a href="index.html" class="logo-mark" aria-label="Ghar home">
-    <img src="images/icon_transparent.png" alt="Ghar" class="logo-svg">
+    <img src="images/logo.png" alt="Ghar" class="logo-svg">
   </a>
   <ul class="nav-links">
     <li><a href="index.html">Home</a></li>
     <li><a href="shop.html">Shop</a></li>
     <li><a href="about.html">Our Story</a></li>
-    <li><a href="about.html#craft">The Craft</a></li>
-    <li><a href="about.html#care">Care</a></li>
+    <li><a href="craft.html">The Craft</a></li>
+    <li><a href="care.html">Care</a></li>
   </ul>
   <a href="cart.html" class="nav-cart" id="nav-bag">Bag</a>
 </nav>
@@ -40,21 +40,31 @@
 
     <div id="cart-content" class="cart-grid">
 
-      <!-- LEFT: items -->
+      <!-- LEFT: items + summary -->
       <div class="cart-card">
         <h2>Your bag</h2>
         <p class="card-sub">Price</p>
         <div id="cart-items" class="cart-list"></div>
-        <div class="cart-total">
-          <span>Subtotal (<span id="cart-count">0</span> items):</span>
-          <span class="price" id="cart-total">€0</span>
+
+        <div class="promo-row">
+          <input id="promo-input" placeholder="Discount code" autocomplete="off">
+          <button id="promo-apply" type="button">Apply</button>
         </div>
+        <p id="promo-msg"></p>
+
+        <div class="sum-lines">
+          <div class="sum-line"><span>Subtotal (<span id="cart-count">0</span> items)</span><span id="sum-sub">€0</span></div>
+          <div class="sum-line" id="sum-discount-row" style="display:none;"><span>Discount (20%)</span><span id="sum-discount">−€0</span></div>
+          <div class="sum-line"><span>Shipping</span><span id="sum-ship">€5</span></div>
+          <div class="sum-line sum-total"><span>Total</span><span class="price" id="sum-total">€0</span></div>
+        </div>
+        <p class="sum-note">Pre-order perk: 20% off with code <strong>GHARPREORDER20</strong> and free shipping — both on orders of €50 or more.</p>
       </div>
 
       <!-- RIGHT: delivery details / checkout -->
       <aside class="cart-card">
         <h2>Delivery details</h2>
-        <p class="card-sub">EU only · no payment now — we'll email you when your cushions are ready</p>
+        <p class="card-sub">We currently only operate in the EU. These are pre-orders — once your products are ready, we'll reach out with a payment link.</p>
 
         <form id="preorder-form" class="po-form" novalidate>
           <input class="po-full" name="name" placeholder="Full name *" required autocomplete="name">
@@ -101,7 +111,7 @@
         <div class="footer-logo">
           <img src="images/logo-white.png" alt="Ghar" style="height:96px;width:auto;">
         </div>
-        <p>Crafted by artisans in Jaipur. Made for homes in Amsterdam and beyond. Slow living, honest things.</p>
+        <p>Crafted by artisans in India. Made for homes in Amsterdam and beyond. Slow living, honest things.</p>
         <p style="margin-top:14px;color:rgba(255,255,255,0.25);font-size:0.78rem;">Dim in Dam · KVK 92764350<br>Amsterdam, Netherlands</p>
       </div>
       <div class="f-col">
@@ -116,9 +126,9 @@
         <h4>Story</h4>
         <ul>
           <li><a href="about.html">About Ghar</a></li>
-          <li><a href="about.html#karghewale">Our Makers</a></li>
-          <li><a href="about.html#craft">The Craft</a></li>
-          <li><a href="about.html#care">Care Guide</a></li>
+          <li><a href="craft.html#karghewale">Our Makers</a></li>
+          <li><a href="craft.html">The Craft</a></li>
+          <li><a href="care.html">Care Guide</a></li>
         </ul>
       </div>
       <div class="f-col">
@@ -142,9 +152,6 @@
 </footer>
 
 <script>
-const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwPyxknSnMjppLX_leBgCdiEBlrzqYHj98iEMJHjgbmeNtes_BQjEHx3Pa51t-MuOEdDw/exec';
-const FORM_SECRET = '47d80edaf79922927989f72c'; // must match Apps Script
-
 function renderCart() {
   const cart = gharCart();
   const ids = Object.keys(cart);
@@ -158,13 +165,14 @@ function renderCart() {
   ids.forEach(function (id) {
     const p = GHAR_PRODUCTS[id];
     const qty = cart[id];
+    const left = gharRemaining(id);
     const row = document.createElement('div');
     row.className = 'cart-item';
     row.innerHTML =
       '<div class="cart-thumb"><img src="' + p.img + '" alt="' + p.name + '"></div>' +
       '<div class="cart-info">' +
         '<h3>' + p.name + '</h3>' +
-        '<p>' + p.size + ' · €' + p.price + ' each</p>' +
+        '<p>' + p.size + ' · €' + p.price + ' each' + (left !== Infinity && left <= 5 ? ' · <span style="color:var(--terra);">last pieces</span>' : '') + '</p>' +
         '<div class="cart-item-actions">' +
           '<div class="cart-qty">' +
             '<button type="button" aria-label="Decrease quantity">−</button>' +
@@ -177,17 +185,50 @@ function renderCart() {
       '<div class="cart-line-price price">€' + (p.price * qty) + '</div>';
     const btns = row.querySelectorAll('button');
     btns[0].onclick = function () { gharSetQty(id, qty - 1); renderCart(); };
-    btns[1].onclick = function () { gharSetQty(id, qty + 1); renderCart(); };
+    btns[1].onclick = function () {
+      if (qty + 1 > gharRemaining(id)) {
+        document.getElementById('promo-msg').textContent = 'Only ' + gharRemaining(id) + ' of the ' + p.name + ' available.';
+        return;
+      }
+      gharSetQty(id, qty + 1); renderCart();
+    };
     btns[2].onclick = function () { gharSetQty(id, 0); renderCart(); };
     list.appendChild(row);
   });
-  document.getElementById('cart-total').textContent = '€' + gharCartTotal();
+
+  const t = gharTotals();
   document.getElementById('cart-count').textContent = gharCartCount();
+  document.getElementById('sum-sub').textContent = '€' + t.sub;
+  document.getElementById('sum-discount-row').style.display = t.promo ? 'flex' : 'none';
+  document.getElementById('sum-discount').textContent = '−€' + t.discount;
+  document.getElementById('sum-ship').textContent = t.shipping === 0 ? 'FREE' : '€' + t.shipping;
+  document.getElementById('sum-total').textContent = '€' + t.total;
+  if (gharPromoStored()) document.getElementById('promo-input').value = GHAR_PROMO_CODE;
 }
 if (document.readyState !== 'loading') renderCart();
 else document.addEventListener('DOMContentLoaded', renderCart);
 window.addEventListener('pageshow', renderCart); // covers back/forward cache restores
 
+/* ── discount code ── */
+document.getElementById('promo-apply').addEventListener('click', function () {
+  const val = document.getElementById('promo-input').value.trim().toUpperCase();
+  const msg = document.getElementById('promo-msg');
+  if (val === GHAR_PROMO_CODE) {
+    localStorage.setItem('gharPromo', GHAR_PROMO_CODE);
+    msg.textContent = gharCartTotal() >= GHAR_PROMO_MIN
+      ? 'Code applied — 20% off!'
+      : 'Code saved — it applies automatically on orders of €50 or more.';
+  } else if (val === '') {
+    localStorage.removeItem('gharPromo');
+    msg.textContent = '';
+  } else {
+    localStorage.removeItem('gharPromo');
+    msg.textContent = "That code doesn't look right.";
+  }
+  renderCart();
+});
+
+/* ── submit ── */
 document.getElementById('preorder-form').addEventListener('submit', async function (ev) {
   ev.preventDefault();
   const form = ev.target;
@@ -198,29 +239,55 @@ document.getElementById('preorder-form').addEventListener('submit', async functi
   if (!form.checkValidity()) { form.reportValidity(); return; }
 
   const cart = gharCart();
+  const itemsArr = Object.keys(cart).map(function (id) { return { id: id, qty: cart[id] }; });
   const items = Object.keys(cart).map(function (id) {
     return cart[id] + '× ' + GHAR_PRODUCTS[id].name;
   }).join('; ');
+  const t = gharTotals();
 
   const fd = new FormData(form);
   const payload = Object.fromEntries(fd.entries());
-  payload.secret = FORM_SECRET;
+  payload.secret = GHAR_SECRET;
   payload.items = items;
-  payload.total = gharCartTotal();
+  payload.itemsArr = itemsArr;
+  payload.subtotal = t.sub;
+  payload.discountCode = t.promo ? GHAR_PROMO_CODE : '';
+  payload.discount = t.discount;
+  payload.shipping = t.shipping;
+  payload.total = t.total;
 
   status.textContent = 'Placing your pre-order…';
   submitBtn.disabled = true;
   try {
-    await fetch(SCRIPT_URL, {
+    const res = await fetch(GHAR_API, {
       method: 'POST',
       body: JSON.stringify(payload)
       // no custom headers → avoids CORS preflight with Apps Script
     });
-    status.textContent = 'Thank you! Your pre-order is in — we\'ll email you with payment and delivery details when your cushions are ready.';
+    let out = null;
+    try { out = await res.json(); } catch (e) { /* unreadable response — assume ok */ }
+    if (out && out.ok === false) {
+      if (out.error === 'sold_out') {
+        const p = GHAR_PRODUCTS[out.id];
+        status.textContent = 'So sorry — ' + (p ? p.name : 'one of your items') + ' has ' +
+          (out.left > 0 ? 'only ' + out.left + ' piece(s) left' : 'just sold out') + '. Please adjust your bag.';
+        gharLoadStock(function () { renderCart(); });
+      } else {
+        status.textContent = 'Something went wrong — please try again.';
+      }
+      submitBtn.disabled = false;
+      return;
+    }
+    status.textContent = 'Thank you! Your pre-order is in — we currently operate in the EU only, and we\'ll reach out with a payment link once your cushions are ready.';
     form.reset();
     gharClearCart();
+    localStorage.removeItem('gharPromo');
     document.getElementById('cart-items').innerHTML = '';
-    document.getElementById('cart-total').textContent = '€0';
+    document.getElementById('cart-count').textContent = '0';
+    document.getElementById('sum-sub').textContent = '€0';
+    document.getElementById('sum-discount-row').style.display = 'none';
+    document.getElementById('sum-ship').textContent = '—';
+    document.getElementById('sum-total').textContent = '€0';
   } catch (err) {
     status.textContent = 'Something went wrong — please try again.';
     submitBtn.disabled = false;

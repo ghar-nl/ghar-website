@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Shop — Ghar</title>
 <meta name="description" content="Hand block printed cushion covers on 100% cotton canvas, made by artisans in Jaipur.">
-<link rel="icon" type="image/png" href="images/logo-white.png">
+<link rel="icon" type="image/png" href="images/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&family=Noto+Serif+Devanagari:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
@@ -16,14 +16,14 @@
 <!-- ── NAV ──────────────────────────────────────────────────── -->
 <nav>
   <a href="index.html" class="logo-mark" aria-label="Ghar home">
-    <img src="images/icon_transparent.png" alt="Ghar" class="logo-svg">
+    <img src="images/logo.png" alt="Ghar" class="logo-svg">
   </a>
   <ul class="nav-links">
     <li><a href="index.html">Home</a></li>
     <li><a href="shop.html" class="active">Shop</a></li>
     <li><a href="about.html">Our Story</a></li>
-    <li><a href="about.html#craft">The Craft</a></li>
-    <li><a href="about.html#care">Care</a></li>
+    <li><a href="craft.html">The Craft</a></li>
+    <li><a href="care.html">Care</a></li>
   </ul>
   <a href="cart.html" class="nav-cart" id="nav-bag">Bag</a>
 </nav>
@@ -143,7 +143,7 @@
   <div class="newsletter-inner">
     <div>
       <h2>Be the first to know.</h2>
-      <p>New collections, Amsterdam market dates, and stories from Rajasthan.</p>
+      <p>New collections, Amsterdam market dates, and stories from India.</p>
     </div>
     <div class="nl-form">
       <input type="email" placeholder="your@email.com">
@@ -160,7 +160,7 @@
         <div class="footer-logo">
           <img src="images/logo-white.png" alt="Ghar" style="height:96px;width:auto;">
         </div>
-        <p>Crafted by artisans in Jaipur. Made for homes in Amsterdam and beyond. Slow living, honest things.</p>
+        <p>Crafted by artisans in India. Made for homes in Amsterdam and beyond. Slow living, honest things.</p>
         <p style="margin-top:14px;color:rgba(255,255,255,0.25);font-size:0.78rem;">Dim in Dam · KVK 92764350<br>Amsterdam, Netherlands</p>
       </div>
       <div class="f-col">
@@ -175,9 +175,9 @@
         <h4>Story</h4>
         <ul>
           <li><a href="about.html">About Ghar</a></li>
-          <li><a href="about.html#karghewale">Our Makers</a></li>
-          <li><a href="about.html#craft">The Craft</a></li>
-          <li><a href="about.html#care">Care Guide</a></li>
+          <li><a href="craft.html#karghewale">Our Makers</a></li>
+          <li><a href="craft.html">The Craft</a></li>
+          <li><a href="care.html">Care Guide</a></li>
         </ul>
       </div>
       <div class="f-col">
@@ -199,6 +199,45 @@
     </div>
   </div>
 </footer>
+
+<!-- ── LIMITED STOCK / NOTIFY POPUP ───────────────────────────── -->
+<div id="ghar-popup" class="gpop-overlay" hidden>
+  <div class="gpop" role="dialog" aria-modal="true" aria-labelledby="gpop-title">
+    <button class="gpop-close" aria-label="Close" type="button">×</button>
+    <p class="s-tag">Limited pieces</p>
+    <h3 id="gpop-title">Our stock is getting ready for your home.</h3>
+    <p>We currently have limited pieces of the listed cushion covers. Leave your email address and we'll notify you when new stock arrives.</p>
+    <div class="gpop-form">
+      <input type="email" id="gpop-email" placeholder="your@email.com" autocomplete="email">
+      <button id="gpop-send" type="button">Notify me</button>
+    </div>
+    <p id="gpop-msg"></p>
+    <button id="gpop-skip" class="gpop-skip" type="button">Continue without</button>
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  if (localStorage.getItem('gharNotifySeen')) return;
+  const pop = document.getElementById('ghar-popup');
+  pop.hidden = false;
+  function close() { pop.hidden = true; localStorage.setItem('gharNotifySeen', '1'); }
+  pop.querySelector('.gpop-close').onclick = close;
+  document.getElementById('gpop-skip').onclick = close;
+  pop.onclick = function (e) { if (e.target === pop) close(); };
+  document.getElementById('gpop-send').onclick = async function () {
+    const email = document.getElementById('gpop-email').value.trim();
+    const msg = document.getElementById('gpop-msg');
+    if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) { msg.textContent = 'Please enter a valid email address.'; return; }
+    this.disabled = true;
+    try {
+      await fetch(GHAR_API, { method: 'POST', body: JSON.stringify({ type: 'notify', email: email, secret: GHAR_SECRET }) });
+    } catch (e) { /* optimistic */ }
+    msg.textContent = 'Thank you — we\'ll let you know!';
+    setTimeout(close, 1600);
+  };
+});
+</script>
 
 </body>
 </html>
