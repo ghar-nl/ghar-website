@@ -227,9 +227,26 @@ function gharWireSite() {
   });
 }
 
+/* ── mobile hamburger menu (injected on every page) ── */
+function gharBurger() {
+  const nav = document.querySelector('nav');
+  if (!nav || nav.querySelector('.nav-burger')) return;
+  const btn = document.createElement('button');
+  btn.className = 'nav-burger';
+  btn.setAttribute('aria-label', 'Menu');
+  btn.setAttribute('type', 'button');
+  btn.innerHTML = '<span></span><span></span><span></span>';
+  nav.insertBefore(btn, nav.querySelector('.nav-cart'));
+  btn.addEventListener('click', function () { nav.classList.toggle('nav-open'); });
+  document.querySelectorAll('.nav-links a').forEach(function (a) {
+    a.addEventListener('click', function () { nav.classList.remove('nav-open'); });
+  });
+}
+
 /* ── init ── */
 function gharInit() {
   gharUpdateBadge();
+  gharBurger();
   gharWireSite();
   if (document.querySelector('.btn-add') || document.getElementById('cart-items')) {
     gharLoadStock(function () {
