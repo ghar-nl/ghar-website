@@ -105,6 +105,12 @@ nav{
 .hero-right{position:relative;}
 .hero-right .photo{height:100%;}
 
+/* ── PRE-ORDER SALE BANNER (home) ─────────────────────────── */
+.sale-banner{margin-top:72px;background:var(--terra);color:var(--white);text-align:center;padding:16px 24px 14px;}
+.sale-headline{font-size:0.88rem;letter-spacing:0.12em;text-transform:uppercase;}
+.sale-headline strong{font-weight:500;border-bottom:1px solid rgba(255,255,255,0.55);}
+.sale-small{font-size:0.75rem;font-weight:300;color:rgba(255,255,255,0.88);max-width:820px;margin:8px auto 0;line-height:1.65;}
+
 /* ── TICKER ───────────────────────────────────────────────── */
 .ticker{background:var(--terra);padding:13px 0;overflow:hidden;}
 .ticker-inner{display:flex;white-space:nowrap;animation:tick 24s linear infinite;}

@@ -58,7 +58,7 @@
           <div class="sum-line"><span>Shipping</span><span id="sum-ship">€5</span></div>
           <div class="sum-line sum-total"><span>Total</span><span class="price" id="sum-total">€0</span></div>
         </div>
-        <p class="sum-note">Pre-order perk: 20% off with code <strong>GHARPREORDER20</strong> and free shipping — both on orders of €50 or more.</p>
+        <p class="sum-note">Pre-order perk: 20% off with code <strong>GHARPREORDER20</strong> and free shipping — both on everything above €50. Pre-orders are limited to 6 cushions per person.</p>
       </div>
 
       <!-- RIGHT: delivery details / checkout -->
@@ -186,6 +186,10 @@ function renderCart() {
     const btns = row.querySelectorAll('button');
     btns[0].onclick = function () { gharSetQty(id, qty - 1); renderCart(); };
     btns[1].onclick = function () {
+      if (gharCartCount() + 1 > GHAR_MAX_PER_ORDER) {
+        document.getElementById('promo-msg').textContent = 'Pre-orders are limited to ' + GHAR_MAX_PER_ORDER + ' cushions per person.';
+        return;
+      }
       if (qty + 1 > gharRemaining(id)) {
         document.getElementById('promo-msg').textContent = 'Only ' + gharRemaining(id) + ' of the ' + p.name + ' available.';
         return;
@@ -267,7 +271,9 @@ document.getElementById('preorder-form').addEventListener('submit', async functi
     let out = null;
     try { out = await res.json(); } catch (e) { /* unreadable response — assume ok */ }
     if (out && out.ok === false) {
-      if (out.error === 'sold_out') {
+      if (out.error === 'max_exceeded') {
+        status.textContent = 'Pre-orders are limited to ' + GHAR_MAX_PER_ORDER + ' cushions per person — please adjust your bag.';
+      } else if (out.error === 'sold_out') {
         const p = GHAR_PRODUCTS[out.id];
         status.textContent = 'So sorry — ' + (p ? p.name : 'one of your items') + ' has ' +
           (out.left > 0 ? 'only ' + out.left + ' piece(s) left' : 'just sold out') + '. Please adjust your bag.';

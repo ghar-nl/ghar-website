@@ -11,12 +11,13 @@ const GHAR_PROMO_CODE = 'GHARPREORDER20';
 const GHAR_PROMO_RATE = 0.20;       // 20% off
 const GHAR_PROMO_MIN = 50;          // on orders of €50+
 const GHAR_LOW_STOCK = 5;           // "last few pieces" threshold
+const GHAR_MAX_PER_ORDER = 6;       // max cushions per person/order           // "last few pieces" threshold
 
 const GHAR_PRODUCTS = {
-  marigold:  { name: 'Marigold Garden Cushion Cover',  price: 22, img: 'images/product4.jpeg',  size: '30 × 30 cm' },
-  rivervine: { name: 'River Vine Cushion Cover',       price: 22, img: 'images/product3.jpeg',  size: '30 × 30 cm' },
-  stone:     { name: 'Stone Lattice Cushion Cover',    price: 22, img: 'images/product2.jpeg',  size: '30 × 30 cm' },
-  forest:    { name: 'Forest Arabesque Cushion Cover', price: 22, img: 'images/lifestyle2.jpeg', size: '30 × 30 cm' }
+  marigold:  { name: 'Marigold Garden Cushion Cover',  price: 27, img: 'images/product4.jpeg',  size: '30 × 30 cm' },
+  rivervine: { name: 'River Vine Cushion Cover',       price: 27, img: 'images/product3.jpeg',  size: '30 × 30 cm' },
+  stone:     { name: 'Stone Lattice Cushion Cover',    price: 27, img: 'images/product2.jpeg',  size: '30 × 30 cm' },
+  forest:    { name: 'Forest Arabesque Cushion Cover', price: 27, img: 'images/lifestyle2.jpeg', size: '30 × 30 cm' }
 };
 
 /* ── cart storage ── */
@@ -42,6 +43,8 @@ function gharCartTotal() {
 }
 function gharSetQty(id, qty) {
   const cart = gharCart();
+  const others = gharCartCount() - (cart[id] || 0);
+  if (qty > 0 && others + qty > GHAR_MAX_PER_ORDER) qty = Math.max(0, GHAR_MAX_PER_ORDER - others);
   cart[id] = qty;
   gharSaveCart(cart);
 }
@@ -114,6 +117,14 @@ function gharApplyStockToShop() {
 /* Called by "Add to bag" buttons: gharAdd('marigold', this) */
 function gharAdd(id, btn) {
   if (!GHAR_PRODUCTS[id]) return;
+  if (gharCartCount() + 1 > GHAR_MAX_PER_ORDER) {
+    if (btn) {
+      const orig = btn.textContent;
+      btn.textContent = 'Max ' + GHAR_MAX_PER_ORDER + ' per order';
+      setTimeout(function () { btn.textContent = orig; }, 1800);
+    }
+    return;
+  }
   const cart = gharCart();
   const current = cart[id] || 0;
   const left = gharRemaining(id);
