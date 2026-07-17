@@ -413,6 +413,31 @@ footer{background:var(--blue-dark);padding:64px 52px 36px;}
   .gpop-body{padding:28px 24px 24px;}
 }
 
+/* ── PRODUCT DETAIL VIEWER ────────────────────────────────── */
+.gpop.gpop-product{max-width:920px;width:100%;}
+.pm-grid{display:grid;grid-template-columns:1fr 1.05fr;gap:28px;align-items:start;}
+.pm-main{aspect-ratio:1;overflow:hidden;background:var(--almond);cursor:zoom-in;}
+.pm-main img{width:100%;height:100%;object-fit:cover;transition:transform .25s ease;}
+.pm-main img.zoomed{transform:scale(2.3);cursor:zoom-out;}
+.pm-thumbs{display:flex;gap:6px;margin-top:8px;}
+.pm-thumbs img{width:56px;height:56px;object-fit:cover;cursor:pointer;opacity:.55;display:block;}
+.pm-thumbs img.active{opacity:1;outline:2px solid var(--terra);}
+.pm-zoomhint{font-size:0.72rem;color:var(--text-soft);margin-top:8px;letter-spacing:0.04em;}
+.pm-info h3{margin-bottom:4px;}
+.pm-size{font-size:0.8rem;color:var(--text-soft);margin-bottom:10px;letter-spacing:0.03em;}
+.pm-price{font-size:1.4rem;margin-bottom:16px;display:block;}
+.pm-desc p{font-size:0.88rem !important;color:var(--text-mid) !important;font-weight:300;line-height:1.75;margin-bottom:10px !important;}
+.pm-add{padding:14px 28px;}
+.product-mini{font-size:0.8rem;color:var(--text-soft);font-weight:300;margin-bottom:12px;line-height:1.55;}
+.ws-art svg{width:110px;height:110px;margin-bottom:6px;}
+.sale-small-short{display:none;}
+@media(max-width:700px){
+  .sale-small-full{display:none;}
+  .sale-small-short{display:block;}
+  .pm-grid{grid-template-columns:1fr;gap:16px;}
+  .pm-main{aspect-ratio:4/3;}
+}
+
 /* ── MOBILE HAMBURGER (button injected by cart.js) ────────── */
 .nav-burger{display:none;background:none;border:none;cursor:pointer;padding:10px;margin-left:auto;margin-right:4px;}
 .nav-burger span{display:block;width:22px;height:2px;background:var(--blue-dark);margin:5px 0;transition:transform .2s ease,opacity .2s ease;}

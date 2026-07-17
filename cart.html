@@ -25,6 +25,7 @@
     <li><a href="about.html">Our Story</a></li>
     <li><a href="craft.html">The Craft</a></li>
     <li><a href="care.html">Care</a></li>
+    <li><a href="#" class="ghar-workshops">Workshops</a></li>
   </ul>
   <a href="cart.html" class="nav-cart" id="nav-bag">Bag</a>
 </nav>
@@ -126,7 +127,7 @@
         <h4>Story</h4>
         <ul>
           <li><a href="about.html">About Ghar</a></li>
-          <li><a href="craft.html#karghewale">Our Makers</a></li>
+          <li><a href="craft.html#makers">Our Makers</a></li>
           <li><a href="craft.html">The Craft</a></li>
           <li><a href="care.html">Care Guide</a></li>
         </ul>
@@ -172,7 +173,7 @@ function renderCart() {
       '<div class="cart-thumb"><img src="' + p.img + '" alt="' + p.name + '"></div>' +
       '<div class="cart-info">' +
         '<h3>' + p.name + '</h3>' +
-        '<p>' + p.size + ' · €' + p.price + ' each' + (left !== Infinity && left <= 5 ? ' · <span style="color:var(--terra);">last pieces</span>' : '') + '</p>' +
+        '<p>' + p.size + ' · ' + gharFmt(p.price) + ' each' + (left !== Infinity && left <= 5 ? ' · <span style="color:var(--terra);">last pieces</span>' : '') + '</p>' +
         '<div class="cart-item-actions">' +
           '<div class="cart-qty">' +
             '<button type="button" aria-label="Decrease quantity">−</button>' +
@@ -182,7 +183,7 @@ function renderCart() {
           '<button type="button" class="cart-remove">Remove</button>' +
         '</div>' +
       '</div>' +
-      '<div class="cart-line-price price">€' + (p.price * qty) + '</div>';
+      '<div class="cart-line-price price">' + gharFmt(p.price * qty) + '</div>';
     const btns = row.querySelectorAll('button');
     btns[0].onclick = function () { gharSetQty(id, qty - 1); renderCart(); };
     btns[1].onclick = function () {
@@ -202,11 +203,11 @@ function renderCart() {
 
   const t = gharTotals();
   document.getElementById('cart-count').textContent = gharCartCount();
-  document.getElementById('sum-sub').textContent = '€' + t.sub;
+  document.getElementById('sum-sub').textContent = gharFmt(t.sub);
   document.getElementById('sum-discount-row').style.display = t.promo ? 'flex' : 'none';
-  document.getElementById('sum-discount').textContent = '−€' + t.discount;
-  document.getElementById('sum-ship').textContent = t.shipping === 0 ? 'FREE' : '€' + t.shipping;
-  document.getElementById('sum-total').textContent = '€' + t.total;
+  document.getElementById('sum-discount').textContent = '−' + gharFmt(t.discount);
+  document.getElementById('sum-ship').textContent = t.shipping === 0 ? 'FREE' : gharFmt(t.shipping);
+  document.getElementById('sum-total').textContent = gharFmt(t.total);
   if (gharPromoStored()) document.getElementById('promo-input').value = GHAR_PROMO_CODE;
 }
 if (document.readyState !== 'loading') renderCart();
