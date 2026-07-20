@@ -39,12 +39,12 @@ const GHAR_PRODUCTS = {
     ].concat(GHAR_DESC_SHARED)
   },
   stone: {
-    name: 'Stone Lattice Cushion Cover', price: 29.99,
+    name: 'Stone Lattice Cushion Cover', price: 27.99,
     img: 'images/product2.jpeg', images: ['images/product2.jpeg'],
     size: '30 × 30 cm',
     material: 'Hand block printed · 100% pure cotton · different print on front & back',
     desc: [
-      "One cover, two prints: a graphic lattice on the front and a companion print on the back — two full sets of carved blocks, printed separately and brought together in a single piece. Flip it whenever your room asks for a change. Two print runs go into every cover, which is why this one is €29.99."
+      "One cover, two prints: a graphic lattice on the front and a companion print on the back — two full sets of carved blocks, printed separately and brought together in a single piece. Flip it whenever your room asks for a change."
     ].concat(GHAR_DESC_SHARED)
   },
   forest: {
