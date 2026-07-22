@@ -62,7 +62,7 @@ const GHAR_PRODUCTS = {
     size: '30 × 30 cm',
     material: 'Hand block printed · 100% pure cotton',
     desc: [
-      "Marigold-gold medallions trail along a hand-carved vine, with small blue blooms pressed in between. A softer, sunnier cousin to our floral prints — bordered in green for a finished, framed look."
+      "Marigold-gold medallions trail along a hand-carved vine, with small blue blooms pressed in between. A softer, sunnier cousin to our floral prints — bordered in yellow for a finished, framed look."
     ].concat(GHAR_DESC_SHARED)
   }
 };
