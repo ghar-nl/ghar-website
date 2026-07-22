@@ -22,7 +22,7 @@ const GHAR_DESC_SHARED = [
 const GHAR_PRODUCTS = {
   marigold: {
     name: 'Marigold Garden Cushion Cover', price: 27.99,
-    img: 'images/product4.jpeg', images: ['images/product4.jpeg'],
+    img: 'images/product4.jpeg', images: ['images/product4.jpeg','images/marigold-1.jpg','images/marigold-2.jpg','images/marigold-3.jpg','images/marigold-4.jpg','images/marigold-5.jpg','images/marigold-6.jpg','images/marigold-7.jpg','images/marigold-8.jpg','images/marigold-9.jpg'],
     size: '30 × 30 cm',
     material: 'Hand block printed · 100% pure cotton',
     desc: [
@@ -31,7 +31,7 @@ const GHAR_PRODUCTS = {
   },
   rivervine: {
     name: 'River Vine Cushion Cover', price: 27.99,
-    img: 'images/product3.jpeg', images: ['images/product3.jpeg'],
+    img: 'images/product3.jpeg', images: ['images/product3.jpeg','images/rivervine-1.jpg','images/rivervine-2.jpg','images/rivervine-3.jpg','images/rivervine-4.jpg','images/rivervine-5.jpg','images/rivervine-6.jpg','images/rivervine-7.jpg','images/rivervine-8.jpg','images/rivervine-9.jpg','images/rivervine-10.jpg'],
     size: '30 × 30 cm',
     material: 'Hand block printed · 100% pure cotton',
     desc: [
@@ -40,7 +40,7 @@ const GHAR_PRODUCTS = {
   },
   stone: {
     name: 'Stone Lattice Cushion Cover', price: 27.99,
-    img: 'images/product2.jpeg', images: ['images/product2.jpeg'],
+    img: 'images/product2.jpeg', images: ['images/product2.jpeg','images/stone-1.jpg','images/stone-2.jpg','images/stone-3.jpg','images/stone-4.jpg','images/stone-5.jpg','images/stone-6.jpg','images/stone-7.jpg','images/stone-8.jpg','images/stone-9.jpg','images/stone-10.jpg','images/stone-11.jpg','images/stone-12.jpg','images/stone-13.jpg','images/stone-14.jpg'],
     size: '30 × 30 cm',
     material: 'Hand block printed · 100% pure cotton · different print on front & back',
     desc: [
@@ -49,7 +49,7 @@ const GHAR_PRODUCTS = {
   },
   forest: {
     name: 'Forest Arabesque Cushion Cover', price: 27.99,
-    img: 'images/lifestyle2.jpeg', images: ['images/lifestyle2.jpeg'],
+    img: 'images/lifestyle2.jpeg', images: ['images/lifestyle2.jpeg','images/forest-1.jpg','images/forest-2.jpg','images/forest-3.jpg','images/forest-4.jpg','images/forest-5.jpg','images/forest-6.jpg'],
     size: '30 × 30 cm',
     material: 'Hand block printed · 100% pure cotton',
     desc: [
