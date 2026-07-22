@@ -55,6 +55,15 @@ const GHAR_PRODUCTS = {
     desc: [
       "Deep greens and indigo in an arabesque that echoes centuries of Indo-Persian pattern-making. Hand-carved blocks, layered colour by colour, on soft pure cotton."
     ].concat(GHAR_DESC_SHARED)
+  },
+  golden: {
+    name: 'Golden Trellis Cushion Cover', price: 27.99,
+    img: 'images/golden-1.jpg', images: ['images/golden-1.jpg','images/golden-2.jpg','images/golden-3.jpg','images/golden-4.jpg','images/golden-5.jpg','images/golden-6.jpg','images/golden-7.jpg','images/golden-8.jpg','images/golden-9.jpg','images/golden-10.jpg','images/golden-11.jpg'],
+    size: '30 × 30 cm',
+    material: 'Hand block printed · 100% pure cotton',
+    desc: [
+      "Marigold-gold medallions trail along a hand-carved vine, with small blue blooms pressed in between. A softer, sunnier cousin to our floral prints — bordered in green for a finished, framed look."
+    ].concat(GHAR_DESC_SHARED)
   }
 };
 
@@ -223,7 +232,7 @@ function gharProductModal(id) {
       '<div class="pm-gallery">' +
         '<div class="pm-main" id="pm-main"><img src="' + p.images[0] + '" alt="' + p.name + '"></div>' +
         thumbs +
-        '<p class="pm-zoomhint">Click the photo to zoom · more photos coming soon</p>' +
+        '<p class="pm-zoomhint">Click the photo to zoom</p>' +
       '</div>' +
       '<div class="pm-info">' +
         '<p class="s-tag">The collection</p>' +
