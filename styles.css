@@ -228,7 +228,7 @@ section{padding:100px 52px;}
 .soon-hdr{text-align:center;margin-bottom:48px;}
 .soon-hdr .s-tag{justify-content:center;}
 .soon-hdr .s-h{margin-bottom:16px;}
-.soon-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:3px;}
+.soon-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:3px;}
 .soon-card{background:var(--white);padding:32px 24px;}
 .soon-card.dark{background:var(--blue-dark);}
 .soon-card.almond{background:var(--almond);}
