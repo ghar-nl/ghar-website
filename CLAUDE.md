@@ -17,7 +17,7 @@ This folder is the LIVE website for https://ghar.nl (brand: Ghar — hand block 
 - History note: the site briefly ran on Netlify (Netlify Drop + Netlify DNS) in July 2026; that project and DNS zone were deleted. Never redeploy to Netlify.
 
 ## Pre-order system (added July 2026)
-- Cart: localStorage ("gharCart"), logic in cart.js (included on every page with defer). Product catalog lives in GHAR_PRODUCTS in cart.js — ids: marigold, rivervine, stone, forest (€22 each). "Add to bag" buttons call gharAdd(id, this). Nav "Bag" link (id=nav-bag) shows count.
+- Cart: localStorage ("gharCart"), logic in cart.js (included on every page with defer). Product catalog lives in GHAR_PRODUCTS in cart.js — ids: marigold, rivervine, stone, forest, golden (€27.99 each). "Add to bag" buttons call gharAdd(id, this). Nav "Bag" link (id=nav-bag) shows count.
 - cart.html: cart display + EU-27 pre-order checkout form. No payment collected — customers are emailed later.
 - Backend: Google Apps Script web app (project "Ghar Pre-Order Endpoint", owned by dimplec1511@gmail.com), bound to the private Google Sheet "Ghar Pre-Orders". Sheet is shared with nobody. Sheet URL: https://docs.google.com/spreadsheets/d/1rD2-qwvDXAbAH_sUpbS7XFubgWRas_dwrGQg4x_zdao/edit (also saved as "Ghar Orders & Messages.webloc" on the user's Desktop).
 - The form POSTs JSON to the SCRIPT_URL in cart.html with a shared secret (must match SECRET in the Apps Script). Honeypot field "company" catches bots. Notifications go to NOTIFY_EMAIL (dimple@ghar.nl).
@@ -47,19 +47,15 @@ This folder is the LIVE website for https://ghar.nl (brand: Ghar — hand block 
 - When adding a new photo to a product, drop it in `images/products/<id>/` as the next sequential number and add that path to the `images[]` array in cart.js — keep numbering gap-free (renumber if a photo is removed).
 
 ## Rules for editing
-1. Edit files DIRECTLY in this folder (index.html, shop.html, about.html, styles.css, images/). Do not create copies in session outputs.
+1. The persistent local clone lives at `/Users/dimple/Claude/ghar-website` — work directly in this folder (index.html, shop.html, about.html, styles.css, images/). Do not create copies in session outputs. See the `ghar-website` skill for the pull/push workflow.
 2. Image references are relative (images/site/..., images/products/<id>/..., images/craft/...) — keep them that way.
 3. Keep nav and footer identical across all three pages when editing (they are duplicated in each file).
-4. After ANY change the user approves, ALWAYS push it to GitHub in the same session (see below). The site only updates once pushed — remind the user if a push isn't possible.
+4. After ANY change the user approves, ALWAYS push it to GitHub in the same session (see the `ghar-website` skill). The site only updates once pushed — remind the user if a push isn't possible.
 
-## How to push changes to GitHub
-Use the Claude in Chrome extension (user is logged in to GitHub as ghar-nl):
-1. Navigate to https://github.com/ghar-nl/ghar-website/upload/main (for root files) or https://github.com/ghar-nl/ghar-website/upload/main/images (for images).
-2. Use the find tool to locate the file input, then file_upload with the changed files' paths from this folder. Files with the same name are overwritten — that's how updates work.
-3. Click "Commit changes" (commit directly to main).
-4. Deployment takes 1–2 minutes (check the Actions tab for "pages build and deployment"); verify at https://ghar.nl if asked.
+## How to push changes to GitHub (since August 2026 — direct git push)
+`/Users/dimple/Claude/ghar-website` has a git remote (`origin` → https://github.com/ghar-nl/ghar-website.git) with push access already configured via a GitHub personal access token stored in macOS Keychain (git credential helper `osxkeychain`, scoped to `ghar-nl/ghar-website`, host `github.com`). Just `git add`, `git commit`, `git push origin main` like any normal repo — no browser/Chrome extension needed. See the `ghar-website` skill for the exact steps (pull-first, cache-busting version bump, verify-before-push).
 
-If the Chrome extension is not connected, ask the user to open Chrome and retry before falling back to manual instructions.
+Fallback only if the stored token has expired/been revoked and git push fails with an auth error: use the Claude in Chrome extension (user is logged in to GitHub as ghar-nl) to upload changed files at https://github.com/ghar-nl/ghar-website/upload/main (or `/upload/main/images` for images), then "Commit changes" directly to main. Deployment takes 1–2 minutes either way (check the Actions tab for "pages build and deployment"); verify at https://ghar.nl if asked.
 
 - Product cards on shop open a detail viewer modal (gharProductModal in cart.js) with zoomable gallery — add more photos per product via the images arrays in GHAR_PRODUCTS. Nav has a "Workshops" item (class ghar-workshops) that opens a coming-soon popup. Newsletter is branded "Postcards from Ghar" with button "Count me in".
 - Product modal layout (`.pm-grid` in styles.css): a 2-col CSS grid (`1fr 1.05fr`) with `.pm-gallery` (image + thumbs) as the left grid item and `.pm-info` (title/price/description) as the right. Both grid items MUST keep `min-width:0` — without it, `.pm-thumbs`' intrinsic content width (up to 14 thumbnails) blows out the `1fr` track and pushes `.pm-info` off-screen, rendering as blank space. `.pm-main` uses fixed `height:420px` (280px on mobile) + `width:100%` + `object-fit:contain` (not `cover`, which crops photo tops) so tall/portrait photos are never cropped.
