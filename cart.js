@@ -128,7 +128,7 @@ const GHAR_PRODUCTS = {
   },
   rectmat: {
     name: 'Ikat Rectangle Table Mat', price: 31.99,
-    img: 'images/products/rectmat/1.jpg', images: ['images/products/rectmat/1.jpg','images/products/rectmat/2.jpg','images/products/rectmat/3.jpg'],
+    img: 'images/products/rectmat/1.jpg', images: ['images/products/rectmat/1.jpg','images/products/rectmat/2.jpg'],
     size: '32 × 45 cm', material: 'Ikat woven cotton',
     category: 'placemat', printType: 'ikat', rooms: ['dining'], favRank: 20,
     mini: "A well-dressed table starts here — hemmed in a soft contrast colour.",
