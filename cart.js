@@ -84,28 +84,28 @@ const GHAR_PRODUCTS = {
     ].concat(GHAR_DESC_SHARED)
   },
 
-  /* ── Ikkat collection (added August 2026) — no photos yet, images: [] renders
+  /* ── Ikat collection (added August 2026) — no photos yet, images: [] renders
      the dashed "photo coming soon" placeholder (see .photo-label in styles.css).
      Swap in real paths as soon as they exist; nothing else needs to change. ── */
   wallart: {
-    name: 'Ikkat Wall Art Square', price: 19.99,
+    name: 'Ikat Wall Art Square', price: 19.99,
     img: '', images: [],
-    size: '30 × 30 cm', material: 'Ikkat woven cotton · unframed',
-    category: 'wall-art', printType: 'ikkat', rooms: ['living'], favRank: 1,
-    mini: "Ikkat cotton, cut into perfect squares — ready to frame as art.",
+    size: '30 × 30 cm', material: 'Ikat woven cotton · unframed',
+    category: 'wall-art', printType: 'ikat', rooms: ['living'], favRank: 1,
+    mini: "Ikat cotton, cut into perfect squares — ready to frame as art.",
     desc: [
       "We kept noticing how beautiful these fabrics looked entirely on their own — no cushion, no cover, nothing added — so we cut them into perfect squares and started hanging them as art instead.",
       "Frame the whole square with a generous mat and a thick border, or size the frame right down so every inch you see is fabric. Either way, all four edges are hemmed flawlessly, so there is no raw edge hiding behind the glass.",
-      "Ikkat is the print we are starting with, chosen for the way its pattern seems to soften and blur at its own edges — a quality that comes from how ikkat yarn is dyed before it is ever woven. Many more prints are on their way.",
+      "Ikat is the print we are starting with, chosen for the way its pattern seems to soften and blur at its own edges — a quality that comes from how ikat yarn is dyed before it is ever woven. Many more prints are on their way.",
       "A few of our own favourite ways to frame and hang these are in the photos below — borrow one, or find your own.",
       "Please note: sold as the fabric square only, unframed."
     ]
   },
   largecushion: {
-    name: 'Ikkat Extra-Large Cushion Cover', price: 39.99,
+    name: 'Ikat Extra-Large Cushion Cover', price: 39.99,
     img: '', images: [],
-    size: '60 × 60 cm', material: 'Ikkat woven cotton',
-    category: 'cushion-large', printType: 'ikkat', rooms: ['living'], favRank: 2,
+    size: '60 × 60 cm', material: 'Ikat woven cotton',
+    category: 'cushion-large', printType: 'ikat', rooms: ['living'], favRank: 2,
     mini: "Our cushion covers, scaled all the way up. A very small batch — grab it before it's gone.",
     desc: [
       "We started with small cushion covers — now we are just as excited to launch these in extra-large. Anyone who has tried to find a cover for a big cushion insert knows how hard that size is to track down; ours is cut and finished exactly for it.",
@@ -114,21 +114,21 @@ const GHAR_PRODUCTS = {
     ].concat(GHAR_DESC_SHARED)
   },
   runner: {
-    name: 'Ikkat Table Runner', price: 46.99,
+    name: 'Ikat Table Runner', price: 46.99,
     img: '', images: [],
-    size: '35 × 150 cm', material: 'Ikkat woven · 100% organic cotton',
-    category: 'table-runner', printType: 'ikkat', rooms: ['living', 'dining'], favRank: 3,
-    mini: "A dark red border gives this ikkat runner one last, quiet highlight.",
+    size: '35 × 150 cm', material: 'Ikat woven · 100% organic cotton',
+    category: 'table-runner', printType: 'ikat', rooms: ['living', 'dining'], favRank: 3,
+    mini: "A dark red border gives this ikat runner one last, quiet highlight.",
     desc: [
       "A table runner is the fastest way to change a room without changing anything in it — lay it down the centre of the dining table for dinner, or across a console or sideboard in the living room, and the whole space shifts colour with it.",
-      "At 35 × 150 cm, it is sized generously for the long tables we keep seeing in Dutch homes, with a dark red border that gives the ikkat pattern one last, quiet highlight. The base is 100% organic cotton — easy to wash under cold water, and just as easy to live with."
+      "At 35 × 150 cm, it is sized generously for the long tables we keep seeing in Dutch homes, with a dark red border that gives the ikat pattern one last, quiet highlight. The base is 100% organic cotton — easy to wash under cold water, and just as easy to live with."
     ]
   },
   rectmat: {
-    name: 'Ikkat Rectangle Table Mat', price: 31.99,
+    name: 'Ikat Rectangle Table Mat', price: 31.99,
     img: '', images: [],
-    size: '32 × 45 cm', material: 'Ikkat woven cotton',
-    category: 'placemat', printType: 'ikkat', rooms: ['dining'], favRank: 20,
+    size: '32 × 45 cm', material: 'Ikat woven cotton',
+    category: 'placemat', printType: 'ikat', rooms: ['dining'], favRank: 20,
     mini: "A well-dressed table starts here — hemmed in a soft contrast colour.",
     desc: [
       "Whether you are protecting the table, dressing it up for guests, or simply keeping the wood beneath it safe, a good placemat does more work than it gets credit for. Ours are cut to sit beautifully under a full place setting, and we will admit it — we are a little obsessed with them ourselves.",
@@ -137,21 +137,21 @@ const GHAR_PRODUCTS = {
     ]
   },
   circlemat: {
-    name: 'Ikkat Round Table Mat', price: 31.99,
+    name: 'Ikat Round Table Mat', price: 31.99,
     img: '', images: [],
-    size: '30 cm diameter', material: 'Ikkat woven cotton',
-    category: 'placemat', printType: 'ikkat', rooms: ['dining'], favRank: 21,
+    size: '30 cm diameter', material: 'Ikat woven cotton',
+    category: 'placemat', printType: 'ikat', rooms: ['dining'], favRank: 21,
     mini: "The same idea, in the round — elegant under any dinner plate.",
     desc: [
-      "The same idea, in the round: a circle mat brings a softer line to the table and suits a round plate especially well. In our ikkat red, it gives just the right amount of contrast against plain white or stoneware — enough to notice, not enough to shout.",
+      "The same idea, in the round: a circle mat brings a softer line to the table and suits a round plate especially well. In our ikat red, it gives just the right amount of contrast against plain white or stoneware — enough to notice, not enough to shout.",
       "Wash under cold water and dry in the shade, same as the rest of the collection — these are made to be used, not saved for best."
     ]
   },
   napkin: {
-    name: 'Ikkat Napkin', price: 15.99,
+    name: 'Ikat Napkin', price: 15.99,
     img: '', images: [],
-    size: '40 × 40 cm', material: 'Ikkat woven · 100% organic cotton',
-    category: 'napkin', printType: 'ikkat', rooms: ['dining'], favRank: 22,
+    size: '40 × 40 cm', material: 'Ikat woven · 100% organic cotton',
+    category: 'napkin', printType: 'ikat', rooms: ['dining'], favRank: 22,
     mini: "Soft enough for children, finished enough for guests.",
     desc: [
       "A good napkin does more than wipe a mouth — fold it under the cutlery to finish a place setting, let it sit loose and colourful across the table, or hand it to the smallest person at dinner. Being 100% organic cotton, it is soft enough that we reach for these with children too — gentle on the skin, and it only gets softer with washing.",
@@ -159,10 +159,10 @@ const GHAR_PRODUCTS = {
     ]
   },
   coaster: {
-    name: 'Ikkat Coaster', price: 12.99,
+    name: 'Ikat Coaster', price: 12.99,
     img: '', images: [],
-    size: '10 × 10 cm', material: 'Ikkat woven · 100% organic cotton',
-    category: 'coaster', printType: 'ikkat', rooms: ['dining'], favRank: 23,
+    size: '10 × 10 cm', material: 'Ikat woven · 100% organic cotton',
+    category: 'coaster', printType: 'ikat', rooms: ['dining'], favRank: 23,
     mini: "Zero-waste squares, cut from our own fabric offcuts.",
     desc: [
       "Every coaster is cut from fabric offcuts that would otherwise end up as waste — so alongside your morning chai, you are also keeping good cloth out of a landfill. Zero waste, and quietly rather lovely under a cup.",
@@ -178,32 +178,32 @@ const GHAR_PRODUCTS = {
   'totebag-h-same': {
     name: 'Everyday Tote Bag — Horizontal, Same-colour Strap', price: 56.99,
     img: '', images: [],
-    size: '52 × 36 × 10 cm · 35 cm strap (same colour)', material: 'Ikkat woven · 100% organic cotton',
-    category: 'tote-bag', printType: 'ikkat', rooms: [], favRank: 30,
+    size: '52 × 36 × 10 cm · 35 cm strap (same colour)', material: 'Ikat woven · 100% organic cotton',
+    category: 'tote-bag', printType: 'ikat', rooms: [], favRank: 30,
     variantGroup: 'totebag', variantLabel: 'Horizontal · Same-colour strap', mini: "3 deep pockets, a bottle holder, and room for absolutely everything.",
     desc: null // shared GHAR_TOTE_DESC below
   },
   'totebag-h-contrast': {
     name: 'Everyday Tote Bag — Horizontal, Contrast Strap', price: 56.99,
     img: '', images: [],
-    size: '52 × 36 × 10 cm · 35 cm strap (contrast colour)', material: 'Ikkat woven · 100% organic cotton',
-    category: 'tote-bag', printType: 'ikkat', rooms: [], favRank: 31,
+    size: '52 × 36 × 10 cm · 35 cm strap (contrast colour)', material: 'Ikat woven · 100% organic cotton',
+    category: 'tote-bag', printType: 'ikat', rooms: [], favRank: 31,
     variantGroup: 'totebag', variantLabel: 'Horizontal · Contrast strap', mini: "3 deep pockets, a bottle holder, and room for absolutely everything.",
     desc: null
   },
   'totebag-v-same': {
     name: 'Everyday Tote Bag — Vertical, Same-colour Strap', price: 56.99,
     img: '', images: [],
-    size: '40 × 42 × 10 cm · 35 cm strap (same colour)', material: 'Ikkat woven · 100% organic cotton',
-    category: 'tote-bag', printType: 'ikkat', rooms: [], favRank: 32,
+    size: '40 × 42 × 10 cm · 35 cm strap (same colour)', material: 'Ikat woven · 100% organic cotton',
+    category: 'tote-bag', printType: 'ikat', rooms: [], favRank: 32,
     variantGroup: 'totebag', variantLabel: 'Vertical · Same-colour strap', mini: "3 deep pockets, a bottle holder, and room for absolutely everything.",
     desc: null
   },
   'totebag-v-contrast': {
     name: 'Everyday Tote Bag — Vertical, Contrast Strap', price: 56.99,
     img: '', images: [],
-    size: '40 × 42 × 10 cm · 35 cm strap (contrast colour)', material: 'Ikkat woven · 100% organic cotton',
-    category: 'tote-bag', printType: 'ikkat', rooms: [], favRank: 33,
+    size: '40 × 42 × 10 cm · 35 cm strap (contrast colour)', material: 'Ikat woven · 100% organic cotton',
+    category: 'tote-bag', printType: 'ikat', rooms: [], favRank: 33,
     variantGroup: 'totebag', variantLabel: 'Vertical · Contrast strap', mini: "3 deep pockets, a bottle holder, and room for absolutely everything.",
     desc: null
   }
@@ -424,7 +424,7 @@ function gharProductModal(id) {
         (hasPhoto ? '<p class="pm-zoomhint">Click the photo to zoom</p>' : '') +
       '</div>' +
       '<div class="pm-info">' +
-        '<p class="s-tag">' + (p.printType === 'ikkat' ? 'Ikkat collection' : 'The collection') + '</p>' +
+        '<p class="s-tag">' + (p.printType === 'ikat' ? 'Ikat collection' : 'The collection') + '</p>' +
         '<h3>' + p.name + '</h3>' +
         variantPicker +
         '<p class="pm-size" id="pm-variant-size">' + p.size + ' · ' + p.material + '</p>' +

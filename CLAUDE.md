@@ -24,7 +24,7 @@ This folder is the LIVE website for https://ghar.nl (brand: Ghar — hand block 
 - If the Apps Script code changes, a NEW deployment version must be created (Deploy → Manage deployments → edit → new version) — the URL stays the same.
 - Sheet columns (Orders tab): Timestamp | Name | Email | Phone | Address 1 | Address 2 | City | Region | Postal Code | Country | Items | Subtotal | Discount | Shipping | Total EUR.
 - Sheet also has: "Notify" tab (emails from the shop popup) and "Stock" tab (id | limit | sold). The Apps Script doGet returns remaining stock as JSON, keyed by id; any id with no row in the Stock tab is treated as unlimited (fails open — no "sold out"/"low stock" badge) by gharRemaining() in cart.js. doPost checks stock (rejects with error "sold_out"), updates sold counts, and accepts {type:'notify'} signups. To change stock limits: edit the Stock tab directly (no redeploy needed). If Apps Script code changes: Manage deployments → edit → New version.
-  - **The 8 Ikkat SKUs added August 2026 have no Stock tab rows yet** (wallart, largecushion, runner, rectmat, circlemat, napkin, coaster, and the 4 totebag-* ids), so they currently show as always-in-stock/no badge on the live site. Add rows with these limits to get real badges: wallart 6, largecushion 9, runner 12, rectmat 10, circlemat 10, napkin 15, coaster 23. The 4 tote ids should NOT get independent Stock-tab limits — see "Shared stock groups" below for why.
+  - **The 8 Ikat SKUs added August 2026 have no Stock tab rows yet** (wallart, largecushion, runner, rectmat, circlemat, napkin, coaster, and the 4 totebag-* ids), so they currently show as always-in-stock/no badge on the live site. Add rows with these limits to get real badges: wallart 6, largecushion 9, runner 12, rectmat 10, circlemat 10, napkin 15, coaster 23. The 4 tote ids should NOT get independent Stock-tab limits — see "Shared stock groups" below for why.
 - Pricing (in cart.js GHAR_PRODUCTS): no longer a single flat price — see "Product catalog" below for the current per-product prices. €5 shipping, free shipping on subtotal ≥ €50; discount code GHARPREORDER20 = 20% off on subtotal ≥ €50; max 6 items per order (GHAR_MAX_PER_ORDER, also enforced server-side as MAX_PER_ORDER — this now applies across the whole catalog, not just cushions, so keep any UI copy about it item-neutral). Home page has a .sale-banner announcing the pre-order sale (index.html only; hero there has inline padding-top:0 to sit under it). Shop page shows a once-per-visitor limited-stock popup (localStorage key gharNotifySeen) collecting notify emails; sold-out and "last few pieces" badges appear from live stock (≤5 = low).
 
 ### Shared stock groups (added August 2026)
@@ -67,23 +67,23 @@ Fallback only if the stored token has expired/been revoked and git push fails wi
 - The modal's zoom-hint text under the gallery just reads "Click the photo to zoom" — do not reintroduce "more photos coming soon" now that every product has a full gallery. (Zoom hint and zoom/pan listeners are skipped automatically when a product has no photos yet, per the placeholder handling in gharProductModal.)
 - Products with `variantGroup` set (currently just the tote bag, see "Product catalog") get an extra `.pm-variants` picker rendered above the size line — clicking a variant swaps which id "Add to bag" targets and updates the size text, without re-rendering the whole modal.
 
-## Product catalog (block print cushions + Ikkat collection, added August 2026)
-Shop.html no longer hand-writes product cards in HTML — it renders them from GHAR_PRODUCTS at runtime (see the inline `<script>` at the bottom of shop.html: `gharShopEntries`/`gharCardHtml`/`gharRenderShop`). **To add, remove, or reprice a product, edit cart.js only** — shop.html's script picks it up automatically. Each product needs: `category`, `printType` ('block'|'ikkat'), `rooms` (array of room filter values, `[]` if it doesn't belong to any room), `favRank` (lower = earlier in the default "Favourites" sort), and `mini` (one-line teaser for the card — separate from the longer `desc` array used in the modal).
+## Product catalog (block print cushions + Ikat collection, added August 2026)
+Shop.html no longer hand-writes product cards in HTML — it renders them from GHAR_PRODUCTS at runtime (see the inline `<script>` at the bottom of shop.html: `gharShopEntries`/`gharCardHtml`/`gharRenderShop`). **To add, remove, or reprice a product, edit cart.js only** — shop.html's script picks it up automatically. Each product needs: `category`, `printType` ('block'|'ikat'), `rooms` (array of room filter values, `[]` if it doesn't belong to any room), `favRank` (lower = earlier in the default "Favourites" sort), and `mini` (one-line teaser for the card — separate from the longer `desc` array used in the modal).
 
 **Block print cushions (original 5, unchanged prices):** marigold, rivervine, stone, forest, golden — €27.99 each, 30×30cm, `rooms:['living']`. golden ("Golden Trellis") was added July 2026; photos for all 5 live in `/Users/dimple/Desktop/Ghar Cushions Photo/` (resize to max 1600px, JPEG ~82 quality before adding).
 
-**Ikkat collection (new, no photos yet):** every entry below has `images: []` / `img: ''`, which renders the dashed "Photo coming soon" placeholder (`gharPhotoPlaceholder()` in cart.js, reusing the `.photo-label` CSS built for exactly this). Swap in real paths the same way as any other product — nothing else needs to change.
-- wallart — Ikkat Wall Art Square, €19.99, 30×30cm, unframed, `rooms:['living']`
-- largecushion — Ikkat Extra-Large Cushion Cover, €39.99, 60×60cm, small batch, `rooms:['living']`
-- runner — Ikkat Table Runner, €46.99, 35×150cm, `rooms:['living','dining']`
-- rectmat / circlemat — Ikkat Rectangle/Round Table Mat, €31.99 each, 32×45cm / 30cm diameter, `rooms:['dining']`
-- napkin — Ikkat Napkin, €15.99, `rooms:['dining']`. **Size (40×40cm) is an assumption** — the user didn't specify one; confirm/update if they give a real size.
-- coaster — Ikkat Coaster, €12.99, 10×10cm, `rooms:['dining']`
+**Ikat collection (new, no photos yet):** every entry below has `images: []` / `img: ''`, which renders the dashed "Photo coming soon" placeholder (`gharPhotoPlaceholder()` in cart.js, reusing the `.photo-label` CSS built for exactly this). Swap in real paths the same way as any other product — nothing else needs to change.
+- wallart — Ikat Wall Art Square, €19.99, 30×30cm, unframed, `rooms:['living']`
+- largecushion — Ikat Extra-Large Cushion Cover, €39.99, 60×60cm, small batch, `rooms:['living']`
+- runner — Ikat Table Runner, €46.99, 35×150cm, `rooms:['living','dining']`
+- rectmat / circlemat — Ikat Rectangle/Round Table Mat, €31.99 each, 32×45cm / 30cm diameter, `rooms:['dining']`
+- napkin — Ikat Napkin, €15.99, `rooms:['dining']`. **Size (40×40cm) is an assumption** — the user didn't specify one; confirm/update if they give a real size.
+- coaster — Ikat Coaster, €12.99, 10×10cm, `rooms:['dining']`
 - Everyday Tote Bag — €56.99, one product shown as a single shop card ("Choose options" instead of "Add to bag", opens the modal's variant picker) but stored as 4 separate ids sharing one stock pool of 3 — see "Shared stock groups" above: `totebag-h-same`, `totebag-h-contrast`, `totebag-v-same`, `totebag-v-contrast`. `rooms: []` (not room-tagged). All 4 share `GHAR_TOTE_DESC`.
 
 ### Shop filters (shop.html)
 - **Room filter**: Living room, Dining room, Kitchen, Bedroom, Bathroom, Kids room. **"Dining room" was added by Claude** — the user's original room list was Living/Kitchen/Bedroom/Bathroom/Kids, but they then described a set of dining-specific products (napkins, coasters, runner, placemats) with nowhere else coherent to go. If the user pushes back, this is the one filter label to reconsider. Kitchen/Bedroom/Bathroom/Kids room currently have zero tagged products, so selecting them shows a "coming soon" message (`GHAR_ROOM_MESSAGE` in shop.html) instead of an empty grid.
-- **Print filter**: All prints / Ikkat / Block print, matches `printType`.
+- **Print filter**: All prints / Ikat / Block print, matches `printType`.
 - **Sort**: Favourites (default, sorts by `favRank` — wall art, extra-large cushion, and table runner rank first per the user's instruction, everything else after), Price low→high, Price high→low.
 - Filtering/sorting is entirely client-side over GHAR_PRODUCTS; there's no pagination or server involvement.
 
