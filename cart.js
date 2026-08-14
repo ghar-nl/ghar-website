@@ -41,7 +41,7 @@ const GHAR_PRODUCTS = {
   },
   rivervine: {
     name: 'River Vine Cushion Cover', price: 27.99,
-    img: 'images/products/rivervine/1.jpg', images: ['images/products/rivervine/1.jpg','images/products/rivervine/2.jpg','images/products/rivervine/3.jpg','images/products/rivervine/4.jpg','images/products/rivervine/5.jpg','images/products/rivervine/6.jpg','images/products/rivervine/7.jpg','images/products/rivervine/8.jpg','images/products/rivervine/9.jpg'],
+    img: 'images/products/rivervine/1.jpg', images: ['images/products/rivervine/1.jpg','images/products/rivervine/2.jpg','images/products/rivervine/3.jpg','images/products/rivervine/4.jpg'],
     size: '30 × 30 cm',
     material: 'Hand block printed · 100% pure cotton',
     category: 'cushion-small', printType: 'block', rooms: ['living'], favRank: 11,
@@ -52,7 +52,7 @@ const GHAR_PRODUCTS = {
   },
   stone: {
     name: 'Stone Lattice Cushion Cover', price: 27.99,
-    img: 'images/products/stone/1.jpg', images: ['images/products/stone/1.jpg','images/products/stone/2.jpg','images/products/stone/3.jpg','images/products/stone/4.jpg','images/products/stone/5.jpg','images/products/stone/6.jpg','images/products/stone/7.jpg','images/products/stone/8.jpg','images/products/stone/9.jpg','images/products/stone/10.jpg','images/products/stone/11.jpg','images/products/stone/12.jpg','images/products/stone/13.jpg'],
+    img: 'images/products/stone/1.jpg', images: ['images/products/stone/1.jpg','images/products/stone/2.jpg','images/products/stone/3.jpg','images/products/stone/4.jpg','images/products/stone/5.jpg','images/products/stone/6.jpg','images/products/stone/7.jpg','images/products/stone/8.jpg','images/products/stone/9.jpg'],
     size: '30 × 30 cm',
     material: 'Hand block printed · 100% pure cotton · different print on front & back',
     category: 'cushion-small', printType: 'block', rooms: ['living'], favRank: 12,
@@ -63,7 +63,7 @@ const GHAR_PRODUCTS = {
   },
   forest: {
     name: 'Forest Arabesque Cushion Cover', price: 27.99,
-    img: 'images/site/lifestyle2.jpeg', images: ['images/site/lifestyle2.jpeg','images/products/forest/1.jpg','images/products/forest/2.jpg','images/products/forest/3.jpg','images/products/forest/4.jpg','images/products/forest/5.jpg','images/products/forest/6.jpg'],
+    img: 'images/site/lifestyle2.jpeg', images: ['images/site/lifestyle2.jpeg','images/products/forest/1.jpg','images/products/forest/2.jpg','images/products/forest/3.jpg'],
     size: '30 × 30 cm',
     material: 'Hand block printed · 100% pure cotton',
     category: 'cushion-small', printType: 'block', rooms: ['living'], favRank: 13,
@@ -74,7 +74,7 @@ const GHAR_PRODUCTS = {
   },
   golden: {
     name: 'Golden Trellis Cushion Cover', price: 27.99,
-    img: 'images/products/golden/1.jpg', images: ['images/products/golden/1.jpg','images/products/golden/2.jpg','images/products/golden/3.jpg','images/products/golden/4.jpg','images/products/golden/5.jpg','images/products/golden/6.jpg','images/products/golden/7.jpg','images/products/golden/8.jpg','images/products/golden/9.jpg','images/products/golden/10.jpg','images/products/golden/11.jpg'],
+    img: 'images/products/golden/1.jpg', images: ['images/products/golden/1.jpg','images/products/golden/2.jpg','images/products/golden/3.jpg'],
     size: '30 × 30 cm',
     material: 'Hand block printed · 100% pure cotton',
     category: 'cushion-small', printType: 'block', rooms: ['living'], favRank: 14,
