@@ -41,7 +41,8 @@ const GHAR_PRODUCTS = {
   },
   rivervine: {
     name: 'River Vine Cushion Cover', price: 27.99,
-    img: 'images/products/rivervine/1.jpg', images: ['images/products/rivervine/1.jpg','images/products/rivervine/2.jpg','images/products/rivervine/3.jpg','images/products/rivervine/4.jpg'],
+    img: 'images/products/rivervine/1.jpg', images: ['images/products/rivervine/1.jpg','images/products/rivervine/2.jpg','images/products/rivervine/3.jpg','images/products/rivervine/4.jpg','images/products/rivervine/5.jpg','images/products/rivervine/6.jpg','images/products/rivervine/7.jpg','images/products/rivervine/8.jpg','images/products/rivervine/9.jpg'],
+    videos: ['images/products/rivervine/video1.mp4','images/products/rivervine/video2.mp4','images/products/rivervine/video3.mp4'],
     size: '30 × 30 cm',
     material: 'Hand block printed · 100% pure cotton',
     category: 'cushion-small', printType: 'block', rooms: ['living'], favRank: 11,
@@ -52,7 +53,7 @@ const GHAR_PRODUCTS = {
   },
   stone: {
     name: 'Stone Lattice Cushion Cover', price: 27.99,
-    img: 'images/products/stone/1.jpg', images: ['images/products/stone/1.jpg','images/products/stone/2.jpg','images/products/stone/3.jpg','images/products/stone/4.jpg','images/products/stone/5.jpg','images/products/stone/6.jpg','images/products/stone/7.jpg','images/products/stone/8.jpg','images/products/stone/9.jpg'],
+    img: 'images/products/stone/1.jpg', images: ['images/products/stone/1.jpg','images/products/stone/2.jpg','images/products/stone/3.jpg','images/products/stone/4.jpg','images/products/stone/5.jpg','images/products/stone/6.jpg','images/products/stone/7.jpg','images/products/stone/8.jpg','images/products/stone/9.jpg','images/products/stone/10.jpg','images/products/stone/11.jpg','images/products/stone/12.jpg','images/products/stone/13.jpg','images/products/stone/14.jpg','images/products/stone/15.jpg','images/products/stone/16.jpg'],
     size: '30 × 30 cm',
     material: 'Hand block printed · 100% pure cotton · different print on front & back',
     category: 'cushion-small', printType: 'block', rooms: ['living'], favRank: 12,
@@ -63,7 +64,7 @@ const GHAR_PRODUCTS = {
   },
   forest: {
     name: 'Forest Arabesque Cushion Cover', price: 27.99,
-    img: 'images/site/lifestyle2.jpeg', images: ['images/site/lifestyle2.jpeg','images/products/forest/1.jpg','images/products/forest/2.jpg','images/products/forest/3.jpg'],
+    img: 'images/site/lifestyle2.jpeg', images: ['images/site/lifestyle2.jpeg','images/products/forest/1.jpg','images/products/forest/2.jpg','images/products/forest/3.jpg','images/products/forest/4.jpg','images/products/forest/5.jpg','images/products/forest/6.jpg'],
     size: '30 × 30 cm',
     material: 'Hand block printed · 100% pure cotton',
     category: 'cushion-small', printType: 'block', rooms: ['living'], favRank: 13,
@@ -74,7 +75,8 @@ const GHAR_PRODUCTS = {
   },
   golden: {
     name: 'Golden Trellis Cushion Cover', price: 27.99,
-    img: 'images/products/golden/1.jpg', images: ['images/products/golden/1.jpg','images/products/golden/2.jpg','images/products/golden/3.jpg'],
+    img: 'images/products/golden/1.jpg', images: ['images/products/golden/1.jpg','images/products/golden/2.jpg','images/products/golden/3.jpg','images/products/golden/4.jpg','images/products/golden/5.jpg','images/products/golden/6.jpg'],
+    videos: ['images/products/golden/video1.mp4'],
     size: '30 × 30 cm',
     material: 'Hand block printed · 100% pure cotton',
     category: 'cushion-small', printType: 'block', rooms: ['living'], favRank: 14,
@@ -397,14 +399,31 @@ function gharPhotoPlaceholder() {
     '<span>Photo coming soon</span></div>';
 }
 
+/* Combined photo+video gallery for the product modal. Videos live in a
+   separate p.videos[] (never in p.images[]) so img/images[0] — used for the
+   shop card thumbnail and cart line thumb — is always guaranteed a real
+   photo, never a video. */
+function gharProductMedia(p) {
+  return p.images.map(function (src) { return { type: 'img', src: src }; })
+    .concat((p.videos || []).map(function (src) { return { type: 'video', src: src }; }));
+}
+function gharMediaHtml(m) {
+  return m.type === 'video'
+    ? '<video src="' + m.src + '" autoplay muted loop playsinline></video>'
+    : '<img src="' + m.src + '" alt="">';
+}
+
 /* ── product detail viewer (shop) ── */
 function gharProductModal(id) {
   const p = GHAR_PRODUCTS[id];
   if (!p) return;
-  const hasPhoto = p.images.length > 0;
-  const thumbs = p.images.length > 1
-    ? '<div class="pm-thumbs">' + p.images.map(function (src, i) {
-        return '<img src="' + src + '" data-i="' + i + '" class="' + (i === 0 ? 'active' : '') + '" alt="">';
+  const media = gharProductMedia(p);
+  const hasMedia = media.length > 0;
+  const thumbs = media.length > 1
+    ? '<div class="pm-thumbs">' + media.map(function (m, i) {
+        return m.type === 'video'
+          ? '<video src="' + m.src + '" data-i="' + i + '" class="' + (i === 0 ? 'active' : '') + '" autoplay muted loop playsinline></video>'
+          : '<img src="' + m.src + '" data-i="' + i + '" class="' + (i === 0 ? 'active' : '') + '" alt="">';
       }).join('') + '</div>'
     : '';
   const group = p.variantGroup ? GHAR_STOCK_GROUPS[p.variantGroup] : null;
@@ -414,14 +433,15 @@ function gharProductModal(id) {
           GHAR_PRODUCTS[vid].variantLabel + '</button>';
       }).join('') + '</div>'
     : '';
+  const firstIsImg = hasMedia && media[0].type === 'img';
   gharModalOpen(
     '<div class="pm-grid">' +
       '<div class="pm-gallery">' +
-        '<div class="pm-main" id="pm-main"' + (hasPhoto ? '' : ' style="cursor:default"') + '>' +
-          (hasPhoto ? '<img src="' + p.images[0] + '" alt="' + p.name + '">' : gharPhotoPlaceholder()) +
+        '<div class="pm-main" id="pm-main"' + (firstIsImg ? '' : ' style="cursor:default"') + '>' +
+          (hasMedia ? gharMediaHtml(media[0]) : gharPhotoPlaceholder()) +
         '</div>' +
         thumbs +
-        (hasPhoto ? '<p class="pm-zoomhint">Click the photo to zoom</p>' : '') +
+        '<p class="pm-zoomhint" id="pm-zoomhint" style="' + (firstIsImg ? '' : 'visibility:hidden') + '">Click the photo to zoom</p>' +
       '</div>' +
       '<div class="pm-info">' +
         '<p class="s-tag">' + (p.printType === 'ikat' ? 'Ikat collection' : 'The collection') + '</p>' +
@@ -434,31 +454,36 @@ function gharProductModal(id) {
       '</div>' +
     '</div>', true
   );
-  // zoom: click toggles, mouse position pans (only when there is a real photo)
+  // zoom: click toggles, mouse position pans — bound once; re-queries main's
+  // current <img> each time so it's a no-op whenever a video is showing
+  // instead of a video (bind once, no duplicate listeners on thumb-switch)
   const main = document.getElementById('pm-main');
-  const img = main.querySelector('img');
-  if (img) {
-    main.addEventListener('click', function (e) {
-      const zoomed = img.classList.toggle('zoomed');
-      if (zoomed) {
-        const r = main.getBoundingClientRect();
-        img.style.transformOrigin = ((e.clientX - r.left) / r.width * 100) + '% ' + ((e.clientY - r.top) / r.height * 100) + '%';
-      } else {
-        img.style.transformOrigin = 'center';
-      }
-    });
-    main.addEventListener('mousemove', function (e) {
-      if (!img.classList.contains('zoomed')) return;
+  main.addEventListener('click', function (e) {
+    const img = main.querySelector('img');
+    if (!img) return;
+    const zoomed = img.classList.toggle('zoomed');
+    if (zoomed) {
       const r = main.getBoundingClientRect();
       img.style.transformOrigin = ((e.clientX - r.left) / r.width * 100) + '% ' + ((e.clientY - r.top) / r.height * 100) + '%';
-    });
-  }
-  // thumbnails
-  document.querySelectorAll('.pm-thumbs img').forEach(function (t) {
+    } else {
+      img.style.transformOrigin = 'center';
+    }
+  });
+  main.addEventListener('mousemove', function (e) {
+    const img = main.querySelector('img');
+    if (!img || !img.classList.contains('zoomed')) return;
+    const r = main.getBoundingClientRect();
+    img.style.transformOrigin = ((e.clientX - r.left) / r.width * 100) + '% ' + ((e.clientY - r.top) / r.height * 100) + '%';
+  });
+  // thumbnails — swap pm-main's content between photo and video as needed
+  document.querySelectorAll('.pm-thumbs img, .pm-thumbs video').forEach(function (t) {
     t.addEventListener('click', function () {
-      if (img) img.classList.remove('zoomed');
-      if (img) img.src = p.images[Number(t.dataset.i)];
-      document.querySelectorAll('.pm-thumbs img').forEach(function (x) { x.classList.remove('active'); });
+      const m = media[Number(t.dataset.i)];
+      main.innerHTML = gharMediaHtml(m);
+      main.style.cursor = m.type === 'img' ? 'zoom-in' : 'default';
+      const hint = document.getElementById('pm-zoomhint');
+      if (hint) hint.style.visibility = m.type === 'img' ? 'visible' : 'hidden';
+      document.querySelectorAll('.pm-thumbs img, .pm-thumbs video').forEach(function (x) { x.classList.remove('active'); });
       t.classList.add('active');
     });
   });
