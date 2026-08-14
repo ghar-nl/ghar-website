@@ -89,7 +89,7 @@ const GHAR_PRODUCTS = {
      Swap in real paths as soon as they exist; nothing else needs to change. ── */
   wallart: {
     name: 'Ikat Wall Art Square', price: 19.99,
-    img: '', images: [],
+    img: 'images/products/wallart/1.jpg', images: ['images/products/wallart/1.jpg','images/products/wallart/2.jpg','images/products/wallart/3.jpg','images/products/wallart/4.jpg'],
     size: '30 × 30 cm', material: 'Ikat woven cotton · unframed',
     category: 'wall-art', printType: 'ikat', rooms: ['living'], favRank: 1,
     mini: "Ikat cotton, cut into perfect squares — ready to frame as art.",
@@ -115,7 +115,7 @@ const GHAR_PRODUCTS = {
   },
   runner: {
     name: 'Ikat Table Runner', price: 46.99,
-    img: '', images: [],
+    img: 'images/products/runner/1.jpg', images: ['images/products/runner/1.jpg','images/products/runner/2.jpg'],
     size: '35 × 150 cm', material: 'Ikat woven · 100% organic cotton',
     category: 'table-runner', printType: 'ikat', rooms: ['living', 'dining'], favRank: 3,
     mini: "A dark red border gives this ikat runner one last, quiet highlight.",
@@ -126,7 +126,7 @@ const GHAR_PRODUCTS = {
   },
   rectmat: {
     name: 'Ikat Rectangle Table Mat', price: 31.99,
-    img: '', images: [],
+    img: 'images/products/rectmat/1.jpg', images: ['images/products/rectmat/1.jpg','images/products/rectmat/2.jpg','images/products/rectmat/3.jpg'],
     size: '32 × 45 cm', material: 'Ikat woven cotton',
     category: 'placemat', printType: 'ikat', rooms: ['dining'], favRank: 20,
     mini: "A well-dressed table starts here — hemmed in a soft contrast colour.",
@@ -138,7 +138,7 @@ const GHAR_PRODUCTS = {
   },
   circlemat: {
     name: 'Ikat Round Table Mat', price: 31.99,
-    img: '', images: [],
+    img: 'images/products/circlemat/1.jpg', images: ['images/products/circlemat/1.jpg'],
     size: '30 cm diameter', material: 'Ikat woven cotton',
     category: 'placemat', printType: 'ikat', rooms: ['dining'], favRank: 21,
     mini: "The same idea, in the round — elegant under any dinner plate.",
@@ -149,7 +149,7 @@ const GHAR_PRODUCTS = {
   },
   napkin: {
     name: 'Ikat Napkin', price: 15.99,
-    img: '', images: [],
+    img: 'images/products/napkin/1.jpg', images: ['images/products/napkin/1.jpg'],
     size: '40 × 40 cm', material: 'Ikat woven · 100% organic cotton',
     category: 'napkin', printType: 'ikat', rooms: ['dining'], favRank: 22,
     mini: "Soft enough for children, finished enough for guests.",
@@ -160,7 +160,7 @@ const GHAR_PRODUCTS = {
   },
   coaster: {
     name: 'Ikat Coaster', price: 12.99,
-    img: '', images: [],
+    img: 'images/products/coaster/1.jpg', images: ['images/products/coaster/1.jpg'],
     size: '10 × 10 cm', material: 'Ikat woven · 100% organic cotton',
     category: 'coaster', printType: 'ikat', rooms: ['dining'], favRank: 23,
     mini: "Zero-waste squares, cut from our own fabric offcuts.",
@@ -177,7 +177,7 @@ const GHAR_PRODUCTS = {
      Dimple which physical bag was ordered. */
   'totebag-h-same': {
     name: 'Everyday Tote Bag — Horizontal, Same-colour Strap', price: 56.99,
-    img: '', images: [],
+    img: 'images/products/totebag/1.jpg', images: ['images/products/totebag/1.jpg','images/products/totebag/2.jpg','images/products/totebag/3.jpg'],
     size: '52 × 36 × 10 cm · 35 cm strap (same colour)', material: 'Ikat woven · 100% organic cotton',
     category: 'tote-bag', printType: 'ikat', rooms: [], favRank: 30,
     variantGroup: 'totebag', variantLabel: 'Horizontal · Same-colour strap', mini: "3 deep pockets, a bottle holder, and room for absolutely everything.",
@@ -185,7 +185,7 @@ const GHAR_PRODUCTS = {
   },
   'totebag-h-contrast': {
     name: 'Everyday Tote Bag — Horizontal, Contrast Strap', price: 56.99,
-    img: '', images: [],
+    img: 'images/products/totebag/1.jpg', images: ['images/products/totebag/1.jpg','images/products/totebag/2.jpg','images/products/totebag/3.jpg'],
     size: '52 × 36 × 10 cm · 35 cm strap (contrast colour)', material: 'Ikat woven · 100% organic cotton',
     category: 'tote-bag', printType: 'ikat', rooms: [], favRank: 31,
     variantGroup: 'totebag', variantLabel: 'Horizontal · Contrast strap', mini: "3 deep pockets, a bottle holder, and room for absolutely everything.",
@@ -193,7 +193,7 @@ const GHAR_PRODUCTS = {
   },
   'totebag-v-same': {
     name: 'Everyday Tote Bag — Vertical, Same-colour Strap', price: 56.99,
-    img: '', images: [],
+    img: 'images/products/totebag/1.jpg', images: ['images/products/totebag/1.jpg','images/products/totebag/2.jpg','images/products/totebag/3.jpg'],
     size: '40 × 42 × 10 cm · 35 cm strap (same colour)', material: 'Ikat woven · 100% organic cotton',
     category: 'tote-bag', printType: 'ikat', rooms: [], favRank: 32,
     variantGroup: 'totebag', variantLabel: 'Vertical · Same-colour strap', mini: "3 deep pockets, a bottle holder, and room for absolutely everything.",
@@ -201,7 +201,7 @@ const GHAR_PRODUCTS = {
   },
   'totebag-v-contrast': {
     name: 'Everyday Tote Bag — Vertical, Contrast Strap', price: 56.99,
-    img: '', images: [],
+    img: 'images/products/totebag/1.jpg', images: ['images/products/totebag/1.jpg','images/products/totebag/2.jpg','images/products/totebag/3.jpg'],
     size: '40 × 42 × 10 cm · 35 cm strap (contrast colour)', material: 'Ikat woven · 100% organic cotton',
     category: 'tote-bag', printType: 'ikat', rooms: [], favRank: 33,
     variantGroup: 'totebag', variantLabel: 'Vertical · Contrast strap', mini: "3 deep pockets, a bottle holder, and room for absolutely everything.",
