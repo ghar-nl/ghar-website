@@ -4,13 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Your Bag — Ghar</title>
-<meta name="description" content="Review your bag and place a pre-order for hand block printed Ghar cushion covers.">
+<meta name="description" content="Review your bag and place a pre-order for hand block print and ikkat Ghar home textiles.">
 <meta name="robots" content="noindex">
 <link rel="icon" type="image/png" href="images/site/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&family=Noto+Serif+Devanagari:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=20260812a">
-<script src="cart.js?v=20260812a" defer></script>
+<link rel="stylesheet" href="styles.css?v=20260814a">
+<script src="cart.js?v=20260814a" defer></script>
 </head>
 <body>
 
@@ -59,7 +59,7 @@
           <div class="sum-line"><span>Shipping</span><span id="sum-ship">€5</span></div>
           <div class="sum-line sum-total"><span>Total</span><span class="price" id="sum-total">€0</span></div>
         </div>
-        <p class="sum-note">Pre-order perk: 20% off with code <strong>GHARPREORDER20</strong> and free shipping — both on everything above €50. Pre-orders are limited to 6 cushions per person.</p>
+        <p class="sum-note">Pre-order perk: 20% off with code <strong>GHARPREORDER20</strong> and free shipping — both on everything above €50. Pre-orders are limited to 6 items per person.</p>
       </div>
 
       <!-- RIGHT: delivery details / checkout -->
@@ -118,7 +118,7 @@
       <div class="f-col">
         <h4>Shop</h4>
         <ul>
-          <li><a href="shop.html">Cushion Covers</a></li>
+          <li><a href="shop.html">Shop All</a></li>
           <li><a href="shop.html#soon">Coming Soon</a></li>
           <li><a href="cart.html">Your Bag</a></li>
         </ul>
@@ -166,11 +166,11 @@ function renderCart() {
   ids.forEach(function (id) {
     const p = GHAR_PRODUCTS[id];
     const qty = cart[id];
-    const left = gharRemaining(id);
+    const left = gharEffectiveRemaining(id);
     const row = document.createElement('div');
     row.className = 'cart-item';
     row.innerHTML =
-      '<div class="cart-thumb"><img src="' + p.img + '" alt="' + p.name + '"></div>' +
+      '<div class="cart-thumb">' + (p.img ? '<img src="' + p.img + '" alt="' + p.name + '">' : '') + '</div>' +
       '<div class="cart-info">' +
         '<h3>' + p.name + '</h3>' +
         '<p>' + p.size + ' · ' + gharFmt(p.price) + ' each' + (left !== Infinity && left <= 5 ? ' · <span style="color:var(--terra);">last pieces</span>' : '') + '</p>' +
@@ -188,11 +188,11 @@ function renderCart() {
     btns[0].onclick = function () { gharSetQty(id, qty - 1); renderCart(); };
     btns[1].onclick = function () {
       if (gharCartCount() + 1 > GHAR_MAX_PER_ORDER) {
-        document.getElementById('promo-msg').textContent = 'Pre-orders are limited to ' + GHAR_MAX_PER_ORDER + ' cushions per person.';
+        document.getElementById('promo-msg').textContent = 'Pre-orders are limited to ' + GHAR_MAX_PER_ORDER + ' items per person.';
         return;
       }
-      if (qty + 1 > gharRemaining(id)) {
-        document.getElementById('promo-msg').textContent = 'Only ' + gharRemaining(id) + ' of the ' + p.name + ' available.';
+      if (qty + 1 > gharEffectiveRemaining(id)) {
+        document.getElementById('promo-msg').textContent = 'Only ' + gharEffectiveRemaining(id) + ' of the ' + p.name + ' available.';
         return;
       }
       gharSetQty(id, qty + 1); renderCart();
@@ -240,7 +240,7 @@ document.getElementById('preorder-form').addEventListener('submit', async functi
   const status = document.getElementById('po-status');
   const submitBtn = document.getElementById('po-submit');
 
-  if (gharCartCount() === 0) { status.textContent = 'Your bag is empty — add a cushion first.'; return; }
+  if (gharCartCount() === 0) { status.textContent = 'Your bag is empty — add something first.'; return; }
   if (!form.checkValidity()) { form.reportValidity(); return; }
 
   const cart = gharCart();
@@ -273,7 +273,7 @@ document.getElementById('preorder-form').addEventListener('submit', async functi
     try { out = await res.json(); } catch (e) { /* unreadable response — assume ok */ }
     if (out && out.ok === false) {
       if (out.error === 'max_exceeded') {
-        status.textContent = 'Pre-orders are limited to ' + GHAR_MAX_PER_ORDER + ' cushions per person — please adjust your bag.';
+        status.textContent = 'Pre-orders are limited to ' + GHAR_MAX_PER_ORDER + ' items per person — please adjust your bag.';
       } else if (out.error === 'sold_out') {
         const p = GHAR_PRODUCTS[out.id];
         status.textContent = 'So sorry — ' + (p ? p.name : 'one of your items') + ' has ' +
@@ -285,7 +285,7 @@ document.getElementById('preorder-form').addEventListener('submit', async functi
       submitBtn.disabled = false;
       return;
     }
-    status.textContent = 'Thank you! Your pre-order is in — we currently operate in the EU only, and we\'ll reach out with a payment link once your cushions are ready.';
+    status.textContent = 'Thank you! Your pre-order is in — we currently operate in the EU only, and we\'ll reach out with a payment link once your order is ready.';
     form.reset();
     gharClearCart();
     localStorage.removeItem('gharPromo');

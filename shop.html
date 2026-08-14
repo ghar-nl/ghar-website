@@ -4,12 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Shop — Ghar</title>
-<meta name="description" content="Hand block printed cushion covers on 100% pure cotton, made by artisans in India.">
+<meta name="description" content="Hand block print and ikkat home textiles on 100% cotton — cushions, wall art, table linen and more, made by artisans in India.">
 <link rel="icon" type="image/png" href="images/site/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&family=Noto+Serif+Devanagari:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=20260812a">
-<script src="cart.js?v=20260812a" defer></script>
+<link rel="stylesheet" href="styles.css?v=20260814a">
+<script src="cart.js?v=20260814a" defer></script>
 </head>
 <body>
 
@@ -34,96 +34,58 @@
   <div class="page-hero-inner">
     <img src="images/site/shop-hero.jpg" alt="Ghar hand block printed cushion covers laid out on a garden chair" class="shop-hero-img">
     <p class="s-tag">The collection</p>
-    <h1>Cushion covers. <em>First of many.</em></h1>
-    <p>Hand block printed on 100% pure cotton, finished with contrasting piping. Tiny variations are not flaws — they are the mark of a human hand.</p>
+    <h1>Cushions, ikkat, <em>and everything between.</em></h1>
+    <p>Hand block print and ikkat, hand-finished on 100% cotton. Every piece is made in a small batch — grab what calls to you before it's gone.</p>
+  </div>
+</div>
+
+<!-- ── SHOP INTRO (the longer story lives here on the page, not crammed into the hero) ── -->
+<div class="shop-intro">
+  <div class="shop-intro-inner">
+    <p class="s-tag">More than cushions now</p>
+    <h2 class="s-h">Two prints. <em>One small-batch home.</em></h2>
+    <p>We began with hand block printed cushion covers. Alongside them, we are introducing our ikkat collection — wall art, table runners, placemats, napkins, coasters, extra-large cushions, and totes, all made in the same small-batch spirit.</p>
+    <p>Everything here, block print or ikkat, is made in limited numbers. Once a print sells out, it may not come back — so if something catches your eye, we would grab it now rather than wait.</p>
+    <p>Mix and match freely across the collection — an ikkat runner sits just as well beside a block print cushion. Photos for our newest pieces are on their way; until then, every size, price, and story you see here is real.</p>
   </div>
 </div>
 
 <!-- ── PRODUCTS ───────────────────────────────────────────────── -->
 <section class="products" id="cushions">
   <div class="container">
-    <div class="products-grid">
 
-      <!-- FEATURED: Marigold Garden -->
-      <div class="product product-featured">
-        <div class="product-img">
-          <div class="photo" style="height:100%;">
-            <img src="images/products/marigold/1.jpg" alt="Hand block printed red and green floral cushion covers — Marigold Garden print">
-          </div>
-          <span class="product-badge">New Collection</span>
-        </div>
-        <div class="product-body">
-          <h3>Marigold Garden<br>Cushion Cover</h3>
-          <p class="product-size">30 × 30 cm · Hand block printed 100% pure cotton</p>
-          <p>Rajasthani floral folk art, carved into teak and pressed by hand. No two cushions are ever identical — that is the point.</p>
-          <div class="product-footer">
-            <span class="price">€27.99</span>
-            <button class="btn-add" onclick="gharAdd('marigold', this)">Add to bag</button>
-          </div>
+    <div class="shop-filters">
+      <div class="filter-group">
+        <span class="filter-label">Shop by room</span>
+        <div class="filter-pills" id="filter-room">
+          <button class="pill active" type="button" data-value="all">All</button>
+          <button class="pill" type="button" data-value="living">Living room</button>
+          <button class="pill" type="button" data-value="dining">Dining room</button>
+          <button class="pill" type="button" data-value="kitchen">Kitchen</button>
+          <button class="pill" type="button" data-value="bedroom">Bedroom</button>
+          <button class="pill" type="button" data-value="bathroom">Bathroom</button>
+          <button class="pill" type="button" data-value="kids">Kids room</button>
         </div>
       </div>
-
-      <!-- Blue floral -->
-      <div class="product">
-        <div class="product-img">
-          <div class="photo">
-            <img src="images/products/rivervine/1.jpg" alt="Blue leaf and vine hand block printed cushion cover">
-          </div>
-        </div>
-        <div class="product-body">
-          <h3>River Vine Cushion Cover</h3>
-          <p class="product-size">30 × 30 cm · 100% pure cotton</p>
-          <p class="product-mini">A winding vine in river blues, layered block by block.</p>
-          <div class="product-footer"><span class="price">€27.99</span><button class="btn-add" onclick="gharAdd('rivervine', this)">Add to bag</button></div>
+      <div class="filter-group">
+        <span class="filter-label">Shop by print</span>
+        <div class="filter-pills" id="filter-print">
+          <button class="pill active" type="button" data-value="all">All prints</button>
+          <button class="pill" type="button" data-value="ikkat">Ikkat</button>
+          <button class="pill" type="button" data-value="block">Block print</button>
         </div>
       </div>
-
-      <!-- Grey geometric -->
-      <div class="product">
-        <div class="product-img">
-          <div class="photo">
-            <img src="images/products/stone/1.jpg" alt="Grey geometric hand block printed cushion cover">
-          </div>
-        </div>
-        <div class="product-body">
-          <h3>Stone Lattice Cushion Cover</h3>
-          <p class="product-size">30 × 30 cm · 100% pure cotton</p>
-          <p class="product-mini">Two prints in one — a different pattern on front and back.</p>
-          <div class="product-footer"><span class="price">€27.99</span><button class="btn-add" onclick="gharAdd('stone', this)">Add to bag</button></div>
-        </div>
+      <div class="filter-group filter-sort">
+        <label for="sort-select" class="filter-label">Sort by</label>
+        <select id="sort-select">
+          <option value="fav">Favourites</option>
+          <option value="price-asc">Price: low to high</option>
+          <option value="price-desc">Price: high to low</option>
+        </select>
       </div>
-
-      <!-- Green/blue arabesque -->
-      <div class="product">
-        <div class="product-img">
-          <div class="photo">
-            <img src="images/site/lifestyle2.jpeg" alt="Hand block printed textiles with hand-painted ceramic cups">
-          </div>
-        </div>
-        <div class="product-body">
-          <h3>Forest Arabesque Cushion Cover</h3>
-          <p class="product-size">30 × 30 cm · 100% pure cotton</p>
-          <p class="product-mini">Deep greens and indigo in an Indo-Persian arabesque.</p>
-          <div class="product-footer"><span class="price">€27.99</span><button class="btn-add" onclick="gharAdd('forest', this)">Add to bag</button></div>
-        </div>
-      </div>
-
-      <!-- Gold/blue floral trellis -->
-      <div class="product">
-        <div class="product-img">
-          <div class="photo">
-            <img src="images/products/golden/1.jpg" alt="Gold and blue hand block printed floral trellis cushion cover">
-          </div>
-        </div>
-        <div class="product-body">
-          <h3>Golden Trellis Cushion Cover</h3>
-          <p class="product-size">30 × 30 cm · 100% pure cotton</p>
-          <p class="product-mini">Marigold-gold medallions on a trailing vine, with blue accents.</p>
-          <div class="product-footer"><span class="price">€27.99</span><button class="btn-add" onclick="gharAdd('golden', this)">Add to bag</button></div>
-        </div>
-      </div>
-
     </div>
+
+    <div class="products-grid" id="products-grid"></div>
 
     <!-- ── COMING SOON ── -->
     <div class="soon" id="soon">
@@ -133,53 +95,18 @@
       </div>
       <div class="soon-grid">
         <div class="soon-card">
-          <h4>Table Runners</h4>
-          <p>The same hand block printed cotton, the full length of your table.</p>
-          <p class="soon-tag">Coming soon</p>
-        </div>
-        <div class="soon-card dark">
-          <h4>Placement Mats</h4>
-          <p>Block printed, 100% pure cotton, for long slow meals.</p>
-          <p class="soon-tag">Coming soon</p>
-        </div>
-        <div class="soon-card almond">
-          <h4>Coasters</h4>
-          <p>The same craft, just the right size for your morning cup.</p>
-          <p class="soon-tag">Coming soon</p>
-        </div>
-        <div class="soon-card">
-          <h4>Tote Bags</h4>
-          <p>Carry your Ghar with you — made to be used and kept for years.</p>
-          <p class="soon-tag">Coming soon</p>
-        </div>
-        <div class="soon-card dark">
-          <h4>Napkins, 60 × 60 cm</h4>
-          <p>Big enough to matter, soft enough for every day — folded onto your table, one block at a time.</p>
-          <p class="soon-tag">Coming soon</p>
-        </div>
-        <div class="soon-card almond">
-          <h4>Big Cushion Covers</h4>
-          <p>All the same hand-carved detail, scaled up for the sofa you actually live on.</p>
-          <p class="soon-tag">Coming soon</p>
-        </div>
-        <div class="soon-card">
           <h4>Makeup / Everyday Pouch</h4>
           <p>A small piece of Ghar for your bag — zip it, toss it in, take the print everywhere.</p>
-          <p class="soon-tag">New · Coming soon</p>
+          <p class="soon-tag">Coming soon</p>
         </div>
         <div class="soon-card dark">
           <h4>Wine / Bottle Holder</h4>
           <p>Block printed armour for the bottle you're bringing to dinner.</p>
-          <p class="soon-tag">New · Coming soon</p>
+          <p class="soon-tag">Coming soon</p>
         </div>
         <div class="soon-card almond">
           <h4>Kitchen Apron</h4>
           <p>Made for flour-dusted hands and long Sunday cooking — ties included.</p>
-          <p class="soon-tag">New · Coming soon</p>
-        </div>
-        <div class="soon-card">
-          <h4>Wall Art Squares</h4>
-          <p>Framed block prints to build your own creative corner — one square at a time, straight onto the wall.</p>
           <p class="soon-tag">Coming soon</p>
         </div>
       </div>
@@ -187,6 +114,112 @@
 
   </div>
 </section>
+
+<script>
+/* ── shop grid: rendered from GHAR_PRODUCTS (cart.js), filtered + sorted client-side ── */
+const GHAR_ROOM_MESSAGE = {
+  kitchen: "Ghar for the kitchen is coming soon",
+  bedroom: "Ghar for the bedroom is coming soon",
+  bathroom: "Ghar for the bathroom is coming soon",
+  kids: "Ghar for kids’ rooms is coming soon"
+};
+const gharShopState = { room: 'all', print: 'all', sort: 'fav' };
+
+/* One entry per card: normal products as-is, the 4 tote variants collapsed into
+   a single "Everyday Tote Bag" card (opens the variant picker instead of adding
+   straight to bag — see gharProductModal in cart.js). */
+function gharShopEntries() {
+  const seenGroups = {};
+  const entries = [];
+  Object.keys(GHAR_PRODUCTS).forEach(function (id) {
+    const p = GHAR_PRODUCTS[id];
+    if (p.variantGroup) {
+      if (seenGroups[p.variantGroup]) return;
+      seenGroups[p.variantGroup] = true;
+      entries.push({ id: GHAR_STOCK_GROUPS[p.variantGroup].ids[0], p: p, isVariant: true });
+    } else {
+      entries.push({ id: id, p: p, isVariant: false });
+    }
+  });
+  return entries;
+}
+
+function gharCardHtml(entry) {
+  const id = entry.id, p = entry.p;
+  const photo = p.images.length > 0
+    ? '<img src="' + p.images[0] + '" alt="' + p.name + '">'
+    : gharPhotoPlaceholder();
+  const badge = entry.isVariant ? '<span class="stock-badge low">Only 3 in this batch</span>' : '';
+  const name = entry.isVariant ? 'Everyday Tote Bag' : p.name;
+  const priceLabel = entry.isVariant ? 'From ' + gharFmt(p.price) : gharFmt(p.price);
+  const actionBtn = entry.isVariant
+    ? '<button class="btn-add" type="button" onclick="gharProductModal(\'' + id + '\')">Choose options</button>'
+    : '<button class="btn-add" onclick="gharAdd(\'' + id + '\', this)">Add to bag</button>';
+  return (
+    '<div class="product" data-id="' + id + '">' +
+      '<div class="product-img"><div class="photo">' + photo + '</div>' + badge + '</div>' +
+      '<div class="product-body">' +
+        '<h3>' + name + '</h3>' +
+        '<p class="product-size">' + p.size + ' · ' + p.material + '</p>' +
+        '<p class="product-mini">' + p.mini + '</p>' +
+        '<div class="product-footer"><span class="price">' + priceLabel + '</span>' + actionBtn + '</div>' +
+      '</div>' +
+    '</div>'
+  );
+}
+
+function gharRenderShop() {
+  const mount = document.getElementById('products-grid');
+  const entries = gharShopEntries().filter(function (e) {
+    if (gharShopState.print !== 'all' && e.p.printType !== gharShopState.print) return false;
+    if (gharShopState.room !== 'all' && e.p.rooms.indexOf(gharShopState.room) === -1) return false;
+    return true;
+  });
+  if (gharShopState.sort === 'price-asc') entries.sort(function (a, b) { return a.p.price - b.p.price; });
+  else if (gharShopState.sort === 'price-desc') entries.sort(function (a, b) { return b.p.price - a.p.price; });
+  else entries.sort(function (a, b) { return a.p.favRank - b.p.favRank; });
+
+  if (entries.length === 0) {
+    const msg = GHAR_ROOM_MESSAGE[gharShopState.room] || 'Nothing here yet';
+    mount.innerHTML =
+      '<div class="room-empty"><p class="s-tag">Coming soon</p><h3>' + msg + '.</h3>' +
+      '<p>We are still building this part of the collection — subscribe below and we will let you know the moment it is ready.</p></div>';
+    return;
+  }
+  mount.innerHTML = entries.map(gharCardHtml).join('');
+  // click image/title -> product modal (same behaviour as gharWireSite gives static cards elsewhere)
+  mount.querySelectorAll('.product').forEach(function (card) {
+    const id = card.dataset.id;
+    [card.querySelector('.product-img'), card.querySelector('h3')].forEach(function (el) {
+      el.style.cursor = 'zoom-in';
+      el.addEventListener('click', function () { gharProductModal(id); });
+    });
+  });
+  if (gharStock) gharApplyStockToShop();
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+  document.querySelectorAll('#filter-room .pill').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      document.querySelectorAll('#filter-room .pill').forEach(function (b) { b.classList.toggle('active', b === btn); });
+      gharShopState.room = btn.dataset.value;
+      gharRenderShop();
+    });
+  });
+  document.querySelectorAll('#filter-print .pill').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      document.querySelectorAll('#filter-print .pill').forEach(function (b) { b.classList.toggle('active', b === btn); });
+      gharShopState.print = btn.dataset.value;
+      gharRenderShop();
+    });
+  });
+  document.getElementById('sort-select').addEventListener('change', function () {
+    gharShopState.sort = this.value;
+    gharRenderShop();
+  });
+  gharRenderShop();
+});
+</script>
 
 <!-- ── NEWSLETTER ─────────────────────────────────────────────── -->
 <div class="newsletter">
@@ -217,9 +250,9 @@
       <div class="f-col">
         <h4>Shop</h4>
         <ul>
-          <li><a href="shop.html">Cushion Covers</a></li>
+          <li><a href="shop.html">Shop All</a></li>
           <li><a href="shop.html#soon">Coming Soon</a></li>
-          <li><a href="shop.html">View All</a></li>
+          <li><a href="cart.html">Your Bag</a></li>
         </ul>
       </div>
       <div class="f-col">

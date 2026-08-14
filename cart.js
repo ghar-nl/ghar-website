@@ -11,7 +11,15 @@ const GHAR_PROMO_CODE = 'GHARPREORDER20';
 const GHAR_PROMO_RATE = 0.20;       // 20% off
 const GHAR_PROMO_MIN = 50;          // on orders above €50
 const GHAR_LOW_STOCK = 5;           // "last few pieces" threshold
-const GHAR_MAX_PER_ORDER = 6;       // max cushions per person/order
+const GHAR_MAX_PER_ORDER = 6;       // max items per person/order, across the whole catalog
+
+/* Some products are sold from one shared, combined stock pool under several ids
+   (e.g. the tote bag's 4 colour/orientation variants share one batch of 3 — see
+   CLAUDE.md "Shared stock groups"). Until each id has its own row in the Sheet's
+   Stock tab, this is the only place that limit is enforced. */
+const GHAR_STOCK_GROUPS = {
+  totebag: { ids: ['totebag-h-same', 'totebag-h-contrast', 'totebag-v-same', 'totebag-v-contrast'], limit: 3 }
+};
 
 const GHAR_DESC_SHARED = [
   "The border is block printed separately and finished with contrasting piping — it strengthens every edge and gives the cover its clean, tailored line.",
@@ -25,6 +33,8 @@ const GHAR_PRODUCTS = {
     img: 'images/products/marigold/1.jpg', images: ['images/products/marigold/1.jpg','images/products/marigold/2.jpg','images/products/marigold/3.jpg','images/products/marigold/4.jpg','images/products/marigold/5.jpg','images/products/marigold/6.jpg','images/products/marigold/7.jpg','images/products/marigold/8.jpg','images/products/marigold/9.jpg'],
     size: '30 × 30 cm',
     material: 'Hand block printed · 100% pure cotton',
+    category: 'cushion-small', printType: 'block', rooms: ['living'], favRank: 10,
+    mini: "Rajasthani floral folk art, carved into teak and pressed by hand. No two cushions are ever identical.",
     desc: [
       "Drawn from Rajasthani floral folklore, this pattern took five hand-carved teak blocks to build — one for every colour. Each bloom is pressed by hand, so no two covers are ever identical. That is the point."
     ].concat(GHAR_DESC_SHARED)
@@ -34,6 +44,8 @@ const GHAR_PRODUCTS = {
     img: 'images/products/rivervine/1.jpg', images: ['images/products/rivervine/1.jpg','images/products/rivervine/2.jpg','images/products/rivervine/3.jpg','images/products/rivervine/4.jpg','images/products/rivervine/5.jpg','images/products/rivervine/6.jpg','images/products/rivervine/7.jpg','images/products/rivervine/8.jpg','images/products/rivervine/9.jpg'],
     size: '30 × 30 cm',
     material: 'Hand block printed · 100% pure cotton',
+    category: 'cushion-small', printType: 'block', rooms: ['living'], favRank: 11,
+    mini: "A winding vine in river blues, layered block by block.",
     desc: [
       "A winding vine in river blues, inspired by the leaf-and-water motifs of Indian block printing. Each colour comes from its own hand-carved teak block, pressed one over the other until the pattern flows."
     ].concat(GHAR_DESC_SHARED)
@@ -43,6 +55,8 @@ const GHAR_PRODUCTS = {
     img: 'images/products/stone/1.jpg', images: ['images/products/stone/1.jpg','images/products/stone/2.jpg','images/products/stone/3.jpg','images/products/stone/4.jpg','images/products/stone/5.jpg','images/products/stone/6.jpg','images/products/stone/7.jpg','images/products/stone/8.jpg','images/products/stone/9.jpg','images/products/stone/10.jpg','images/products/stone/11.jpg','images/products/stone/12.jpg','images/products/stone/13.jpg'],
     size: '30 × 30 cm',
     material: 'Hand block printed · 100% pure cotton · different print on front & back',
+    category: 'cushion-small', printType: 'block', rooms: ['living'], favRank: 12,
+    mini: "Two prints in one — a different pattern on front and back.",
     desc: [
       "One cover, two prints: a graphic lattice on the front and a companion print on the back — two full sets of carved blocks, printed separately and brought together in a single piece. Flip it whenever your room asks for a change."
     ].concat(GHAR_DESC_SHARED)
@@ -52,6 +66,8 @@ const GHAR_PRODUCTS = {
     img: 'images/site/lifestyle2.jpeg', images: ['images/site/lifestyle2.jpeg','images/products/forest/1.jpg','images/products/forest/2.jpg','images/products/forest/3.jpg','images/products/forest/4.jpg','images/products/forest/5.jpg','images/products/forest/6.jpg'],
     size: '30 × 30 cm',
     material: 'Hand block printed · 100% pure cotton',
+    category: 'cushion-small', printType: 'block', rooms: ['living'], favRank: 13,
+    mini: "Deep greens and indigo in an Indo-Persian arabesque.",
     desc: [
       "Deep greens and indigo in an arabesque that echoes centuries of Indo-Persian pattern-making. Hand-carved blocks, layered colour by colour, on soft pure cotton."
     ].concat(GHAR_DESC_SHARED)
@@ -61,11 +77,148 @@ const GHAR_PRODUCTS = {
     img: 'images/products/golden/1.jpg', images: ['images/products/golden/1.jpg','images/products/golden/2.jpg','images/products/golden/3.jpg','images/products/golden/4.jpg','images/products/golden/5.jpg','images/products/golden/6.jpg','images/products/golden/7.jpg','images/products/golden/8.jpg','images/products/golden/9.jpg','images/products/golden/10.jpg','images/products/golden/11.jpg'],
     size: '30 × 30 cm',
     material: 'Hand block printed · 100% pure cotton',
+    category: 'cushion-small', printType: 'block', rooms: ['living'], favRank: 14,
+    mini: "Marigold-gold medallions on a trailing vine, with blue accents.",
     desc: [
       "Marigold-gold medallions trail along a hand-carved vine, with small blue blooms pressed in between. A softer, sunnier cousin to our floral prints — bordered in yellow for a finished, framed look."
     ].concat(GHAR_DESC_SHARED)
+  },
+
+  /* ── Ikkat collection (added August 2026) — no photos yet, images: [] renders
+     the dashed "photo coming soon" placeholder (see .photo-label in styles.css).
+     Swap in real paths as soon as they exist; nothing else needs to change. ── */
+  wallart: {
+    name: 'Ikkat Wall Art Square', price: 19.99,
+    img: '', images: [],
+    size: '30 × 30 cm', material: 'Ikkat woven cotton · unframed',
+    category: 'wall-art', printType: 'ikkat', rooms: ['living'], favRank: 1,
+    mini: "Ikkat cotton, cut into perfect squares — ready to frame as art.",
+    desc: [
+      "We kept noticing how beautiful these fabrics looked entirely on their own — no cushion, no cover, nothing added — so we cut them into perfect squares and started hanging them as art instead.",
+      "Frame the whole square with a generous mat and a thick border, or size the frame right down so every inch you see is fabric. Either way, all four edges are hemmed flawlessly, so there is no raw edge hiding behind the glass.",
+      "Ikkat is the print we are starting with, chosen for the way its pattern seems to soften and blur at its own edges — a quality that comes from how ikkat yarn is dyed before it is ever woven. Many more prints are on their way.",
+      "A few of our own favourite ways to frame and hang these are in the photos below — borrow one, or find your own.",
+      "Please note: sold as the fabric square only, unframed."
+    ]
+  },
+  largecushion: {
+    name: 'Ikkat Extra-Large Cushion Cover', price: 39.99,
+    img: '', images: [],
+    size: '60 × 60 cm', material: 'Ikkat woven cotton',
+    category: 'cushion-large', printType: 'ikkat', rooms: ['living'], favRank: 2,
+    mini: "Our cushion covers, scaled all the way up. A very small batch — grab it before it's gone.",
+    desc: [
+      "We started with small cushion covers — now we are just as excited to launch these in extra-large. Anyone who has tried to find a cover for a big cushion insert knows how hard that size is to track down; ours is cut and finished exactly for it.",
+      "The zip runs precisely the length it needs to — no more, no less — and the edges are hemmed just as carefully as our smaller covers. Perfect for a living room that wants a little more presence, or a bed that wants a lot more colour.",
+      "We are producing a very small batch in this size, so if it catches your eye, we would grab it now rather than later."
+    ].concat(GHAR_DESC_SHARED)
+  },
+  runner: {
+    name: 'Ikkat Table Runner', price: 46.99,
+    img: '', images: [],
+    size: '35 × 150 cm', material: 'Ikkat woven · 100% organic cotton',
+    category: 'table-runner', printType: 'ikkat', rooms: ['living', 'dining'], favRank: 3,
+    mini: "A dark red border gives this ikkat runner one last, quiet highlight.",
+    desc: [
+      "A table runner is the fastest way to change a room without changing anything in it — lay it down the centre of the dining table for dinner, or across a console or sideboard in the living room, and the whole space shifts colour with it.",
+      "At 35 × 150 cm, it is sized generously for the long tables we keep seeing in Dutch homes, with a dark red border that gives the ikkat pattern one last, quiet highlight. The base is 100% organic cotton — easy to wash under cold water, and just as easy to live with."
+    ]
+  },
+  rectmat: {
+    name: 'Ikkat Rectangle Table Mat', price: 31.99,
+    img: '', images: [],
+    size: '32 × 45 cm', material: 'Ikkat woven cotton',
+    category: 'placemat', printType: 'ikkat', rooms: ['dining'], favRank: 20,
+    mini: "A well-dressed table starts here — hemmed in a soft contrast colour.",
+    desc: [
+      "Whether you are protecting the table, dressing it up for guests, or simply keeping the wood beneath it safe, a good placemat does more work than it gets credit for. Ours are cut to sit beautifully under a full place setting, and we will admit it — we are a little obsessed with them ourselves.",
+      "Each mat is finished with a hem in a soft contrast colour, giving it a clean, defined edge against any tablecloth or bare wood. Wash under cold water with a gentle detergent (or just cold water alone) and dry in the shade — no fuss, no fading.",
+      "See a few of the ways we have used them in our own homes, below."
+    ]
+  },
+  circlemat: {
+    name: 'Ikkat Round Table Mat', price: 31.99,
+    img: '', images: [],
+    size: '30 cm diameter', material: 'Ikkat woven cotton',
+    category: 'placemat', printType: 'ikkat', rooms: ['dining'], favRank: 21,
+    mini: "The same idea, in the round — elegant under any dinner plate.",
+    desc: [
+      "The same idea, in the round: a circle mat brings a softer line to the table and suits a round plate especially well. In our ikkat red, it gives just the right amount of contrast against plain white or stoneware — enough to notice, not enough to shout.",
+      "Wash under cold water and dry in the shade, same as the rest of the collection — these are made to be used, not saved for best."
+    ]
+  },
+  napkin: {
+    name: 'Ikkat Napkin', price: 15.99,
+    img: '', images: [],
+    size: '40 × 40 cm', material: 'Ikkat woven · 100% organic cotton',
+    category: 'napkin', printType: 'ikkat', rooms: ['dining'], favRank: 22,
+    mini: "Soft enough for children, finished enough for guests.",
+    desc: [
+      "A good napkin does more than wipe a mouth — fold it under the cutlery to finish a place setting, let it sit loose and colourful across the table, or hand it to the smallest person at dinner. Being 100% organic cotton, it is soft enough that we reach for these with children too — gentle on the skin, and it only gets softer with washing.",
+      "Finished at 40 × 40 cm — generous enough for a lap, easy enough to fold into a neat square."
+    ]
+  },
+  coaster: {
+    name: 'Ikkat Coaster', price: 12.99,
+    img: '', images: [],
+    size: '10 × 10 cm', material: 'Ikkat woven · 100% organic cotton',
+    category: 'coaster', printType: 'ikkat', rooms: ['dining'], favRank: 23,
+    mini: "Zero-waste squares, cut from our own fabric offcuts.",
+    desc: [
+      "Every coaster is cut from fabric offcuts that would otherwise end up as waste — so alongside your morning chai, you are also keeping good cloth out of a landfill. Zero waste, and quietly rather lovely under a cup.",
+      "They sit well under a glass or your favourite ceramic mug, and being 100% organic cotton, they wash easily and dry fast — so keep a stack of these on hand, they earn their place."
+    ]
+  },
+
+  /* Everyday Tote Bag — one product, 4 variants sharing GHAR_STOCK_GROUPS.totebag
+     (a combined pool of 3, since that is the true physical stock — see cart.js
+     top and CLAUDE.md). Each variant is still its own id so it behaves like any
+     other product in the cart/checkout — the variant name alone is what tells
+     Dimple which physical bag was ordered. */
+  'totebag-h-same': {
+    name: 'Everyday Tote Bag — Horizontal, Same-colour Strap', price: 56.99,
+    img: '', images: [],
+    size: '52 × 36 × 10 cm · 35 cm strap (same colour)', material: 'Ikkat woven · 100% organic cotton',
+    category: 'tote-bag', printType: 'ikkat', rooms: [], favRank: 30,
+    variantGroup: 'totebag', variantLabel: 'Horizontal · Same-colour strap', mini: "3 deep pockets, a bottle holder, and room for absolutely everything.",
+    desc: null // shared GHAR_TOTE_DESC below
+  },
+  'totebag-h-contrast': {
+    name: 'Everyday Tote Bag — Horizontal, Contrast Strap', price: 56.99,
+    img: '', images: [],
+    size: '52 × 36 × 10 cm · 35 cm strap (contrast colour)', material: 'Ikkat woven · 100% organic cotton',
+    category: 'tote-bag', printType: 'ikkat', rooms: [], favRank: 31,
+    variantGroup: 'totebag', variantLabel: 'Horizontal · Contrast strap', mini: "3 deep pockets, a bottle holder, and room for absolutely everything.",
+    desc: null
+  },
+  'totebag-v-same': {
+    name: 'Everyday Tote Bag — Vertical, Same-colour Strap', price: 56.99,
+    img: '', images: [],
+    size: '40 × 42 × 10 cm · 35 cm strap (same colour)', material: 'Ikkat woven · 100% organic cotton',
+    category: 'tote-bag', printType: 'ikkat', rooms: [], favRank: 32,
+    variantGroup: 'totebag', variantLabel: 'Vertical · Same-colour strap', mini: "3 deep pockets, a bottle holder, and room for absolutely everything.",
+    desc: null
+  },
+  'totebag-v-contrast': {
+    name: 'Everyday Tote Bag — Vertical, Contrast Strap', price: 56.99,
+    img: '', images: [],
+    size: '40 × 42 × 10 cm · 35 cm strap (contrast colour)', material: 'Ikkat woven · 100% organic cotton',
+    category: 'tote-bag', printType: 'ikkat', rooms: [], favRank: 33,
+    variantGroup: 'totebag', variantLabel: 'Vertical · Contrast strap', mini: "3 deep pockets, a bottle holder, and room for absolutely everything.",
+    desc: null
   }
 };
+
+/* Shared description for every Everyday Tote Bag variant (assigned after the
+   object literal since it needs to reference itself — keeps the four entries
+   above from repeating this in full). "Ghar" is Hindi for "home". */
+const GHAR_TOTE_DESC = [
+  "These are meant to carry your Ghar (home) with you — but they are built to carry rather more than that. Not a basic tote: there are three deep pockets, a compartment sized for a laptop, books, or a change of gym clothes, and a bottle holder generous enough for a water bottle on a hot day or a bottle of wine on the way to a friend's.",
+  "Take it to the beach, the office, the gym, or just the supermarket — it is cut for all of it. We have kept the strap long enough to sling across your body on a bike, and added a front pocket for whatever you reach for without looking: earphones, mints, your phone for a quick photo. Inside, two more deep pockets mean your smaller things stop sliding around at the bottom.",
+  "We hear from customers who take theirs to the gym and use the compartments to keep before-and-after workout clothes apart — that is the kind of everyday tote this is meant to be. And since it is 100% organic cotton, the whole thing goes straight into the wash, then hangs dry and comes back looking new.",
+  "Available in four fits — horizontal or vertical, with the strap either matching or in contrast — choose whichever feels most like you."
+];
+GHAR_STOCK_GROUPS.totebag.ids.forEach(function (id) { GHAR_PRODUCTS[id].desc = GHAR_TOTE_DESC; });
 
 /* ── money formatting ── */
 function gharFmt(n) { return '€' + (Math.round(n * 100) / 100).toFixed(2); }
@@ -127,6 +280,23 @@ let gharStock = null;
 function gharRemaining(id) {
   return (gharStock && (id in gharStock)) ? gharStock[id] : Infinity;
 }
+/* Group-aware remaining: for a product sharing a GHAR_STOCK_GROUPS pool, caps
+   at (group limit − however much of the group is already in this cart), on
+   top of whatever the live per-id stock says. Ungrouped products just get
+   gharRemaining(id) back unchanged. */
+function gharGroupOf(id) {
+  for (const key in GHAR_STOCK_GROUPS) {
+    if (GHAR_STOCK_GROUPS[key].ids.indexOf(id) !== -1) return GHAR_STOCK_GROUPS[key];
+  }
+  return null;
+}
+function gharEffectiveRemaining(id) {
+  const group = gharGroupOf(id);
+  if (!group) return gharRemaining(id);
+  const cart = gharCart();
+  const inCart = group.ids.reduce(function (sum, gid) { return sum + (gid === id ? 0 : (cart[gid] || 0)); }, 0);
+  return Math.min(gharRemaining(id), Math.max(0, group.limit - inCart));
+}
 function gharLoadStock(cb) {
   fetch(GHAR_API).then(function (r) { return r.json(); }).then(function (d) {
     if (d && d.remaining) {
@@ -141,7 +311,7 @@ function gharApplyStockToShop() {
     const m = (btn.getAttribute('onclick') || '').match(/gharAdd\('([a-z]+)'/);
     if (!m) return;
     const id = m[1];
-    const left = gharRemaining(id);
+    const left = gharEffectiveRemaining(id);
     const card = btn.closest('.product');
     const imgWrap = card ? card.querySelector('.product-img') : null;
     const oldBadge = imgWrap ? imgWrap.querySelector('.stock-badge') : null;
@@ -177,7 +347,7 @@ function gharAdd(id, btn) {
   }
   const cart = gharCart();
   const current = cart[id] || 0;
-  const left = gharRemaining(id);
+  const left = gharEffectiveRemaining(id);
   if (current + 1 > left) {
     if (btn) {
       const original = btn.textContent;
@@ -218,61 +388,97 @@ function gharModalClose() {
 }
 function gharEmailOk(email) { return /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email); }
 
+/* Shared "photo coming soon" block — used by the shop grid (inside a .photo
+   parent, which is already position:relative — see styles.css) and by the
+   product modal (pm-main is given position:relative for this same reason). */
+function gharPhotoPlaceholder() {
+  return '<div class="photo-label"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#143659" stroke-width="1.3">' +
+    '<rect x="3" y="5" width="18" height="14" rx="1.5"/><circle cx="8.5" cy="10" r="1.4"/><path d="M3 16.5l5-5 4 4 3-3 6 6"/></svg>' +
+    '<span>Photo coming soon</span></div>';
+}
+
 /* ── product detail viewer (shop) ── */
 function gharProductModal(id) {
   const p = GHAR_PRODUCTS[id];
   if (!p) return;
+  const hasPhoto = p.images.length > 0;
   const thumbs = p.images.length > 1
     ? '<div class="pm-thumbs">' + p.images.map(function (src, i) {
         return '<img src="' + src + '" data-i="' + i + '" class="' + (i === 0 ? 'active' : '') + '" alt="">';
       }).join('') + '</div>'
     : '';
+  const group = p.variantGroup ? GHAR_STOCK_GROUPS[p.variantGroup] : null;
+  const variantPicker = group
+    ? '<div class="pm-variants">' + group.ids.map(function (vid) {
+        return '<button type="button" class="pm-variant' + (vid === id ? ' active' : '') + '" data-id="' + vid + '">' +
+          GHAR_PRODUCTS[vid].variantLabel + '</button>';
+      }).join('') + '</div>'
+    : '';
   gharModalOpen(
     '<div class="pm-grid">' +
       '<div class="pm-gallery">' +
-        '<div class="pm-main" id="pm-main"><img src="' + p.images[0] + '" alt="' + p.name + '"></div>' +
+        '<div class="pm-main" id="pm-main"' + (hasPhoto ? '' : ' style="cursor:default"') + '>' +
+          (hasPhoto ? '<img src="' + p.images[0] + '" alt="' + p.name + '">' : gharPhotoPlaceholder()) +
+        '</div>' +
         thumbs +
-        '<p class="pm-zoomhint">Click the photo to zoom</p>' +
+        (hasPhoto ? '<p class="pm-zoomhint">Click the photo to zoom</p>' : '') +
       '</div>' +
       '<div class="pm-info">' +
-        '<p class="s-tag">The collection</p>' +
+        '<p class="s-tag">' + (p.printType === 'ikkat' ? 'Ikkat collection' : 'The collection') + '</p>' +
         '<h3>' + p.name + '</h3>' +
-        '<p class="pm-size">' + p.size + ' · ' + p.material + '</p>' +
+        variantPicker +
+        '<p class="pm-size" id="pm-variant-size">' + p.size + ' · ' + p.material + '</p>' +
         '<p class="pm-price price">' + gharFmt(p.price) + '</p>' +
         '<div class="pm-desc">' + p.desc.map(function (d) { return '<p>' + d + '</p>'; }).join('') + '</div>' +
         '<button class="btn-add pm-add" onclick="gharAdd(\'' + id + '\', this)">Add to bag</button>' +
       '</div>' +
     '</div>', true
   );
-  // zoom: click toggles, mouse position pans
+  // zoom: click toggles, mouse position pans (only when there is a real photo)
   const main = document.getElementById('pm-main');
   const img = main.querySelector('img');
-  main.addEventListener('click', function (e) {
-    const zoomed = img.classList.toggle('zoomed');
-    if (zoomed) {
+  if (img) {
+    main.addEventListener('click', function (e) {
+      const zoomed = img.classList.toggle('zoomed');
+      if (zoomed) {
+        const r = main.getBoundingClientRect();
+        img.style.transformOrigin = ((e.clientX - r.left) / r.width * 100) + '% ' + ((e.clientY - r.top) / r.height * 100) + '%';
+      } else {
+        img.style.transformOrigin = 'center';
+      }
+    });
+    main.addEventListener('mousemove', function (e) {
+      if (!img.classList.contains('zoomed')) return;
       const r = main.getBoundingClientRect();
       img.style.transformOrigin = ((e.clientX - r.left) / r.width * 100) + '% ' + ((e.clientY - r.top) / r.height * 100) + '%';
-    } else {
-      img.style.transformOrigin = 'center';
-    }
-  });
-  main.addEventListener('mousemove', function (e) {
-    if (!img.classList.contains('zoomed')) return;
-    const r = main.getBoundingClientRect();
-    img.style.transformOrigin = ((e.clientX - r.left) / r.width * 100) + '% ' + ((e.clientY - r.top) / r.height * 100) + '%';
-  });
+    });
+  }
   // thumbnails
   document.querySelectorAll('.pm-thumbs img').forEach(function (t) {
     t.addEventListener('click', function () {
-      img.classList.remove('zoomed');
-      img.src = p.images[Number(t.dataset.i)];
+      if (img) img.classList.remove('zoomed');
+      if (img) img.src = p.images[Number(t.dataset.i)];
       document.querySelectorAll('.pm-thumbs img').forEach(function (x) { x.classList.remove('active'); });
       t.classList.add('active');
     });
   });
+  // variant picker (Everyday Tote Bag, etc.) — switches which id "Add to bag" targets
+  document.querySelectorAll('.pm-variant').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      const vid = btn.dataset.id;
+      const vp = GHAR_PRODUCTS[vid];
+      document.querySelectorAll('.pm-variant').forEach(function (b) { b.classList.toggle('active', b === btn); });
+      document.getElementById('pm-variant-size').textContent = vp.size + ' · ' + vp.material;
+      const addBtn2 = document.querySelector('.pm-add');
+      addBtn2.setAttribute('onclick', "gharAdd('" + vid + "', this)");
+      const left2 = gharEffectiveRemaining(vid);
+      addBtn2.disabled = left2 <= 0;
+      addBtn2.textContent = left2 <= 0 ? 'Sold out' : 'Add to bag';
+    });
+  });
   // stock state on the modal button
   const addBtn = document.querySelector('.pm-add');
-  if (gharRemaining(id) <= 0 && addBtn) { addBtn.disabled = true; addBtn.textContent = 'Sold out'; }
+  if (gharEffectiveRemaining(id) <= 0 && addBtn) { addBtn.disabled = true; addBtn.textContent = 'Sold out'; }
 }
 
 /* ── mobile hamburger menu (injected on every page) ── */
