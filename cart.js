@@ -140,7 +140,7 @@ const GHAR_PRODUCTS = {
   },
   circlemat: {
     name: 'Ikat Round Table Mat', price: 31.99,
-    img: 'images/products/circlemat/1.jpg', images: ['images/products/circlemat/1.jpg'],
+    img: 'images/products/circlemat/1.jpg', images: ['images/products/circlemat/1.jpg','images/products/circlemat/2.jpg','images/products/circlemat/3.jpg','images/products/circlemat/4.jpg','images/products/circlemat/5.jpg','images/products/circlemat/6.jpg'],
     size: '30 cm diameter', material: 'Ikat woven cotton',
     category: 'placemat', printType: 'ikat', rooms: ['dining'], favRank: 21,
     mini: "The same idea, in the round — elegant under any dinner plate.",
@@ -151,7 +151,7 @@ const GHAR_PRODUCTS = {
   },
   napkin: {
     name: 'Ikat Napkin', price: 15.99,
-    img: 'images/products/napkin/1.jpg', images: ['images/products/napkin/1.jpg'],
+    img: 'images/products/napkin/1.jpg', images: ['images/products/napkin/1.jpg','images/products/napkin/2.jpg','images/products/napkin/3.jpg','images/products/napkin/4.jpg','images/products/napkin/5.jpg'],
     size: '40 × 40 cm', material: 'Ikat woven · 100% organic cotton',
     category: 'napkin', printType: 'ikat', rooms: ['dining'], favRank: 22,
     mini: "Soft enough for children, finished enough for guests.",
@@ -162,7 +162,7 @@ const GHAR_PRODUCTS = {
   },
   coaster: {
     name: 'Ikat Coaster', price: 12.99,
-    img: 'images/products/coaster/1.jpg', images: ['images/products/coaster/1.jpg'],
+    img: 'images/products/coaster/1.jpg', images: ['images/products/coaster/1.jpg','images/products/coaster/2.jpg','images/products/coaster/3.jpg','images/products/coaster/4.jpg'],
     size: '10 × 10 cm', material: 'Ikat woven · 100% organic cotton',
     category: 'coaster', printType: 'ikat', rooms: ['dining'], favRank: 23,
     mini: "Zero-waste squares, cut from our own fabric offcuts.",
