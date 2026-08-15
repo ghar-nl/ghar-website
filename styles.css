@@ -456,7 +456,7 @@ footer{background:var(--blue-dark);padding:64px 52px 36px;}
 /* ── WIDE SUBSCRIBE POPUP (home) ──────────────────────────── */
 .gpop-wide{max-width:760px;padding:0;overflow:hidden;}
 .gpop-cols{display:grid;grid-template-columns:1fr 1.15fr;}
-.gpop-art{background:var(--almond);}
+.gpop-art{position:relative;background:var(--almond);}
 .gpop-art img{width:100%;height:100%;object-fit:cover;display:block;}
 .gpop-body{padding:44px 36px 32px;}
 @media(max-width:700px){

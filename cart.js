@@ -64,7 +64,7 @@ const GHAR_PRODUCTS = {
   },
   forest: {
     name: 'Forest Arabesque Cushion Cover', price: 27.99,
-    img: 'images/site/lifestyle2.jpeg', images: ['images/site/lifestyle2.jpeg','images/products/forest/1.jpg','images/products/forest/2.jpg','images/products/forest/3.jpg','images/products/forest/4.jpg','images/products/forest/5.jpg','images/products/forest/6.jpg'],
+    img: 'images/products/forest/1.jpg', images: ['images/products/forest/1.jpg','images/products/forest/2.jpg','images/products/forest/3.jpg','images/products/forest/4.jpg','images/products/forest/5.jpg','images/products/forest/6.jpg'],
     size: '30 × 30 cm',
     material: 'Hand block printed · 100% pure cotton',
     category: 'cushion-small', printType: 'block', rooms: ['living'], favRank: 13,
