@@ -214,12 +214,12 @@ const GHAR_PRODUCTS = {
     desc: null // shared GHAR_TOTE_DESC below
   },
   'totebag-h-contrast': {
-    name: 'Everyday Tote Bag — Horizontal, Contrast Strap', price: 32.99,
+    name: 'Everyday Tote Bag — Horizontal, Contrast Strap (White)', price: 32.99,
     img: 'images/products/totebag/8.jpg', images: ['images/products/totebag/8.jpg','images/products/totebag/1.jpg','images/products/totebag/2.jpg','images/products/totebag/3.jpg','images/products/totebag/4.jpg','images/products/totebag/5.jpg','images/products/totebag/6.jpg','images/products/totebag/7.jpg','images/products/totebag/9.jpg','images/products/totebag/10.jpg'],
     videos: ['images/products/totebag/video1.mp4','images/products/totebag/video2.mp4'],
-    size: '52 × 36 × 10 cm · 35 cm strap (contrast colour)', material: 'Ikat woven · 100% organic cotton',
+    size: '52 × 36 × 10 cm · 35 cm white contrast strap', material: 'Ikat woven · 100% organic cotton',
     category: 'tote-bag', printType: 'ikat', rooms: [], favRank: 31,
-    variantGroup: 'totebag', variantLabel: 'Horizontal · Contrast strap', mini: "3 deep pockets, a bottle holder, and room for absolutely everything.",
+    variantGroup: 'totebag', variantLabel: 'Horizontal · Contrast strap (white)', mini: "3 deep pockets, a bottle holder, and room for absolutely everything.",
     desc: null
   },
   'totebag-v-same': {
@@ -232,12 +232,12 @@ const GHAR_PRODUCTS = {
     desc: null
   },
   'totebag-v-contrast': {
-    name: 'Everyday Tote Bag — Vertical, Contrast Strap', price: 32.99,
+    name: 'Everyday Tote Bag — Vertical, Contrast Strap (White)', price: 32.99,
     img: 'images/products/totebag/8.jpg', images: ['images/products/totebag/8.jpg','images/products/totebag/1.jpg','images/products/totebag/2.jpg','images/products/totebag/3.jpg','images/products/totebag/4.jpg','images/products/totebag/5.jpg','images/products/totebag/6.jpg','images/products/totebag/7.jpg','images/products/totebag/9.jpg','images/products/totebag/10.jpg'],
     videos: ['images/products/totebag/video1.mp4','images/products/totebag/video2.mp4'],
-    size: '40 × 42 × 10 cm · 35 cm strap (contrast colour)', material: 'Ikat woven · 100% organic cotton',
+    size: '40 × 42 × 10 cm · 35 cm white contrast strap', material: 'Ikat woven · 100% organic cotton',
     category: 'tote-bag', printType: 'ikat', rooms: [], favRank: 33,
-    variantGroup: 'totebag', variantLabel: 'Vertical · Contrast strap', mini: "3 deep pockets, a bottle holder, and room for absolutely everything.",
+    variantGroup: 'totebag', variantLabel: 'Vertical · Contrast strap (white)', mini: "3 deep pockets, a bottle holder, and room for absolutely everything.",
     desc: null
   }
 };
@@ -249,7 +249,7 @@ const GHAR_TOTE_DESC = [
   "These are meant to carry your Ghar (home) with you — but they are built to carry rather more than that. Not a basic tote: there are three deep pockets, a compartment sized for a laptop, books, or a change of gym clothes, and a bottle holder generous enough for a water bottle on a hot day or a bottle of wine on the way to a friend's.",
   "Take it to the beach, the office, the gym, or just the supermarket — it is cut for all of it. We have kept the strap long enough to sling across your body on a bike, and added a front pocket for whatever you reach for without looking: earphones, mints, your phone for a quick photo. Inside, two more deep pockets mean your smaller things stop sliding around at the bottom.",
   "We hear from customers who take theirs to the gym and use the compartments to keep before-and-after workout clothes apart — that is the kind of everyday tote this is meant to be. And since it is 100% organic cotton, the whole thing goes straight into the wash, then hangs dry and comes back looking new.",
-  "Available in four fits — horizontal or vertical, with the strap either matching or in contrast — choose whichever feels most like you."
+  "Available in four fits — horizontal or vertical, with the strap either matching the body or in white for contrast — choose whichever feels most like you."
 ];
 GHAR_STOCK_GROUPS.totebag.ids.forEach(function (id) { GHAR_PRODUCTS[id].desc = GHAR_TOTE_DESC; });
 
