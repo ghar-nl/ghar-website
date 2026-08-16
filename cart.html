@@ -9,8 +9,8 @@
 <link rel="icon" type="image/png" href="images/site/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&family=Noto+Serif+Devanagari:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=20260816b">
-<script src="cart.js?v=20260816b" defer></script>
+<link rel="stylesheet" href="styles.css?v=20260816c">
+<script src="cart.js?v=20260816c" defer></script>
 </head>
 <body>
 
@@ -173,7 +173,8 @@ function renderCart() {
       '<div class="cart-thumb">' + (p.img ? '<img src="' + p.img + '" alt="' + p.name + '">' : '') + '</div>' +
       '<div class="cart-info">' +
         '<h3>' + p.name + '</h3>' +
-        '<p>' + p.size + ' · ' + gharFmt(p.price) + ' each' + (left !== Infinity && left <= 5 ? ' · <span style="color:var(--terra);">last pieces</span>' : '') + '</p>' +
+        '<p>' + p.size + ' · ' + (gharUnitNote(id) || (gharFmt(p.price) + ' each')) + (left !== Infinity && left <= 5 ? ' · <span style="color:var(--terra);">last pieces</span>' : '') + '</p>' +
+        (p.bulk && qty > 1 ? '<p style="color:var(--terra);font-size:0.85rem;">You save ' + gharFmt(p.price * qty - gharLineTotal(id, qty)) + ' on this line</p>' : '') +
         '<div class="cart-item-actions">' +
           '<div class="cart-qty">' +
             '<button type="button" aria-label="Decrease quantity">−</button>' +
@@ -183,7 +184,7 @@ function renderCart() {
           '<button type="button" class="cart-remove">Remove</button>' +
         '</div>' +
       '</div>' +
-      '<div class="cart-line-price price">' + gharFmt(p.price * qty) + '</div>';
+      '<div class="cart-line-price price">' + gharFmt(gharLineTotal(id, qty)) + '</div>';
     const btns = row.querySelectorAll('button');
     btns[0].onclick = function () { gharSetQty(id, qty - 1); renderCart(); };
     btns[1].onclick = function () {

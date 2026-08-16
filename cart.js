@@ -90,21 +90,20 @@ const GHAR_PRODUCTS = {
      the dashed "photo coming soon" placeholder (see .photo-label in styles.css).
      Swap in real paths as soon as they exist; nothing else needs to change. ── */
   wallart: {
-    name: 'Ikat Wall Art Square', price: 19.99,
+    name: 'Ikat Wall Art Square', price: 16.99,
     img: 'images/products/wallart/1.jpg', images: ['images/products/wallart/1.jpg','images/products/wallart/2.jpg','images/products/wallart/3.jpg','images/products/wallart/4.jpg'],
-    size: '30 × 30 cm', material: 'Ikat woven cotton · unframed',
+    size: '30 × 30 cm', material: 'Ikat woven cotton · framed',
     category: 'wall-art', printType: 'ikat', rooms: ['living'], favRank: 1,
-    mini: "Ikat cotton, cut into perfect squares — ready to frame as art.",
+    mini: "Ikat cotton, cut into perfect squares and framed — ready to hang.",
     desc: [
       "We kept noticing how beautiful these fabrics looked entirely on their own — no cushion, no cover, nothing added — so we cut them into perfect squares and started hanging them as art instead.",
-      "Frame the whole square with a generous mat and a thick border, or size the frame right down so every inch you see is fabric. Either way, all four edges are hemmed flawlessly, so there is no raw edge hiding behind the glass.",
+      "Each square comes complete with a simple frame, ready to hang straight out of the box — no trip to a framing shop needed. All four edges of the fabric are hemmed flawlessly, so there is no raw edge hiding behind the glass.",
       "Ikat is the print we are starting with, chosen for the way its pattern seems to soften and blur at its own edges — a quality that comes from how ikat yarn is dyed before it is ever woven. Many more prints are on their way.",
-      "A few of our own favourite ways to frame and hang these are in the photos below — borrow one, or find your own.",
-      "Please note: sold as the fabric square only, unframed."
+      "A few of our own favourite ways to hang these are in the photos below."
     ]
   },
   largecushion: {
-    name: 'Ikat Extra-Large Cushion Cover', price: 39.99,
+    name: 'Ikat Extra-Large Cushion Cover', price: 18.99,
     img: '', images: [],
     size: '60 × 60 cm', material: 'Ikat woven cotton',
     category: 'cushion-large', printType: 'ikat', rooms: ['living'], favRank: 2,
@@ -116,7 +115,7 @@ const GHAR_PRODUCTS = {
     ].concat(GHAR_DESC_SHARED)
   },
   runner: {
-    name: 'Ikat Table Runner', price: 46.99,
+    name: 'Ikat Table Runner', price: 20.99,
     img: 'images/products/runner/1.jpg', images: ['images/products/runner/1.jpg','images/products/runner/2.jpg'],
     size: '35 × 150 cm', material: 'Ikat woven · 100% organic cotton',
     category: 'table-runner', printType: 'ikat', rooms: ['living', 'dining'], favRank: 3,
@@ -127,48 +126,76 @@ const GHAR_PRODUCTS = {
     ]
   },
   rectmat: {
-    name: 'Ikat Rectangle Table Mat', price: 31.99,
+    name: 'Ikat Rectangle Table Mat', price: 12.99, bulk: { extra: 11.00 },
     img: 'images/products/rectmat/1.jpg', images: ['images/products/rectmat/1.jpg','images/products/rectmat/2.jpg'],
     size: '32 × 45 cm', material: 'Ikat woven cotton',
     category: 'placemat', printType: 'ikat', rooms: ['dining'], favRank: 20,
-    mini: "A well-dressed table starts here — hemmed in a soft contrast colour.",
+    mini: "A well-dressed table starts here — hemmed in a soft contrast colour. Buy 2 or more and every extra mat is just €11.",
     desc: [
       "Whether you are protecting the table, dressing it up for guests, or simply keeping the wood beneath it safe, a good placemat does more work than it gets credit for. Ours are cut to sit beautifully under a full place setting, and we will admit it — we are a little obsessed with them ourselves.",
       "Each mat is finished with a hem in a soft contrast colour, giving it a clean, defined edge against any tablecloth or bare wood. Wash under cold water with a gentle detergent (or just cold water alone) and dry in the shade — no fuss, no fading.",
+      "The first mat is €12.99 — every mat after that is just €11.00, automatically, right in your bag. Setting a table for four? That's €45.99 instead of €51.96.",
       "See a few of the ways we have used them in our own homes, below."
     ]
   },
   circlemat: {
-    name: 'Ikat Round Table Mat', price: 31.99,
+    name: 'Ikat Round Table Mat', price: 12.99, bulk: { extra: 11.00 },
     img: 'images/products/circlemat/1.jpg', images: ['images/products/circlemat/1.jpg','images/products/circlemat/2.jpg','images/products/circlemat/3.jpg','images/products/circlemat/4.jpg','images/products/circlemat/5.jpg','images/products/circlemat/6.jpg'],
     size: '30 cm diameter', material: 'Ikat woven cotton',
     category: 'placemat', printType: 'ikat', rooms: ['dining'], favRank: 21,
-    mini: "The same idea, in the round — elegant under any dinner plate.",
+    mini: "The same idea, in the round — elegant under any dinner plate. Buy 2 or more and every extra mat is just €11.",
     desc: [
       "The same idea, in the round: a circle mat brings a softer line to the table and suits a round plate especially well. In our ikat red, it gives just the right amount of contrast against plain white or stoneware — enough to notice, not enough to shout.",
+      "The first mat is €12.99 — every mat after that is just €11.00, automatically, right in your bag. Setting a table for four? That's €45.99 instead of €51.96.",
       "Wash under cold water and dry in the shade, same as the rest of the collection — these are made to be used, not saved for best."
     ]
   },
-  napkin: {
-    name: 'Ikat Napkin', price: 15.99,
+  'napkin-set4': {
+    name: 'Ikat Napkins — Set of 4', price: 24.99,
     img: 'images/products/napkin/1.jpg', images: ['images/products/napkin/1.jpg','images/products/napkin/2.jpg','images/products/napkin/3.jpg','images/products/napkin/4.jpg','images/products/napkin/5.jpg'],
-    size: '40 × 40 cm', material: 'Ikat woven · 100% organic cotton',
+    size: '40 × 40 cm · set of 4', material: 'Ikat woven · 100% organic cotton',
     category: 'napkin', printType: 'ikat', rooms: ['dining'], favRank: 22,
-    mini: "Soft enough for children, finished enough for guests.",
+    mini: "Soft enough for children, finished enough for guests. Sold as a set of 4 — works out to about €6.25 per napkin.",
     desc: [
       "A good napkin does more than wipe a mouth — fold it under the cutlery to finish a place setting, let it sit loose and colourful across the table, or hand it to the smallest person at dinner. Being 100% organic cotton, it is soft enough that we reach for these with children too — gentle on the skin, and it only gets softer with washing.",
-      "Finished at 40 × 40 cm — generous enough for a lap, easy enough to fold into a neat square."
+      "Finished at 40 × 40 cm — generous enough for a lap, easy enough to fold into a neat square.",
+      "Sold only as a set of 4 (about €6.25 per napkin) — if you need a bigger table setting, the Set of 6 works out a little cheaper per napkin."
     ]
   },
-  coaster: {
-    name: 'Ikat Coaster', price: 12.99,
+  'napkin-set6': {
+    name: 'Ikat Napkins — Set of 6', price: 36.99,
+    img: 'images/products/napkin/1.jpg', images: ['images/products/napkin/1.jpg','images/products/napkin/2.jpg','images/products/napkin/3.jpg','images/products/napkin/4.jpg','images/products/napkin/5.jpg'],
+    size: '40 × 40 cm · set of 6', material: 'Ikat woven · 100% organic cotton',
+    category: 'napkin', printType: 'ikat', rooms: ['dining'], favRank: 23,
+    mini: "Soft enough for children, finished enough for guests. Sold as a set of 6 — about €6.17 per napkin, our best per-napkin price.",
+    desc: [
+      "A good napkin does more than wipe a mouth — fold it under the cutlery to finish a place setting, let it sit loose and colourful across the table, or hand it to the smallest person at dinner. Being 100% organic cotton, it is soft enough that we reach for these with children too — gentle on the skin, and it only gets softer with washing.",
+      "Finished at 40 × 40 cm — generous enough for a lap, easy enough to fold into a neat square.",
+      "Sold only as a set of 6 — at about €6.17 per napkin, this is the better-value option if your table sits more than four."
+    ]
+  },
+  'coaster-set2': {
+    name: 'Ikat Coasters — Set of 2', price: 6.99,
     img: 'images/products/coaster/1.jpg', images: ['images/products/coaster/1.jpg','images/products/coaster/2.jpg','images/products/coaster/3.jpg','images/products/coaster/4.jpg'],
-    size: '10 × 10 cm', material: 'Ikat woven · 100% organic cotton',
-    category: 'coaster', printType: 'ikat', rooms: ['dining'], favRank: 23,
-    mini: "Zero-waste squares, cut from our own fabric offcuts.",
+    size: '10 × 10 cm · set of 2', material: 'Ikat woven · 100% organic cotton',
+    category: 'coaster', printType: 'ikat', rooms: ['dining'], favRank: 24,
+    mini: "Zero-waste squares, cut from our own fabric offcuts. Sold as a set of 2, about €3.50 each.",
     desc: [
       "Every coaster is cut from fabric offcuts that would otherwise end up as waste — so alongside your morning chai, you are also keeping good cloth out of a landfill. Zero waste, and quietly rather lovely under a cup.",
-      "They sit well under a glass or your favourite ceramic mug, and being 100% organic cotton, they wash easily and dry fast — so keep a stack of these on hand, they earn their place."
+      "They sit well under a glass or your favourite ceramic mug, and being 100% organic cotton, they wash easily and dry fast.",
+      "Sold only as a set of 2 (about €3.50 each) — need more on the table? The Set of 4 works out cheaper per coaster."
+    ]
+  },
+  'coaster-set4': {
+    name: 'Ikat Coasters — Set of 4', price: 10.99,
+    img: 'images/products/coaster/1.jpg', images: ['images/products/coaster/1.jpg','images/products/coaster/2.jpg','images/products/coaster/3.jpg','images/products/coaster/4.jpg'],
+    size: '10 × 10 cm · set of 4', material: 'Ikat woven · 100% organic cotton',
+    category: 'coaster', printType: 'ikat', rooms: ['dining'], favRank: 25,
+    mini: "Zero-waste squares, cut from our own fabric offcuts. Sold as a set of 4, about €2.75 each — our best per-coaster price.",
+    desc: [
+      "Every coaster is cut from fabric offcuts that would otherwise end up as waste — so alongside your morning chai, you are also keeping good cloth out of a landfill. Zero waste, and quietly rather lovely under a cup.",
+      "They sit well under a glass or your favourite ceramic mug, and being 100% organic cotton, they wash easily and dry fast.",
+      "Sold only as a set of 4 — at about €2.75 each, that's roughly €2.99 less than buying two Sets of 2."
     ]
   },
 
@@ -178,7 +205,7 @@ const GHAR_PRODUCTS = {
      other product in the cart/checkout — the variant name alone is what tells
      Dimple which physical bag was ordered. */
   'totebag-h-same': {
-    name: 'Everyday Tote Bag — Horizontal, Same-colour Strap', price: 56.99,
+    name: 'Everyday Tote Bag — Horizontal, Same-colour Strap', price: 32.99,
     img: 'images/products/totebag/1.jpg', images: ['images/products/totebag/1.jpg','images/products/totebag/2.jpg','images/products/totebag/3.jpg'],
     size: '52 × 36 × 10 cm · 35 cm strap (same colour)', material: 'Ikat woven · 100% organic cotton',
     category: 'tote-bag', printType: 'ikat', rooms: [], favRank: 30,
@@ -186,7 +213,7 @@ const GHAR_PRODUCTS = {
     desc: null // shared GHAR_TOTE_DESC below
   },
   'totebag-h-contrast': {
-    name: 'Everyday Tote Bag — Horizontal, Contrast Strap', price: 56.99,
+    name: 'Everyday Tote Bag — Horizontal, Contrast Strap', price: 32.99,
     img: 'images/products/totebag/1.jpg', images: ['images/products/totebag/1.jpg','images/products/totebag/2.jpg','images/products/totebag/3.jpg'],
     size: '52 × 36 × 10 cm · 35 cm strap (contrast colour)', material: 'Ikat woven · 100% organic cotton',
     category: 'tote-bag', printType: 'ikat', rooms: [], favRank: 31,
@@ -194,7 +221,7 @@ const GHAR_PRODUCTS = {
     desc: null
   },
   'totebag-v-same': {
-    name: 'Everyday Tote Bag — Vertical, Same-colour Strap', price: 56.99,
+    name: 'Everyday Tote Bag — Vertical, Same-colour Strap', price: 32.99,
     img: 'images/products/totebag/1.jpg', images: ['images/products/totebag/1.jpg','images/products/totebag/2.jpg','images/products/totebag/3.jpg'],
     size: '40 × 42 × 10 cm · 35 cm strap (same colour)', material: 'Ikat woven · 100% organic cotton',
     category: 'tote-bag', printType: 'ikat', rooms: [], favRank: 32,
@@ -202,7 +229,7 @@ const GHAR_PRODUCTS = {
     desc: null
   },
   'totebag-v-contrast': {
-    name: 'Everyday Tote Bag — Vertical, Contrast Strap', price: 56.99,
+    name: 'Everyday Tote Bag — Vertical, Contrast Strap', price: 32.99,
     img: 'images/products/totebag/1.jpg', images: ['images/products/totebag/1.jpg','images/products/totebag/2.jpg','images/products/totebag/3.jpg'],
     size: '40 × 42 × 10 cm · 35 cm strap (contrast colour)', material: 'Ikat woven · 100% organic cotton',
     category: 'tote-bag', printType: 'ikat', rooms: [], favRank: 33,
@@ -225,6 +252,22 @@ GHAR_STOCK_GROUPS.totebag.ids.forEach(function (id) { GHAR_PRODUCTS[id].desc = G
 /* ── money formatting ── */
 function gharFmt(n) { return '€' + (Math.round(n * 100) / 100).toFixed(2); }
 
+/* ── bulk (quantity) pricing ──
+   A product can set `bulk: { extra: N }` — the first unit costs the normal
+   `price`, and every unit after that costs a flat `extra` instead (a simple
+   automatic discount for buying more than one, e.g. the Ikat table mats).
+   Always compute cart/line totals through this — never `price * qty` directly. */
+function gharLineTotal(id, qty) {
+  const p = GHAR_PRODUCTS[id];
+  if (!p) return 0;
+  if (p.bulk && qty > 0) return p.price + p.bulk.extra * (qty - 1);
+  return p.price * qty;
+}
+function gharUnitNote(id) {
+  const p = GHAR_PRODUCTS[id];
+  return (p && p.bulk) ? gharFmt(p.price) + ' first, ' + gharFmt(p.bulk.extra) + ' each extra' : null;
+}
+
 /* ── cart storage ── */
 function gharCart() {
   try { return JSON.parse(localStorage.getItem('gharCart')) || {}; }
@@ -243,7 +286,7 @@ function gharCartCount() {
 function gharCartTotal() {
   const cart = gharCart();
   return Object.keys(cart).reduce(function (sum, id) {
-    return sum + GHAR_PRODUCTS[id].price * cart[id];
+    return sum + gharLineTotal(id, cart[id]);
   }, 0);
 }
 function gharSetQty(id, qty) {

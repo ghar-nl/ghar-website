@@ -143,7 +143,7 @@ section{padding:100px 52px;}
 .story{background:var(--linen);}
 .story-grid{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center;}
 .story-photos{display:grid;grid-template-columns:1fr;gap:4px;}
-.story-photo-main{aspect-ratio:16/9;}
+.story-photo-main{aspect-ratio:1/1;}
 .story-photo-a{aspect-ratio:16/9;}
 .story-text .s-h{margin-bottom:24px;}
 .story-text p{color:var(--text-mid);line-height:1.9;font-weight:300;font-size:1rem;margin-bottom:18px;}
