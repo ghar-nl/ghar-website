@@ -51,6 +51,15 @@ This folder is the LIVE website for https://ghar.nl (brand: Ghar — hand block 
 - craft-1..5.jpeg were converted from user-uploaded HEIC photos (Mac Finder Quick Actions → Convert Image, since the Linux sandbox can't decode HEIC) then enhanced with PIL (autocontrast + colour/brightness/contrast, resized to 1400px max). craft-loop.mp4 is the user's uploaded video with audio stripped via ffmpeg (`-an`) and re-encoded H.264/yuv420p for autoplay compatibility.
 - 6.jpeg, loop2.mp4, and loop3.mp4 were added August 2026 from user-uploaded WhatsApp exports (renamed only, no ffmpeg re-encode — the working environment that session had no ffmpeg available). They've worked fine as plain WhatsApp H.264 MP4 exports so far; if autoplay/looping ever misbehaves on a real device, that's the first thing to check (re-encode with `-an` + H.264/yuv420p like the original loop.mp4).
 
+## Pending photo de-duplication (added August 2026)
+- Several site photos used to be reused across unrelated sections (same file standing in for different stories in different places) — the user asked for these de-duplicated. 4 empty upload folders exist for this, waiting on new photos:
+  - `images/site/home-hero/` → index.html's `.hero-right` photo AND the "Be the first to know" subscribe popup (`.gpop-art`) — these two staying on the same photo is intentional (same brand moment, not a duplication problem), so wire one photo to both spots once it lands.
+  - `images/site/home-shop-teaser/` → index.html's `.shop-teaser-imgs` (the 3 photos under "Cushions, ikat, and everything between"), which currently reuse marigold/rivervine/stone's product cover photos. Expects 3 photos (`1.jpg`/`2.jpg`/`3.jpg`).
+  - `images/site/about-why-ghar/` → about.html's `.story-photos` (3 photos: 1 main + 2 small), which currently reuse `hero.jpeg`/`yellow-blue-cushion.jpeg`/`story.jpeg`. Expects 3 photos.
+  - `images/site/about-why-cotton/` → about.html's `.cotton-mosaic` (3 photos), which currently reuse `yellow-blue-cushion.jpeg`/`images/products/rivervine/1.jpg`/`story.jpeg`. Expects 3 photos.
+  - Once each folder has real photos: swap the corresponding `<img src>` in index.html/about.html, and leave `hero.jpeg`/`yellow-blue-cushion.jpeg`/`story.jpeg`/the product photos exactly where they still legitimately belong (e.g. rivervine's own product photo stays rivervine's, it's not "duplicated," it's just that one product's own cover).
+- `founders-sketch.png` (the old home-hero photo) and `lifestyle2.jpeg` (the old forest-cushion-cover-turned-shop-decoration) were deleted by the user directly on GitHub — don't reintroduce references to either filename; they're gone.
+
 ## Mobile
 - Responsive breakpoints in styles.css: ≤900px (hamburger nav, single-column layouts, stacked newsletter) and ≤560px (single-column product/craft grids, stacked hero buttons). The hamburger button is INJECTED by cart.js (gharBurger) — no markup in the HTML files; menu opens by toggling .nav-open on <nav>.
 - Avoid inline padding styles on sections — they override the mobile media queries (this bit us once on craft.html).
