@@ -41,7 +41,7 @@ const GHAR_PRODUCTS = {
   },
   rivervine: {
     name: 'River Vine Cushion Cover', price: 27.99,
-    img: 'images/products/rivervine/1.jpg', images: ['images/products/rivervine/1.jpg','images/products/rivervine/2.jpg','images/products/rivervine/3.jpg','images/products/rivervine/4.jpg','images/products/rivervine/5.jpg','images/products/rivervine/6.jpg','images/products/rivervine/7.jpg','images/products/rivervine/8.jpg','images/products/rivervine/9.jpg'],
+    img: 'images/products/rivervine/5.jpg', images: ['images/products/rivervine/5.jpg','images/products/rivervine/1.jpg','images/products/rivervine/2.jpg','images/products/rivervine/3.jpg','images/products/rivervine/4.jpg','images/products/rivervine/6.jpg','images/products/rivervine/7.jpg','images/products/rivervine/8.jpg','images/products/rivervine/9.jpg'],
     videos: ['images/products/rivervine/video1.mp4','images/products/rivervine/video2.mp4','images/products/rivervine/video3.mp4'],
     size: '30 × 30 cm',
     material: 'Hand block printed · 100% pure cotton',
@@ -53,7 +53,7 @@ const GHAR_PRODUCTS = {
   },
   stone: {
     name: 'Stone Lattice Cushion Cover', price: 27.99,
-    img: 'images/products/stone/1.jpg', images: ['images/products/stone/1.jpg','images/products/stone/2.jpg','images/products/stone/3.jpg','images/products/stone/4.jpg','images/products/stone/5.jpg','images/products/stone/6.jpg','images/products/stone/7.jpg','images/products/stone/8.jpg','images/products/stone/9.jpg','images/products/stone/10.jpg','images/products/stone/11.jpg','images/products/stone/12.jpg','images/products/stone/13.jpg','images/products/stone/14.jpg','images/products/stone/15.jpg','images/products/stone/16.jpg'],
+    img: 'images/products/stone/6.jpg', images: ['images/products/stone/6.jpg','images/products/stone/1.jpg','images/products/stone/2.jpg','images/products/stone/3.jpg','images/products/stone/4.jpg','images/products/stone/5.jpg','images/products/stone/7.jpg','images/products/stone/8.jpg','images/products/stone/9.jpg','images/products/stone/10.jpg','images/products/stone/11.jpg','images/products/stone/12.jpg','images/products/stone/13.jpg','images/products/stone/14.jpg','images/products/stone/15.jpg','images/products/stone/16.jpg'],
     size: '30 × 30 cm',
     material: 'Hand block printed · 100% pure cotton · different print on front & back',
     category: 'cushion-small', printType: 'block', rooms: ['living'], favRank: 12,
@@ -64,7 +64,7 @@ const GHAR_PRODUCTS = {
   },
   forest: {
     name: 'Forest Arabesque Cushion Cover', price: 27.99,
-    img: 'images/products/forest/1.jpg', images: ['images/products/forest/1.jpg','images/products/forest/2.jpg','images/products/forest/3.jpg','images/products/forest/4.jpg','images/products/forest/5.jpg','images/products/forest/6.jpg'],
+    img: 'images/products/forest/4.jpg', images: ['images/products/forest/4.jpg','images/products/forest/1.jpg','images/products/forest/2.jpg','images/products/forest/3.jpg','images/products/forest/5.jpg','images/products/forest/6.jpg'],
     size: '30 × 30 cm',
     material: 'Hand block printed · 100% pure cotton',
     category: 'cushion-small', printType: 'block', rooms: ['living'], favRank: 13,
@@ -75,7 +75,7 @@ const GHAR_PRODUCTS = {
   },
   golden: {
     name: 'Golden Trellis Cushion Cover', price: 27.99,
-    img: 'images/products/golden/1.jpg', images: ['images/products/golden/1.jpg','images/products/golden/2.jpg','images/products/golden/3.jpg','images/products/golden/4.jpg','images/products/golden/5.jpg','images/products/golden/6.jpg'],
+    img: 'images/products/golden/5.jpg', images: ['images/products/golden/5.jpg','images/products/golden/1.jpg','images/products/golden/2.jpg','images/products/golden/3.jpg','images/products/golden/4.jpg','images/products/golden/6.jpg'],
     videos: ['images/products/golden/video1.mp4'],
     size: '30 × 30 cm',
     material: 'Hand block printed · 100% pure cotton',
@@ -91,7 +91,7 @@ const GHAR_PRODUCTS = {
      Swap in real paths as soon as they exist; nothing else needs to change. ── */
   wallart: {
     name: 'Ikat Wall Art Square', price: 16.99,
-    img: 'images/products/wallart/1.jpg', images: ['images/products/wallart/1.jpg','images/products/wallart/2.jpg','images/products/wallart/3.jpg','images/products/wallart/4.jpg'],
+    img: 'images/products/wallart/5.jpg', images: ['images/products/wallart/5.jpg','images/products/wallart/6.jpg','images/products/wallart/7.jpg','images/products/wallart/8.jpg','images/products/wallart/1.jpg','images/products/wallart/2.jpg','images/products/wallart/3.jpg','images/products/wallart/4.jpg'],
     size: '30 × 30 cm', material: 'Ikat woven cotton · framed',
     category: 'wall-art', printType: 'ikat', rooms: ['living'], favRank: 1,
     mini: "Ikat cotton, cut into perfect squares and framed — ready to hang.",
@@ -106,7 +106,7 @@ const GHAR_PRODUCTS = {
     name: 'Ikat Extra-Large Cushion Cover', price: 18.99,
     img: '', images: [],
     size: '60 × 60 cm', material: 'Ikat woven cotton',
-    category: 'cushion-large', printType: 'ikat', rooms: ['living'], favRank: 2,
+    category: 'cushion-large', printType: 'ikat', rooms: ['living'], favRank: 40,
     mini: "Our cushion covers, scaled all the way up. A very small batch — grab it before it's gone.",
     desc: [
       "We started with small cushion covers — now we are just as excited to launch these in extra-large. Anyone who has tried to find a cover for a big cushion insert knows how hard that size is to track down; ours is cut and finished exactly for it.",
@@ -116,7 +116,7 @@ const GHAR_PRODUCTS = {
   },
   runner: {
     name: 'Ikat Table Runner', price: 20.99,
-    img: 'images/products/runner/1.jpg', images: ['images/products/runner/1.jpg','images/products/runner/2.jpg'],
+    img: 'images/products/runner/2.jpg', images: ['images/products/runner/2.jpg','images/products/runner/1.jpg'],
     size: '35 × 150 cm', material: 'Ikat woven · 100% organic cotton',
     category: 'table-runner', printType: 'ikat', rooms: ['living', 'dining'], favRank: 3,
     mini: "A dark red border gives this ikat runner one last, quiet highlight.",
@@ -140,7 +140,7 @@ const GHAR_PRODUCTS = {
   },
   circlemat: {
     name: 'Ikat Round Table Mat', price: 12.99, bulk: { extra: 11.00 },
-    img: 'images/products/circlemat/1.jpg', images: ['images/products/circlemat/1.jpg','images/products/circlemat/2.jpg','images/products/circlemat/3.jpg','images/products/circlemat/4.jpg','images/products/circlemat/5.jpg','images/products/circlemat/6.jpg'],
+    img: 'images/products/circlemat/6.jpg', images: ['images/products/circlemat/6.jpg','images/products/circlemat/1.jpg','images/products/circlemat/2.jpg','images/products/circlemat/3.jpg','images/products/circlemat/4.jpg','images/products/circlemat/5.jpg'],
     size: '30 cm diameter', material: 'Ikat woven cotton',
     category: 'placemat', printType: 'ikat', rooms: ['dining'], favRank: 21,
     mini: "The same idea, in the round — elegant under any dinner plate. Buy 2 or more and every extra mat is just €11.",
@@ -164,7 +164,7 @@ const GHAR_PRODUCTS = {
   },
   'napkin-set6': {
     name: 'Ikat Napkins — Set of 6', price: 36.99,
-    img: 'images/products/napkin/1.jpg', images: ['images/products/napkin/1.jpg','images/products/napkin/2.jpg','images/products/napkin/3.jpg','images/products/napkin/4.jpg','images/products/napkin/5.jpg'],
+    img: 'images/products/napkin/2.jpg', images: ['images/products/napkin/2.jpg','images/products/napkin/1.jpg','images/products/napkin/3.jpg','images/products/napkin/4.jpg','images/products/napkin/5.jpg'],
     size: '40 × 40 cm · set of 6', material: 'Ikat woven · 100% organic cotton',
     category: 'napkin', printType: 'ikat', rooms: ['dining'], favRank: 23,
     mini: "Soft enough for children, finished enough for guests. Sold as a set of 6 — about €6.17 per napkin, our best per-napkin price.",
@@ -175,27 +175,27 @@ const GHAR_PRODUCTS = {
     ]
   },
   'coaster-set2': {
-    name: 'Ikat Coasters — Set of 2', price: 6.99,
-    img: 'images/products/coaster/1.jpg', images: ['images/products/coaster/1.jpg','images/products/coaster/2.jpg','images/products/coaster/3.jpg','images/products/coaster/4.jpg'],
+    name: 'Ikat Coasters — Set of 2', price: 8.99,
+    img: 'images/products/coaster/3.jpg', images: ['images/products/coaster/3.jpg','images/products/coaster/1.jpg','images/products/coaster/2.jpg','images/products/coaster/4.jpg'],
     size: '10 × 10 cm · set of 2', material: 'Ikat woven · 100% organic cotton',
     category: 'coaster', printType: 'ikat', rooms: ['dining'], favRank: 24,
-    mini: "Zero-waste squares, cut from our own fabric offcuts. Sold as a set of 2, about €3.50 each.",
+    mini: "Zero-waste squares, cut from our own fabric offcuts. Sold as a set of 2, about €4.50 each.",
     desc: [
       "Every coaster is cut from fabric offcuts that would otherwise end up as waste — so alongside your morning chai, you are also keeping good cloth out of a landfill. Zero waste, and quietly rather lovely under a cup.",
       "They sit well under a glass or your favourite ceramic mug, and being 100% organic cotton, they wash easily and dry fast.",
-      "Sold only as a set of 2 (about €3.50 each) — need more on the table? The Set of 4 works out cheaper per coaster."
+      "Sold only as a set of 2 (about €4.50 each) — need more on the table? The Set of 4 works out to about €3.25 a coaster."
     ]
   },
   'coaster-set4': {
-    name: 'Ikat Coasters — Set of 4', price: 10.99,
-    img: 'images/products/coaster/1.jpg', images: ['images/products/coaster/1.jpg','images/products/coaster/2.jpg','images/products/coaster/3.jpg','images/products/coaster/4.jpg'],
+    name: 'Ikat Coasters — Set of 4', price: 12.99,
+    img: 'images/products/coaster/4.jpg', images: ['images/products/coaster/4.jpg','images/products/coaster/1.jpg','images/products/coaster/2.jpg','images/products/coaster/3.jpg'],
     size: '10 × 10 cm · set of 4', material: 'Ikat woven · 100% organic cotton',
     category: 'coaster', printType: 'ikat', rooms: ['dining'], favRank: 25,
-    mini: "Zero-waste squares, cut from our own fabric offcuts. Sold as a set of 4, about €2.75 each — our best per-coaster price.",
+    mini: "Zero-waste squares, cut from our own fabric offcuts. Sold as a set of 4, about €3.25 each — our best per-coaster price.",
     desc: [
       "Every coaster is cut from fabric offcuts that would otherwise end up as waste — so alongside your morning chai, you are also keeping good cloth out of a landfill. Zero waste, and quietly rather lovely under a cup.",
       "They sit well under a glass or your favourite ceramic mug, and being 100% organic cotton, they wash easily and dry fast.",
-      "Sold only as a set of 4 — at about €2.75 each, that's roughly €2.99 less than buying two Sets of 2."
+      "Sold only as a set of 4 — at about €3.25 each, that's €4.99 less than buying two Sets of 2."
     ]
   },
 
