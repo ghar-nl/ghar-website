@@ -9,8 +9,8 @@
 <link rel="icon" type="image/png" href="images/site/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&family=Noto+Serif+Devanagari:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=20260816d">
-<script src="cart.js?v=20260816d" defer></script>
+<link rel="stylesheet" href="styles.css?v=20260816e">
+<script src="cart.js?v=20260816e" defer></script>
 </head>
 <body>
 
@@ -59,7 +59,7 @@
           <div class="sum-line"><span>Shipping</span><span id="sum-ship">€5</span></div>
           <div class="sum-line sum-total"><span>Total</span><span class="price" id="sum-total">€0</span></div>
         </div>
-        <p class="sum-note">Pre-order perk: 20% off with code <strong>GHARPREORDER20</strong> and free shipping — both on everything above €50. Pre-orders are limited to 6 items per person.</p>
+        <p class="sum-note">Pre-order perk: 20% off with code <strong>GHARPREORDER20</strong> on orders above €100, and free shipping on orders above €59.99. Pre-orders are limited to 6 items per person.</p>
       </div>
 
       <!-- RIGHT: delivery details / checkout -->
@@ -223,7 +223,7 @@ document.getElementById('promo-apply').addEventListener('click', function () {
     localStorage.setItem('gharPromo', GHAR_PROMO_CODE);
     msg.textContent = gharCartTotal() >= GHAR_PROMO_MIN
       ? 'Code applied — 20% off!'
-      : 'Code saved — it applies automatically on orders of €50 or more.';
+      : 'Code saved — it applies automatically on orders of €100 or more.';
   } else if (val === '') {
     localStorage.removeItem('gharPromo');
     msg.textContent = '';

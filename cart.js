@@ -6,10 +6,10 @@ const GHAR_API = 'https://script.google.com/macros/s/AKfycbwPyxknSnMjppLX_leBgCd
 const GHAR_SECRET = '47d80edaf79922927989f72c'; // must match Apps Script
 
 const GHAR_SHIPPING = 5;            // € flat shipping
-const GHAR_FREE_SHIP_MIN = 50;      // € free shipping threshold
+const GHAR_FREE_SHIP_MIN = 59.99;   // € free shipping threshold
 const GHAR_PROMO_CODE = 'GHARPREORDER20';
 const GHAR_PROMO_RATE = 0.20;       // 20% off
-const GHAR_PROMO_MIN = 50;          // on orders above €50
+const GHAR_PROMO_MIN = 100;         // on orders above €100
 const GHAR_LOW_STOCK = 5;           // "last few pieces" threshold
 const GHAR_MAX_PER_ORDER = 6;       // max items per person/order, across the whole catalog
 
