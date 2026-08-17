@@ -206,7 +206,8 @@ const GHAR_PRODUCTS = {
      Dimple which physical bag was ordered. */
   'totebag-h-same': {
     name: 'Everyday Tote Bag — Horizontal, Same-colour Strap', price: 32.99,
-    img: 'images/products/totebag/8.jpg', images: ['images/products/totebag/8.jpg','images/products/totebag/1.jpg','images/products/totebag/2.jpg','images/products/totebag/3.jpg','images/products/totebag/4.jpg','images/products/totebag/5.jpg','images/products/totebag/6.jpg','images/products/totebag/7.jpg','images/products/totebag/9.jpg','images/products/totebag/10.jpg'],
+    img: 'images/products/totebag/8.jpg', demo: 'images/products/totebag/demo-embed.html',
+    images: ['images/products/totebag/8.jpg','images/products/totebag/1.jpg','images/products/totebag/2.jpg','images/products/totebag/3.jpg','images/products/totebag/4.jpg','images/products/totebag/5.jpg','images/products/totebag/6.jpg','images/products/totebag/7.jpg','images/products/totebag/9.jpg','images/products/totebag/10.jpg'],
     videos: ['images/products/totebag/video1.mp4','images/products/totebag/video2.mp4'],
     size: '52 × 36 × 10 cm · 35 cm strap (same colour)', material: 'Ikat woven · 100% organic cotton',
     category: 'tote-bag', printType: 'ikat', rooms: [], favRank: 30,
@@ -215,7 +216,8 @@ const GHAR_PRODUCTS = {
   },
   'totebag-h-contrast': {
     name: 'Everyday Tote Bag — Horizontal, Contrast Strap (White)', price: 32.99,
-    img: 'images/products/totebag/8.jpg', images: ['images/products/totebag/8.jpg','images/products/totebag/1.jpg','images/products/totebag/2.jpg','images/products/totebag/3.jpg','images/products/totebag/4.jpg','images/products/totebag/5.jpg','images/products/totebag/6.jpg','images/products/totebag/7.jpg','images/products/totebag/9.jpg','images/products/totebag/10.jpg'],
+    img: 'images/products/totebag/8.jpg', demo: 'images/products/totebag/demo-embed.html',
+    images: ['images/products/totebag/8.jpg','images/products/totebag/1.jpg','images/products/totebag/2.jpg','images/products/totebag/3.jpg','images/products/totebag/4.jpg','images/products/totebag/5.jpg','images/products/totebag/6.jpg','images/products/totebag/7.jpg','images/products/totebag/9.jpg','images/products/totebag/10.jpg'],
     videos: ['images/products/totebag/video1.mp4','images/products/totebag/video2.mp4'],
     size: '52 × 36 × 10 cm · 35 cm white contrast strap', material: 'Ikat woven · 100% organic cotton',
     category: 'tote-bag', printType: 'ikat', rooms: [], favRank: 31,
@@ -224,7 +226,8 @@ const GHAR_PRODUCTS = {
   },
   'totebag-v-same': {
     name: 'Everyday Tote Bag — Vertical, Same-colour Strap', price: 32.99,
-    img: 'images/products/totebag/8.jpg', images: ['images/products/totebag/8.jpg','images/products/totebag/1.jpg','images/products/totebag/2.jpg','images/products/totebag/3.jpg','images/products/totebag/4.jpg','images/products/totebag/5.jpg','images/products/totebag/6.jpg','images/products/totebag/7.jpg','images/products/totebag/9.jpg','images/products/totebag/10.jpg'],
+    img: 'images/products/totebag/8.jpg', demo: 'images/products/totebag/demo-embed.html',
+    images: ['images/products/totebag/8.jpg','images/products/totebag/1.jpg','images/products/totebag/2.jpg','images/products/totebag/3.jpg','images/products/totebag/4.jpg','images/products/totebag/5.jpg','images/products/totebag/6.jpg','images/products/totebag/7.jpg','images/products/totebag/9.jpg','images/products/totebag/10.jpg'],
     videos: ['images/products/totebag/video1.mp4','images/products/totebag/video2.mp4'],
     size: '40 × 42 × 10 cm · 35 cm strap (same colour)', material: 'Ikat woven · 100% organic cotton',
     category: 'tote-bag', printType: 'ikat', rooms: [], favRank: 32,
@@ -233,7 +236,8 @@ const GHAR_PRODUCTS = {
   },
   'totebag-v-contrast': {
     name: 'Everyday Tote Bag — Vertical, Contrast Strap (White)', price: 32.99,
-    img: 'images/products/totebag/8.jpg', images: ['images/products/totebag/8.jpg','images/products/totebag/1.jpg','images/products/totebag/2.jpg','images/products/totebag/3.jpg','images/products/totebag/4.jpg','images/products/totebag/5.jpg','images/products/totebag/6.jpg','images/products/totebag/7.jpg','images/products/totebag/9.jpg','images/products/totebag/10.jpg'],
+    img: 'images/products/totebag/8.jpg', demo: 'images/products/totebag/demo-embed.html',
+    images: ['images/products/totebag/8.jpg','images/products/totebag/1.jpg','images/products/totebag/2.jpg','images/products/totebag/3.jpg','images/products/totebag/4.jpg','images/products/totebag/5.jpg','images/products/totebag/6.jpg','images/products/totebag/7.jpg','images/products/totebag/9.jpg','images/products/totebag/10.jpg'],
     videos: ['images/products/totebag/video1.mp4','images/products/totebag/video2.mp4'],
     size: '40 × 42 × 10 cm · 35 cm white contrast strap', material: 'Ikat woven · 100% organic cotton',
     category: 'tote-bag', printType: 'ikat', rooms: [], favRank: 33,
@@ -451,13 +455,14 @@ function gharPhotoPlaceholder() {
    shop card thumbnail and cart line thumb — is always guaranteed a real
    photo, never a video. */
 function gharProductMedia(p) {
-  return p.images.map(function (src) { return { type: 'img', src: src }; })
+  const demo = p.demo ? [{ type: 'demo', src: p.demo, thumb: p.img }] : [];
+  return demo.concat(p.images.map(function (src) { return { type: 'img', src: src }; }))
     .concat((p.videos || []).map(function (src) { return { type: 'video', src: src }; }));
 }
 function gharMediaHtml(m) {
-  return m.type === 'video'
-    ? '<video src="' + m.src + '" autoplay muted loop playsinline></video>'
-    : '<img src="' + m.src + '" alt="">';
+  if (m.type === 'video') return '<video src="' + m.src + '" autoplay muted loop playsinline></video>';
+  if (m.type === 'demo') return '<iframe src="' + m.src + '" title="Feature walkthrough" loading="lazy"></iframe>';
+  return '<img src="' + m.src + '" alt="">';
 }
 
 /* ── product detail viewer (shop) ── */
@@ -468,6 +473,7 @@ function gharProductModal(id) {
   const hasMedia = media.length > 0;
   const thumbs = media.length > 1
     ? '<div class="pm-thumbs">' + media.map(function (m, i) {
+        if (m.type === 'demo') return '<span class="pm-thumb-demo' + (i === 0 ? ' active' : '') + '" data-i="' + i + '"><img src="' + m.thumb + '" alt=""><b>▶</b></span>';
         return m.type === 'video'
           ? '<video src="' + m.src + '" data-i="' + i + '" class="' + (i === 0 ? 'active' : '') + '" autoplay muted loop playsinline></video>'
           : '<img src="' + m.src + '" data-i="' + i + '" class="' + (i === 0 ? 'active' : '') + '" alt="">';
@@ -522,15 +528,15 @@ function gharProductModal(id) {
     const r = main.getBoundingClientRect();
     img.style.transformOrigin = ((e.clientX - r.left) / r.width * 100) + '% ' + ((e.clientY - r.top) / r.height * 100) + '%';
   });
-  // thumbnails — swap pm-main's content between photo and video as needed
-  document.querySelectorAll('.pm-thumbs img, .pm-thumbs video').forEach(function (t) {
+  // thumbnails — swap pm-main's content between photo, video and demo as needed
+  document.querySelectorAll('.pm-thumbs > img, .pm-thumbs > video, .pm-thumbs > .pm-thumb-demo').forEach(function (t) {
     t.addEventListener('click', function () {
       const m = media[Number(t.dataset.i)];
       main.innerHTML = gharMediaHtml(m);
       main.style.cursor = m.type === 'img' ? 'zoom-in' : 'default';
       const hint = document.getElementById('pm-zoomhint');
       if (hint) hint.style.visibility = m.type === 'img' ? 'visible' : 'hidden';
-      document.querySelectorAll('.pm-thumbs img, .pm-thumbs video').forEach(function (x) { x.classList.remove('active'); });
+      document.querySelectorAll('.pm-thumbs > img, .pm-thumbs > video, .pm-thumbs > .pm-thumb-demo').forEach(function (x) { x.classList.remove('active'); });
       t.classList.add('active');
     });
   });

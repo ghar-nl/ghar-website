@@ -1,0 +1,185 @@
+<meta charset="UTF-8">
+<title>Everyday Tote Bag — feature walkthrough</title>
+<style>
+  :root{
+    --panel:#fdfaf6; --ink:#143659; --ink-soft:#5c6b7a; --accent:#c07a60; --line:#e4d9c8;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{ --panel:#242017; --ink:#f4efe6; --ink-soft:#c9c0b2; --accent:#d99a80; --line:#3a3428; }
+  }
+  :root[data-theme="dark"]{ --panel:#242017; --ink:#f4efe6; --ink-soft:#c9c0b2; --accent:#d99a80; --line:#3a3428; }
+  :root[data-theme="light"]{ --panel:#fdfaf6; --ink:#143659; --ink-soft:#5c6b7a; --accent:#c07a60; --line:#e4d9c8; }
+
+  *{box-sizing:border-box;}
+  html,body{margin:0;height:100%;background:var(--panel);color:var(--ink);font-family:Georgia,'Times New Roman',serif;overflow:hidden;}
+  .player{position:relative;height:100%;display:flex;flex-direction:column;background:var(--panel);}
+  .stage{position:relative;flex:1;min-height:0;background:#000;overflow:hidden;}
+  .scene{position:absolute;inset:0;opacity:0;transition:opacity .5s ease;}
+  .scene.active{opacity:1;}
+  .scene img{width:100%;height:100%;object-fit:cover;display:block;}
+  .scene .tint{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 55%,rgba(0,0,0,0.55) 100%);}
+
+  .arrow-svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible;}
+  .arrow-path{fill:none;stroke:var(--accent);stroke-width:4;stroke-linecap:round;stroke-linejoin:round;
+    filter:drop-shadow(0 1px 2px rgba(0,0,0,0.35));
+    stroke-dasharray:400;stroke-dashoffset:400;}
+  .scene.active .arrow-path{animation:draw 0.9s 0.35s cubic-bezier(.65,0,.35,1) forwards;}
+  @keyframes draw{to{stroke-dashoffset:0;}}
+  .arrow-head{fill:var(--accent);opacity:0;filter:drop-shadow(0 1px 2px rgba(0,0,0,0.35));}
+  .scene.active .arrow-head{animation:pop 0.3s 1.1s ease forwards;}
+  @keyframes pop{to{opacity:1;}}
+
+  .caption{
+    position:absolute;left:0;right:0;bottom:0;padding:16px 18px 18px;
+    font-family:"Segoe Print","Bradley Hand","Chalkboard SE","Comic Sans MS",cursive;
+    color:#fff;font-size:1.15rem;line-height:1.25;text-shadow:0 2px 8px rgba(0,0,0,0.5);
+    opacity:0;transform:translateY(10px);transition:opacity .45s ease,transform .45s ease;
+    transition-delay:1.15s;
+  }
+  .scene.active .caption{opacity:1;transform:translateY(0);}
+  .caption .sub{display:block;font-family:Helvetica,Arial,sans-serif;font-size:0.65rem;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.75);margin-bottom:3px;text-shadow:none;}
+
+  .titlecard{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;background:linear-gradient(160deg,#7a2f22,#c07a60);color:#fff;text-align:center;padding:0 20px;}
+  .titlecard .word{font-family:Georgia,serif;font-size:1.4rem;margin-bottom:5px;}
+  .titlecard .sub{font-family:Helvetica,Arial,sans-serif;font-size:0.68rem;letter-spacing:0.1em;text-transform:uppercase;opacity:0.85;}
+
+  .controls{display:flex;align-items:center;gap:10px;padding:8px 10px;border-top:1px solid var(--line);background:var(--panel);flex-shrink:0;}
+  .progress{flex:1;display:flex;gap:4px;}
+  .seg{flex:1;height:3px;border-radius:2px;background:var(--line);overflow:hidden;position:relative;}
+  .seg i{position:absolute;inset:0;background:var(--accent);width:0%;transition:width linear;}
+  .btn{font-family:Helvetica,Arial,sans-serif;font-size:0.68rem;letter-spacing:0.04em;text-transform:uppercase;
+    background:var(--accent);color:#fff;border:none;padding:6px 12px;border-radius:5px;cursor:pointer;white-space:nowrap;}
+  .btn:hover{opacity:0.9;}
+  .btn.ghost{background:transparent;color:var(--ink-soft);border:1px solid var(--line);}
+  .badge{position:absolute;top:10px;left:10px;z-index:2;background:rgba(20,54,89,0.65);color:#fff;font-family:Helvetica,Arial,sans-serif;font-size:0.62rem;letter-spacing:0.06em;text-transform:uppercase;padding:4px 9px;border-radius:20px;}
+</style>
+
+<div class="player">
+  <div class="stage" id="stage">
+    <span class="badge">See it in use</span>
+    <div class="scene active" id="scene-title">
+      <div class="titlecard">
+        <div class="word">Everyday Tote Bag</div>
+        <div class="sub">Ikat woven · 100% organic cotton</div>
+      </div>
+    </div>
+    <div class="scene" id="scene-0b">
+      <img src="1.jpg" alt="Carrying a picnic cushion">
+      <div class="tint"></div>
+      <div class="caption" style="bottom:auto;top:0;padding:16px 18px 0;"><span class="sub">First things first</span>Big enough for a picnic cushion. Everything else fits easily.</div>
+    </div>
+    <div class="scene" id="scene-1">
+      <img src="7.jpg" alt="Front pocket">
+      <div class="tint"></div>
+      <svg class="arrow-svg" viewBox="0 0 100 125" preserveAspectRatio="none">
+        <path class="arrow-path" d="M 78 30 C 68 45, 62 55, 55 63" vector-effect="non-scaling-stroke"/>
+        <polygon class="arrow-head" points="55,63 61,58 63,66" />
+      </svg>
+      <div class="caption"><span class="sub">Feature 1</span>A deep front pocket — phone, keys, everything, right where you can reach it.</div>
+    </div>
+    <div class="scene" id="scene-2">
+      <img src="4.jpg" alt="Laptop compartment">
+      <div class="tint"></div>
+      <svg class="arrow-svg" viewBox="0 0 100 125" preserveAspectRatio="none">
+        <path class="arrow-path" d="M 85 20 C 70 30, 58 38, 48 46" vector-effect="non-scaling-stroke"/>
+        <polygon class="arrow-head" points="48,46 56,43 55,51" />
+      </svg>
+      <div class="caption"><span class="sub">Feature 2</span>Now, inside — a space just for your laptop.</div>
+    </div>
+    <div class="scene" id="scene-3">
+      <img src="6.jpg" alt="Interior">
+      <div class="tint"></div>
+      <svg class="arrow-svg" viewBox="0 0 100 125" preserveAspectRatio="none">
+        <path class="arrow-path" d="M 20 25 C 30 45, 35 60, 40 75" vector-effect="non-scaling-stroke"/>
+        <polygon class="arrow-head" points="40,75 33,69 41,66" />
+      </svg>
+      <div class="caption"><span class="sub">Feature 3</span>No tiny pockets here — everything inside is XL.</div>
+    </div>
+    <div class="scene" id="scene-4">
+      <img src="6.jpg" alt="Bottle holder">
+      <div class="tint"></div>
+      <svg class="arrow-svg" viewBox="0 0 100 125" preserveAspectRatio="none">
+        <path class="arrow-path" d="M 90 70 C 82 60, 76 52, 70 46" vector-effect="non-scaling-stroke"/>
+        <polygon class="arrow-head" points="70,46 78,47 74,54" />
+      </svg>
+      <div class="caption"><span class="sub">Feature 4</span>Room for a large bottle. Even a bottle of wine.</div>
+    </div>
+    <div class="scene" id="scene-5">
+      <img src="6.jpg" alt="Velcro closure">
+      <div class="tint"></div>
+      <svg class="arrow-svg" viewBox="0 0 100 125" preserveAspectRatio="none">
+        <path class="arrow-path" d="M 8 62 C 20 57, 30 52, 38 49" vector-effect="non-scaling-stroke"/>
+        <polygon class="arrow-head" points="38,49 30,48 33,41" />
+      </svg>
+      <div class="caption"><span class="sub">Feature 5</span>One tap of velcro — open and go.</div>
+    </div>
+    <div class="scene" id="scene-outro">
+      <img src="8.jpg" alt="Everyday Tote Bag">
+      <div class="tint"></div>
+      <div class="caption" style="bottom:auto;top:0;padding-top:16px;"><span class="sub">ghar.nl</span>The Everyday Tote Bag</div>
+    </div>
+  </div>
+  <div class="controls">
+    <button class="btn ghost" id="replayBtn">↺ Replay</button>
+    <div class="progress" id="progress"></div>
+    <button class="btn" id="playBtn">Pause</button>
+  </div>
+</div>
+
+<script>
+(function(){
+  const scenes = ['scene-title','scene-0b','scene-1','scene-2','scene-3','scene-4','scene-5','scene-outro'];
+  const durations = [1800, 2600, 3400, 3400, 3400, 3400, 3400, 2400];
+  let idx = 0, playing = true, segTimer = null;
+  const progress = document.getElementById('progress');
+  const playBtn = document.getElementById('playBtn');
+  const replayBtn = document.getElementById('replayBtn');
+
+  scenes.forEach(() => {
+    const seg = document.createElement('div');
+    seg.className = 'seg';
+    seg.innerHTML = '<i></i>';
+    progress.appendChild(seg);
+  });
+  const segs = progress.querySelectorAll('.seg > i');
+
+  function showScene(i){
+    scenes.forEach((id, n) => {
+      document.getElementById(id).classList.toggle('active', n === i);
+    });
+    segs.forEach((s, n) => { s.style.transition = 'none'; s.style.width = n < i ? '100%' : '0%'; });
+  }
+  function animateSeg(i, dur){
+    const s = segs[i];
+    requestAnimationFrame(() => {
+      s.style.transition = 'none'; s.style.width = '0%';
+      requestAnimationFrame(() => {
+        s.style.transition = 'width ' + dur + 'ms linear';
+        s.style.width = '100%';
+      });
+    });
+  }
+  function next(){
+    idx = (idx + 1) % scenes.length;
+    showScene(idx);
+    if (playing) runTimer();
+  }
+  function runTimer(){
+    clearTimeout(segTimer);
+    animateSeg(idx, durations[idx]);
+    segTimer = setTimeout(next, durations[idx]);
+  }
+  showScene(0);
+  runTimer();
+
+  playBtn.addEventListener('click', function(){
+    playing = !playing;
+    playBtn.textContent = playing ? 'Pause' : 'Play';
+    if (playing) { runTimer(); } else { clearTimeout(segTimer); segs[idx].style.transition = 'none'; }
+  });
+  replayBtn.addEventListener('click', function(){
+    idx = 0; playing = true; playBtn.textContent = 'Pause';
+    showScene(0); runTimer();
+  });
+})();
+</script>
