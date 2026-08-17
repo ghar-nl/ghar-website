@@ -571,42 +571,6 @@ function gharBurger() {
 
 /* ── footer links + newsletter wiring (runs on every page) ── */
 function gharWireSite() {
-  // Shipping info / Returns: work-in-progress notice
-  document.querySelectorAll('a.ghar-wip').forEach(function (a) {
-    a.addEventListener('click', function (e) {
-      e.preventDefault();
-      const topic = a.textContent.toLowerCase().indexOf('return') !== -1 ? 'returns policy' : 'shipping policy';
-      gharModalOpen(
-        '<p class="s-tag">' + a.textContent.trim() + '</p>' +
-        '<h3>We are still building the website.</h3>' +
-        '<p>You will see more information about our ' + topic + ' shortly. Thank you for your patience!</p>'
-      );
-    });
-  });
-
-  // Workshops: coming soon popup
-  document.querySelectorAll('a.ghar-workshops').forEach(function (a) {
-    a.addEventListener('click', function (e) {
-      e.preventDefault();
-      gharModalOpen(
-        '<div class="ws-art"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">' +
-          '<rect x="10" y="70" width="80" height="18" rx="1" fill="rgba(20,54,89,0.05)" stroke="#143659" stroke-width="0.8"/>' +
-          '<ellipse cx="50" cy="78" rx="18" ry="5" fill="rgba(192,122,96,0.4)" stroke="rgba(192,122,96,0.7)" stroke-width="0.6"/>' +
-          '<rect x="28" y="42" width="44" height="26" rx="1.5" fill="rgba(20,54,89,0.07)" stroke="#143659" stroke-width="1.1"/>' +
-          '<circle cx="42" cy="52" r="5" fill="none" stroke="#143659" stroke-width="0.9"/>' +
-          '<circle cx="58" cy="52" r="4" fill="none" stroke="#143659" stroke-width="0.9"/>' +
-          '<path d="M38 42 L38 20 Q38 15 44 15 L56 15 Q62 15 62 20 L62 42" fill="rgba(20,54,89,0.1)" stroke="#143659" stroke-width="1.1" stroke-linejoin="round"/>' +
-          '<line x1="84" y1="30" x2="84" y2="55" stroke="rgba(192,122,96,0.8)" stroke-width="1.2" stroke-linecap="round"/>' +
-          '<path d="M80 50 L84 57 L88 50" fill="none" stroke="rgba(192,122,96,0.8)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>' +
-        '</svg></div>' +
-        '<p class="s-tag">Workshops</p>' +
-        '<h3>Workshops coming soon.</h3>' +
-        '<p>Soon you can experience the art of making your own fabric: real hand-carved wooden blocks, trays of colour, and the joy of pressing your very first print. Ink on your fingers, a pattern of your own to take home.</p>' +
-        '<p>Keep an eye on this space — or subscribe below and we\'ll tell you the moment dates are out.</p>'
-      );
-    });
-  });
-
   // Contact us: form popup
   document.querySelectorAll('a.ghar-contact').forEach(function (a) {
     a.addEventListener('click', function (e) {
