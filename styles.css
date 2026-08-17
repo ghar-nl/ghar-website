@@ -187,6 +187,7 @@ section{padding:100px 52px;}
 .craft-story .s-tag{margin-bottom:16px;}
 .craft-story h2{font-size:clamp(1.9rem,3.4vw,2.6rem);color:var(--blue-dark);font-weight:400;line-height:1.22;margin-bottom:32px;}
 .craft-story-body p{color:var(--text-mid);font-size:1rem;line-height:1.9;font-weight:300;margin-bottom:22px;}
+.craft-story-body p strong{color:var(--blue-dark);font-weight:500;}
 .craft-story-photos{display:grid;gap:4px;margin:36px 0;}
 .craft-story-photos.two-col{grid-template-columns:1fr 1fr;}
 .craft-story-photos figure{margin:0;}
