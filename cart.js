@@ -91,7 +91,7 @@ const GHAR_PRODUCTS = {
      Swap in real paths as soon as they exist; nothing else needs to change. ── */
   wallart: {
     name: 'Ikat Wall Art Square', price: 16.99,
-    img: 'images/products/wallart/5.jpg', images: ['images/products/wallart/5.jpg','images/products/wallart/6.jpg','images/products/wallart/7.jpg','images/products/wallart/8.jpg','images/products/wallart/1.jpg','images/products/wallart/2.jpg','images/products/wallart/3.jpg','images/products/wallart/4.jpg'],
+    img: 'images/products/wallart/5.jpg', images: ['images/products/wallart/5.jpg','images/products/wallart/9.jpg','images/products/wallart/6.jpg','images/products/wallart/7.jpg','images/products/wallart/8.jpg','images/products/wallart/1.jpg','images/products/wallart/2.jpg','images/products/wallart/3.jpg','images/products/wallart/4.jpg'],
     size: '30 × 30 cm', material: 'Ikat woven cotton · framed',
     category: 'wall-art', printType: 'ikat', rooms: ['living'], favRank: 1,
     mini: "Ikat cotton, cut into perfect squares and framed — ready to hang.",
