@@ -104,7 +104,7 @@ const GHAR_PRODUCTS = {
   },
   largecushion: {
     name: 'Ikat Extra-Large Cushion Cover', price: 32.99, bulk: { extra: 28.00 },
-    img: 'images/products/largecushion/1.jpg', images: ['images/products/largecushion/1.jpg','images/products/largecushion/2.jpg','images/products/largecushion/3.jpg','images/products/largecushion/4.jpg','images/products/largecushion/5.jpg','images/products/largecushion/6.jpg','images/products/largecushion/7.jpg','images/products/largecushion/8.jpg'],
+    img: 'images/products/largecushion/1.jpg', images: ['images/products/largecushion/1.jpg','images/products/largecushion/2.jpg','images/products/largecushion/3.jpg','images/products/largecushion/4.jpg','images/products/largecushion/5.jpg','images/products/largecushion/6.jpg','images/products/largecushion/7.jpg','images/products/largecushion/8.jpg','images/products/largecushion/9.jpg','images/products/largecushion/10.jpg'],
     size: '60 × 60 cm', material: 'Ikat woven cotton',
     category: 'cushion-large', printType: 'ikat', rooms: ['living'], favRank: 40,
     mini: "Our cushion covers, scaled all the way up. A very small batch — grab it before it's gone.",
@@ -118,7 +118,7 @@ const GHAR_PRODUCTS = {
   },
   runner: {
     name: 'Ikat Table Runner', price: 20.99,
-    img: 'images/products/runner/2.jpg', images: ['images/products/runner/2.jpg','images/products/runner/1.jpg','images/products/runner/3.jpg','images/products/runner/4.jpg','images/products/runner/5.jpg','images/products/runner/6.jpg','images/products/runner/7.jpg'],
+    img: 'images/products/runner/2.jpg', images: ['images/products/runner/2.jpg','images/products/runner/1.jpg','images/products/runner/3.jpg','images/products/runner/4.jpg','images/products/runner/5.jpg','images/products/runner/6.jpg','images/products/runner/7.jpg','images/products/runner/8.jpg','images/products/runner/9.jpg','images/products/runner/10.jpg'],
     size: '35 × 150 cm', material: 'Ikat woven · 100% organic cotton',
     category: 'table-runner', printType: 'ikat', rooms: ['living', 'dining'], favRank: 3,
     mini: "A dark red border gives this ikat runner one last, quiet highlight.",
@@ -129,7 +129,7 @@ const GHAR_PRODUCTS = {
   },
   rectmat: {
     name: 'Ikat Rectangle Table Mat', price: 12.99, bulk: { extra: 11.00 },
-    img: 'images/products/rectmat/1.jpg', images: ['images/products/rectmat/1.jpg','images/products/rectmat/2.jpg','images/products/rectmat/3.jpg','images/products/rectmat/4.jpg','images/products/rectmat/5.jpg','images/products/rectmat/6.jpg'],
+    img: 'images/products/rectmat/1.jpg', images: ['images/products/rectmat/1.jpg','images/products/rectmat/2.jpg','images/products/rectmat/3.jpg','images/products/rectmat/4.jpg','images/products/rectmat/5.jpg','images/products/rectmat/6.jpg','images/products/rectmat/7.jpg','images/products/rectmat/8.jpg','images/products/rectmat/9.jpg'],
     size: '32 × 45 cm', material: 'Ikat woven cotton',
     category: 'placemat', printType: 'ikat', rooms: ['dining'], favRank: 20,
     mini: "A well-dressed table starts here — hemmed in a soft contrast colour. Buy 2 or more and every extra mat is just €11.",
@@ -142,7 +142,7 @@ const GHAR_PRODUCTS = {
   },
   circlemat: {
     name: 'Ikat Round Table Mat', price: 12.99, bulk: { extra: 11.00 },
-    img: 'images/products/circlemat/6.jpg', images: ['images/products/circlemat/6.jpg','images/products/circlemat/1.jpg','images/products/circlemat/2.jpg','images/products/circlemat/3.jpg','images/products/circlemat/4.jpg','images/products/circlemat/5.jpg'],
+    img: 'images/products/circlemat/6.jpg', images: ['images/products/circlemat/6.jpg','images/products/circlemat/1.jpg','images/products/circlemat/2.jpg','images/products/circlemat/3.jpg','images/products/circlemat/4.jpg','images/products/circlemat/5.jpg','images/products/circlemat/7.jpg','images/products/circlemat/8.jpg','images/products/circlemat/9.jpg','images/products/circlemat/10.jpg'],
     size: '30 cm diameter', material: 'Ikat woven cotton',
     category: 'placemat', printType: 'ikat', rooms: ['dining'], favRank: 21,
     mini: "The same idea, in the round — elegant under any dinner plate. Buy 2 or more and every extra mat is just €11.",
@@ -209,7 +209,7 @@ const GHAR_PRODUCTS = {
   'totebag-h-same': {
     name: 'Everyday Tote Bag — Horizontal, Same-colour Strap', price: 32.99,
     img: 'images/products/totebag/8.jpg', demo: 'images/products/totebag/demo-embed.html',
-    images: ['images/products/totebag/8.jpg','images/products/totebag/1.jpg','images/products/totebag/2.jpg','images/products/totebag/3.jpg','images/products/totebag/4.jpg','images/products/totebag/5.jpg','images/products/totebag/6.jpg','images/products/totebag/7.jpg','images/products/totebag/9.jpg','images/products/totebag/10.jpg'],
+    images: ['images/products/totebag/8.jpg','images/products/totebag/1.jpg','images/products/totebag/2.jpg','images/products/totebag/3.jpg','images/products/totebag/4.jpg','images/products/totebag/5.jpg','images/products/totebag/6.jpg','images/products/totebag/7.jpg','images/products/totebag/9.jpg','images/products/totebag/10.jpg','images/products/totebag/11.jpg','images/products/totebag/12.jpg','images/products/totebag/13.jpg','images/products/totebag/14.jpg','images/products/totebag/15.jpg'],
     videos: ['images/products/totebag/video1.mp4','images/products/totebag/video2.mp4'],
     size: '52 × 36 × 10 cm · 35 cm strap (same colour)', material: 'Ikat woven · 100% organic cotton',
     category: 'tote-bag', printType: 'ikat', rooms: [], favRank: 30,
@@ -219,7 +219,7 @@ const GHAR_PRODUCTS = {
   'totebag-h-contrast': {
     name: 'Everyday Tote Bag — Horizontal, Contrast Strap (White)', price: 32.99,
     img: 'images/products/totebag/8.jpg', demo: 'images/products/totebag/demo-embed.html',
-    images: ['images/products/totebag/8.jpg','images/products/totebag/1.jpg','images/products/totebag/2.jpg','images/products/totebag/3.jpg','images/products/totebag/4.jpg','images/products/totebag/5.jpg','images/products/totebag/6.jpg','images/products/totebag/7.jpg','images/products/totebag/9.jpg','images/products/totebag/10.jpg'],
+    images: ['images/products/totebag/8.jpg','images/products/totebag/1.jpg','images/products/totebag/2.jpg','images/products/totebag/3.jpg','images/products/totebag/4.jpg','images/products/totebag/5.jpg','images/products/totebag/6.jpg','images/products/totebag/7.jpg','images/products/totebag/9.jpg','images/products/totebag/10.jpg','images/products/totebag/11.jpg','images/products/totebag/12.jpg','images/products/totebag/13.jpg','images/products/totebag/14.jpg','images/products/totebag/15.jpg'],
     videos: ['images/products/totebag/video1.mp4','images/products/totebag/video2.mp4'],
     size: '52 × 36 × 10 cm · 35 cm white contrast strap', material: 'Ikat woven · 100% organic cotton',
     category: 'tote-bag', printType: 'ikat', rooms: [], favRank: 31,
@@ -229,7 +229,7 @@ const GHAR_PRODUCTS = {
   'totebag-v-same': {
     name: 'Everyday Tote Bag — Vertical, Same-colour Strap', price: 32.99,
     img: 'images/products/totebag/8.jpg', demo: 'images/products/totebag/demo-embed.html',
-    images: ['images/products/totebag/8.jpg','images/products/totebag/1.jpg','images/products/totebag/2.jpg','images/products/totebag/3.jpg','images/products/totebag/4.jpg','images/products/totebag/5.jpg','images/products/totebag/6.jpg','images/products/totebag/7.jpg','images/products/totebag/9.jpg','images/products/totebag/10.jpg'],
+    images: ['images/products/totebag/8.jpg','images/products/totebag/1.jpg','images/products/totebag/2.jpg','images/products/totebag/3.jpg','images/products/totebag/4.jpg','images/products/totebag/5.jpg','images/products/totebag/6.jpg','images/products/totebag/7.jpg','images/products/totebag/9.jpg','images/products/totebag/10.jpg','images/products/totebag/11.jpg','images/products/totebag/12.jpg','images/products/totebag/13.jpg','images/products/totebag/14.jpg','images/products/totebag/15.jpg'],
     videos: ['images/products/totebag/video1.mp4','images/products/totebag/video2.mp4'],
     size: '40 × 42 × 10 cm · 35 cm strap (same colour)', material: 'Ikat woven · 100% organic cotton',
     category: 'tote-bag', printType: 'ikat', rooms: [], favRank: 32,
@@ -239,7 +239,7 @@ const GHAR_PRODUCTS = {
   'totebag-v-contrast': {
     name: 'Everyday Tote Bag — Vertical, Contrast Strap (White)', price: 32.99,
     img: 'images/products/totebag/8.jpg', demo: 'images/products/totebag/demo-embed.html',
-    images: ['images/products/totebag/8.jpg','images/products/totebag/1.jpg','images/products/totebag/2.jpg','images/products/totebag/3.jpg','images/products/totebag/4.jpg','images/products/totebag/5.jpg','images/products/totebag/6.jpg','images/products/totebag/7.jpg','images/products/totebag/9.jpg','images/products/totebag/10.jpg'],
+    images: ['images/products/totebag/8.jpg','images/products/totebag/1.jpg','images/products/totebag/2.jpg','images/products/totebag/3.jpg','images/products/totebag/4.jpg','images/products/totebag/5.jpg','images/products/totebag/6.jpg','images/products/totebag/7.jpg','images/products/totebag/9.jpg','images/products/totebag/10.jpg','images/products/totebag/11.jpg','images/products/totebag/12.jpg','images/products/totebag/13.jpg','images/products/totebag/14.jpg','images/products/totebag/15.jpg'],
     videos: ['images/products/totebag/video1.mp4','images/products/totebag/video2.mp4'],
     size: '40 × 42 × 10 cm · 35 cm white contrast strap', material: 'Ikat woven · 100% organic cotton',
     category: 'tote-bag', printType: 'ikat', rooms: [], favRank: 33,
