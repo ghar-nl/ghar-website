@@ -109,10 +109,12 @@ const GHAR_PRODUCTS = {
     category: 'cushion-large', printType: 'ikat', rooms: ['living'], favRank: 40,
     mini: "Our cushion covers, scaled all the way up. A very small batch — grab it before it's gone.",
     desc: [
-      "We started with small cushion covers — now we are just as excited to launch these in extra-large. Anyone who has tried to find a cover for a big cushion insert knows how hard that size is to track down; ours is cut and finished exactly for it.",
+      "We are excited to launch our extra-large cushion covers. Anyone who has tried to find a cover for a big cushion insert knows how hard that size is to track down; ours is cut and finished exactly for it.",
       "The zip runs precisely the length it needs to — no more, no less — and the edges are hemmed just as carefully as our smaller covers. Perfect for a living room that wants a little more presence, or a bed that wants a lot more colour.",
-      "We are producing a very small batch in this size, so if it catches your eye, we would grab it now rather than later."
-    ].concat(GHAR_DESC_SHARED)
+      "We are producing a very small batch in this size, so if it catches your eye, we would grab it now rather than later.",
+      "The border is finished with a thin contrasting piping — a small, elegant detail that strengthens every edge and gives the cover its clean, tailored line.",
+      "Slip in a thick insert for a full, plump look, or a thinner one for a relaxed, lived-in fold. We love this Ikat cushion cover styled beside our colourful hand block printed small cushion covers — but it's your home, experiment and play with colours as you like."
+    ]
   },
   runner: {
     name: 'Ikat Table Runner', price: 20.99,
