@@ -103,7 +103,7 @@ const GHAR_PRODUCTS = {
     ]
   },
   largecushion: {
-    name: 'Ikat Extra-Large Cushion Cover', price: 18.99,
+    name: 'Ikat Extra-Large Cushion Cover', price: 32.99, bulk: { extra: 28.00 },
     img: 'images/products/largecushion/1.jpg', images: ['images/products/largecushion/1.jpg','images/products/largecushion/2.jpg','images/products/largecushion/3.jpg','images/products/largecushion/4.jpg','images/products/largecushion/5.jpg','images/products/largecushion/6.jpg','images/products/largecushion/7.jpg','images/products/largecushion/8.jpg'],
     size: '60 × 60 cm', material: 'Ikat woven cotton',
     category: 'cushion-large', printType: 'ikat', rooms: ['living'], favRank: 40,
