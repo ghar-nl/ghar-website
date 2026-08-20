@@ -8,8 +8,8 @@
 <link rel="icon" type="image/png" href="images/site/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&family=Noto+Serif+Devanagari:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=20260816n">
-<script src="cart.js?v=20260816n" defer></script>
+<link rel="stylesheet" href="styles.css?v=20260816o">
+<script src="cart.js?v=20260816o" defer></script>
 </head>
 <body>
 
@@ -140,6 +140,7 @@ function gharCardHtml(entry) {
   const badge = entry.isVariant ? '<span class="stock-badge low">Only 3 in this batch</span>' : '';
   const name = entry.isVariant ? 'Everyday Tote Bag' : p.name;
   const priceLabel = entry.isVariant ? 'From ' + gharFmt(p.price) : gharFmt(p.price);
+  const bulkNote = (!entry.isVariant && gharBulkNote(id)) ? '<p class="product-bulk">' + gharBulkNote(id) + '</p>' : '';
   const actionBtn = entry.isVariant
     ? '<button class="btn-add" type="button" onclick="gharProductModal(\'' + id + '\')">Choose options</button>'
     : '<button class="btn-add" onclick="gharAdd(\'' + id + '\', this)">Add to bag</button>';
@@ -150,6 +151,7 @@ function gharCardHtml(entry) {
         '<h3>' + name + '</h3>' +
         '<p class="product-size">' + p.size + ' · ' + p.material + '</p>' +
         '<p class="product-mini">' + p.mini + '</p>' +
+        bulkNote +
         '<div class="product-footer"><span class="price">' + priceLabel + '</span>' + actionBtn + '</div>' +
       '</div>' +
     '</div>'

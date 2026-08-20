@@ -493,6 +493,8 @@ footer{background:var(--blue-dark);padding:64px 52px 36px;}
 .pm-variant.active{border-color:var(--blue-dark);background:var(--blue-dark);color:var(--white);}
 .pm-size{font-size:0.8rem;color:var(--text-soft);margin-bottom:10px;letter-spacing:0.03em;}
 .pm-price{font-size:1.4rem;margin-bottom:16px;display:block;}
+.pm-bulk{font-size:0.78rem;color:var(--terra);font-weight:500;margin:-10px 0 16px;letter-spacing:0.02em;}
+.product-bulk{font-size:0.74rem;color:var(--terra);font-weight:500;margin:-4px 0 10px;letter-spacing:0.02em;}
 .pm-desc p{font-size:0.88rem !important;color:var(--text-mid) !important;font-weight:300;line-height:1.75;margin-bottom:10px !important;}
 .pm-add{padding:14px 28px;}
 .product-mini{font-size:0.8rem;color:var(--text-soft);font-weight:300;margin-bottom:12px;line-height:1.55;}

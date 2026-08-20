@@ -277,6 +277,10 @@ function gharUnitNote(id) {
   const p = GHAR_PRODUCTS[id];
   return (p && p.bulk) ? gharFmt(p.price) + ' first, ' + gharFmt(p.bulk.extra) + ' each extra' : null;
 }
+function gharBulkNote(id) {
+  const p = GHAR_PRODUCTS[id];
+  return (p && p.bulk) ? 'Buy more, save more — just ' + gharFmt(p.bulk.extra) + ' each after the first' : null;
+}
 
 /* ── cart storage ── */
 function gharCart() {
@@ -504,6 +508,7 @@ function gharProductModal(id) {
         variantPicker +
         '<p class="pm-size" id="pm-variant-size">' + p.size + ' · ' + p.material + '</p>' +
         '<p class="pm-price price">' + gharFmt(p.price) + '</p>' +
+        (gharBulkNote(id) ? '<p class="pm-bulk">' + gharBulkNote(id) + '</p>' : '') +
         '<div class="pm-desc">' + p.desc.map(function (d) { return '<p>' + d + '</p>'; }).join('') + '</div>' +
         '<button class="btn-add pm-add" onclick="gharAdd(\'' + id + '\', this)">Add to bag</button>' +
       '</div>' +
