@@ -24,7 +24,7 @@ const GHAR_STOCK_GROUPS = {
 const GHAR_DESC_SHARED = [
   "The border is block printed separately and finished with contrasting piping — it strengthens every edge and gives the cover its clean, tailored line.",
   "The zip sits hidden at the centre of the back panel — never running end to end — so it stays strong for years and never works loose.",
-  "Slip in a thick insert for a full, plump look, or a thinner one for a relaxed, lived-in fold. We love it beside plain covers — but it's your home: play."
+  "This is a cover only — no cushion insert included. Slip in a thick insert for a full, plump look, or a thinner one for a relaxed, lived-in fold. We love it beside plain covers — but it's your home: play."
 ];
 
 const GHAR_PRODUCTS = {
@@ -104,7 +104,7 @@ const GHAR_PRODUCTS = {
   },
   largecushion: {
     name: 'Ikat Extra-Large Cushion Cover', price: 18.99,
-    img: '', images: [],
+    img: 'images/products/largecushion/1.jpg', images: ['images/products/largecushion/1.jpg','images/products/largecushion/2.jpg','images/products/largecushion/3.jpg','images/products/largecushion/4.jpg','images/products/largecushion/5.jpg','images/products/largecushion/6.jpg','images/products/largecushion/7.jpg','images/products/largecushion/8.jpg'],
     size: '60 × 60 cm', material: 'Ikat woven cotton',
     category: 'cushion-large', printType: 'ikat', rooms: ['living'], favRank: 40,
     mini: "Our cushion covers, scaled all the way up. A very small batch — grab it before it's gone.",
@@ -113,7 +113,7 @@ const GHAR_PRODUCTS = {
       "The zip runs precisely the length it needs to — no more, no less — and the edges are hemmed just as carefully as our smaller covers. Perfect for a living room that wants a little more presence, or a bed that wants a lot more colour.",
       "We are producing a very small batch in this size, so if it catches your eye, we would grab it now rather than later.",
       "The border is finished with a thin contrasting piping — a small, elegant detail that strengthens every edge and gives the cover its clean, tailored line.",
-      "Slip in a thick insert for a full, plump look, or a thinner one for a relaxed, lived-in fold. We love this Ikat cushion cover styled beside our colourful hand block printed small cushion covers — but it's your home, experiment and play with colours as you like."
+      "This is a cover only — no cushion insert included. Slip in a thick insert for a full, plump look, or a thinner one for a relaxed, lived-in fold. We love this Ikat cushion cover styled beside our colourful hand block printed small cushion covers — but it's your home, experiment and play with colours as you like."
     ]
   },
   runner: {

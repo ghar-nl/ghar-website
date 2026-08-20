@@ -87,6 +87,9 @@ This folder is the LIVE website for https://ghar.nl (brand: Ghar — hand block 
 - Wall Art now ships WITH a frame (was previously unframed) — price dropped 19.99 → 16.99 to reflect the simpler "ready to hang" positioning; its `desc` copy was rewritten to stop suggesting the customer choose/buy their own frame.
 - Other August 2026 price changes (no mechanic change, just numbers): Table Runner 46.99→20.99, Large Cushion 39.99→18.99, all 4 Tote Bag variants 56.99→32.99.
 
+## Cushion insert disclosure (added August 2026)
+- All cushion covers on the site (the 5 block-print small cushions via `GHAR_DESC_SHARED`, and `largecushion`) explicitly state "This is a cover only — no cushion insert included" right before the insert-styling sentence — the user was explicit that customers must not think an insert is included. If a new cushion-cover product is ever added outside `GHAR_DESC_SHARED`, carry this same disclosure line into its own `desc`.
+
 ## Per-product photo/cover ordering (added August 2026)
 - The user reviews each product's gallery individually and tells Claude exactly which photo should lead — there's no general rule ("best photo first", "lifestyle before product shots") to apply on your own; always ask per product rather than guessing, per explicit user preference.
 - `img` (shop-card thumbnail) MUST always equal `images[0]` (the modal gallery's first photo) — when reordering, update both together, never just one (see "Each product's `img` ... always equals `images[0]`" rule below, which this reinforces).
@@ -140,7 +143,7 @@ Shop.html no longer hand-writes product cards in HTML — it renders them from G
 
 **Ikat collection (new, no photos yet):** every entry below has `images: []` / `img: ''`, which renders the dashed "Photo coming soon" placeholder (`gharPhotoPlaceholder()` in cart.js, reusing the `.photo-label` CSS built for exactly this). Swap in real paths the same way as any other product — nothing else needs to change.
 - wallart — Ikat Wall Art Square, €19.99, 30×30cm, unframed, `rooms:['living']`
-- largecushion — Ikat Extra-Large Cushion Cover, €39.99, 60×60cm, small batch, `rooms:['living']`
+- largecushion — Ikat Extra-Large Cushion Cover, €39.99, 60×60cm, small batch, `rooms:['living']`. Photos added August 2026: 8 real lifestyle shots (`images/products/largecushion/1.jpg`–`8.jpg`, resized from user-uploaded WhatsApp exports via `sips -Z 1600` q82), no more placeholder.
 - runner — Ikat Table Runner, €46.99, 35×150cm, `rooms:['living','dining']`
 - rectmat / circlemat — Ikat Rectangle/Round Table Mat, €31.99 each, 32×45cm / 30cm diameter, `rooms:['dining']`
 - napkin — Ikat Napkin, €15.99, `rooms:['dining']`. **Size (40×40cm) is an assumption** — the user didn't specify one; confirm/update if they give a real size.
