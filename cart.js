@@ -29,7 +29,7 @@ const GHAR_DESC_SHARED = [
 
 const GHAR_PRODUCTS = {
   marigold: {
-    name: 'Marigold Garden Cushion Cover', price: 27.99,
+    name: 'Marigold Garden Cushion Cover', price: 26.99, bulk: { extra: 24.00 },
     img: 'images/products/marigold/1.jpg', images: ['images/products/marigold/1.jpg','images/products/marigold/2.jpg','images/products/marigold/3.jpg','images/products/marigold/4.jpg','images/products/marigold/5.jpg','images/products/marigold/6.jpg','images/products/marigold/7.jpg','images/products/marigold/8.jpg','images/products/marigold/9.jpg'],
     size: '30 × 30 cm',
     material: 'Hand block printed · 100% pure cotton',
@@ -40,7 +40,7 @@ const GHAR_PRODUCTS = {
     ].concat(GHAR_DESC_SHARED)
   },
   rivervine: {
-    name: 'River Vine Cushion Cover', price: 27.99,
+    name: 'River Vine Cushion Cover', price: 26.99, bulk: { extra: 24.00 },
     img: 'images/products/rivervine/5.jpg', images: ['images/products/rivervine/5.jpg','images/products/rivervine/1.jpg','images/products/rivervine/2.jpg','images/products/rivervine/3.jpg','images/products/rivervine/4.jpg','images/products/rivervine/6.jpg','images/products/rivervine/7.jpg','images/products/rivervine/8.jpg','images/products/rivervine/9.jpg'],
     videos: ['images/products/rivervine/video1.mp4','images/products/rivervine/video2.mp4','images/products/rivervine/video3.mp4'],
     size: '30 × 30 cm',
@@ -52,7 +52,7 @@ const GHAR_PRODUCTS = {
     ].concat(GHAR_DESC_SHARED)
   },
   stone: {
-    name: 'Stone Lattice Cushion Cover', price: 27.99,
+    name: 'Stone Lattice Cushion Cover', price: 26.99, bulk: { extra: 24.00 },
     img: 'images/products/stone/6.jpg', images: ['images/products/stone/6.jpg','images/products/stone/1.jpg','images/products/stone/2.jpg','images/products/stone/3.jpg','images/products/stone/4.jpg','images/products/stone/5.jpg','images/products/stone/7.jpg','images/products/stone/8.jpg','images/products/stone/9.jpg','images/products/stone/10.jpg','images/products/stone/11.jpg','images/products/stone/12.jpg','images/products/stone/13.jpg','images/products/stone/14.jpg','images/products/stone/15.jpg','images/products/stone/16.jpg'],
     size: '30 × 30 cm',
     material: 'Hand block printed · 100% pure cotton · different print on front & back',
@@ -63,7 +63,7 @@ const GHAR_PRODUCTS = {
     ].concat(GHAR_DESC_SHARED)
   },
   forest: {
-    name: 'Forest Arabesque Cushion Cover', price: 27.99,
+    name: 'Forest Arabesque Cushion Cover', price: 26.99, bulk: { extra: 24.00 },
     img: 'images/products/forest/4.jpg', images: ['images/products/forest/4.jpg','images/products/forest/1.jpg','images/products/forest/2.jpg','images/products/forest/3.jpg','images/products/forest/5.jpg','images/products/forest/6.jpg'],
     size: '30 × 30 cm',
     material: 'Hand block printed · 100% pure cotton',
@@ -74,7 +74,7 @@ const GHAR_PRODUCTS = {
     ].concat(GHAR_DESC_SHARED)
   },
   golden: {
-    name: 'Golden Trellis Cushion Cover', price: 27.99,
+    name: 'Golden Trellis Cushion Cover', price: 26.99, bulk: { extra: 24.00 },
     img: 'images/products/golden/5.jpg', images: ['images/products/golden/5.jpg','images/products/golden/1.jpg','images/products/golden/2.jpg','images/products/golden/3.jpg','images/products/golden/4.jpg','images/products/golden/6.jpg'],
     videos: ['images/products/golden/video1.mp4'],
     size: '30 × 30 cm',
