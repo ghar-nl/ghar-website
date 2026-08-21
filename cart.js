@@ -16,9 +16,16 @@ const GHAR_MAX_PER_ORDER = 6;       // max items per person/order, across the wh
 /* Some products are sold from one shared, combined stock pool under several ids
    (e.g. the tote bag's 4 colour/orientation variants share one batch of 3 — see
    CLAUDE.md "Shared stock groups"). Until each id has its own row in the Sheet's
-   Stock tab, this is the only place that limit is enforced. */
+   Stock tab, this is the only place that limit is enforced.
+   `limit` is always in PHYSICAL PIECES. `weights` (optional) says how many
+   pieces one unit of a given id consumes — omit it (or an id) to default to 1
+   piece per unit, as with the tote bag where each id IS one physical bag. For
+   coasters/napkins, a "set of 4" consumes 4 pieces from the same pool a "set
+   of 2"/"set of 6" also draws from — see gharEffectiveRemaining(). */
 const GHAR_STOCK_GROUPS = {
-  totebag: { ids: ['totebag-h-same', 'totebag-h-contrast', 'totebag-v-same', 'totebag-v-contrast'], limit: 3 }
+  totebag: { ids: ['totebag-h-same', 'totebag-h-contrast', 'totebag-v-same', 'totebag-v-contrast'], limit: 3 },
+  coasters: { ids: ['coaster-set2', 'coaster-set4'], limit: 100, weights: { 'coaster-set2': 2, 'coaster-set4': 4 } },
+  napkins: { ids: ['napkin-set4', 'napkin-set6'], limit: 128, weights: { 'napkin-set4': 4, 'napkin-set6': 6 } }
 };
 
 const GHAR_DESC_SHARED = [
@@ -349,12 +356,19 @@ function gharGroupOf(id) {
   }
   return null;
 }
+function gharPieceWeight(group, id) {
+  return (group.weights && group.weights[id]) || 1;
+}
 function gharEffectiveRemaining(id) {
   const group = gharGroupOf(id);
   if (!group) return gharRemaining(id);
   const cart = gharCart();
-  const inCart = group.ids.reduce(function (sum, gid) { return sum + (gid === id ? 0 : (cart[gid] || 0)); }, 0);
-  return Math.min(gharRemaining(id), Math.max(0, group.limit - inCart));
+  const piecesInCart = group.ids.reduce(function (sum, gid) {
+    return sum + (gid === id ? 0 : (cart[gid] || 0) * gharPieceWeight(group, gid));
+  }, 0);
+  const piecesLeft = Math.max(0, group.limit - piecesInCart);
+  const unitsLeftFromPool = Math.floor(piecesLeft / gharPieceWeight(group, id));
+  return Math.min(gharRemaining(id), unitsLeftFromPool);
 }
 function gharLoadStock(cb) {
   fetch(GHAR_API).then(function (r) { return r.json(); }).then(function (d) {
