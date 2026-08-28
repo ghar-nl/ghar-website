@@ -23,9 +23,9 @@ const GHAR_MAX_PER_ORDER = 6;       // max items per person/order, across the wh
    coasters/napkins, a "set of 4" consumes 4 pieces from the same pool a "set
    of 2"/"set of 6" also draws from — see gharEffectiveRemaining(). */
 const GHAR_STOCK_GROUPS = {
-  totebag: { ids: ['totebag-h-same', 'totebag-h-contrast', 'totebag-v-same', 'totebag-v-contrast'], limit: 3 },
-  coasters: { ids: ['coaster-set2', 'coaster-set4'], limit: 100, weights: { 'coaster-set2': 2, 'coaster-set4': 4 } },
-  napkins: { ids: ['napkin-set4', 'napkin-set6'], limit: 128, weights: { 'napkin-set4': 4, 'napkin-set6': 6 } }
+  totebag: { ids: ['totebag-h-same', 'totebag-h-contrast', 'totebag-v-same', 'totebag-v-contrast'], limit: 25 },
+  coasters: { ids: ['coaster-set2', 'coaster-set4'], limit: 25, weights: { 'coaster-set2': 2, 'coaster-set4': 4 } },
+  napkins: { ids: ['napkin-set4', 'napkin-set6'], limit: 20, weights: { 'napkin-set4': 4, 'napkin-set6': 6 } }
 };
 
 const GHAR_DESC_SHARED = [

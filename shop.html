@@ -8,8 +8,8 @@
 <link rel="icon" type="image/png" href="images/site/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&family=Noto+Serif+Devanagari:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=20260816t">
-<script src="cart.js?v=20260816t" defer></script>
+<link rel="stylesheet" href="styles.css?v=20260816u">
+<script src="cart.js?v=20260816u" defer></script>
 </head>
 <body>
 
@@ -137,7 +137,7 @@ function gharCardHtml(entry) {
   const photo = p.images.length > 0
     ? '<img src="' + p.images[0] + '" alt="' + p.name + '">'
     : gharPhotoPlaceholder();
-  const badge = entry.isVariant ? '<span class="stock-badge low">Only 3 in this batch</span>' : '';
+  const badge = entry.isVariant ? '<span class="stock-badge low">Only ' + GHAR_STOCK_GROUPS[p.variantGroup].limit + ' in this batch</span>' : '';
   const name = entry.isVariant ? 'Everyday Tote Bag' : p.name;
   const priceLabel = entry.isVariant ? 'From ' + gharFmt(p.price) : gharFmt(p.price);
   const bulkNote = (!entry.isVariant && gharBulkNote(id)) ? '<p class="product-bulk">' + gharBulkNote(id) + '</p>' : '';
