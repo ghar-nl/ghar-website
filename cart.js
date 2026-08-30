@@ -354,7 +354,12 @@ const GHAR_STATIC_STOCK = {
   runner: 11,
   largecushion: 8,
   rectmat: 8,
-  circlemat: 9
+  circlemat: 9,
+  marigold: 8,
+  rivervine: 8,
+  stone: 8,
+  forest: 8,
+  golden: 8
 };
 function gharRemaining(id) {
   if (gharStock && (id in gharStock)) return gharStock[id];
