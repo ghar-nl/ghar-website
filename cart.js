@@ -100,7 +100,7 @@ const GHAR_PRODUCTS = {
     name: 'Ikat Wall Art Square', price: 16.99,
     img: 'images/products/wallart/5.jpg', images: ['images/products/wallart/5.jpg','images/products/wallart/9.jpg','images/products/wallart/6.jpg','images/products/wallart/7.jpg','images/products/wallart/8.jpg','images/products/wallart/1.jpg','images/products/wallart/2.jpg','images/products/wallart/3.jpg','images/products/wallart/4.jpg'],
     size: '30 × 30 cm', material: 'Ikat woven cotton · framed',
-    category: 'wall-art', printType: 'ikat', rooms: ['living'], favRank: 1,
+    category: 'wall-art', printType: 'ikat', rooms: ['living'], favRank: 99, comingSoon: true,
     mini: "Ikat cotton, cut into perfect squares and framed — ready to hang.",
     desc: [
       "We kept noticing how beautiful these fabrics looked entirely on their own — no cushion, no cover, nothing added — so we cut them into perfect squares and started hanging them as art instead.",
@@ -127,7 +127,7 @@ const GHAR_PRODUCTS = {
     name: 'Ikat Table Runner', price: 20.99,
     img: 'images/products/runner/2.jpg', images: ['images/products/runner/2.jpg','images/products/runner/1.jpg','images/products/runner/3.jpg','images/products/runner/4.jpg','images/products/runner/5.jpg','images/products/runner/6.jpg','images/products/runner/7.jpg','images/products/runner/8.jpg','images/products/runner/9.jpg'],
     size: '35 × 150 cm', material: 'Ikat woven · 100% organic cotton',
-    category: 'table-runner', printType: 'ikat', rooms: ['living', 'dining'], favRank: 3,
+    category: 'table-runner', printType: 'ikat', rooms: ['living', 'dining'], favRank: 45,
     mini: "A dark red border gives this ikat runner one last, quiet highlight.",
     desc: [
       "A table runner is the fastest way to change a room without changing anything in it — lay it down the centre of the dining table for dinner, or across a console or sideboard in the living room, and the whole space shifts colour with it.",
@@ -163,7 +163,7 @@ const GHAR_PRODUCTS = {
     name: 'Ikat Napkins — Set of 4', price: 24.99,
     img: 'images/products/napkin/1.jpg', images: ['images/products/napkin/1.jpg','images/products/napkin/2.jpg','images/products/napkin/3.jpg','images/products/napkin/4.jpg','images/products/napkin/5.jpg'],
     size: '40 × 40 cm · set of 4', material: 'Ikat woven · 100% organic cotton',
-    category: 'napkin', printType: 'ikat', rooms: ['dining'], favRank: 22,
+    category: 'napkin', printType: 'ikat', rooms: ['dining'], favRank: 1,
     mini: "Soft enough for children, finished enough for guests. Sold as a set of 4 — works out to about €6.25 per napkin.",
     desc: [
       "A good napkin does more than wipe a mouth — fold it under the cutlery to finish a place setting, let it sit loose and colourful across the table, or hand it to the smallest person at dinner. Being 100% organic cotton, it is soft enough that we reach for these with children too — gentle on the skin, and it only gets softer with washing.",
@@ -175,7 +175,7 @@ const GHAR_PRODUCTS = {
     name: 'Ikat Napkins — Set of 6', price: 36.99,
     img: 'images/products/napkin/2.jpg', images: ['images/products/napkin/2.jpg','images/products/napkin/1.jpg','images/products/napkin/3.jpg','images/products/napkin/4.jpg','images/products/napkin/5.jpg'],
     size: '40 × 40 cm · set of 6', material: 'Ikat woven · 100% organic cotton',
-    category: 'napkin', printType: 'ikat', rooms: ['dining'], favRank: 23,
+    category: 'napkin', printType: 'ikat', rooms: ['dining'], favRank: 2,
     mini: "Soft enough for children, finished enough for guests. Sold as a set of 6 — about €6.17 per napkin, our best per-napkin price.",
     desc: [
       "A good napkin does more than wipe a mouth — fold it under the cutlery to finish a place setting, let it sit loose and colourful across the table, or hand it to the smallest person at dinner. Being 100% organic cotton, it is soft enough that we reach for these with children too — gentle on the skin, and it only gets softer with washing.",
@@ -187,7 +187,7 @@ const GHAR_PRODUCTS = {
     name: 'Ikat Coasters — Set of 2', price: 8.99,
     img: 'images/products/coaster/3.jpg', images: ['images/products/coaster/3.jpg','images/products/coaster/1.jpg','images/products/coaster/2.jpg','images/products/coaster/4.jpg'],
     size: '10 × 10 cm · set of 2', material: 'Ikat woven · 100% organic cotton',
-    category: 'coaster', printType: 'ikat', rooms: ['dining'], favRank: 24,
+    category: 'coaster', printType: 'ikat', rooms: ['dining'], favRank: 15,
     mini: "Zero-waste squares, cut from our own fabric offcuts. Sold as a set of 2, about €4.50 each.",
     desc: [
       "Every coaster is cut from fabric offcuts that would otherwise end up as waste — so alongside your morning chai, you are also keeping good cloth out of a landfill. Zero waste, and quietly rather lovely under a cup.",
@@ -199,7 +199,7 @@ const GHAR_PRODUCTS = {
     name: 'Ikat Coasters — Set of 4', price: 12.99,
     img: 'images/products/coaster/4.jpg', images: ['images/products/coaster/4.jpg','images/products/coaster/1.jpg','images/products/coaster/2.jpg','images/products/coaster/3.jpg'],
     size: '10 × 10 cm · set of 4', material: 'Ikat woven · 100% organic cotton',
-    category: 'coaster', printType: 'ikat', rooms: ['dining'], favRank: 25,
+    category: 'coaster', printType: 'ikat', rooms: ['dining'], favRank: 16,
     mini: "Zero-waste squares, cut from our own fabric offcuts. Sold as a set of 4, about €3.25 each — our best per-coaster price.",
     desc: [
       "Every coaster is cut from fabric offcuts that would otherwise end up as waste — so alongside your morning chai, you are also keeping good cloth out of a landfill. Zero waste, and quietly rather lovely under a cup.",
