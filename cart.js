@@ -23,9 +23,9 @@ const GHAR_MAX_PER_ORDER = 6;       // max items per person/order, across the wh
    coasters/napkins, a "set of 4" consumes 4 pieces from the same pool a "set
    of 2"/"set of 6" also draws from — see gharEffectiveRemaining(). */
 const GHAR_STOCK_GROUPS = {
-  totebag: { ids: ['totebag-h-same', 'totebag-h-contrast', 'totebag-v-same', 'totebag-v-contrast'], limit: 25 },
-  coasters: { ids: ['coaster-set2', 'coaster-set4'], limit: 25, weights: { 'coaster-set2': 2, 'coaster-set4': 4 } },
-  napkins: { ids: ['napkin-set4', 'napkin-set6'], limit: 20, weights: { 'napkin-set4': 4, 'napkin-set6': 6 } }
+  totebag: { ids: ['totebag-h-same', 'totebag-h-contrast', 'totebag-v-same', 'totebag-v-contrast'], limit: 22 },
+  coasters: { ids: ['coaster-set2', 'coaster-set4'], limit: 20, weights: { 'coaster-set2': 2, 'coaster-set4': 4 } },
+  napkins: { ids: ['napkin-set4', 'napkin-set6'], limit: 8, weights: { 'napkin-set4': 4, 'napkin-set6': 6 } }
 };
 
 const GHAR_DESC_SHARED = [
@@ -343,8 +343,23 @@ function gharUpdateBadge() {
 
 /* ── stock ── */
 let gharStock = null;
+/* Fallback stock numbers for single-id products with no Stock tab row yet in
+   the Google Sheet (added August 2026, real on-hand counts after accounting
+   for pieces held back for display/photoshoot use). This only limits what
+   THIS browser can add to cart in one session — it does NOT decrement across
+   different customers' orders the way a real Stock tab row does. Add a real
+   row with the same number to get true cross-order automatic tracking; once
+   a row exists, the live Sheet value below takes over automatically. */
+const GHAR_STATIC_STOCK = {
+  runner: 11,
+  largecushion: 8,
+  rectmat: 8,
+  circlemat: 9
+};
 function gharRemaining(id) {
-  return (gharStock && (id in gharStock)) ? gharStock[id] : Infinity;
+  if (gharStock && (id in gharStock)) return gharStock[id];
+  if (id in GHAR_STATIC_STOCK) return GHAR_STATIC_STOCK[id];
+  return Infinity;
 }
 /* Group-aware remaining: for a product sharing a GHAR_STOCK_GROUPS pool, caps
    at (group limit − however much of the group is already in this cart), on
