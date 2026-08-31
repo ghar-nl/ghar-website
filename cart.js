@@ -126,7 +126,7 @@ const GHAR_PRODUCTS = {
     ]
   },
   runner: {
-    name: 'Ikat Table Runner', price: 20.99,
+    name: 'Ikat Table Runner', price: 22.99,
     img: 'images/products/runner/2.jpg', images: ['images/products/runner/2.jpg','images/products/runner/1.jpg','images/products/runner/3.jpg','images/products/runner/4.jpg','images/products/runner/5.jpg','images/products/runner/6.jpg','images/products/runner/7.jpg','images/products/runner/8.jpg','images/products/runner/9.jpg'],
     size: '35 × 150 cm', material: 'Ikat woven · 100% organic cotton',
     category: 'table-runner', printType: 'ikat', rooms: ['living', 'dining'], favRank: 45,
@@ -137,7 +137,7 @@ const GHAR_PRODUCTS = {
     ]
   },
   rectmat: {
-    name: 'Ikat Rectangle Table Mat', price: 12.99, bulk: { extra: 11.00 },
+    name: 'Ikat Rectangle Table Mat', price: 15.99, bulk: { extra: 11.00 },
     img: 'images/products/rectmat/1.jpg', images: ['images/products/rectmat/1.jpg','images/products/rectmat/2.jpg','images/products/rectmat/3.jpg','images/products/rectmat/4.jpg','images/products/rectmat/5.jpg','images/products/rectmat/6.jpg','images/products/rectmat/7.jpg','images/products/rectmat/8.jpg','images/products/rectmat/9.jpg'],
     size: '32 × 45 cm', material: 'Ikat woven cotton',
     category: 'placemat', printType: 'ikat', rooms: ['dining'], favRank: 20,
@@ -146,11 +146,11 @@ const GHAR_PRODUCTS = {
       "Whether you are protecting the table, dressing it up for guests, or simply keeping the wood beneath it safe, a good placemat does more work than it gets credit for. Ours are cut to sit beautifully under a full place setting, and we will admit it — we are a little obsessed with them ourselves.",
       "Each mat is finished with a hem in a soft contrast colour, giving it a clean, defined edge against any tablecloth or bare wood. Wash under cold water with a gentle detergent (or just cold water alone) and dry in the shade — no fuss, no fading.",
       "See a few of the ways we have used them in our own homes, below.",
-      "The first mat is €12.99 — every mat after that is just €11.00 and nothing more."
+      "The first mat is €15.99 — every mat after that is just €11.00 and nothing more."
     ]
   },
   circlemat: {
-    name: 'Ikat Round Table Mat', price: 12.99, bulk: { extra: 11.00 },
+    name: 'Ikat Round Table Mat', price: 15.99, bulk: { extra: 11.00 },
     img: 'images/products/circlemat/6.jpg', images: ['images/products/circlemat/6.jpg','images/products/circlemat/1.jpg','images/products/circlemat/2.jpg','images/products/circlemat/3.jpg','images/products/circlemat/4.jpg','images/products/circlemat/5.jpg','images/products/circlemat/7.jpg','images/products/circlemat/8.jpg','images/products/circlemat/9.jpg','images/products/circlemat/10.jpg'],
     size: '30 cm diameter', material: 'Ikat woven cotton',
     category: 'placemat', printType: 'ikat', rooms: ['dining'], favRank: 21,
@@ -158,7 +158,7 @@ const GHAR_PRODUCTS = {
     desc: [
       "A circle mat brings a softer line to the table, finished in our ikat red — it suits a round plate especially well, and gives just the right amount of contrast against plain white or stoneware: enough to notice, not enough to shout.",
       "Wash under cold water and dry in the shade, same as the rest of the collection — these are made to be used, not saved for best.",
-      "The first mat is €12.99 — every mat after that is just €11.00 and nothing more."
+      "The first mat is €15.99 — every mat after that is just €11.00 and nothing more."
     ]
   },
   'napkin-set2': {
@@ -199,27 +199,27 @@ const GHAR_PRODUCTS = {
     ]
   },
   'coaster-set2': {
-    name: 'Ikat Coasters — Set of 2', price: 8.99,
+    name: 'Ikat Coasters — Set of 2', price: 9.99,
     img: 'images/products/coaster/3.jpg', images: ['images/products/coaster/3.jpg','images/products/coaster/1.jpg','images/products/coaster/2.jpg','images/products/coaster/4.jpg'],
     size: '10 × 10 cm · set of 2', material: 'Ikat woven · 100% organic cotton',
     category: 'coaster', printType: 'ikat', rooms: ['dining'], favRank: 15,
-    mini: "Zero-waste squares, cut from our own fabric offcuts. Sold as a set of 2, about €4.50 each.",
+    mini: "Zero-waste squares, cut from our own fabric offcuts. Sold as a set of 2, about €5.00 each.",
     desc: [
       "Every coaster is cut from fabric offcuts that would otherwise end up as waste — so alongside your morning chai, you are also keeping good cloth out of a landfill. Zero waste, and quietly rather lovely under a cup.",
       "They sit well under a glass or your favourite ceramic mug, and being 100% organic cotton, they wash easily and dry fast.",
-      "Sold only as a set of 2 (about €4.50 each) — need more on the table? The Set of 4 works out to about €3.25 a coaster."
+      "Sold only as a set of 2 (about €5.00 each) — need more on the table? The Set of 4 works out to about €3.50 a coaster."
     ]
   },
   'coaster-set4': {
-    name: 'Ikat Coasters — Set of 4', price: 12.99,
+    name: 'Ikat Coasters — Set of 4', price: 13.99,
     img: 'images/products/coaster/4.jpg', images: ['images/products/coaster/4.jpg','images/products/coaster/1.jpg','images/products/coaster/2.jpg','images/products/coaster/3.jpg'],
     size: '10 × 10 cm · set of 4', material: 'Ikat woven · 100% organic cotton',
     category: 'coaster', printType: 'ikat', rooms: ['dining'], favRank: 16,
-    mini: "Zero-waste squares, cut from our own fabric offcuts. Sold as a set of 4, about €3.25 each — our best per-coaster price.",
+    mini: "Zero-waste squares, cut from our own fabric offcuts. Sold as a set of 4, about €3.50 each — our best per-coaster price.",
     desc: [
       "Every coaster is cut from fabric offcuts that would otherwise end up as waste — so alongside your morning chai, you are also keeping good cloth out of a landfill. Zero waste, and quietly rather lovely under a cup.",
       "They sit well under a glass or your favourite ceramic mug, and being 100% organic cotton, they wash easily and dry fast.",
-      "Sold only as a set of 4 — at about €3.25 each, that's €4.99 less than buying two Sets of 2."
+      "Sold only as a set of 4 — at about €3.50 each, that's €5.99 less than buying two Sets of 2."
     ]
   },
 
@@ -229,7 +229,7 @@ const GHAR_PRODUCTS = {
      other product in the cart/checkout — the variant name alone is what tells
      Dimple which physical bag was ordered. */
   'totebag-h-same': {
-    name: 'Everyday Tote Bag — Horizontal, Same-colour Strap', price: 22.99, wasPrice: 32.99,
+    name: 'Everyday Tote Bag — Horizontal, Same-colour Strap', price: 24.99, wasPrice: 39.99,
     img: 'images/products/totebag/14.jpg', demo: 'images/products/totebag/demo-embed.html',
     images: ['images/products/totebag/14.jpg','images/products/totebag/8.jpg','images/products/totebag/1.jpg','images/products/totebag/2.jpg','images/products/totebag/3.jpg','images/products/totebag/4.jpg','images/products/totebag/5.jpg','images/products/totebag/6.jpg','images/products/totebag/7.jpg','images/products/totebag/9.jpg','images/products/totebag/10.jpg','images/products/totebag/11.jpg','images/products/totebag/12.jpg','images/products/totebag/13.jpg'],
     videos: ['images/products/totebag/video1.mp4','images/products/totebag/video2.mp4'],
@@ -239,7 +239,7 @@ const GHAR_PRODUCTS = {
     desc: null // shared GHAR_TOTE_DESC below
   },
   'totebag-h-contrast': {
-    name: 'Everyday Tote Bag — Horizontal, Contrast Strap (White)', price: 22.99, wasPrice: 32.99,
+    name: 'Everyday Tote Bag — Horizontal, Contrast Strap (White)', price: 24.99, wasPrice: 39.99,
     img: 'images/products/totebag/14.jpg', demo: 'images/products/totebag/demo-embed.html',
     images: ['images/products/totebag/14.jpg','images/products/totebag/8.jpg','images/products/totebag/1.jpg','images/products/totebag/2.jpg','images/products/totebag/3.jpg','images/products/totebag/4.jpg','images/products/totebag/5.jpg','images/products/totebag/6.jpg','images/products/totebag/7.jpg','images/products/totebag/9.jpg','images/products/totebag/10.jpg','images/products/totebag/11.jpg','images/products/totebag/12.jpg','images/products/totebag/13.jpg'],
     videos: ['images/products/totebag/video1.mp4','images/products/totebag/video2.mp4'],
@@ -249,7 +249,7 @@ const GHAR_PRODUCTS = {
     desc: null
   },
   'totebag-v-same': {
-    name: 'Everyday Tote Bag — Vertical, Same-colour Strap', price: 22.99, wasPrice: 32.99,
+    name: 'Everyday Tote Bag — Vertical, Same-colour Strap', price: 24.99, wasPrice: 39.99,
     img: 'images/products/totebag/14.jpg', demo: 'images/products/totebag/demo-embed.html',
     images: ['images/products/totebag/14.jpg','images/products/totebag/8.jpg','images/products/totebag/1.jpg','images/products/totebag/2.jpg','images/products/totebag/3.jpg','images/products/totebag/4.jpg','images/products/totebag/5.jpg','images/products/totebag/6.jpg','images/products/totebag/7.jpg','images/products/totebag/9.jpg','images/products/totebag/10.jpg','images/products/totebag/11.jpg','images/products/totebag/12.jpg','images/products/totebag/13.jpg'],
     videos: ['images/products/totebag/video1.mp4','images/products/totebag/video2.mp4'],
@@ -259,7 +259,7 @@ const GHAR_PRODUCTS = {
     desc: null
   },
   'totebag-v-contrast': {
-    name: 'Everyday Tote Bag — Vertical, Contrast Strap (White)', price: 22.99, wasPrice: 32.99,
+    name: 'Everyday Tote Bag — Vertical, Contrast Strap (White)', price: 24.99, wasPrice: 39.99,
     img: 'images/products/totebag/14.jpg', demo: 'images/products/totebag/demo-embed.html',
     images: ['images/products/totebag/14.jpg','images/products/totebag/8.jpg','images/products/totebag/1.jpg','images/products/totebag/2.jpg','images/products/totebag/3.jpg','images/products/totebag/4.jpg','images/products/totebag/5.jpg','images/products/totebag/6.jpg','images/products/totebag/7.jpg','images/products/totebag/9.jpg','images/products/totebag/10.jpg','images/products/totebag/11.jpg','images/products/totebag/12.jpg','images/products/totebag/13.jpg'],
     videos: ['images/products/totebag/video1.mp4','images/products/totebag/video2.mp4'],
@@ -274,7 +274,7 @@ const GHAR_PRODUCTS = {
    object literal since it needs to reference itself — keeps the four entries
    above from repeating this in full). "Ghar" is Hindi for "home". */
 const GHAR_TOTE_DESC = [
-  "This is our very first batch of tote bags — only 25 exist. We're pricing this batch at €22.99 instead of €32.99, because we want you to actually use it before we make more: carry it hard for a few weeks, then tell us what to improve. Your feedback shapes the next batch.",
+  "This is our very first batch of tote bags — only 25 exist. We're pricing this batch at €24.99 instead of €39.99, because we want you to actually use it before we make more: carry it hard for a few weeks, then tell us what to improve. Your feedback shapes the next batch.",
   "These are meant to carry your Ghar (home) with you — but they are built to carry rather more than that. Not a basic tote: there are three deep pockets, a compartment sized for a laptop, books, or a change of gym clothes, and a bottle holder generous enough for a water bottle on a hot day or a bottle of wine on the way to a friend's.",
   "Take it to the beach, the office, the gym, or just the supermarket — it is cut for all of it. We have kept the strap long enough to sling across your body on a bike, and added a front pocket for whatever you reach for without looking: earphones, mints, your phone for a quick photo. Inside, two more deep pockets mean your smaller things stop sliding around at the bottom.",
   "We hear from customers who take theirs to the gym and use the compartments to keep before-and-after workout clothes apart — that is the kind of everyday tote this is meant to be. And since it is 100% organic cotton, the whole thing goes straight into the wash, then hangs dry and comes back looking new.",
