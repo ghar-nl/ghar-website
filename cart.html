@@ -9,8 +9,8 @@
 <link rel="icon" type="image/png" href="images/site/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&family=Noto+Serif+Devanagari:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=20260816x">
-<script src="cart.js?v=20260816x" defer></script>
+<link rel="stylesheet" href="styles.css?v=20260816y">
+<script src="cart.js?v=20260816y" defer></script>
 </head>
 <body>
 
@@ -189,6 +189,10 @@ function renderCart() {
     btns[1].onclick = function () {
       if (gharCartCount() + 1 > GHAR_MAX_PER_ORDER) {
         document.getElementById('promo-msg').textContent = 'Pre-orders are limited to ' + GHAR_MAX_PER_ORDER + ' items per person.';
+        return;
+      }
+      if (p.maxPerOrder && qty + 1 > p.maxPerOrder) {
+        document.getElementById('promo-msg').textContent = 'Max ' + p.maxPerOrder + ' per person for ' + p.name + '.';
         return;
       }
       if (qty + 1 > gharEffectiveRemaining(id)) {

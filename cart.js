@@ -24,9 +24,11 @@ const GHAR_MAX_PER_ORDER = 6;       // max items per person/order, across the wh
    of 2"/"set of 6" also draws from — see gharEffectiveRemaining(). */
 const GHAR_STOCK_GROUPS = {
   totebag: { ids: ['totebag-h-same', 'totebag-h-contrast', 'totebag-v-same', 'totebag-v-contrast'], limit: 22 },
-  coasters: { ids: ['coaster-set2', 'coaster-set4'], limit: 20, weights: { 'coaster-set2': 2, 'coaster-set4': 4 } },
-  napkins: { ids: ['napkin-set4', 'napkin-set6'], limit: 8, weights: { 'napkin-set4': 4, 'napkin-set6': 6 } }
+  coasters: { ids: ['coaster-set2', 'coaster-set4'], limit: 20, weights: { 'coaster-set2': 2, 'coaster-set4': 4 } }
 };
+/* napkin-set4/set6 are comingSoon (batch too small) — napkin-set2 is the only
+   sellable napkin id right now, so it doesn't need a shared-pool group, just
+   a plain cap in GHAR_STATIC_STOCK below (8 pieces ÷ 2 per set = 4 sets). */
 
 const GHAR_DESC_SHARED = [
   "The border is block printed separately and finished with contrasting piping — it strengthens every edge and gives the cover its clean, tailored line.",
@@ -159,27 +161,40 @@ const GHAR_PRODUCTS = {
       "Wash under cold water and dry in the shade, same as the rest of the collection — these are made to be used, not saved for best."
     ]
   },
-  'napkin-set4': {
-    name: 'Ikat Napkins — Set of 4', price: 24.99,
+  'napkin-set2': {
+    name: 'Ikat Napkins — Set of 2', price: 14.99, maxPerOrder: 1,
     img: 'images/products/napkin/1.jpg', images: ['images/products/napkin/1.jpg','images/products/napkin/2.jpg','images/products/napkin/3.jpg','images/products/napkin/4.jpg','images/products/napkin/5.jpg'],
-    size: '40 × 40 cm · set of 4', material: 'Ikat woven · 100% organic cotton',
+    size: '30 × 30 cm · set of 2', material: 'Ikat woven · 100% organic cotton',
     category: 'napkin', printType: 'ikat', rooms: ['dining'], favRank: 1,
+    mini: "A tiny first batch — just a handful of sets exist. One set per person, so more of you get to try them.",
+    desc: [
+      "This is a very small first batch of napkins — small enough that we're selling them as a Set of 2, one set per person, so as many of you as possible get to actually try them before we decide on the next batch.",
+      "A good napkin does more than wipe a mouth — fold it under the cutlery to finish a place setting, let it sit loose and colourful across the table, or hand it to the smallest person at dinner. Being 100% organic cotton, it is soft enough that we reach for these with children too — gentle on the skin, and it only gets softer with washing.",
+      "Finished at 30 × 30 cm — generous enough for a lap, easy enough to fold into a neat square.",
+      "Bigger sets (4 and 6) come back once we've heard from enough of you and made a proper-sized batch — tell us what you think after you've used them."
+    ]
+  },
+  'napkin-set4': {
+    name: 'Ikat Napkins — Set of 4', price: 24.99, comingSoon: true,
+    img: 'images/products/napkin/1.jpg', images: ['images/products/napkin/1.jpg','images/products/napkin/2.jpg','images/products/napkin/3.jpg','images/products/napkin/4.jpg','images/products/napkin/5.jpg'],
+    size: '30 × 30 cm · set of 4', material: 'Ikat woven · 100% organic cotton',
+    category: 'napkin', printType: 'ikat', rooms: ['dining'], favRank: 60,
     mini: "Soft enough for children, finished enough for guests. Sold as a set of 4 — works out to about €6.25 per napkin.",
     desc: [
       "A good napkin does more than wipe a mouth — fold it under the cutlery to finish a place setting, let it sit loose and colourful across the table, or hand it to the smallest person at dinner. Being 100% organic cotton, it is soft enough that we reach for these with children too — gentle on the skin, and it only gets softer with washing.",
-      "Finished at 40 × 40 cm — generous enough for a lap, easy enough to fold into a neat square.",
+      "Finished at 30 × 30 cm — generous enough for a lap, easy enough to fold into a neat square.",
       "Sold only as a set of 4 (about €6.25 per napkin) — if you need a bigger table setting, the Set of 6 works out a little cheaper per napkin."
     ]
   },
   'napkin-set6': {
-    name: 'Ikat Napkins — Set of 6', price: 36.99,
+    name: 'Ikat Napkins — Set of 6', price: 36.99, comingSoon: true,
     img: 'images/products/napkin/2.jpg', images: ['images/products/napkin/2.jpg','images/products/napkin/1.jpg','images/products/napkin/3.jpg','images/products/napkin/4.jpg','images/products/napkin/5.jpg'],
-    size: '40 × 40 cm · set of 6', material: 'Ikat woven · 100% organic cotton',
-    category: 'napkin', printType: 'ikat', rooms: ['dining'], favRank: 2,
+    size: '30 × 30 cm · set of 6', material: 'Ikat woven · 100% organic cotton',
+    category: 'napkin', printType: 'ikat', rooms: ['dining'], favRank: 61,
     mini: "Soft enough for children, finished enough for guests. Sold as a set of 6 — about €6.17 per napkin, our best per-napkin price.",
     desc: [
       "A good napkin does more than wipe a mouth — fold it under the cutlery to finish a place setting, let it sit loose and colourful across the table, or hand it to the smallest person at dinner. Being 100% organic cotton, it is soft enough that we reach for these with children too — gentle on the skin, and it only gets softer with washing.",
-      "Finished at 40 × 40 cm — generous enough for a lap, easy enough to fold into a neat square.",
+      "Finished at 30 × 30 cm — generous enough for a lap, easy enough to fold into a neat square.",
       "Sold only as a set of 6 — at about €6.17 per napkin, this is the better-value option if your table sits more than four."
     ]
   },
@@ -214,43 +229,43 @@ const GHAR_PRODUCTS = {
      other product in the cart/checkout — the variant name alone is what tells
      Dimple which physical bag was ordered. */
   'totebag-h-same': {
-    name: 'Everyday Tote Bag — Horizontal, Same-colour Strap', price: 32.99,
+    name: 'Everyday Tote Bag — Horizontal, Same-colour Strap', price: 22.99, wasPrice: 32.99,
     img: 'images/products/totebag/14.jpg', demo: 'images/products/totebag/demo-embed.html',
     images: ['images/products/totebag/14.jpg','images/products/totebag/8.jpg','images/products/totebag/1.jpg','images/products/totebag/2.jpg','images/products/totebag/3.jpg','images/products/totebag/4.jpg','images/products/totebag/5.jpg','images/products/totebag/6.jpg','images/products/totebag/7.jpg','images/products/totebag/9.jpg','images/products/totebag/10.jpg','images/products/totebag/11.jpg','images/products/totebag/12.jpg','images/products/totebag/13.jpg'],
     videos: ['images/products/totebag/video1.mp4','images/products/totebag/video2.mp4'],
     size: '52 × 36 × 10 cm · 35 cm strap (same colour)', material: 'Ikat woven · 100% organic cotton',
     category: 'tote-bag', printType: 'ikat', rooms: [], favRank: 30,
-    variantGroup: 'totebag', variantLabel: 'Horizontal · Same-colour strap', mini: "3 deep pockets, a bottle holder, and room for absolutely everything.",
+    variantGroup: 'totebag', variantLabel: 'Horizontal · Same-colour strap', mini: "Our first batch — only 25 exist. First-batch price while we learn from real use.",
     desc: null // shared GHAR_TOTE_DESC below
   },
   'totebag-h-contrast': {
-    name: 'Everyday Tote Bag — Horizontal, Contrast Strap (White)', price: 32.99,
+    name: 'Everyday Tote Bag — Horizontal, Contrast Strap (White)', price: 22.99, wasPrice: 32.99,
     img: 'images/products/totebag/14.jpg', demo: 'images/products/totebag/demo-embed.html',
     images: ['images/products/totebag/14.jpg','images/products/totebag/8.jpg','images/products/totebag/1.jpg','images/products/totebag/2.jpg','images/products/totebag/3.jpg','images/products/totebag/4.jpg','images/products/totebag/5.jpg','images/products/totebag/6.jpg','images/products/totebag/7.jpg','images/products/totebag/9.jpg','images/products/totebag/10.jpg','images/products/totebag/11.jpg','images/products/totebag/12.jpg','images/products/totebag/13.jpg'],
     videos: ['images/products/totebag/video1.mp4','images/products/totebag/video2.mp4'],
     size: '52 × 36 × 10 cm · 35 cm white contrast strap', material: 'Ikat woven · 100% organic cotton',
     category: 'tote-bag', printType: 'ikat', rooms: [], favRank: 31,
-    variantGroup: 'totebag', variantLabel: 'Horizontal · Contrast strap (white)', mini: "3 deep pockets, a bottle holder, and room for absolutely everything.",
+    variantGroup: 'totebag', variantLabel: 'Horizontal · Contrast strap (white)', mini: "Our first batch — only 25 exist. First-batch price while we learn from real use.",
     desc: null
   },
   'totebag-v-same': {
-    name: 'Everyday Tote Bag — Vertical, Same-colour Strap', price: 32.99,
+    name: 'Everyday Tote Bag — Vertical, Same-colour Strap', price: 22.99, wasPrice: 32.99,
     img: 'images/products/totebag/14.jpg', demo: 'images/products/totebag/demo-embed.html',
     images: ['images/products/totebag/14.jpg','images/products/totebag/8.jpg','images/products/totebag/1.jpg','images/products/totebag/2.jpg','images/products/totebag/3.jpg','images/products/totebag/4.jpg','images/products/totebag/5.jpg','images/products/totebag/6.jpg','images/products/totebag/7.jpg','images/products/totebag/9.jpg','images/products/totebag/10.jpg','images/products/totebag/11.jpg','images/products/totebag/12.jpg','images/products/totebag/13.jpg'],
     videos: ['images/products/totebag/video1.mp4','images/products/totebag/video2.mp4'],
     size: '40 × 42 × 10 cm · 35 cm strap (same colour)', material: 'Ikat woven · 100% organic cotton',
     category: 'tote-bag', printType: 'ikat', rooms: [], favRank: 32,
-    variantGroup: 'totebag', variantLabel: 'Vertical · Same-colour strap', mini: "3 deep pockets, a bottle holder, and room for absolutely everything.",
+    variantGroup: 'totebag', variantLabel: 'Vertical · Same-colour strap', mini: "Our first batch — only 25 exist. First-batch price while we learn from real use.",
     desc: null
   },
   'totebag-v-contrast': {
-    name: 'Everyday Tote Bag — Vertical, Contrast Strap (White)', price: 32.99,
+    name: 'Everyday Tote Bag — Vertical, Contrast Strap (White)', price: 22.99, wasPrice: 32.99,
     img: 'images/products/totebag/14.jpg', demo: 'images/products/totebag/demo-embed.html',
     images: ['images/products/totebag/14.jpg','images/products/totebag/8.jpg','images/products/totebag/1.jpg','images/products/totebag/2.jpg','images/products/totebag/3.jpg','images/products/totebag/4.jpg','images/products/totebag/5.jpg','images/products/totebag/6.jpg','images/products/totebag/7.jpg','images/products/totebag/9.jpg','images/products/totebag/10.jpg','images/products/totebag/11.jpg','images/products/totebag/12.jpg','images/products/totebag/13.jpg'],
     videos: ['images/products/totebag/video1.mp4','images/products/totebag/video2.mp4'],
     size: '40 × 42 × 10 cm · 35 cm white contrast strap', material: 'Ikat woven · 100% organic cotton',
     category: 'tote-bag', printType: 'ikat', rooms: [], favRank: 33,
-    variantGroup: 'totebag', variantLabel: 'Vertical · Contrast strap (white)', mini: "3 deep pockets, a bottle holder, and room for absolutely everything.",
+    variantGroup: 'totebag', variantLabel: 'Vertical · Contrast strap (white)', mini: "Our first batch — only 25 exist. First-batch price while we learn from real use.",
     desc: null
   }
 };
@@ -259,6 +274,7 @@ const GHAR_PRODUCTS = {
    object literal since it needs to reference itself — keeps the four entries
    above from repeating this in full). "Ghar" is Hindi for "home". */
 const GHAR_TOTE_DESC = [
+  "This is our very first batch of tote bags — only 25 exist. We're pricing this batch at €22.99 instead of €32.99, because we want you to actually use it before we make more: carry it hard for a few weeks, then tell us what to improve. Your feedback shapes the next batch.",
   "These are meant to carry your Ghar (home) with you — but they are built to carry rather more than that. Not a basic tote: there are three deep pockets, a compartment sized for a laptop, books, or a change of gym clothes, and a bottle holder generous enough for a water bottle on a hot day or a bottle of wine on the way to a friend's.",
   "Take it to the beach, the office, the gym, or just the supermarket — it is cut for all of it. We have kept the strap long enough to sling across your body on a bike, and added a front pocket for whatever you reach for without looking: earphones, mints, your phone for a quick photo. Inside, two more deep pockets mean your smaller things stop sliding around at the bottom.",
   "We hear from customers who take theirs to the gym and use the compartments to keep before-and-after workout clothes apart — that is the kind of everyday tote this is meant to be. And since it is 100% organic cotton, the whole thing goes straight into the wash, then hangs dry and comes back looking new.",
@@ -268,6 +284,13 @@ GHAR_STOCK_GROUPS.totebag.ids.forEach(function (id) { GHAR_PRODUCTS[id].desc = G
 
 /* ── money formatting ── */
 function gharFmt(n) { return '€' + (Math.round(n * 100) / 100).toFixed(2); }
+/* For a product on a temporary discount (p.wasPrice set), shows the old price
+   struck through before the current one. `prefix` is e.g. "From " for the
+   tote bag's variant-picker card. */
+function gharPriceHtml(p, prefix) {
+  const cur = (prefix || '') + gharFmt(p.price);
+  return p.wasPrice ? '<span class="price-was">' + gharFmt(p.wasPrice) + '</span> ' + cur : cur;
+}
 
 /* ── bulk (quantity) pricing ──
    A product can set `bulk: { extra: N }` — the first unit costs the normal
@@ -359,7 +382,8 @@ const GHAR_STATIC_STOCK = {
   rivervine: 8,
   stone: 8,
   forest: 8,
-  golden: 8
+  golden: 8,
+  'napkin-set2': 4
 };
 function gharRemaining(id) {
   if (gharStock && (id in gharStock)) return gharStock[id];
@@ -401,7 +425,7 @@ function gharLoadStock(cb) {
 }
 function gharApplyStockToShop() {
   document.querySelectorAll('.btn-add').forEach(function (btn) {
-    const m = (btn.getAttribute('onclick') || '').match(/gharAdd\('([a-z]+)'/);
+    const m = (btn.getAttribute('onclick') || '').match(/gharAdd\('([a-z0-9-]+)'/);
     if (!m) return;
     const id = m[1];
     const left = gharEffectiveRemaining(id);
@@ -440,6 +464,15 @@ function gharAdd(id, btn) {
   }
   const cart = gharCart();
   const current = cart[id] || 0;
+  const p = GHAR_PRODUCTS[id];
+  if (p.maxPerOrder && current + 1 > p.maxPerOrder) {
+    if (btn) {
+      const orig = btn.textContent;
+      btn.textContent = 'Max ' + p.maxPerOrder + ' per person';
+      setTimeout(function () { btn.textContent = orig; }, 1800);
+    }
+    return;
+  }
   const left = gharEffectiveRemaining(id);
   if (current + 1 > left) {
     if (btn) {
@@ -541,10 +574,12 @@ function gharProductModal(id) {
         '<h3>' + p.name + '</h3>' +
         variantPicker +
         '<p class="pm-size" id="pm-variant-size">' + p.size + ' · ' + p.material + '</p>' +
-        '<p class="pm-price price">' + gharFmt(p.price) + '</p>' +
+        '<p class="pm-price price">' + gharPriceHtml(p) + '</p>' +
         (gharBulkNote(id) ? '<p class="pm-bulk">' + gharBulkNote(id) + '</p>' : '') +
+        (p.maxPerOrder ? '<p class="pm-bulk">Just ' + p.maxPerOrder + ' per person — this batch is tiny.</p>' : '') +
         '<div class="pm-desc">' + p.desc.map(function (d) { return '<p>' + d + '</p>'; }).join('') + '</div>' +
-        '<button class="btn-add pm-add" onclick="gharAdd(\'' + id + '\', this)">Add to bag</button>' +
+        '<p class="pm-note">Every batch here is intentionally small — what you choose to buy tells us what to make more of next.</p>' +
+        '<button class="btn-add pm-add" onclick="gharAdd(\'' + id + '\', this)">Yes, I\'m in</button>' +
       '</div>' +
     '</div>', true
   );
@@ -592,7 +627,7 @@ function gharProductModal(id) {
       addBtn2.setAttribute('onclick', "gharAdd('" + vid + "', this)");
       const left2 = gharEffectiveRemaining(vid);
       addBtn2.disabled = left2 <= 0;
-      addBtn2.textContent = left2 <= 0 ? 'Sold out' : 'Add to bag';
+      addBtn2.textContent = left2 <= 0 ? 'Sold out' : "Yes, I'm in";
     });
   });
   // stock state on the modal button
