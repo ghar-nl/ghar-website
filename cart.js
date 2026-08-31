@@ -580,7 +580,7 @@ function gharProductModal(id) {
         (p.maxPerOrder ? '<p class="pm-bulk">Just ' + p.maxPerOrder + ' per person — this batch is tiny.</p>' : '') +
         '<div class="pm-desc">' + p.desc.map(function (d) { return '<p>' + d + '</p>'; }).join('') + '</div>' +
         '<p class="pm-note">Every batch here is intentionally small — what you choose to buy tells us what to make more of next.</p>' +
-        '<button class="btn-add pm-add" onclick="gharAdd(\'' + id + '\', this)">Yes, I\'m in</button>' +
+        '<div id="pm-action"></div>' +
       '</div>' +
     '</div>', true
   );
@@ -639,16 +639,43 @@ function gharProductModal(id) {
       const vp = GHAR_PRODUCTS[vid];
       document.querySelectorAll('.pm-variant').forEach(function (b) { b.classList.toggle('active', b === btn); });
       document.getElementById('pm-variant-size').textContent = vp.size + ' · ' + vp.material;
-      const addBtn2 = document.querySelector('.pm-add');
-      addBtn2.setAttribute('onclick', "gharAdd('" + vid + "', this)");
-      const left2 = gharEffectiveRemaining(vid);
-      addBtn2.disabled = left2 <= 0;
-      addBtn2.textContent = left2 <= 0 ? 'Sold out' : "Yes, I'm in";
+      gharRenderPmAction(vid);
     });
   });
-  // stock state on the modal button
-  const addBtn = document.querySelector('.pm-add');
-  if (gharEffectiveRemaining(id) <= 0 && addBtn) { addBtn.disabled = true; addBtn.textContent = 'Sold out'; }
+  // fills #pm-action with either the normal add button, or — once a product/variant
+  // is sold out — a warm thank-you + "notify me for the next batch" email capture,
+  // instead of just disabling the button. Called on initial render and again on
+  // every variant switch, so it's always in sync with whichever id is selected.
+  gharRenderPmAction(id);
+}
+
+function gharRenderPmAction(id) {
+  const el = document.getElementById('pm-action');
+  if (!el) return;
+  if (gharEffectiveRemaining(id) > 0) {
+    el.innerHTML = '<button class="btn-add pm-add" onclick="gharAdd(\'' + id + '\', this)">Yes, I\'m in</button>';
+    return;
+  }
+  el.innerHTML =
+    '<div class="pm-soldout">' +
+      '<p>Thank you for your interest — this piece was part of a very first, very small production run. We keep every batch intentionally small: so nothing is overproduced, nothing ends up in a landfill, and the hands that made it by hand are valued for the time that took, not rushed into making more than needed.</p>' +
+      '<p>Leave your email below and we\'ll let you know as soon as the next production is ready.</p>' +
+      '<div class="pm-soldout-form">' +
+        '<input type="email" id="pm-notify-email" placeholder="your@email.com" autocomplete="email">' +
+        '<button type="button" id="pm-notify-send">Notify me</button>' +
+      '</div>' +
+      '<p id="pm-notify-status" role="status"></p>' +
+    '</div>';
+  document.getElementById('pm-notify-send').addEventListener('click', async function () {
+    const email = document.getElementById('pm-notify-email').value.trim();
+    const status = document.getElementById('pm-notify-status');
+    if (!gharEmailOk(email)) { status.textContent = 'Please enter a valid email address.'; return; }
+    this.disabled = true;
+    try {
+      await fetch(GHAR_API, { method: 'POST', body: JSON.stringify({ type: 'notify', email: email, product: GHAR_PRODUCTS[id].name, secret: GHAR_SECRET }) });
+    } catch (e) { /* optimistic */ }
+    status.textContent = 'Thank you — we\'ll let you know!';
+  });
 }
 
 /* ── mobile hamburger menu (injected on every page) ── */
