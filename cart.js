@@ -32,7 +32,7 @@ const GHAR_STOCK_GROUPS = {
 
 const GHAR_DESC_SHARED = [
   "The border is block printed separately and finished with contrasting piping — it strengthens every edge and gives the cover its clean, tailored line.",
-  "The zip sits hidden at the centre of the back panel — never running end to end — so it stays strong for years and never works loose.",
+  "The zip runs along the top edge, in plain sight rather than hidden on the back — never running end to end, so it stays strong for years and never works loose.",
   "This is a cover only — no cushion insert included. Slip in a thick insert for a full, plump look, or a thinner one for a relaxed, lived-in fold. We love it beside plain covers — but it's your home: play."
 ];
 
@@ -62,7 +62,7 @@ const GHAR_PRODUCTS = {
   },
   stone: {
     name: 'Stone Lattice Cushion Cover', price: 26.99, bulk: { extra: 24.00 },
-    img: 'images/products/stone/6.jpg', images: ['images/products/stone/6.jpg','images/products/stone/1.jpg','images/products/stone/2.jpg','images/products/stone/3.jpg','images/products/stone/4.jpg','images/products/stone/5.jpg','images/products/stone/7.jpg','images/products/stone/8.jpg','images/products/stone/9.jpg','images/products/stone/10.jpg','images/products/stone/11.jpg','images/products/stone/12.jpg','images/products/stone/13.jpg','images/products/stone/14.jpg','images/products/stone/15.jpg','images/products/stone/16.jpg'],
+    img: 'images/products/stone/14.jpg', images: ['images/products/stone/14.jpg','images/products/stone/6.jpg','images/products/stone/1.jpg','images/products/stone/2.jpg','images/products/stone/3.jpg','images/products/stone/4.jpg','images/products/stone/5.jpg','images/products/stone/7.jpg','images/products/stone/8.jpg','images/products/stone/9.jpg','images/products/stone/10.jpg','images/products/stone/11.jpg','images/products/stone/12.jpg','images/products/stone/13.jpg','images/products/stone/15.jpg','images/products/stone/16.jpg'],
     size: '30 × 30 cm',
     material: 'Hand block printed · 100% pure cotton · different print on front & back',
     category: 'cushion-small', printType: 'block', rooms: ['living'], favRank: 12,
@@ -145,8 +145,8 @@ const GHAR_PRODUCTS = {
     desc: [
       "Whether you are protecting the table, dressing it up for guests, or simply keeping the wood beneath it safe, a good placemat does more work than it gets credit for. Ours are cut to sit beautifully under a full place setting, and we will admit it — we are a little obsessed with them ourselves.",
       "Each mat is finished with a hem in a soft contrast colour, giving it a clean, defined edge against any tablecloth or bare wood. Wash under cold water with a gentle detergent (or just cold water alone) and dry in the shade — no fuss, no fading.",
-      "The first mat is €12.99 — every mat after that is just €11.00, automatically, right in your bag. Setting a table for four? That's €45.99 instead of €51.96.",
-      "See a few of the ways we have used them in our own homes, below."
+      "See a few of the ways we have used them in our own homes, below.",
+      "The first mat is €12.99 — every mat after that is just €11.00 and nothing more."
     ]
   },
   circlemat: {
@@ -154,11 +154,11 @@ const GHAR_PRODUCTS = {
     img: 'images/products/circlemat/6.jpg', images: ['images/products/circlemat/6.jpg','images/products/circlemat/1.jpg','images/products/circlemat/2.jpg','images/products/circlemat/3.jpg','images/products/circlemat/4.jpg','images/products/circlemat/5.jpg','images/products/circlemat/7.jpg','images/products/circlemat/8.jpg','images/products/circlemat/9.jpg','images/products/circlemat/10.jpg'],
     size: '30 cm diameter', material: 'Ikat woven cotton',
     category: 'placemat', printType: 'ikat', rooms: ['dining'], favRank: 21,
-    mini: "The same idea, in the round — elegant under any dinner plate. Buy 2 or more and every extra mat is just €11.",
+    mini: "A softer line for the table, in the same rich ikat red — elegant under any dinner plate. Buy 2 or more and every extra mat is just €11.",
     desc: [
-      "The same idea, in the round: a circle mat brings a softer line to the table and suits a round plate especially well. In our ikat red, it gives just the right amount of contrast against plain white or stoneware — enough to notice, not enough to shout.",
-      "The first mat is €12.99 — every mat after that is just €11.00, automatically, right in your bag. Setting a table for four? That's €45.99 instead of €51.96.",
-      "Wash under cold water and dry in the shade, same as the rest of the collection — these are made to be used, not saved for best."
+      "A circle mat brings a softer line to the table, finished in our ikat red — it suits a round plate especially well, and gives just the right amount of contrast against plain white or stoneware: enough to notice, not enough to shout.",
+      "Wash under cold water and dry in the shade, same as the rest of the collection — these are made to be used, not saved for best.",
+      "The first mat is €12.99 — every mat after that is just €11.00 and nothing more."
     ]
   },
   'napkin-set2': {
@@ -565,6 +565,7 @@ function gharProductModal(id) {
       '<div class="pm-gallery">' +
         '<div class="pm-main" id="pm-main"' + (firstIsImg ? '' : ' style="cursor:default"') + '>' +
           (hasMedia ? gharMediaHtml(media[0]) : gharPhotoPlaceholder()) +
+          (media.length > 1 ? '<button type="button" class="pm-nav pm-prev" aria-label="Previous photo">‹</button><button type="button" class="pm-nav pm-next" aria-label="Next photo">›</button>' : '') +
         '</div>' +
         thumbs +
         '<p class="pm-zoomhint" id="pm-zoomhint" style="' + (firstIsImg ? '' : 'visibility:hidden') + '">Click the photo to zoom</p>' +
@@ -604,17 +605,32 @@ function gharProductModal(id) {
     const r = main.getBoundingClientRect();
     img.style.transformOrigin = ((e.clientX - r.left) / r.width * 100) + '% ' + ((e.clientY - r.top) / r.height * 100) + '%';
   });
-  // thumbnails — swap pm-main's content between photo, video and demo as needed
-  document.querySelectorAll('.pm-thumbs > img, .pm-thumbs > video, .pm-thumbs > .pm-thumb-demo').forEach(function (t) {
-    t.addEventListener('click', function () {
-      const m = media[Number(t.dataset.i)];
-      main.innerHTML = gharMediaHtml(m);
-      main.style.cursor = m.type === 'img' ? 'zoom-in' : 'default';
-      const hint = document.getElementById('pm-zoomhint');
-      if (hint) hint.style.visibility = m.type === 'img' ? 'visible' : 'hidden';
-      document.querySelectorAll('.pm-thumbs > img, .pm-thumbs > video, .pm-thumbs > .pm-thumb-demo').forEach(function (x) { x.classList.remove('active'); });
-      t.classList.add('active');
+  // thumbnails + prev/next arrows both swap pm-main's content through this one
+  // function, so the "active" thumbnail and the arrows' notion of "current"
+  // never fall out of sync with each other.
+  let pmCurrent = 0;
+  function gharShowMedia(i) {
+    pmCurrent = (i + media.length) % media.length;
+    const m = media[pmCurrent];
+    main.innerHTML = gharMediaHtml(m) +
+      (media.length > 1 ? '<button type="button" class="pm-nav pm-prev" aria-label="Previous photo">‹</button><button type="button" class="pm-nav pm-next" aria-label="Next photo">›</button>' : '');
+    main.style.cursor = m.type === 'img' ? 'zoom-in' : 'default';
+    const hint = document.getElementById('pm-zoomhint');
+    if (hint) hint.style.visibility = m.type === 'img' ? 'visible' : 'hidden';
+    document.querySelectorAll('.pm-thumbs > img, .pm-thumbs > video, .pm-thumbs > .pm-thumb-demo').forEach(function (x) {
+      x.classList.toggle('active', Number(x.dataset.i) === pmCurrent);
     });
+    gharBindPmNav();
+  }
+  function gharBindPmNav() {
+    const prev = main.querySelector('.pm-prev');
+    const next = main.querySelector('.pm-next');
+    if (prev) prev.addEventListener('click', function (e) { e.stopPropagation(); gharShowMedia(pmCurrent - 1); });
+    if (next) next.addEventListener('click', function (e) { e.stopPropagation(); gharShowMedia(pmCurrent + 1); });
+  }
+  gharBindPmNav();
+  document.querySelectorAll('.pm-thumbs > img, .pm-thumbs > video, .pm-thumbs > .pm-thumb-demo').forEach(function (t) {
+    t.addEventListener('click', function () { gharShowMedia(Number(t.dataset.i)); });
   });
   // variant picker (Everyday Tote Bag, etc.) — switches which id "Add to bag" targets
   document.querySelectorAll('.pm-variant').forEach(function (btn) {
