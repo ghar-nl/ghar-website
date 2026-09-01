@@ -127,7 +127,7 @@ const GHAR_PRODUCTS = {
   },
   runner: {
     name: 'Ikat Table Runner', price: 22.99,
-    img: 'images/products/runner/1.jpg', images: ['images/products/runner/1.jpg','images/products/runner/2.jpg','images/products/runner/3.jpg','images/products/runner/4.jpg'],
+    img: 'images/products/runner/1.jpg', images: ['images/products/runner/1.jpg','images/products/runner/2.jpg','images/products/runner/3.jpg','images/products/runner/4.jpg','images/products/runner/5.jpg'],
     size: '35 × 150 cm', material: 'Ikat woven · 100% organic cotton',
     category: 'table-runner', printType: 'ikat', rooms: ['living', 'dining'], favRank: 45,
     mini: "A dark red border gives this ikat runner one last, quiet highlight.",
