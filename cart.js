@@ -50,7 +50,7 @@ const GHAR_PRODUCTS = {
   },
   rivervine: {
     name: 'River Vine Cushion Cover', price: 26.99, bulk: { extra: 24.00 },
-    img: 'images/products/rivervine/5.jpg', images: ['images/products/rivervine/5.jpg','images/products/rivervine/1.jpg','images/products/rivervine/2.jpg','images/products/rivervine/3.jpg','images/products/rivervine/4.jpg','images/products/rivervine/6.jpg','images/products/rivervine/7.jpg','images/products/rivervine/8.jpg','images/products/rivervine/9.jpg'],
+    img: 'images/products/rivervine/1.jpg', images: ['images/products/rivervine/1.jpg','images/products/rivervine/2.jpg','images/products/rivervine/3.jpg'],
     videos: ['images/products/rivervine/video1.mp4','images/products/rivervine/video2.mp4','images/products/rivervine/video3.mp4'],
     size: '30 × 30 cm',
     material: 'Hand block printed · 100% pure cotton',
@@ -113,7 +113,7 @@ const GHAR_PRODUCTS = {
   },
   largecushion: {
     name: 'Ikat Extra-Large Cushion Cover', price: 32.99, bulk: { extra: 28.00 },
-    img: 'images/products/largecushion/1.jpg', images: ['images/products/largecushion/1.jpg','images/products/largecushion/2.jpg','images/products/largecushion/3.jpg','images/products/largecushion/4.jpg','images/products/largecushion/5.jpg','images/products/largecushion/6.jpg','images/products/largecushion/7.jpg','images/products/largecushion/8.jpg','images/products/largecushion/9.jpg','images/products/largecushion/10.jpg'],
+    img: 'images/products/largecushion/1.jpg', images: ['images/products/largecushion/1.jpg','images/products/largecushion/2.jpg','images/products/largecushion/3.jpg','images/products/largecushion/4.jpg','images/products/largecushion/5.jpg'],
     size: '60 × 60 cm', material: 'Ikat woven cotton',
     category: 'cushion-large', printType: 'ikat', rooms: ['living'], favRank: 40,
     mini: "Our cushion covers, scaled all the way up. A very small batch — grab it before it's gone.",
@@ -127,7 +127,7 @@ const GHAR_PRODUCTS = {
   },
   runner: {
     name: 'Ikat Table Runner', price: 22.99,
-    img: 'images/products/runner/2.jpg', images: ['images/products/runner/2.jpg','images/products/runner/1.jpg','images/products/runner/3.jpg','images/products/runner/4.jpg','images/products/runner/5.jpg','images/products/runner/6.jpg','images/products/runner/7.jpg','images/products/runner/8.jpg','images/products/runner/9.jpg'],
+    img: 'images/products/runner/1.jpg', images: ['images/products/runner/1.jpg','images/products/runner/2.jpg','images/products/runner/3.jpg','images/products/runner/4.jpg'],
     size: '35 × 150 cm', material: 'Ikat woven · 100% organic cotton',
     category: 'table-runner', printType: 'ikat', rooms: ['living', 'dining'], favRank: 45,
     mini: "A dark red border gives this ikat runner one last, quiet highlight.",
@@ -138,7 +138,7 @@ const GHAR_PRODUCTS = {
   },
   rectmat: {
     name: 'Ikat Rectangle Table Mat', price: 15.99, bulk: { extra: 11.00 },
-    img: 'images/products/rectmat/1.jpg', images: ['images/products/rectmat/1.jpg','images/products/rectmat/2.jpg','images/products/rectmat/3.jpg','images/products/rectmat/4.jpg','images/products/rectmat/5.jpg','images/products/rectmat/6.jpg','images/products/rectmat/7.jpg','images/products/rectmat/8.jpg','images/products/rectmat/9.jpg'],
+    img: 'images/products/rectmat/1.jpg', images: ['images/products/rectmat/1.jpg','images/products/rectmat/2.jpg','images/products/rectmat/3.jpg'],
     size: '32 × 45 cm', material: 'Ikat woven cotton',
     category: 'placemat', printType: 'ikat', rooms: ['dining'], favRank: 20,
     mini: "A well-dressed table starts here — hemmed in a soft contrast colour. Buy 2 or more and every extra mat is just €11.",
@@ -151,7 +151,7 @@ const GHAR_PRODUCTS = {
   },
   circlemat: {
     name: 'Ikat Round Table Mat', price: 15.99, bulk: { extra: 11.00 },
-    img: 'images/products/circlemat/6.jpg', images: ['images/products/circlemat/6.jpg','images/products/circlemat/1.jpg','images/products/circlemat/2.jpg','images/products/circlemat/3.jpg','images/products/circlemat/4.jpg','images/products/circlemat/5.jpg','images/products/circlemat/7.jpg','images/products/circlemat/8.jpg','images/products/circlemat/9.jpg','images/products/circlemat/10.jpg'],
+    img: 'images/products/circlemat/1.jpg', images: ['images/products/circlemat/1.jpg','images/products/circlemat/2.jpg','images/products/circlemat/3.jpg','images/products/circlemat/4.jpg','images/products/circlemat/5.jpg','images/products/circlemat/6.jpg','images/products/circlemat/7.jpg','images/products/circlemat/8.jpg'],
     size: '30 cm diameter', material: 'Ikat woven cotton',
     category: 'placemat', printType: 'ikat', rooms: ['dining'], favRank: 21,
     mini: "A softer line for the table, in the same rich ikat red — elegant under any dinner plate. Buy 2 or more and every extra mat is just €11.",
