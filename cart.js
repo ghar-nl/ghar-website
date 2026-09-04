@@ -23,12 +23,12 @@ const GHAR_MAX_PER_ORDER = 6;       // max items per person/order, across the wh
    coasters/napkins, a "set of 4" consumes 4 pieces from the same pool a "set
    of 2"/"set of 6" also draws from — see gharEffectiveRemaining(). */
 const GHAR_STOCK_GROUPS = {
-  totebag: { ids: ['totebag-h-same', 'totebag-h-contrast', 'totebag-v-same', 'totebag-v-contrast'], limit: 22 },
-  coasters: { ids: ['coaster-set2', 'coaster-set4'], limit: 20, weights: { 'coaster-set2': 2, 'coaster-set4': 4 } }
+  totebag: { ids: ['totebag-h-same', 'totebag-h-contrast', 'totebag-v-same', 'totebag-v-contrast'], limit: 20 },
+  coasters: { ids: ['coaster-set2', 'coaster-set4'], limit: 10, weights: { 'coaster-set2': 2, 'coaster-set4': 4 } }
 };
 /* napkin-set4/set6 are comingSoon (batch too small) — napkin-set2 is the only
    sellable napkin id right now, so it doesn't need a shared-pool group, just
-   a plain cap in GHAR_STATIC_STOCK below (8 pieces ÷ 2 per set = 4 sets). */
+   a plain cap in GHAR_STATIC_STOCK below (12 pieces ÷ 2 per set = 6 sets). */
 
 const GHAR_DESC_SHARED = [
   "The border is block printed separately and finished with contrasting piping — it strengthens every edge and gives the cover its clean, tailored line.",
@@ -374,8 +374,8 @@ let gharStock = null;
    row with the same number to get true cross-order automatic tracking; once
    a row exists, the live Sheet value below takes over automatically. */
 const GHAR_STATIC_STOCK = {
-  runner: 11,
-  largecushion: 8,
+  runner: 10,
+  largecushion: 7,
   rectmat: 8,
   circlemat: 9,
   marigold: 8,
@@ -383,7 +383,7 @@ const GHAR_STATIC_STOCK = {
   stone: 8,
   forest: 8,
   golden: 8,
-  'napkin-set2': 4
+  'napkin-set2': 6
 };
 function gharRemaining(id) {
   if (gharStock && (id in gharStock)) return gharStock[id];
