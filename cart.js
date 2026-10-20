@@ -229,43 +229,43 @@ const GHAR_PRODUCTS = {
      other product in the cart/checkout — the variant name alone is what tells
      Dimple which physical bag was ordered. */
   'totebag-h-same': {
-    name: 'Everyday Tote Bag — Horizontal, Same-colour Strap', price: 24.99, wasPrice: 39.99,
+    name: 'Everyday Tote Bag — Horizontal, Same-colour Strap', price: 24.99, wasPrice: 39.99, notForSale: true,
     img: 'images/products/totebag/14.jpg', demo: 'images/products/totebag/demo-embed.html',
     images: ['images/products/totebag/14.jpg','images/products/totebag/8.jpg','images/products/totebag/1.jpg','images/products/totebag/2.jpg','images/products/totebag/3.jpg','images/products/totebag/4.jpg','images/products/totebag/5.jpg','images/products/totebag/6.jpg','images/products/totebag/7.jpg','images/products/totebag/9.jpg','images/products/totebag/10.jpg','images/products/totebag/11.jpg','images/products/totebag/12.jpg','images/products/totebag/13.jpg'],
     videos: ['images/products/totebag/video1.mp4','images/products/totebag/video2.mp4'],
     size: '52 × 36 × 10 cm · 35 cm strap (same colour)', material: 'Ikat woven · 100% organic cotton',
     category: 'tote-bag', printType: 'ikat', rooms: [], favRank: 30,
-    variantGroup: 'totebag', variantLabel: 'Horizontal · Same-colour strap', mini: "Our first batch — only 25 exist. First-batch price while we learn from real use.",
+    variantGroup: 'totebag', variantLabel: 'Horizontal · Same-colour strap', mini: "Our very first tote bag. A sturdier, better one is on its way.",
     desc: null // shared GHAR_TOTE_DESC below
   },
   'totebag-h-contrast': {
-    name: 'Everyday Tote Bag — Horizontal, Contrast Strap (White)', price: 24.99, wasPrice: 39.99,
+    name: 'Everyday Tote Bag — Horizontal, Contrast Strap (White)', price: 24.99, wasPrice: 39.99, notForSale: true,
     img: 'images/products/totebag/14.jpg', demo: 'images/products/totebag/demo-embed.html',
     images: ['images/products/totebag/14.jpg','images/products/totebag/8.jpg','images/products/totebag/1.jpg','images/products/totebag/2.jpg','images/products/totebag/3.jpg','images/products/totebag/4.jpg','images/products/totebag/5.jpg','images/products/totebag/6.jpg','images/products/totebag/7.jpg','images/products/totebag/9.jpg','images/products/totebag/10.jpg','images/products/totebag/11.jpg','images/products/totebag/12.jpg','images/products/totebag/13.jpg'],
     videos: ['images/products/totebag/video1.mp4','images/products/totebag/video2.mp4'],
     size: '52 × 36 × 10 cm · 35 cm white contrast strap', material: 'Ikat woven · 100% organic cotton',
     category: 'tote-bag', printType: 'ikat', rooms: [], favRank: 31,
-    variantGroup: 'totebag', variantLabel: 'Horizontal · Contrast strap (white)', mini: "Our first batch — only 25 exist. First-batch price while we learn from real use.",
+    variantGroup: 'totebag', variantLabel: 'Horizontal · Contrast strap (white)', mini: "Our very first tote bag. A sturdier, better one is on its way.",
     desc: null
   },
   'totebag-v-same': {
-    name: 'Everyday Tote Bag — Vertical, Same-colour Strap', price: 24.99, wasPrice: 39.99,
+    name: 'Everyday Tote Bag — Vertical, Same-colour Strap', price: 24.99, wasPrice: 39.99, notForSale: true,
     img: 'images/products/totebag/14.jpg', demo: 'images/products/totebag/demo-embed.html',
     images: ['images/products/totebag/14.jpg','images/products/totebag/8.jpg','images/products/totebag/1.jpg','images/products/totebag/2.jpg','images/products/totebag/3.jpg','images/products/totebag/4.jpg','images/products/totebag/5.jpg','images/products/totebag/6.jpg','images/products/totebag/7.jpg','images/products/totebag/9.jpg','images/products/totebag/10.jpg','images/products/totebag/11.jpg','images/products/totebag/12.jpg','images/products/totebag/13.jpg'],
     videos: ['images/products/totebag/video1.mp4','images/products/totebag/video2.mp4'],
     size: '40 × 42 × 10 cm · 35 cm strap (same colour)', material: 'Ikat woven · 100% organic cotton',
     category: 'tote-bag', printType: 'ikat', rooms: [], favRank: 32,
-    variantGroup: 'totebag', variantLabel: 'Vertical · Same-colour strap', mini: "Our first batch — only 25 exist. First-batch price while we learn from real use.",
+    variantGroup: 'totebag', variantLabel: 'Vertical · Same-colour strap', mini: "Our very first tote bag. A sturdier, better one is on its way.",
     desc: null
   },
   'totebag-v-contrast': {
-    name: 'Everyday Tote Bag — Vertical, Contrast Strap (White)', price: 24.99, wasPrice: 39.99,
+    name: 'Everyday Tote Bag — Vertical, Contrast Strap (White)', price: 24.99, wasPrice: 39.99, notForSale: true,
     img: 'images/products/totebag/14.jpg', demo: 'images/products/totebag/demo-embed.html',
     images: ['images/products/totebag/14.jpg','images/products/totebag/8.jpg','images/products/totebag/1.jpg','images/products/totebag/2.jpg','images/products/totebag/3.jpg','images/products/totebag/4.jpg','images/products/totebag/5.jpg','images/products/totebag/6.jpg','images/products/totebag/7.jpg','images/products/totebag/9.jpg','images/products/totebag/10.jpg','images/products/totebag/11.jpg','images/products/totebag/12.jpg','images/products/totebag/13.jpg'],
     videos: ['images/products/totebag/video1.mp4','images/products/totebag/video2.mp4'],
     size: '40 × 42 × 10 cm · 35 cm white contrast strap', material: 'Ikat woven · 100% organic cotton',
     category: 'tote-bag', printType: 'ikat', rooms: [], favRank: 33,
-    variantGroup: 'totebag', variantLabel: 'Vertical · Contrast strap (white)', mini: "Our first batch — only 25 exist. First-batch price while we learn from real use.",
+    variantGroup: 'totebag', variantLabel: 'Vertical · Contrast strap (white)', mini: "Our very first tote bag. A sturdier, better one is on its way.",
     desc: null
   }
 };
@@ -274,11 +274,9 @@ const GHAR_PRODUCTS = {
    object literal since it needs to reference itself — keeps the four entries
    above from repeating this in full). "Ghar" is Hindi for "home". */
 const GHAR_TOTE_DESC = [
-  "This is our very first batch of tote bags — only 25 exist. We're pricing this batch at €24.99 instead of €39.99, because we want you to actually use it before we make more: carry it hard for a few weeks, then tell us what to improve. Your feedback shapes the next batch.",
-  "These are meant to carry your Ghar (home) with you — but they are built to carry rather more than that. Not a basic tote: there are three deep pockets, a compartment sized for a laptop, books, or a change of gym clothes, and a bottle holder generous enough for a water bottle on a hot day or a bottle of wine on the way to a friend's.",
-  "Take it to the beach, the office, the gym, or just the supermarket — it is cut for all of it. We have kept the strap long enough to sling across your body on a bike, and added a front pocket for whatever you reach for without looking: earphones, mints, your phone for a quick photo. Inside, two more deep pockets mean your smaller things stop sliding around at the bottom.",
-  "We hear from customers who take theirs to the gym and use the compartments to keep before-and-after workout clothes apart — that is the kind of everyday tote this is meant to be. And since it is 100% organic cotton, the whole thing goes straight into the wash, then hangs dry and comes back looking new.",
-  "Available in four fits — horizontal or vertical, with the strap either matching the body or in white for contrast — choose whichever feels most like you."
+  "This is the very first tote bag we ever made, and we are proud of it.",
+  "Along the way we realised it needs some improvements, so we are working on them. Very soon we will bring you a better tote: more comprehensive, sturdier, and one you will truly love to carry every day.",
+  "It is inspired by this first design, with many, many improvements."
 ];
 GHAR_STOCK_GROUPS.totebag.ids.forEach(function (id) { GHAR_PRODUCTS[id].desc = GHAR_TOTE_DESC; });
 
@@ -314,8 +312,13 @@ function gharBulkNote(id) {
 
 /* ── cart storage ── */
 function gharCart() {
-  try { return JSON.parse(localStorage.getItem('gharCart')) || {}; }
+  let c;
+  try { c = JSON.parse(localStorage.getItem('gharCart')) || {}; }
   catch (e) { return {}; }
+  Object.keys(c).forEach(function (id) {
+    if (GHAR_PRODUCTS[id] && GHAR_PRODUCTS[id].notForSale) delete c[id];
+  });
+  return c;
 }
 function gharSaveCart(cart) {
   for (const id of Object.keys(cart)) {
@@ -453,7 +456,7 @@ function gharApplyStockToShop() {
 
 /* Called by "Add to bag" buttons: gharAdd('marigold', this) */
 function gharAdd(id, btn) {
-  if (!GHAR_PRODUCTS[id]) return;
+  if (!GHAR_PRODUCTS[id] || GHAR_PRODUCTS[id].notForSale) return;
   if (gharCartCount() + 1 > GHAR_MAX_PER_ORDER) {
     if (btn) {
       const orig = btn.textContent;
@@ -552,7 +555,7 @@ function gharProductModal(id) {
           : '<img src="' + m.src + '" data-i="' + i + '" class="' + (i === 0 ? 'active' : '') + '" alt="">';
       }).join('') + '</div>'
     : '';
-  const group = p.variantGroup ? GHAR_STOCK_GROUPS[p.variantGroup] : null;
+  const group = (p.variantGroup && !p.notForSale) ? GHAR_STOCK_GROUPS[p.variantGroup] : null;
   const variantPicker = group
     ? '<div class="pm-variants">' + group.ids.map(function (vid) {
         return '<button type="button" class="pm-variant' + (vid === id ? ' active' : '') + '" data-id="' + vid + '">' +
@@ -572,14 +575,15 @@ function gharProductModal(id) {
       '</div>' +
       '<div class="pm-info">' +
         '<p class="s-tag">' + (p.printType === 'ikat' ? 'Ikat collection' : 'The collection') + '</p>' +
-        '<h3>' + p.name + '</h3>' +
+        '<h3>' + ((p.notForSale && p.variantGroup) ? 'Everyday Tote Bag' : p.name) + '</h3>' +
         variantPicker +
-        '<p class="pm-size" id="pm-variant-size">' + p.size + ' · ' + p.material + '</p>' +
-        '<p class="pm-price price">' + gharPriceHtml(p) + '</p>' +
-        (gharBulkNote(id) ? '<p class="pm-bulk">' + gharBulkNote(id) + '</p>' : '') +
-        (p.maxPerOrder ? '<p class="pm-bulk">Just ' + p.maxPerOrder + ' per person — this batch is tiny.</p>' : '') +
+        (p.notForSale ? '' :
+          '<p class="pm-size" id="pm-variant-size">' + p.size + ' · ' + p.material + '</p>' +
+          '<p class="pm-price price">' + gharPriceHtml(p) + '</p>' +
+          (gharBulkNote(id) ? '<p class="pm-bulk">' + gharBulkNote(id) + '</p>' : '') +
+          (p.maxPerOrder ? '<p class="pm-bulk">Just ' + p.maxPerOrder + ' per person — this batch is tiny.</p>' : '')) +
         '<div class="pm-desc">' + p.desc.map(function (d) { return '<p>' + d + '</p>'; }).join('') + '</div>' +
-        '<p class="pm-note">Every batch here is intentionally small — what you choose to buy tells us what to make more of next.</p>' +
+        (p.notForSale ? '' : '<p class="pm-note">Every batch here is intentionally small — what you choose to buy tells us what to make more of next.</p>') +
         '<div id="pm-action"></div>' +
       '</div>' +
     '</div>', true
@@ -652,14 +656,17 @@ function gharProductModal(id) {
 function gharRenderPmAction(id) {
   const el = document.getElementById('pm-action');
   if (!el) return;
-  if (gharEffectiveRemaining(id) > 0) {
+  const notForSale = !!GHAR_PRODUCTS[id].notForSale;
+  if (!notForSale && gharEffectiveRemaining(id) > 0) {
     el.innerHTML = '<button class="btn-add pm-add" onclick="gharAdd(\'' + id + '\', this)">Yes, I\'m in</button>';
     return;
   }
   el.innerHTML =
     '<div class="pm-soldout">' +
-      '<p>Thank you for your interest — this piece was part of a very first, very small production run. We keep every batch intentionally small: so nothing is overproduced, nothing ends up in a landfill, and the hands that made it by hand are valued for the time that took, not rushed into making more than needed.</p>' +
-      '<p>Leave your email below and we\'ll let you know as soon as the next production is ready.</p>' +
+      (notForSale
+        ? '<p>Want to be the first to know when the new tote is ready? Leave your email below and we\'ll tell you the moment it is.</p>'
+        : '<p>Thank you for your interest — this piece was part of a very first, very small production run. We keep every batch intentionally small: so nothing is overproduced, nothing ends up in a landfill, and the hands that made it by hand are valued for the time that took, not rushed into making more than needed.</p>' +
+          '<p>Leave your email below and we\'ll let you know as soon as the next production is ready.</p>') +
       '<div class="pm-soldout-form">' +
         '<input type="email" id="pm-notify-email" placeholder="your@email.com" autocomplete="email">' +
         '<button type="button" id="pm-notify-send">Notify me</button>' +
