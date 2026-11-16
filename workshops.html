@@ -3,15 +3,55 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Workshops — Ghar</title>
-<meta name="description" content="Hand block printing workshops from Ghar are coming soon — leave your name and email and we'll let you know the moment dates are out.">
+<title>Block Printing Workshop, Amsterdam, 28 November — Ghar</title>
+<meta name="description" content="Hand block printing workshop at De Steek Amsterdam, Saturday 28 November 2026. Print up to two tote bags with hand-carved wooden blocks, with homemade chai. €38 per person.">
 <link rel="icon" type="image/png" href="images/site/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&family=Noto+Serif+Devanagari:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=20260817a">
-<script src="cart.js?v=20260817a" defer></script>
+<link rel="stylesheet" href="styles.css?v=20261116b">
+<script src="cart.js?v=20261116b" defer></script>
+<script>if("IntersectionObserver" in window)document.documentElement.className+=" bk-js";</script>
+<script type="application/ld+json" id="ws-ld">
+{
+  "@context": "https://schema.org",
+  "@type": "Event",
+  "name": "Block printing workshop",
+  "description": "A hand block printing workshop with Ghar: print up to two tote bags with hand-carved wooden blocks, with homemade chai along the way.",
+  "startDate": "2026-11-28",
+  "eventStatus": "https://schema.org/EventScheduled",
+  "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+  "image": "https://ghar.nl/images/blocks/01-floral-star-square-1.jpg",
+  "location": {
+    "@type": "Place",
+    "name": "De Steek Amsterdam",
+    "url": "https://desteekamsterdam.com/en/",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Van der Hoopstraat 70HS",
+      "postalCode": "1051 VK",
+      "addressLocality": "Amsterdam",
+      "addressCountry": "NL"
+    }
+  },
+  "offers": {
+    "@type": "Offer",
+    "url": "https://ghar.nl/workshops.html",
+    "price": "38",
+    "priceCurrency": "EUR",
+    "availability": "https://schema.org/InStock"
+  },
+  "organizer": { "@type": "Organization", "name": "Ghar", "url": "https://ghar.nl" }
+}
+</script>
 </head>
 <body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs>
+  <g id="bk-motif" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+    <circle r="58" pathLength="1"/><circle r="22" pathLength="1"/>
+    <ellipse cx="0" cy="-40" rx="9" ry="17" pathLength="1"/><ellipse cx="0" cy="-40" rx="9" ry="17" pathLength="1" transform="rotate(45)"/><ellipse cx="0" cy="-40" rx="9" ry="17" pathLength="1" transform="rotate(90)"/><ellipse cx="0" cy="-40" rx="9" ry="17" pathLength="1" transform="rotate(135)"/><ellipse cx="0" cy="-40" rx="9" ry="17" pathLength="1" transform="rotate(180)"/><ellipse cx="0" cy="-40" rx="9" ry="17" pathLength="1" transform="rotate(225)"/><ellipse cx="0" cy="-40" rx="9" ry="17" pathLength="1" transform="rotate(270)"/><ellipse cx="0" cy="-40" rx="9" ry="17" pathLength="1" transform="rotate(315)"/>
+    <path d="M0 -10 L10 0 L0 10 L-10 0Z" pathLength="1"/>
+  </g></defs></svg>
+<div class="bk-progress" aria-hidden="true"></div>
 
 <!-- ── NAV ──────────────────────────────────────────────────── -->
 <nav>
@@ -23,33 +63,249 @@
     <li><a href="shop.html">Shop</a></li>
     <li><a href="about.html">Our Story</a></li>
     <li><a href="craft.html">The Craft</a></li>
+    <li><a href="blocks.html">Blocks</a></li>
     <li><a href="care.html">Care</a></li>
     <li><a href="workshops.html" class="active">Workshops</a></li>
   </ul>
   <a href="cart.html" class="nav-cart" id="nav-bag">Bag</a>
 </nav>
 
-<!-- ── PAGE HERO ──────────────────────────────────────────────── -->
-<div class="page-hero">
-  <div class="page-hero-inner">
-    <p class="s-tag">Workshops</p>
-    <h1>Coming <em>soon.</em></h1>
-    <p>Soon you can experience the art of making your own fabric: real hand-carved wooden blocks, trays of colour, and the joy of pressing your very first print. Ink on your fingers, a pattern of your own to take home.</p>
-  </div>
-</div>
 
-<!-- ── INTEREST FORM ──────────────────────────────────────────── -->
-<section class="craft-story">
-  <div class="container craft-story-inner" style="max-width:560px;">
-    <p class="s-tag">Be the first to know</p>
-    <h2>Leave your name, and we'll reach out.</h2>
-    <div class="craft-story-body">
-      <p>We're planning our first hand block printing workshops in Amsterdam. Tell us you're interested, and the moment we set a date, you'll be among the first to hear about it.</p>
+<!-- ── HERO ───────────────────────────────────────────────────── -->
+<header class="page-hero bk-hero ws-hero">
+  <div class="page-hero-inner">
+    <div>
+      <p class="s-tag">Workshop</p>
+      <h1>Block printing <em>workshop</em></h1>
+      <p>Hand-carved wooden blocks, a table of colour and homemade chai. Press your own pattern onto a tote bag you will carry for years.</p>
+      <ul class="ws-meta">
+        <li><span class="ws-k">When</span><span><span data-ws="dateText">Saturday 28 November 2026</span><small data-ws="time">Start time announced soon</small></span></li>
+        <li><span class="ws-k">Where</span><span><a href="https://desteekamsterdam.com/en/" target="_blank" rel="noopener">De Steek Amsterdam</a><small>Van der Hoopstraat 70HS, Amsterdam West</small></span></li>
+        <li><span class="ws-k">Price</span><span><span><span data-ws="price">€38</span> per person, incl. 21% VAT</span><small>Our very first workshop</small></span></li>
+        <li data-ws-row="spots" hidden><span class="ws-k">Spots</span><span data-ws="spots"></span></li>
+      </ul>
+      <div class="bk-hero-cta" style="margin-top:32px">
+        <a class="btn-pri ws-reserve" href="#interest" data-ws-reserve data-ws-live>Sign up, no payment yet</a>
+        <a class="btn-sec" href="#included" data-ws-live>See what you get</a>
+        <span class="ws-past-note" data-ws-past>This workshop has taken place</span>
+        <a class="btn-sec" href="#interest" data-ws-past>Tell us about the next one</a>
+      </div>
     </div>
-    <div class="gform" style="margin-top:12px;">
-      <input id="ws-name" placeholder="Your name" autocomplete="name">
-      <input id="ws-email" type="email" placeholder="Email address" autocomplete="email">
-      <button id="ws-send" type="button" class="gform-btn">I'm interested</button>
+    <div class="bk-hero-art"><svg viewBox="0 0 420 250" role="img" aria-label="A wooden block pressing a flower pattern onto cloth three times in a row">
+  <rect class="hs-cloth" x="14" y="96" width="392" height="124"/>
+  <g class="hs-weave"><path d="M14 126H406M14 156H406M14 186H406"/></g>
+  <use class="hs-print hs-p1" href="#bk-motif" transform="translate(90 158) scale(.72)" stroke-width="4.5"/>
+  <use class="hs-print hs-p2" href="#bk-motif" transform="translate(210 158) scale(.72)" stroke-width="4.5"/>
+  <use class="hs-print hs-p3" href="#bk-motif" transform="translate(330 158) scale(.72)" stroke-width="4.5"/>
+  <g class="hs-presser"><g transform="translate(210 158)">
+    <rect class="hs-block" x="-42" y="-42" width="84" height="84" rx="5" fill-opacity=".96"/>
+    <circle class="hs-handle" r="15"/><circle r="15" fill="none" stroke="#6b4226" stroke-width="2"/>
+  </g></g>
+</svg><p class="bk-hero-cap">Press. Lift. Move along. Repeat.</p></div>
+  </div>
+</header>
+<div class="bk-kinara" aria-hidden="true"></div>
+
+<!-- ── WHAT YOU GET ───────────────────────────────────────────── -->
+<section class="bk-section ws-included" id="included">
+  <div class="bk-inner">
+    <div class="bk-reveal">
+      <p class="s-tag">What you get</p>
+      <h2>Everything is <em>ready and waiting.</em></h2>
+      <p class="bk-lead">Come as you are. We have the blocks, the colour, the chai and a story to begin with. Tap any card to read a little more.</p>
+    </div>
+    <ul class="ws-grid">
+
+      <li class="ws-item bk-reveal"><div class="ws-card">
+        <button class="ws-card-btn" type="button" aria-expanded="false" aria-controls="wsp-1" id="wsb-1">
+          <svg class="ws-ico" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path class="bk-draw" pathLength="1" d="M14 24h36l-3 33H17z"/><path class="bk-draw" pathLength="1" d="M23 24c0-14 18-14 18 0"/><path class="bk-draw a" pathLength="1" d="M32 33l6 6-6 6-6-6z"/><path class="bk-draw a" pathLength="1" d="M32 39h0"/></svg>
+          <span><span class="ws-card-title">Print up to two tote bags</span><span class="ws-card-sub">Thick, heavy-quality totes, yours to keep.</span></span>
+          <span class="ws-plus" aria-hidden="true"></span>
+        </button>
+        <div class="ws-panel" id="wsp-1" role="region" aria-labelledby="wsb-1"><div class="ws-panel-in"><div class="ws-panel-body">
+          <p>These are generous, sturdy totes made of thick 100% pure cotton. They are built to be used for years, so the pattern you press today goes to market, to the beach and to every picnic after.</p>
+          <p>Print one, or print two. Both are yours to keep.</p>
+        </div></div></div>
+      </div></li>
+
+      <li class="ws-item bk-reveal" style="--d:.08s"><div class="ws-card">
+        <button class="ws-card-btn" type="button" aria-expanded="false" aria-controls="wsp-2" id="wsb-2">
+          <svg class="ws-ico" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path class="bk-draw" pathLength="1" d="M26 8h12v12H26z"/><path class="bk-draw" pathLength="1" d="M12 20h40v36H12z"/><circle class="bk-draw a" pathLength="1" cx="32" cy="38" r="9"/><circle class="bk-draw a" pathLength="1" cx="32" cy="38" r="3"/><path class="bk-draw a" pathLength="1" d="M32 26v3M32 47v3M20 38h3M41 38h3"/></svg>
+          <span><span class="ws-card-title">Our hand-carved wooden blocks</span><span class="ws-card-sub">All of them, ready for you to press with.</span></span>
+          <span class="ws-plus" aria-hidden="true"></span>
+        </button>
+        <div class="ws-panel" id="wsp-2" role="region" aria-labelledby="wsb-2"><div class="ws-panel-in"><div class="ws-panel-body">
+          <p>Every one of our hand-carved wooden blocks is on the table. Choose a favourite, mix a few, and build a pattern that is entirely your own.</p>
+          <p><a href="blocks.html">Meet the blocks</a></p>
+        </div></div></div>
+      </div></li>
+
+      <li class="ws-item bk-reveal" style="--d:.16s"><div class="ws-card">
+        <button class="ws-card-btn" type="button" aria-expanded="false" aria-controls="wsp-3" id="wsb-3">
+          <svg class="ws-ico" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path class="bk-draw" pathLength="1" d="M32 9C18 9 8 19 8 32s10 23 22 23c6 0 7-4 4-7-3-4-1-8 5-8h8c7 0 13-5 13-11C60 18 48 9 32 9z"/><circle class="bk-draw a" pathLength="1" cx="21" cy="27" r="4"/><circle class="bk-draw a" pathLength="1" cx="33" cy="20" r="4"/><circle class="bk-draw a" pathLength="1" cx="45" cy="25" r="4"/><circle class="bk-draw a" pathLength="1" cx="19" cy="40" r="4"/></svg>
+          <span><span class="ws-card-title">A palette of colours</span><span class="ws-card-sub">Pick your favourites from the table.</span></span>
+          <span class="ws-plus" aria-hidden="true"></span>
+        </button>
+        <div class="ws-panel" id="wsp-3" role="region" aria-labelledby="wsb-3"><div class="ws-panel-in"><div class="ws-panel-body">
+          <p>A whole palette is laid out for you to choose from. Go with one colour you love, or let two shades meet on the same cloth and see what happens.</p>
+        </div></div></div>
+      </div></li>
+
+      <li class="ws-item bk-reveal"><div class="ws-card">
+        <button class="ws-card-btn" type="button" aria-expanded="false" aria-controls="wsp-4" id="wsb-4">
+          <svg class="ws-ico" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path class="bk-draw" pathLength="1" d="M54 8L30 33"/><path class="bk-draw" pathLength="1" d="M27 30l7 7"/><path class="bk-draw a" pathLength="1" d="M27 37c-8-1-12 4-12 9-1 4-4 7-8 9 9 3 20 1 24-8 2-4 1-8-4-10z"/></svg>
+          <span><span class="ws-card-title">Brushes and tools</span><span class="ws-card-sub">For colour that lies even, clean and neat.</span></span>
+          <span class="ws-plus" aria-hidden="true"></span>
+        </button>
+        <div class="ws-panel" id="wsp-4" role="region" aria-labelledby="wsb-4"><div class="ws-panel-in"><div class="ws-panel-body">
+          <p>Brushes of different kinds, and little tools to lay the colour on evenly and cleanly. They help every press come out crisp, and your tote come out neat.</p>
+        </div></div></div>
+      </div></li>
+
+      <li class="ws-item ws-wide bk-reveal" style="--d:.08s"><div class="ws-card ws-feature">
+        <button class="ws-card-btn" type="button" aria-expanded="false" aria-controls="wsp-5" id="wsb-5">
+          <svg class="ws-ico" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path class="bk-draw" pathLength="1" d="M7 15c9-3 17-3 25 2 8-5 16-5 25-2v35c-9-3-17-3-25 2-8-5-16-5-25-2z"/><path class="bk-draw" pathLength="1" d="M32 17v35"/><path class="bk-draw" pathLength="1" d="M14 26c5-1 10-1 13 1M14 33c5-1 10-1 13 1M14 40c5-1 10-1 13 1"/><path class="bk-draw a" pathLength="1" d="M44 25l6 6-6 6-6-6z"/><path class="bk-draw a" pathLength="1" d="M40 43h8"/></svg>
+          <span><span class="ws-tag">Made for this workshop</span><span class="ws-card-title">An illustrated story to begin with</span><span class="ws-card-sub">An opening session full of pictures and stories about block printing.</span></span>
+          <span class="ws-plus" aria-hidden="true"></span>
+        </button>
+        <div class="ws-panel" id="wsp-5" role="region" aria-labelledby="wsb-5"><div class="ws-panel-in"><div class="ws-panel-body">
+          <p>Before the first press, we gather for a beautifully illustrated introduction to block printing, made especially for this workshop. It is full of stories: where block printing comes from, how a block is carved, what the patterns mean, and how to look after what you print.</p>
+          <p class="ws-teaser">Indian block-printed cloth was being sold in Egypt about a thousand years ago. Centuries later, ships of the Dutch East India Company carried Indian prints to Amsterdam.</p>
+          <p>Come for the stories. Stay, and watch your hands join them.</p>
+        </div></div></div>
+      </div></li>
+
+      <li class="ws-item bk-reveal"><div class="ws-card">
+        <button class="ws-card-btn" type="button" aria-expanded="false" aria-controls="wsp-6" id="wsb-6">
+          <svg class="ws-ico" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path class="bk-draw" pathLength="1" d="M10 30h34v8c0 10-7 17-17 17S10 48 10 38z"/><path class="bk-draw" pathLength="1" d="M44 33h4c6 0 6 11 0 11h-5"/><path class="bk-draw" pathLength="1" d="M8 58h40"/><path class="bk-draw a" pathLength="1" d="M19 23c-3-4 3-6 0-11M28 23c-3-4 3-6 0-11M37 23c-3-4 3-6 0-11"/></svg>
+          <span><span class="ws-card-title">Unhurried time to print, with chai</span><span class="ws-card-sub">Homemade chai, served along the way.</span></span>
+          <span class="ws-plus" aria-hidden="true"></span>
+        </button>
+        <div class="ws-panel" id="wsp-6" role="region" aria-labelledby="wsb-6"><div class="ws-panel-in"><div class="ws-panel-body">
+          <p>There is no rush here. Press, lift, look, and press again. Homemade chai is served along the way, and water and other drinks are available from the venue's menu.</p>
+        </div></div></div>
+      </div></li>
+
+      <li class="ws-item bk-reveal" style="--d:.08s"><div class="ws-card">
+        <button class="ws-card-btn" type="button" aria-expanded="false" aria-controls="wsp-7" id="wsb-7">
+          <svg class="ws-ico" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path class="bk-draw" pathLength="1" d="M32 7C25 19 16 27 16 37a16 16 0 0032 0C48 27 39 19 32 7z"/><path class="bk-draw a" pathLength="1" d="M24 38a8 8 0 006 8"/><path class="bk-draw a" pathLength="1" d="M10 58c7-4 12-4 22 0s15 4 22 0"/></svg>
+          <span><span class="ws-card-title">Cleaning the blocks</span><span class="ws-card-sub">A calm ritual to end on.</span></span>
+          <span class="ws-plus" aria-hidden="true"></span>
+        </button>
+        <div class="ws-panel" id="wsp-7" role="region" aria-labelledby="wsb-7"><div class="ws-panel-in"><div class="ws-panel-body">
+          <p>At the end, we set aside time to clean the blocks, and we will show you how. Trust us, it turns out to be a calming ritual in itself.</p>
+        </div></div></div>
+      </div></li>
+
+      <li class="ws-item bk-reveal" style="--d:.16s"><div class="ws-card">
+        <button class="ws-card-btn" type="button" aria-expanded="false" aria-controls="wsp-8" id="wsb-8">
+          <svg class="ws-ico" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path class="bk-draw" pathLength="1" d="M8 32L32 10l24 22"/><path class="bk-draw" pathLength="1" d="M15 28v27h34V28"/><path class="bk-draw a" pathLength="1" d="M32 49c-9-5-10-12-5-14 2-1 5 0 5 3 0-3 3-4 5-3 5 2 4 9-5 14z"/></svg>
+          <span><span class="ws-card-title">Take your tote home</span><span class="ws-card-sub">Your own print, ready to use.</span></span>
+          <span class="ws-plus" aria-hidden="true"></span>
+        </button>
+        <div class="ws-panel" id="wsp-8" role="region" aria-labelledby="wsb-8"><div class="ws-panel-in"><div class="ws-panel-body">
+          <p>Your finished tote, or both of them, goes home with you: a pattern pressed by your own hands, ready for everyday life.</p>
+        </div></div></div>
+      </div></li>
+
+    </ul>
+  </div>
+</section>
+
+<!-- ── HOW THE SESSION UNFOLDS ────────────────────────────────── -->
+<section class="bk-section bk-journey" id="session">
+  <div class="bk-inner">
+    <div class="bk-reveal">
+      <p class="s-tag">How the session unfolds</p>
+      <h2>A gentle <em>five-part rhythm.</em></h2>
+      <p class="bk-lead">Here is how the workshop flows, from the first cup of chai to taking your tote home.</p>
+    </div>
+    <ol class="bk-timeline">
+      <li><div class="bk-year">Arrive</div><p>Find a seat and settle in with a cup of homemade chai.</p></li>
+      <li><div class="bk-year">Listen</div><p>The illustrated story of block printing opens the workshop.</p></li>
+      <li><div class="bk-year">Print</div><p>Choose your blocks and colours, and press at your own pace.</p></li>
+      <li><div class="bk-year">Clean</div><p>Together we clean the blocks, a quiet and calming ritual.</p></li>
+      <li><div class="bk-year">Home</div><p>Your tote, or two, goes home with you.</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ── PRINTS ON A TABLE ──────────────────────────────────────── -->
+<section class="bk-section ws-prints" id="blocks-preview">
+  <div class="bk-inner">
+    <div class="bk-reveal">
+      <p class="s-tag">On the table</p>
+      <h2>A few of the blocks <em>waiting for you.</em></h2>
+      <p class="bk-lead">Carved by hand from wood, each one with a pattern of its own.</p>
+    </div>
+    <ul class="ws-table">
+      <li class="bk-reveal"><figure class="ws-print" style="--r:-3deg"><div class="ws-ph"><img src="images/blocks/01-floral-star-square-1.jpg" alt="A square wooden block carved with a floral star pattern" loading="lazy"></div></figure></li>
+      <li class="bk-reveal" style="--d:.07s"><figure class="ws-print" style="--r:2.5deg"><div class="ws-ph"><img src="images/blocks/04-flower-vine-jaal-1.jpg" alt="A wooden block carved with a trailing flower and vine pattern" loading="lazy"></div></figure></li>
+      <li class="bk-reveal" style="--d:.14s"><figure class="ws-print" style="--r:-1.5deg"><div class="ws-ph"><img src="images/blocks/07-sunburst-1.jpg" alt="A round wooden block carved as a sunburst" loading="lazy"></div></figure></li>
+      <li class="bk-reveal" style="--d:.21s"><figure class="ws-print" style="--r:3deg"><div class="ws-ph"><img src="images/blocks/08-spiral-1.jpg" alt="A round wooden block carved with a spiral" loading="lazy"></div></figure></li>
+      <li class="bk-reveal" style="--d:.28s"><figure class="ws-print" style="--r:-2.5deg"><div class="ws-ph"><img src="images/blocks/05-peacock-column-1.jpg" alt="A tall wooden block carved with a peacock feather column pattern" loading="lazy"></div></figure></li>
+      <li class="bk-reveal" style="--d:.35s"><figure class="ws-print" style="--r:2deg"><div class="ws-ph"><img src="images/blocks/02-mandala-rectangle-1.jpg" alt="A rectangular wooden block carved with a mandala" loading="lazy"></div></figure></li>
+    </ul>
+    <div class="ws-prints-cta bk-reveal"><a class="btn-dark" href="blocks.html">Meet the blocks</a></div>
+  </div>
+</section>
+
+<!-- ── VENUE ──────────────────────────────────────────────────── -->
+<section class="bk-section bk-make ws-venue" id="venue">
+  <div class="bk-inner">
+    <div class="bk-reveal">
+      <p class="s-tag">Where</p>
+      <h2>Find us in <em>Amsterdam West.</em></h2>
+      <div class="ws-venue-card">
+        <div>
+          <p class="ws-venue-area">Amsterdam West</p>
+          <p class="ws-venue-name"><a href="https://desteekamsterdam.com/en/" target="_blank" rel="noopener">De Steek Amsterdam</a></p>
+          <address class="ws-venue-addr">Van der Hoopstraat 70HS<br>1051 VK Amsterdam</address>
+          <a class="ws-venue-go" href="https://www.google.com/maps/search/?api=1&amp;query=De+Steek+Amsterdam+Van+der+Hoopstraat+70HS+1051+VK+Amsterdam" target="_blank" rel="noopener" aria-label="Open De Steek Amsterdam in Google Maps (opens in a new tab)">Open in Google Maps</a><a class="ws-venue-apple" href="https://maps.apple.com/?q=De+Steek+Amsterdam+Van+der+Hoopstraat+70HS+1051+VK+Amsterdam" target="_blank" rel="noopener">Apple Maps</a>
+        </div>
+        <svg class="ws-map" viewBox="0 0 300 200" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 60c60-20 120 20 280-10M10 130c80 20 150-30 280 10M90 8v184M200 8v184M10 100h280" opacity=".7"/><path d="M40 20l30 30M230 150l40 30" opacity=".35"/><g class="ws-pin a"><path d="M150 108c-18-22-24-32-24-44a24 24 0 0148 0c0 12-6 22-24 44z" stroke-width="2.4"/><circle cx="150" cy="64" r="8" stroke-width="2.4"/></g><ellipse class="a" cx="150" cy="114" rx="16" ry="4" opacity=".6"/></svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FAQ ────────────────────────────────────────────────────── -->
+<section class="bk-section ws-faq" id="faq">
+  <div class="bk-inner">
+    <div class="bk-reveal">
+      <p class="s-tag">Good to know</p>
+      <h2>A few <em>questions.</em></h2>
+      <details class="ws-q"><summary>Do I need any experience?</summary><p>None at all. If you can press a stamp, you can block print. We guide you through every step, and there is no wrong way to make a pattern.</p></details>
+      <details class="ws-q"><summary>Can I come with friends?</summary><p>Yes, please do. Each person signs up with their own name and email, so everyone in your group gets a spot on the list.</p></details>
+      <details class="ws-q"><summary>What does my ticket include?</summary><p>Your ticket is <span data-ws="price">€38</span> per person, incl. 21% VAT. It includes printing up to two tote bags, all of our blocks, colours, brushes and tools, the illustrated opening session and homemade chai. Water and other drinks are available from the venue's menu.</p></details>
+      <details class="ws-q"><summary>Where does it take place?</summary><p>At <a href="https://desteekamsterdam.com/en/" target="_blank" rel="noopener">De Steek Amsterdam</a>, Van der Hoopstraat 70HS, 1051 VK Amsterdam, in Amsterdam West.</p></details>
+      <details class="ws-q"><summary>I have a question. Who do I ask?</summary><p>We would love to hear from you. Message us on Instagram at <a href="https://instagram.com/ghar_dam" target="_blank" rel="noopener">@ghar_dam</a> or write to <a href="mailto:dimple@ghar.nl" data-ws="mail">dimple@ghar.nl</a>.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- ── CLOSING CTA ────────────────────────────────────────────── -->
+<section class="bk-section bk-close ws-close" id="reserve">
+  <div class="bk-inner bk-reveal">
+    <p class="s-tag" style="justify-content:center">Join us</p>
+    <h2>Come and press <em>your own pattern.</em></h2>
+    <p class="bk-lead"><span data-ws="dateText">Saturday 28 November 2026</span> at De Steek Amsterdam. <span data-ws="price">€38</span> per person, incl. 21% VAT.</p>
+    <div class="bk-close-cta"><a class="btn-pri ws-reserve" href="#interest" data-ws-reserve data-ws-live>Sign up, no payment yet</a><a class="btn-dark" href="blocks.html">Meet the blocks</a></div>
+    <p class="ws-fine" data-ws-past>This workshop has taken place. Tell us below and we will let you know about the next one.</p>
+  </div>
+</section>
+
+<!-- ── INTEREST FORM (fallback / next workshop) ───────────────── -->
+<section class="bk-section ws-interest" id="interest" tabindex="-1">
+  <div class="bk-inner bk-reveal">
+    <p class="s-tag">Stay in the loop</p>
+    <h2>Sign up for <em>28 November.</em></h2>
+    <p class="bk-lead">No payment needed right now. Leave your name and email, and we will send you the details and a payment link as soon as bookings open. You can also leave your details for the next workshop.</p>
+    <p class="ws-soon" id="ws-soon" role="status" tabindex="-1" hidden>No payment needed yet: add your name and email below and we will send you the details and a payment link soon.</p>
+    <div class="gform">
+      <input id="ws-name" placeholder="Your name" autocomplete="name" aria-label="Your name">
+      <input id="ws-email" type="email" placeholder="Email address" autocomplete="email" aria-label="Email address">
+      <button id="ws-send" type="button" class="gform-btn">Sign me up</button>
       <p id="ws-status" role="status"></p>
     </div>
   </div>
@@ -80,6 +336,7 @@
           <li><a href="about.html">About Ghar</a></li>
           <li><a href="craft.html#makers">Our Makers</a></li>
           <li><a href="craft.html">The Craft</a></li>
+          <li><a href="blocks.html">The Blocks</a></li>
           <li><a href="care.html">Care Guide</a></li>
         </ul>
       </div>
@@ -102,18 +359,160 @@
   </div>
 </footer>
 
+
+<!-- ── STICKY MOBILE BAR ──────────────────────────────────────── -->
+<div class="ws-sticky" id="ws-sticky" data-ws-live>
+  <p class="ws-sticky-info">Block printing workshop<span class="ws-sticky-sub"><span data-ws="dateShort">Sat 28 Nov</span> · <span data-ws="price">€38</span> per person</span></p>
+  <a class="btn-pri ws-reserve" href="#interest" data-ws-reserve>Sign up, no payment yet</a>
+</div>
+
 <script>
-document.getElementById('ws-send').addEventListener('click', async function () {
-  const name = document.getElementById('ws-name').value.trim();
-  const email = document.getElementById('ws-email').value.trim();
-  const status = document.getElementById('ws-status');
-  if (!name || !gharEmailOk(email)) { status.textContent = 'Please fill in your name and a valid email.'; return; }
-  this.disabled = true;
+/* ═══════════════════════════════════════════════════════════════════
+   WORKSHOP CONFIG: edit ONLY this object when the facts are decided.
+   Everything on the page reads from here.
+   - dateISO       YYYY-MM-DD. Once this day has passed, the page shows
+                   "This workshop has taken place" and the interest form
+                   instead of the booking buttons.
+   - dateText      the date as shown to visitors.
+   - startTime /
+     endTime       24h "HH:MM", e.g. '18:30'. Leave '' while undecided
+                   (the page then says "Start time announced soon").
+   - priceEur      price per person in euro, incl. 21% VAT.
+   - paymentLink   paste the Stripe Payment Link here (https://buy.stripe.com/...).
+                   While '' the Reserve buttons scroll to the interest form.
+   - spots         number of places, or null to leave it out. The page
+                   never shows "remaining" seats.
+   - contactEmail  address used in the FAQ.
+   ═══════════════════════════════════════════════════════════════════ */
+const WORKSHOP = {
+  dateISO: '2026-11-28',
+  dateText: 'Saturday 28 November 2026',
+  startTime: '',
+  endTime: '',
+  priceEur: 38,
+  paymentLink: '',
+  spots: null,
+  contactEmail: 'dimple@ghar.nl'
+};
+
+(function () {
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var hasIO = 'IntersectionObserver' in window;
+  var $ = function (s, c) { return (c || document).querySelector(s); };
+  var $$ = function (s, c) { return Array.prototype.slice.call((c || document).querySelectorAll(s)); };
+  var raf = window.requestAnimationFrame || function (f) { return setTimeout(f, 16); };
+  var W = WORKSHOP;
+
+  /* ── fill the page from the config ── */
+  function todayISO() {
+    try { return new Date().toLocaleDateString('en-CA', { timeZone: 'Europe/Amsterdam' }); }
+    catch (e) { return new Date().toISOString().slice(0, 10); }
+  }
+  var isPast = todayISO() > W.dateISO;
+  document.documentElement.classList.toggle('ws-past', isPast);
+
+  var priceText = '€' + (W.priceEur % 1 === 0 ? W.priceEur : W.priceEur.toFixed(2).replace('.', ','));
+  var timeText = (W.startTime && W.endTime) ? W.startTime + ' to ' + W.endTime
+               : W.startTime ? 'Starts at ' + W.startTime
+               : 'Start time announced soon';
+  var shortDate = W.dateText;
+  try { shortDate = new Date(W.dateISO + 'T12:00:00Z').toLocaleDateString('en-GB', { weekday: 'short', day: 'numeric', month: 'short', timeZone: 'UTC' }).replace(',', ''); } catch (e) {}
+  var texts = { dateText: W.dateText, dateShort: shortDate, price: priceText, time: timeText, mail: W.contactEmail };
+  $$('[data-ws]').forEach(function (el) {
+    var k = el.getAttribute('data-ws');
+    if (k === 'spots') return;
+    if (texts[k]) el.textContent = texts[k];
+    if (k === 'mail' && W.contactEmail) el.setAttribute('href', 'mailto:' + W.contactEmail);
+  });
+  if (W.spots) {
+    var sr = $('[data-ws-row="spots"]');
+    $('[data-ws="spots"]', sr).textContent = W.spots + (W.spots === 1 ? ' spot' : ' spots');
+    sr.hidden = false;
+  }
+  /* keep the Event structured data in step with the config */
   try {
-    await fetch(GHAR_API, { method: 'POST', body: JSON.stringify({ type: 'workshop_interest', name: name, email: email, secret: GHAR_SECRET }) });
-  } catch (err) { /* optimistic */ }
-  status.textContent = 'Thank you — we will reach out the moment we have workshop dates!';
-});
+    var ld = $('#ws-ld'), data = JSON.parse(ld.textContent);
+    data.startDate = W.startTime ? W.dateISO + 'T' + W.startTime : W.dateISO;
+    if (W.endTime) data.endDate = W.dateISO + 'T' + W.endTime; else delete data.endDate;
+    data.offers.price = String(W.priceEur);
+    ld.textContent = JSON.stringify(data);
+  } catch (e) {}
+
+  /* ── Reserve buttons: Stripe link when set, otherwise to the interest form ── */
+  var link = (W.paymentLink || '').trim();
+  var hasLink = /^https?:\/\//i.test(link);
+  var soon = $('#ws-soon'), form = $('#interest');
+  function showSoon() {
+    soon.hidden = false;
+    soon.classList.remove('ws-pulse'); void soon.offsetWidth; soon.classList.add('ws-pulse');
+    form.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
+    setTimeout(function () { try { soon.focus({ preventScroll: true }); } catch (e) {} }, reduce ? 0 : 700);
+  }
+  $$('[data-ws-reserve]').forEach(function (b) {
+    if (hasLink) { b.setAttribute('href', link); b.setAttribute('rel', 'noopener'); b.textContent = 'Reserve your spot'; }
+    else b.addEventListener('click', function (e) { e.preventDefault(); showSoon(); });
+  });
+
+  /* ── reading progress bar ── */
+  var bar = $('.bk-progress');
+  function progress() {
+    var h = document.documentElement.scrollHeight - window.innerHeight;
+    bar.style.transform = 'scaleX(' + (h > 0 ? Math.min(1, window.scrollY / h) : 0) + ')';
+  }
+  window.addEventListener('scroll', progress, { passive: true });
+  progress();
+
+  /* ── fade-and-slide reveals + timeline ── */
+  function watch(els, cls, opts) {
+    if (!hasIO) { els.forEach(function (e) { e.classList.add(cls); }); return; }
+    var o = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (en.isIntersecting) { en.target.classList.add(cls); o.unobserve(en.target); }
+      });
+    }, opts);
+    els.forEach(function (e) { o.observe(e); });
+  }
+  watch($$('.bk-reveal'), 'in', { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
+  watch($$('.bk-timeline'), 'in', { threshold: 0.25 });
+
+  /* ── expanding "what you get" cards ── */
+  $$('.ws-card-btn').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var card = btn.closest('.ws-card');
+      var open = !card.classList.contains('open');
+      card.classList.toggle('open', open);
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  });
+
+  /* ── sticky mobile bar: appears after the hero, hides near the form / footer ── */
+  var sticky = $('#ws-sticky');
+  if (hasIO && sticky) {
+    var heroOut = false, hide = {};
+    function updateSticky() {
+      var covered = Object.keys(hide).some(function (k) { return hide[k]; });
+      sticky.classList.toggle('show', heroOut && !covered);
+    }
+    new IntersectionObserver(function (en) { heroOut = !en[0].isIntersecting; updateSticky(); }).observe($('.ws-hero'));
+    ['#reserve', '#interest', 'footer'].forEach(function (sel) {
+      var el = $(sel); if (!el) return;
+      new IntersectionObserver(function (en) { hide[sel] = en[0].isIntersecting; updateSticky(); }).observe(el);
+    });
+  }
+
+  /* ── interest form (unchanged submit behaviour) ── */
+  document.getElementById('ws-send').addEventListener('click', async function () {
+    const name = document.getElementById('ws-name').value.trim();
+    const email = document.getElementById('ws-email').value.trim();
+    const status = document.getElementById('ws-status');
+    if (!name || !gharEmailOk(email)) { status.textContent = 'Please fill in your name and a valid email.'; return; }
+    this.disabled = true;
+    try {
+      await fetch(GHAR_API, { method: 'POST', body: JSON.stringify({ type: 'workshop_interest', name: name, email: email, secret: GHAR_SECRET }) });
+    } catch (err) { /* optimistic */ }
+    status.textContent = 'Thank you! You are on the list. We will email you the details and a payment link soon.';
+  });
+})();
 </script>
 
 </body>

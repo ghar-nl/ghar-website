@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Blocks — Ghar</title>
+<meta name="description" content="Meet the hand-carved wooden blocks behind Ghar prints: how a block is made, and what each pattern is traditionally read to mean.">
+<link rel="icon" type="image/png" href="images/site/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&family=Noto+Serif+Devanagari:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css?v=20261116b">
+<script src="cart.js?v=20261116b" defer></script>
+<script>if("IntersectionObserver" in window)document.documentElement.className+=" bk-js";</script>
+
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs>
+  <g id="bk-motif" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+    <circle r="58" pathLength="1"/><circle r="22" pathLength="1"/>
+    <ellipse cx="0" cy="-40" rx="9" ry="17" pathLength="1"/><ellipse cx="0" cy="-40" rx="9" ry="17" pathLength="1" transform="rotate(45)"/><ellipse cx="0" cy="-40" rx="9" ry="17" pathLength="1" transform="rotate(90)"/><ellipse cx="0" cy="-40" rx="9" ry="17" pathLength="1" transform="rotate(135)"/><ellipse cx="0" cy="-40" rx="9" ry="17" pathLength="1" transform="rotate(180)"/><ellipse cx="0" cy="-40" rx="9" ry="17" pathLength="1" transform="rotate(225)"/><ellipse cx="0" cy="-40" rx="9" ry="17" pathLength="1" transform="rotate(270)"/><ellipse cx="0" cy="-40" rx="9" ry="17" pathLength="1" transform="rotate(315)"/>
+    <path d="M0 -10 L10 0 L0 10 L-10 0Z" pathLength="1"/>
+  </g></defs></svg>
+<div class="bk-progress" aria-hidden="true"></div>
+
+<!-- ── NAV ──────────────────────────────────────────────────── -->
+<nav>
+  <a href="index.html" class="logo-mark" aria-label="Ghar home">
+    <img src="images/site/logo.png" alt="Ghar" class="logo-svg">
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="shop.html">Shop</a></li>
+    <li><a href="about.html">Our Story</a></li>
+    <li><a href="craft.html">The Craft</a></li>
+    <li><a href="blocks.html" class="active">Blocks</a></li>
+    <li><a href="care.html">Care</a></li>
+    <li><a href="workshops.html">Workshops</a></li>
+  </ul>
+  <a href="cart.html" class="nav-cart" id="nav-bag">Bag</a>
+</nav>
+
+<!-- ── PAGE HERO ──────────────────────────────────────────────── -->
+<header class="page-hero bk-hero">
+  <div class="page-hero-inner">
+    <div>
+      <p class="s-tag">The Blocks</p>
+      <h1>Wooden blocks. <em>Endless patterns.</em></h1>
+      <p>Every Ghar print begins as a carved piece of wood. Come closer, meet each block, and find out what its pattern is traditionally read to mean.</p>
+      <div class="bk-hero-cta"><a class="btn-pri" href="#meet">Meet the blocks</a><a class="btn-sec" href="#make">See how a block is made</a></div>
+    </div>
+    <div class="bk-hero-art"><svg viewBox="0 0 420 250" role="img" aria-label="A wooden block pressing a flower pattern onto cloth three times in a row">
+  <rect class="hs-cloth" x="14" y="96" width="392" height="124"/>
+  <g class="hs-weave"><path d="M14 126H406M14 156H406M14 186H406"/></g>
+  <use class="hs-print hs-p1" href="#bk-motif" transform="translate(90 158) scale(.72)" stroke-width="4.5"/>
+  <use class="hs-print hs-p2" href="#bk-motif" transform="translate(210 158) scale(.72)" stroke-width="4.5"/>
+  <use class="hs-print hs-p3" href="#bk-motif" transform="translate(330 158) scale(.72)" stroke-width="4.5"/>
+  <g class="hs-presser"><g transform="translate(210 158)">
+    <rect class="hs-block" x="-42" y="-42" width="84" height="84" rx="5" fill-opacity=".96"/>
+    <circle class="hs-handle" r="15"/><circle r="15" fill="none" stroke="#6b4226" stroke-width="2"/>
+  </g></g>
+</svg><p class="bk-hero-cap">Press. Lift. Move along. Repeat.</p></div>
+  </div>
+</header>
+<div class="bk-kinara" aria-hidden="true"></div>
+
+<!-- ── WHAT IS BLOCK PRINTING ─────────────────────────────────── -->
+<section class="bk-section bk-what" id="what">
+  <div class="bk-inner">
+    <div class="bk-reveal">
+      <p class="s-tag">The craft</p>
+      <h2>Pattern, <em>pressed by hand.</em></h2>
+      <p class="bk-lead">Block printing is one of the simplest and most beautiful ideas in textiles. A pattern is carved into a block of wood, the block is dipped in colour, and then it is pressed onto cloth by hand. Press, lift, move along, press again. The pattern grows across the fabric one impression at a time.</p>
+      <p class="bk-lead">Because a person makes every press, no two are identical. Those small differences are the quiet signature of a handmade cloth.</p>
+    </div>
+    <div class="bk-playwrap bk-reveal" style="--d:.15s">
+      <button class="bk-cloth" type="button" aria-label="Press a block onto the cloth. Each press prints one flower. Try it a few times and notice that no two come out the same."><span class="bk-cloth-hint">Tap the cloth to press a block</span></button>
+      <div class="bk-print-tools"><span>Every print comes out a little different.</span><button class="bk-clear" type="button">Wipe the cloth</button></div>
+    </div>
+  </div>
+</section>
+
+<!-- ── HOW A BLOCK IS MADE ────────────────────────────────────── -->
+<section class="bk-section bk-make" id="make">
+  <div class="bk-inner">
+    <div class="bk-reveal">
+      <p class="s-tag">From wood to cloth</p>
+      <h2>How a block <em>is made.</em></h2>
+      <p class="bk-lead">Five steps, one patient pair of hands. Scroll to follow a block from raw wood to printed cotton.</p>
+    </div>
+    <div class="bk-make-grid">
+      <div class="bk-stage" data-step="1">
+        <svg viewBox="0 0 420 360" role="img" aria-label="Illustration of the current step in making a wooden printing block">
+  <defs><pattern id="bkweave" width="8" height="8" patternUnits="userSpaceOnUse"><path d="M0 0H8M0 0V8" stroke="#143659" stroke-opacity=".14" fill="none"/></pattern></defs>
+  <g class="bk-scene s1 on">
+    <polygon class="woods" points="300,190 350,150 350,250 300,290"/><polygon class="woodt" points="100,190 150,150 350,150 300,190"/><rect class="woodf" x="100" y="190" width="200" height="100" rx="2"/>
+    <path class="grain bk-draw" pathLength="1" d="M114 214C150 204 200 224 286 212"/><path class="grain bk-draw" pathLength="1" d="M114 242C160 232 210 252 286 240"/><path class="grain bk-draw" pathLength="1" d="M114 268C150 260 220 278 286 264"/><path class="grain bk-draw" pathLength="1" d="M168 166C220 160 280 172 334 164"/>
+    <text class="cap" x="210" y="334">a block of solid wood</text>
+  </g>
+  <g class="bk-scene s2">
+    <rect class="woodt" x="110" y="52" width="200" height="200" rx="3"/>
+    <use class="bk-draw" href="#bk-motif" transform="translate(210 152) scale(1.28)" stroke-width="2.4" style="color:#4a2c17"/>
+    <g class="pencil tool"><g transform="translate(300 200) rotate(-40)"><rect x="0" y="-6" width="76" height="12" fill="#C8A96E"/><polygon points="0,-6 -18,0 0,6" fill="#F4EFEA"/><polygon points="-18,0 -10,-3 -10,3" fill="#143659"/></g></g>
+    <text class="cap" x="210" y="300">the pattern is drawn</text>
+  </g>
+  <g class="bk-scene s3">
+    <rect x="110" y="52" width="200" height="200" rx="3" fill="#5a3820" stroke="#3d2412" stroke-width="2"/>
+    <use class="bk-draw" href="#bk-motif" transform="translate(210 152) scale(1.28)" stroke-width="5" style="color:#EBD2A8"/>
+    <polygon class="chipf" points="150,110 156,104 162,110 156,116" fill="#D1A073" style="--dx:-34px;--dy:-30px;animation-delay:0s"/><polygon class="chipf" points="240,96 246,90 252,96 246,102" fill="#D1A073" style="--dx:30px;--dy:-34px;animation-delay:.5s"/><polygon class="chipf" points="270,190 276,184 282,190 276,196" fill="#B9855A" style="--dx:40px;--dy:20px;animation-delay:.9s"/><polygon class="chipf" points="170,220 176,214 182,220 176,226" fill="#B9855A" style="--dx:-30px;--dy:34px;animation-delay:1.2s"/>
+    <g class="chisel tool"><g transform="translate(318 214) rotate(-35)"><rect x="0" y="-7" width="64" height="14" rx="5" fill="#8F6240"/><rect x="-32" y="-4" width="34" height="8" fill="#cfd6dc"/><polygon points="-32,-4 -46,0 -32,4" fill="#cfd6dc"/></g></g>
+    <text class="cap" x="210" y="300">carved by hand</text>
+  </g>
+  <g class="bk-scene s4">
+    <rect x="86" y="248" width="248" height="52" rx="7" fill="#0b2543" stroke="#C8A96E" stroke-opacity=".45"/><rect x="98" y="242" width="224" height="16" rx="5" fill="#1F4E79"/><rect x="112" y="245" width="90" height="3" rx="1.5" fill="#fff" fill-opacity=".25"/>
+    <g class="dipper"><rect x="190" y="52" width="40" height="30" rx="4" fill="#8F6240" stroke="#6b4226" stroke-width="2"/><rect class="woodf" x="130" y="82" width="160" height="92" rx="3"/><rect class="inkedge" x="130" y="164" width="160" height="10" fill="#8F6240" stroke="#6b4226" stroke-width="2"/></g>
+    <text class="cap" x="210" y="334">dipped in colour</text>
+  </g>
+  <g class="bk-scene s5">
+    <rect x="46" y="140" width="328" height="150" fill="#F4EFEA" stroke="#fff" stroke-opacity=".5"/><rect x="46" y="140" width="328" height="150" fill="url(#bkweave)"/>
+    <use class="pr1" href="#bk-motif" transform="translate(126 215) scale(.62)" stroke-width="5" style="color:#1F4E79"/><use class="pr2" href="#bk-motif" transform="translate(210 215) scale(.62)" stroke-width="5" style="color:#1F4E79"/><use class="pr3" href="#bk-motif" transform="translate(294 215) scale(.62)" stroke-width="5" style="color:#1F4E79"/>
+    <g class="presser"><g transform="translate(210 215)"><rect x="-36" y="-36" width="72" height="72" rx="4" fill="#B9855A" stroke="#8F6240" stroke-width="2" fill-opacity=".97"/><circle r="13" fill="#8F6240" stroke="#6b4226" stroke-width="2"/></g></g>
+    <text class="cap" x="210" y="334">pressed onto cotton</text>
+  </g>
+</svg>
+        <div class="bk-stage-bar"><span id="bk-stage-label">01 &middot; Wood</span><span class="bk-dots" aria-hidden="true"><i class="on"></i><i></i><i></i><i></i><i></i></span></div>
+      </div>
+      <div class="bk-steps">
+      <div class="bk-step" data-step="1">
+        <p class="bk-step-n">Step 01</p>
+        <h3>It begins with solid wood</h3>
+        <p>A block starts as a piece of solid wood, cut to size and smoothed flat, ready to hold a pattern for years of pressing.</p>
+      </div>
+      <div class="bk-step" data-step="2">
+        <p class="bk-step-n">Step 02</p>
+        <h3>A pattern is drawn</h3>
+        <p>The motif is sketched onto the wood. Every line is deliberate, because every line will be cut by hand.</p>
+      </div>
+      <div class="bk-step" data-step="3">
+        <p class="bk-step-n">Step 03</p>
+        <h3>Carved by hand</h3>
+        <p>A carver cuts away everything that should stay blank, leaving the pattern standing proud. A single block can take up to a week.</p>
+      </div>
+      <div class="bk-step" data-step="4">
+        <p class="bk-step-n">Step 04</p>
+        <h3>Dipped in colour</h3>
+        <p>The raised pattern is pressed onto a pad of colour, so that only the carved lines pick up the ink.</p>
+        <p>Patterns with more colours use one block per colour.</p>
+      </div>
+      <div class="bk-step" data-step="5">
+        <p class="bk-step-n">Step 05</p>
+        <h3>Pressed onto cloth</h3>
+        <p>The block is pressed firmly onto cotton, lifted, moved along and pressed again. Every impression is made by a person, so every one has its own character.</p>
+      </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── MEET THE BLOCKS ────────────────────────────────────────── -->
+<section class="bk-section bk-meet" id="meet">
+  <div class="bk-inner">
+    <div class="bk-meet-head">
+      <div class="bk-reveal">
+        <p class="s-tag">The collection</p>
+        <h2>Meet the <em>blocks.</em></h2>
+        <p class="bk-lead">Tap a block to open it: see it from every side and find out what its pattern traditionally stands for.</p>
+      </div>
+      <div class="bk-filters bk-reveal" role="group" aria-label="Filter blocks by kind" style="--d:.1s">
+        <button class="pill active" type="button" data-f="all" aria-pressed="true">All</button>
+        <button class="pill" type="button" data-f="big" aria-pressed="false">Big</button>
+        <button class="pill" type="button" data-f="small" aria-pressed="false">Small</button>
+        <button class="pill" type="button" data-f="border" aria-pressed="false">Borders</button>
+      </div>
+    </div>
+    <p class="bk-note">The meanings here are how each motif is traditionally read. They are an introduction to the tradition, and the carvers may tell these stories in their own way.</p>
+    <p class="bk-live" id="bk-live" role="status" aria-live="polite" style="position:absolute;left:-9999px">Showing all blocks</p>
+    <div class="bk-grid">
+      <article class="bk-card" id="block-1" data-type="big">
+        <button class="bk-card-btn" type="button" aria-expanded="false" aria-controls="bk-panel-1">
+          <span class="bk-cover"><span class="bk-num" aria-hidden="true">01</span><img src="images/blocks/01-floral-star-square-1.jpg" width="900" height="1200" loading="lazy" decoding="async" alt=""></span>
+          <span class="bk-meta"><span class="bk-name">Star &amp; Medallion Lattice</span><span class="bk-type">Big block</span><span class="bk-plus" aria-hidden="true"></span></span>
+        </button>
+        <div class="bk-panel" id="bk-panel-1" role="region" aria-label="Star &amp; Medallion Lattice" hidden>
+          <div class="bk-strip-wrap">
+            <div class="bk-strip" tabindex="0" role="group" aria-label="Photos of Star &amp; Medallion Lattice, scroll sideways"><span class="bk-slide" style="--nh:1200px"><img src="images/blocks/01-floral-star-square-1.jpg" width="900" height="1200" loading="lazy" decoding="async" alt="Carved wooden printing block, Star &amp; Medallion Lattice: photo 1 of 4"></span><span class="bk-slide" style="--nh:1200px"><img src="images/blocks/01-floral-star-square-2.jpg" width="900" height="1200" loading="lazy" decoding="async" alt="Carved wooden printing block, Star &amp; Medallion Lattice: photo 2 of 4"></span><span class="bk-slide" style="--nh:1200px"><img src="images/blocks/01-floral-star-square-3.jpg" width="900" height="1200" loading="lazy" decoding="async" alt="Carved wooden printing block, Star &amp; Medallion Lattice: photo 3 of 4"></span><span class="bk-slide" style="--nh:1200px"><img src="images/blocks/01-floral-star-square-4.jpg" width="900" height="1200" loading="lazy" decoding="async" alt="Carved wooden printing block, Star &amp; Medallion Lattice: photo 4 of 4"></span></div>
+            <div class="bk-strip-bar"><span class="bk-count-photo" aria-live="polite">Photo 1 of 4</span><span class="bk-navs"><button class="bk-nav bk-prev" type="button" aria-label="Previous photo">&#8249;</button><button class="bk-nav bk-next" type="button" aria-label="Next photo">&#8250;</button></span></div>
+          </div>
+          <div class="bk-text">
+            <h3>Star &amp; Medallion Lattice</h3>
+            <p>A repeating net of stars and round medallions. This kind of geometric all-over pattern is often seen in Ajrakh printing from Kutch and Sindh.</p>
+            <div class="bk-read"><span>Traditionally read as</span><p>Stars and rosettes are often read as sky and flower: the night sky and a garden in one pattern.</p></div>
+            
+          </div>
+        </div>
+      </article>
+      <article class="bk-card lowres" id="block-2" data-type="big">
+        <button class="bk-card-btn" type="button" aria-expanded="false" aria-controls="bk-panel-2">
+          <span class="bk-cover"><span class="bk-num" aria-hidden="true">02</span><img src="images/blocks/02-mandala-rectangle-1.jpg" width="800" height="934" loading="lazy" decoding="async" alt=""></span>
+          <span class="bk-meta"><span class="bk-name">Mandala Rosette</span><span class="bk-type">Big block</span><span class="bk-soon">More block photos coming soon</span><span class="bk-plus" aria-hidden="true"></span></span>
+        </button>
+        <div class="bk-panel" id="bk-panel-2" role="region" aria-label="Mandala Rosette" hidden>
+          <div class="bk-strip-wrap">
+            <div class="bk-strip" tabindex="0" role="group" aria-label="Photos of Mandala Rosette, scroll sideways"><span class="bk-slide" style="--nh:934px"><img src="images/blocks/02-mandala-rectangle-1.jpg" width="800" height="934" loading="lazy" decoding="async" alt="Carved wooden printing block, Mandala Rosette: photo 1 of 2"></span><span class="bk-slide" style="--nh:1058px"><img src="images/blocks/02-mandala-rectangle-2.jpg" width="1200" height="1058" loading="lazy" decoding="async" alt="Carved wooden printing block, Mandala Rosette: photo 2 of 2"></span></div>
+            <div class="bk-strip-bar"><span class="bk-count-photo" aria-live="polite">Photo 1 of 2</span><span class="bk-navs"><button class="bk-nav bk-prev" type="button" aria-label="Previous photo">&#8249;</button><button class="bk-nav bk-next" type="button" aria-label="Next photo">&#8250;</button></span></div>
+          </div>
+          <div class="bk-text">
+            <h3>Mandala Rosette</h3>
+            <p>A circular mandala at the centre, framed by paisleys and petals. &#x27;Mandala&#x27; is Sanskrit for circle.</p>
+            <div class="bk-read"><span>Traditionally read as</span><p>A circle around a centre is traditionally read as wholeness, with everything held in balance.</p></div>
+            <p class="bk-soon-note">More block photos coming soon.</p>
+          </div>
+        </div>
+      </article>
+      <article class="bk-card lowres" id="block-3" data-type="big">
+        <button class="bk-card-btn" type="button" aria-expanded="false" aria-controls="bk-panel-3">
+          <span class="bk-cover"><span class="bk-num" aria-hidden="true">03</span><img src="images/blocks/03-square-spiral-grid-1.jpg" width="1134" height="1053" loading="lazy" decoding="async" alt=""></span>
+          <span class="bk-meta"><span class="bk-name">Square Spiral Grid</span><span class="bk-type">Big block</span><span class="bk-soon">More block photos coming soon</span><span class="bk-plus" aria-hidden="true"></span></span>
+        </button>
+        <div class="bk-panel" id="bk-panel-3" role="region" aria-label="Square Spiral Grid" hidden>
+          <div class="bk-strip-wrap">
+            <div class="bk-strip" tabindex="0" role="group" aria-label="Photos of Square Spiral Grid, scroll sideways"><span class="bk-slide" style="--nh:1053px"><img src="images/blocks/03-square-spiral-grid-1.jpg" width="1134" height="1053" loading="lazy" decoding="async" alt="Carved wooden printing block, Square Spiral Grid: photo 1 of 2"></span><span class="bk-slide" style="--nh:699px"><img src="images/blocks/03-square-spiral-grid-2.jpg" width="1200" height="699" loading="lazy" decoding="async" alt="Carved wooden printing block, Square Spiral Grid: photo 2 of 2"></span></div>
+            <div class="bk-strip-bar"><span class="bk-count-photo" aria-live="polite">Photo 1 of 2</span><span class="bk-navs"><button class="bk-nav bk-prev" type="button" aria-label="Previous photo">&#8249;</button><button class="bk-nav bk-next" type="button" aria-label="Next photo">&#8250;</button></span></div>
+          </div>
+          <div class="bk-text">
+            <h3>Square Spiral Grid</h3>
+            <p>Interlocking square spirals that run into each other like a maze, in the family of &#x27;key&#x27; or meander patterns found in many cultures.</p>
+            <div class="bk-read"><span>Traditionally read as</span><p>Spirals and meanders are often read as a path or journey with no beginning and no end.</p></div>
+            <p class="bk-soon-note">More block photos coming soon.</p>
+          </div>
+        </div>
+      </article>
+      <article class="bk-card lowres" id="block-4" data-type="big">
+        <button class="bk-card-btn" type="button" aria-expanded="false" aria-controls="bk-panel-4">
+          <span class="bk-cover"><span class="bk-num" aria-hidden="true">04</span><img src="images/blocks/04-flower-vine-jaal-1.jpg" width="1080" height="854" loading="lazy" decoding="async" alt=""></span>
+          <span class="bk-meta"><span class="bk-name">Blooming Vine Jaal</span><span class="bk-type">Big block</span><span class="bk-soon">More block photos coming soon</span><span class="bk-plus" aria-hidden="true"></span></span>
+        </button>
+        <div class="bk-panel" id="bk-panel-4" role="region" aria-label="Blooming Vine Jaal" hidden>
+          <div class="bk-strip-wrap">
+            <div class="bk-strip" tabindex="0" role="group" aria-label="Photos of Blooming Vine Jaal, scroll sideways"><span class="bk-slide" style="--nh:854px"><img src="images/blocks/04-flower-vine-jaal-1.jpg" width="1080" height="854" loading="lazy" decoding="async" alt="Carved wooden printing block, Blooming Vine Jaal: photo 1 of 2"></span><span class="bk-slide" style="--nh:1200px"><img src="images/blocks/04-flower-vine-jaal-2.jpg" width="807" height="1200" loading="lazy" decoding="async" alt="Carved wooden printing block, Blooming Vine Jaal: photo 2 of 2"></span></div>
+            <div class="bk-strip-bar"><span class="bk-count-photo" aria-live="polite">Photo 1 of 2</span><span class="bk-navs"><button class="bk-nav bk-prev" type="button" aria-label="Previous photo">&#8249;</button><button class="bk-nav bk-next" type="button" aria-label="Next photo">&#8250;</button></span></div>
+          </div>
+          <div class="bk-text">
+            <h3>Blooming Vine Jaal</h3>
+            <p>Flowers on a winding creeper. &#x27;Jaal&#x27; means net or lattice: a pattern that can repeat and spread across a whole cloth.</p>
+            <div class="bk-read"><span>Traditionally read as</span><p>The creeper is a classic Indian sign of growth, abundance and life continuing.</p></div>
+            <p class="bk-soon-note">More block photos coming soon.</p>
+          </div>
+        </div>
+      </article>
+      <article class="bk-card lowres" id="block-5" data-type="big">
+        <button class="bk-card-btn" type="button" aria-expanded="false" aria-controls="bk-panel-5">
+          <span class="bk-cover"><span class="bk-num" aria-hidden="true">05</span><img src="images/blocks/05-peacock-column-1.jpg" width="600" height="1200" loading="lazy" decoding="async" alt=""></span>
+          <span class="bk-meta"><span class="bk-name">Peacock Feather Column</span><span class="bk-type">Big block</span><span class="bk-soon">More block photos coming soon</span><span class="bk-plus" aria-hidden="true"></span></span>
+        </button>
+        <div class="bk-panel" id="bk-panel-5" role="region" aria-label="Peacock Feather Column" hidden>
+          <div class="bk-strip-wrap">
+            <div class="bk-strip" tabindex="0" role="group" aria-label="Photos of Peacock Feather Column, scroll sideways"><span class="bk-slide" style="--nh:1200px"><img src="images/blocks/05-peacock-column-1.jpg" width="600" height="1200" loading="lazy" decoding="async" alt="Carved wooden printing block, Peacock Feather Column: photo 1 of 2"></span><span class="bk-slide" style="--nh:453px"><img src="images/blocks/05-peacock-column-2.jpg" width="947" height="453" loading="lazy" decoding="async" alt="Carved wooden printing block, Peacock Feather Column: photo 2 of 2"></span></div>
+            <div class="bk-strip-bar"><span class="bk-count-photo" aria-live="polite">Photo 1 of 2</span><span class="bk-navs"><button class="bk-nav bk-prev" type="button" aria-label="Previous photo">&#8249;</button><button class="bk-nav bk-next" type="button" aria-label="Next photo">&#8250;</button></span></div>
+          </div>
+          <div class="bk-text">
+            <h3>Peacock Feather Column</h3>
+            <p>A tall column of feather or lotus-petal shapes, stacked and mirrored. It reads as peacock feathers or lotus petals, or both.</p>
+            <div class="bk-read"><span>Traditionally read as</span><p>The peacock is India&#x27;s national bird and stands for beauty, joy and the monsoon. The lotus stands for purity: it rises clean from the mud.</p></div>
+            <p class="bk-soon-note">More block photos coming soon.</p>
+          </div>
+        </div>
+      </article>
+      <article class="bk-card lowres" id="block-6" data-type="big">
+        <button class="bk-card-btn" type="button" aria-expanded="false" aria-controls="bk-panel-6">
+          <span class="bk-cover"><span class="bk-num" aria-hidden="true">06</span><img src="images/blocks/06-paisley-bush-1.jpg" width="573" height="760" loading="lazy" decoding="async" alt=""></span>
+          <span class="bk-meta"><span class="bk-name">Grand Paisley</span><span class="bk-type">Big block</span><span class="bk-soon">More block photos coming soon</span><span class="bk-plus" aria-hidden="true"></span></span>
+        </button>
+        <div class="bk-panel" id="bk-panel-6" role="region" aria-label="Grand Paisley" hidden>
+          <div class="bk-strip-wrap">
+            <div class="bk-strip" tabindex="0" role="group" aria-label="Photos of Grand Paisley, scroll sideways"><span class="bk-slide" style="--nh:760px"><img src="images/blocks/06-paisley-bush-1.jpg" width="573" height="760" loading="lazy" decoding="async" alt="Carved wooden printing block, Grand Paisley: photo 1 of 2"></span><span class="bk-slide" style="--nh:827px"><img src="images/blocks/06-paisley-bush-2.jpg" width="867" height="827" loading="lazy" decoding="async" alt="Carved wooden printing block, Grand Paisley: photo 2 of 2"></span></div>
+            <div class="bk-strip-bar"><span class="bk-count-photo" aria-live="polite">Photo 1 of 2</span><span class="bk-navs"><button class="bk-nav bk-prev" type="button" aria-label="Previous photo">&#8249;</button><button class="bk-nav bk-next" type="button" aria-label="Next photo">&#8250;</button></span></div>
+          </div>
+          <div class="bk-text">
+            <h3>Grand Paisley</h3>
+            <p>A big paisley filled with flowers and leaves. The shape comes from the Persian and Kashmiri &#x27;boteh&#x27;. The English name comes from Paisley in Scotland, where shawls with this motif were woven in the 1800s.</p>
+            <div class="bk-read"><span>Traditionally read as</span><p>In India it is often called the mango motif (ambi or kairi) and read as abundance and fertility.</p></div>
+            <p class="bk-soon-note">More block photos coming soon.</p>
+          </div>
+        </div>
+      </article>
+      <article class="bk-card" id="block-7" data-type="small">
+        <button class="bk-card-btn" type="button" aria-expanded="false" aria-controls="bk-panel-7">
+          <span class="bk-cover"><span class="bk-num" aria-hidden="true">07</span><img src="images/blocks/07-sunburst-1.jpg" width="1200" height="900" loading="lazy" decoding="async" alt=""></span>
+          <span class="bk-meta"><span class="bk-name">Sun Burst</span><span class="bk-type">Small block</span><span class="bk-plus" aria-hidden="true"></span></span>
+        </button>
+        <div class="bk-panel" id="bk-panel-7" role="region" aria-label="Sun Burst" hidden>
+          <div class="bk-strip-wrap">
+            <div class="bk-strip" tabindex="0" role="group" aria-label="Photos of Sun Burst, scroll sideways"><span class="bk-slide" style="--nh:900px"><img src="images/blocks/07-sunburst-1.jpg" width="1200" height="900" loading="lazy" decoding="async" alt="Carved wooden printing block, Sun Burst: photo 1 of 5"></span><span class="bk-slide" style="--nh:1200px"><img src="images/blocks/07-sunburst-2.jpg" width="900" height="1200" loading="lazy" decoding="async" alt="Carved wooden printing block, Sun Burst: photo 2 of 5"></span><span class="bk-slide" style="--nh:1200px"><img src="images/blocks/07-sunburst-3.jpg" width="900" height="1200" loading="lazy" decoding="async" alt="Carved wooden printing block, Sun Burst: photo 3 of 5"></span><span class="bk-slide" style="--nh:1200px"><img src="images/blocks/07-sunburst-4.jpg" width="900" height="1200" loading="lazy" decoding="async" alt="Carved wooden printing block, Sun Burst: photo 4 of 5"></span><span class="bk-slide" style="--nh:1200px"><img src="images/blocks/07-sunburst-5.jpg" width="900" height="1200" loading="lazy" decoding="async" alt="Carved wooden printing block, Sun Burst: photo 5 of 5"></span></div>
+            <div class="bk-strip-bar"><span class="bk-count-photo" aria-live="polite">Photo 1 of 5</span><span class="bk-navs"><button class="bk-nav bk-prev" type="button" aria-label="Previous photo">&#8249;</button><button class="bk-nav bk-next" type="button" aria-label="Next photo">&#8250;</button></span></div>
+          </div>
+          <div class="bk-text">
+            <h3>Sun Burst</h3>
+            <p>A sun with a ring of rays around a dotted centre. Sun motifs appear all over Indian art and architecture.</p>
+            <div class="bk-read"><span>Traditionally read as</span><p>The sun is life and energy: the thing that makes everything grow.</p></div>
+            
+          </div>
+        </div>
+      </article>
+      <article class="bk-card" id="block-8" data-type="small">
+        <button class="bk-card-btn" type="button" aria-expanded="false" aria-controls="bk-panel-8">
+          <span class="bk-cover"><span class="bk-num" aria-hidden="true">08</span><img src="images/blocks/08-spiral-1.jpg" width="900" height="1200" loading="lazy" decoding="async" alt=""></span>
+          <span class="bk-meta"><span class="bk-name">Spiral</span><span class="bk-type">Small block</span><span class="bk-plus" aria-hidden="true"></span></span>
+        </button>
+        <div class="bk-panel" id="bk-panel-8" role="region" aria-label="Spiral" hidden>
+          <div class="bk-strip-wrap">
+            <div class="bk-strip" tabindex="0" role="group" aria-label="Photos of Spiral, scroll sideways"><span class="bk-slide" style="--nh:1200px"><img src="images/blocks/08-spiral-1.jpg" width="900" height="1200" loading="lazy" decoding="async" alt="Carved wooden printing block, Spiral: photo 1 of 5"></span><span class="bk-slide" style="--nh:1200px"><img src="images/blocks/08-spiral-2.jpg" width="900" height="1200" loading="lazy" decoding="async" alt="Carved wooden printing block, Spiral: photo 2 of 5"></span><span class="bk-slide" style="--nh:900px"><img src="images/blocks/08-spiral-3.jpg" width="1200" height="900" loading="lazy" decoding="async" alt="Carved wooden printing block, Spiral: photo 3 of 5"></span><span class="bk-slide" style="--nh:900px"><img src="images/blocks/08-spiral-4.jpg" width="1200" height="900" loading="lazy" decoding="async" alt="Carved wooden printing block, Spiral: photo 4 of 5"></span><span class="bk-slide" style="--nh:900px"><img src="images/blocks/08-spiral-5.jpg" width="1200" height="900" loading="lazy" decoding="async" alt="Carved wooden printing block, Spiral: photo 5 of 5"></span></div>
+            <div class="bk-strip-bar"><span class="bk-count-photo" aria-live="polite">Photo 1 of 5</span><span class="bk-navs"><button class="bk-nav bk-prev" type="button" aria-label="Previous photo">&#8249;</button><button class="bk-nav bk-next" type="button" aria-label="Next photo">&#8250;</button></span></div>
+          </div>
+          <div class="bk-text">
+            <h3>Spiral</h3>
+            <p>A single spiral inside a toothed ring. It is one of the oldest patterns people have drawn, and it appears in shells, ferns and galaxies.</p>
+            <div class="bk-read"><span>Traditionally read as</span><p>A spiral is often read as growth, a cycle, or a journey outward from the centre.</p></div>
+            
+          </div>
+        </div>
+      </article>
+      <article class="bk-card" id="block-9" data-type="small">
+        <button class="bk-card-btn" type="button" aria-expanded="false" aria-controls="bk-panel-9">
+          <span class="bk-cover"><span class="bk-num" aria-hidden="true">09</span><img src="images/blocks/09-fern-leaf-1.jpg" width="1200" height="900" loading="lazy" decoding="async" alt=""></span>
+          <span class="bk-meta"><span class="bk-name">Fern Leaf</span><span class="bk-type">Small block</span><span class="bk-plus" aria-hidden="true"></span></span>
+        </button>
+        <div class="bk-panel" id="bk-panel-9" role="region" aria-label="Fern Leaf" hidden>
+          <div class="bk-strip-wrap">
+            <div class="bk-strip" tabindex="0" role="group" aria-label="Photos of Fern Leaf, scroll sideways"><span class="bk-slide" style="--nh:900px"><img src="images/blocks/09-fern-leaf-1.jpg" width="1200" height="900" loading="lazy" decoding="async" alt="Carved wooden printing block, Fern Leaf: photo 1 of 4"></span><span class="bk-slide" style="--nh:900px"><img src="images/blocks/09-fern-leaf-2.jpg" width="1200" height="900" loading="lazy" decoding="async" alt="Carved wooden printing block, Fern Leaf: photo 2 of 4"></span><span class="bk-slide" style="--nh:900px"><img src="images/blocks/09-fern-leaf-3.jpg" width="1200" height="900" loading="lazy" decoding="async" alt="Carved wooden printing block, Fern Leaf: photo 3 of 4"></span><span class="bk-slide" style="--nh:1200px"><img src="images/blocks/09-fern-leaf-4.jpg" width="900" height="1200" loading="lazy" decoding="async" alt="Carved wooden printing block, Fern Leaf: photo 4 of 4"></span></div>
+            <div class="bk-strip-bar"><span class="bk-count-photo" aria-live="polite">Photo 1 of 4</span><span class="bk-navs"><button class="bk-nav bk-prev" type="button" aria-label="Previous photo">&#8249;</button><button class="bk-nav bk-next" type="button" aria-label="Next photo">&#8250;</button></span></div>
+          </div>
+          <div class="bk-text">
+            <h3>Fern Leaf</h3>
+            <p>A long leaf with feathery side veins, drawn like a fern frond.</p>
+            <div class="bk-read"><span>Traditionally read as</span><p>Leaves stand for new growth. One leaf is easy to print in a row, a circle or a pile.</p></div>
+            
+          </div>
+        </div>
+      </article>
+      <article class="bk-card" id="block-10" data-type="small">
+        <button class="bk-card-btn" type="button" aria-expanded="false" aria-controls="bk-panel-10">
+          <span class="bk-cover"><span class="bk-num" aria-hidden="true">10</span><img src="images/blocks/10-endless-knot-1.jpg" width="900" height="1200" loading="lazy" decoding="async" alt=""></span>
+          <span class="bk-meta"><span class="bk-name">Endless Knot</span><span class="bk-type">Small block</span><span class="bk-plus" aria-hidden="true"></span></span>
+        </button>
+        <div class="bk-panel" id="bk-panel-10" role="region" aria-label="Endless Knot" hidden>
+          <div class="bk-strip-wrap">
+            <div class="bk-strip" tabindex="0" role="group" aria-label="Photos of Endless Knot, scroll sideways"><span class="bk-slide" style="--nh:1200px"><img src="images/blocks/10-endless-knot-1.jpg" width="900" height="1200" loading="lazy" decoding="async" alt="Carved wooden printing block, Endless Knot: photo 1 of 4"></span><span class="bk-slide" style="--nh:1200px"><img src="images/blocks/10-endless-knot-2.jpg" width="900" height="1200" loading="lazy" decoding="async" alt="Carved wooden printing block, Endless Knot: photo 2 of 4"></span><span class="bk-slide" style="--nh:547px"><img src="images/blocks/10-endless-knot-3.jpg" width="547" height="547" loading="lazy" decoding="async" alt="Carved wooden printing block, Endless Knot: photo 3 of 4"></span><span class="bk-slide" style="--nh:373px"><img src="images/blocks/10-endless-knot-4.jpg" width="374" height="373" loading="lazy" decoding="async" alt="Carved wooden printing block, Endless Knot: photo 4 of 4"></span></div>
+            <div class="bk-strip-bar"><span class="bk-count-photo" aria-live="polite">Photo 1 of 4</span><span class="bk-navs"><button class="bk-nav bk-prev" type="button" aria-label="Previous photo">&#8249;</button><button class="bk-nav bk-next" type="button" aria-label="Next photo">&#8250;</button></span></div>
+          </div>
+          <div class="bk-text">
+            <h3>Endless Knot</h3>
+            <p>A knot with no beginning and no end. It is one of the Eight Auspicious Symbols (Ashtamangala) of Buddhism.</p>
+            <div class="bk-read"><span>Traditionally read as</span><p>It is read as everything being connected: wisdom, compassion and life all tied together.</p></div>
+            
+          </div>
+        </div>
+      </article>
+      <article class="bk-card" id="block-11" data-type="small">
+        <button class="bk-card-btn" type="button" aria-expanded="false" aria-controls="bk-panel-11">
+          <span class="bk-cover"><span class="bk-num" aria-hidden="true">11</span><img src="images/blocks/11-striped-leaf-1.jpg" width="900" height="1200" loading="lazy" decoding="async" alt=""></span>
+          <span class="bk-meta"><span class="bk-name">Striped Leaf</span><span class="bk-type">Small block</span><span class="bk-plus" aria-hidden="true"></span></span>
+        </button>
+        <div class="bk-panel" id="bk-panel-11" role="region" aria-label="Striped Leaf" hidden>
+          <div class="bk-strip-wrap">
+            <div class="bk-strip" tabindex="0" role="group" aria-label="Photos of Striped Leaf, scroll sideways"><span class="bk-slide" style="--nh:1200px"><img src="images/blocks/11-striped-leaf-1.jpg" width="900" height="1200" loading="lazy" decoding="async" alt="Carved wooden printing block, Striped Leaf: photo 1 of 5"></span><span class="bk-slide" style="--nh:1200px"><img src="images/blocks/11-striped-leaf-2.jpg" width="900" height="1200" loading="lazy" decoding="async" alt="Carved wooden printing block, Striped Leaf: photo 2 of 5"></span><span class="bk-slide" style="--nh:1200px"><img src="images/blocks/11-striped-leaf-3.jpg" width="900" height="1200" loading="lazy" decoding="async" alt="Carved wooden printing block, Striped Leaf: photo 3 of 5"></span><span class="bk-slide" style="--nh:1200px"><img src="images/blocks/11-striped-leaf-4.jpg" width="900" height="1200" loading="lazy" decoding="async" alt="Carved wooden printing block, Striped Leaf: photo 4 of 5"></span><span class="bk-slide" style="--nh:1200px"><img src="images/blocks/11-striped-leaf-5.jpg" width="900" height="1200" loading="lazy" decoding="async" alt="Carved wooden printing block, Striped Leaf: photo 5 of 5"></span></div>
+            <div class="bk-strip-bar"><span class="bk-count-photo" aria-live="polite">Photo 1 of 5</span><span class="bk-navs"><button class="bk-nav bk-prev" type="button" aria-label="Previous photo">&#8249;</button><button class="bk-nav bk-next" type="button" aria-label="Next photo">&#8250;</button></span></div>
+          </div>
+          <div class="bk-text">
+            <h3>Striped Leaf</h3>
+            <p>A broad leaf with straight, regular veins. This is the simplest and boldest of the leaf blocks.</p>
+            <div class="bk-read"><span>Traditionally read as</span><p>Like the fern, it is a plain sign of growth and nature. Printed in rows it makes a field of leaves.</p></div>
+            
+          </div>
+        </div>
+      </article>
+      <article class="bk-card" id="block-12" data-type="small">
+        <button class="bk-card-btn" type="button" aria-expanded="false" aria-controls="bk-panel-12">
+          <span class="bk-cover"><span class="bk-num" aria-hidden="true">12</span><img src="images/blocks/12-tree-candy-cane-1.jpg" width="900" height="1200" loading="lazy" decoding="async" alt=""></span>
+          <span class="bk-meta"><span class="bk-name">Candy-cane Tree</span><span class="bk-type">Small block</span><span class="bk-plus" aria-hidden="true"></span></span>
+        </button>
+        <div class="bk-panel" id="bk-panel-12" role="region" aria-label="Candy-cane Tree" hidden>
+          <div class="bk-strip-wrap">
+            <div class="bk-strip" tabindex="0" role="group" aria-label="Photos of Candy-cane Tree, scroll sideways"><span class="bk-slide" style="--nh:1200px"><img src="images/blocks/12-tree-candy-cane-1.jpg" width="900" height="1200" loading="lazy" decoding="async" alt="Carved wooden printing block, Candy-cane Tree: photo 1 of 4"></span><span class="bk-slide" style="--nh:1200px"><img src="images/blocks/12-tree-candy-cane-2.jpg" width="900" height="1200" loading="lazy" decoding="async" alt="Carved wooden printing block, Candy-cane Tree: photo 2 of 4"></span><span class="bk-slide" style="--nh:1200px"><img src="images/blocks/12-tree-candy-cane-3.jpg" width="900" height="1200" loading="lazy" decoding="async" alt="Carved wooden printing block, Candy-cane Tree: photo 3 of 4"></span><span class="bk-slide" style="--nh:1200px"><img src="images/blocks/12-tree-candy-cane-4.jpg" width="900" height="1200" loading="lazy" decoding="async" alt="Carved wooden printing block, Candy-cane Tree: photo 4 of 4"></span></div>
+            <div class="bk-strip-bar"><span class="bk-count-photo" aria-live="polite">Photo 1 of 4</span><span class="bk-navs"><button class="bk-nav bk-prev" type="button" aria-label="Previous photo">&#8249;</button><button class="bk-nav bk-next" type="button" aria-label="Next photo">&#8250;</button></span></div>
+          </div>
+          <div class="bk-text">
+            <h3>Candy-cane Tree</h3>
+            <p>A little festive tree with a candy cane and ornaments, a modern motif made for the Christmas market.</p>
+            <div class="bk-read"><span>Traditionally read as</span><p>Indian carvers also make modern festive designs for the Christmas market. A fun reminder that block printing keeps moving with the times.</p></div>
+            
+          </div>
+        </div>
+      </article>
+      <article class="bk-card" id="block-13" data-type="small">
+        <button class="bk-card-btn" type="button" aria-expanded="false" aria-controls="bk-panel-13">
+          <span class="bk-cover"><span class="bk-num" aria-hidden="true">13</span><img src="images/blocks/13-tree-presents-star-1.jpg" width="900" height="1200" loading="lazy" decoding="async" alt=""></span>
+          <span class="bk-meta"><span class="bk-name">Festive Tree with Gifts</span><span class="bk-type">Small block</span><span class="bk-plus" aria-hidden="true"></span></span>
+        </button>
+        <div class="bk-panel" id="bk-panel-13" role="region" aria-label="Festive Tree with Gifts" hidden>
+          <div class="bk-strip-wrap">
+            <div class="bk-strip" tabindex="0" role="group" aria-label="Photos of Festive Tree with Gifts, scroll sideways"><span class="bk-slide" style="--nh:1200px"><img src="images/blocks/13-tree-presents-star-1.jpg" width="900" height="1200" loading="lazy" decoding="async" alt="Carved wooden printing block, Festive Tree with Gifts: photo 1 of 4"></span><span class="bk-slide" style="--nh:1200px"><img src="images/blocks/13-tree-presents-star-2.jpg" width="900" height="1200" loading="lazy" decoding="async" alt="Carved wooden printing block, Festive Tree with Gifts: photo 2 of 4"></span><span class="bk-slide" style="--nh:1200px"><img src="images/blocks/13-tree-presents-star-3.jpg" width="900" height="1200" loading="lazy" decoding="async" alt="Carved wooden printing block, Festive Tree with Gifts: photo 3 of 4"></span><span class="bk-slide" style="--nh:1200px"><img src="images/blocks/13-tree-presents-star-4.jpg" width="900" height="1200" loading="lazy" decoding="async" alt="Carved wooden printing block, Festive Tree with Gifts: photo 4 of 4"></span></div>
+            <div class="bk-strip-bar"><span class="bk-count-photo" aria-live="polite">Photo 1 of 4</span><span class="bk-navs"><button class="bk-nav bk-prev" type="button" aria-label="Previous photo">&#8249;</button><button class="bk-nav bk-next" type="button" aria-label="Next photo">&#8250;</button></span></div>
+          </div>
+          <div class="bk-text">
+            <h3>Festive Tree with Gifts</h3>
+            <p>A Christmas tree with a star on top, baubles and a wrapped present at the base. Another modern festive block.</p>
+            <div class="bk-read"><span>Traditionally read as</span><p>It is made for the Christmas market, which is why it sits next to far older motifs in our collection.</p></div>
+            
+          </div>
+        </div>
+      </article>
+      <article class="bk-card" id="block-14" data-type="small">
+        <button class="bk-card-btn" type="button" aria-expanded="false" aria-controls="bk-panel-14">
+          <span class="bk-cover"><span class="bk-num" aria-hidden="true">14</span><img src="images/blocks/14-paisley-1.jpg" width="900" height="1200" loading="lazy" decoding="async" alt=""></span>
+          <span class="bk-meta"><span class="bk-name">Little Paisley (Buti)</span><span class="bk-type">Small block</span><span class="bk-plus" aria-hidden="true"></span></span>
+        </button>
+        <div class="bk-panel" id="bk-panel-14" role="region" aria-label="Little Paisley (Buti)" hidden>
+          <div class="bk-strip-wrap">
+            <div class="bk-strip" tabindex="0" role="group" aria-label="Photos of Little Paisley (Buti), scroll sideways"><span class="bk-slide" style="--nh:1200px"><img src="images/blocks/14-paisley-1.jpg" width="900" height="1200" loading="lazy" decoding="async" alt="Carved wooden printing block, Little Paisley (Buti): photo 1 of 4"></span><span class="bk-slide" style="--nh:1200px"><img src="images/blocks/14-paisley-2.jpg" width="900" height="1200" loading="lazy" decoding="async" alt="Carved wooden printing block, Little Paisley (Buti): photo 2 of 4"></span><span class="bk-slide" style="--nh:1200px"><img src="images/blocks/14-paisley-3.jpg" width="900" height="1200" loading="lazy" decoding="async" alt="Carved wooden printing block, Little Paisley (Buti): photo 3 of 4"></span><span class="bk-slide" style="--nh:1200px"><img src="images/blocks/14-paisley-4.jpg" width="900" height="1200" loading="lazy" decoding="async" alt="Carved wooden printing block, Little Paisley (Buti): photo 4 of 4"></span></div>
+            <div class="bk-strip-bar"><span class="bk-count-photo" aria-live="polite">Photo 1 of 4</span><span class="bk-navs"><button class="bk-nav bk-prev" type="button" aria-label="Previous photo">&#8249;</button><button class="bk-nav bk-next" type="button" aria-label="Next photo">&#8250;</button></span></div>
+          </div>
+          <div class="bk-text">
+            <h3>Little Paisley (Buti)</h3>
+            <p>A small paisley, a &#x27;buti&#x27; (small motif). Printed many times, it builds up a pattern of its own.</p>
+            <div class="bk-read"><span>Traditionally read as</span><p>Like its big sister, it is often read as the mango motif: abundance, and luck.</p></div>
+            
+          </div>
+        </div>
+      </article>
+      <article class="bk-card" id="block-15" data-type="border">
+        <button class="bk-card-btn" type="button" aria-expanded="false" aria-controls="bk-panel-15">
+          <span class="bk-cover"><span class="bk-num" aria-hidden="true">15</span><img src="images/blocks/15-chevron-zigzag-1.jpg" width="1200" height="900" loading="lazy" decoding="async" alt=""></span>
+          <span class="bk-meta"><span class="bk-name">Zigzag &amp; Scallop Border</span><span class="bk-type">Border block</span><span class="bk-plus" aria-hidden="true"></span></span>
+        </button>
+        <div class="bk-panel" id="bk-panel-15" role="region" aria-label="Zigzag &amp; Scallop Border" hidden>
+          <div class="bk-strip-wrap">
+            <div class="bk-strip" tabindex="0" role="group" aria-label="Photos of Zigzag &amp; Scallop Border, scroll sideways"><span class="bk-slide" style="--nh:900px"><img src="images/blocks/15-chevron-zigzag-1.jpg" width="1200" height="900" loading="lazy" decoding="async" alt="Carved wooden printing block, Zigzag &amp; Scallop Border: photo 1 of 3"></span><span class="bk-slide" style="--nh:1200px"><img src="images/blocks/15-chevron-zigzag-2.jpg" width="900" height="1200" loading="lazy" decoding="async" alt="Carved wooden printing block, Zigzag &amp; Scallop Border: photo 2 of 3"></span><span class="bk-slide" style="--nh:1200px"><img src="images/blocks/15-chevron-zigzag-3.jpg" width="900" height="1200" loading="lazy" decoding="async" alt="Carved wooden printing block, Zigzag &amp; Scallop Border: photo 3 of 3"></span></div>
+            <div class="bk-strip-bar"><span class="bk-count-photo" aria-live="polite">Photo 1 of 3</span><span class="bk-navs"><button class="bk-nav bk-prev" type="button" aria-label="Previous photo">&#8249;</button><button class="bk-nav bk-next" type="button" aria-label="Next photo">&#8250;</button></span></div>
+          </div>
+          <div class="bk-text">
+            <h3>Zigzag &amp; Scallop Border</h3>
+            <p>A zigzag line with a scalloped edge. Borders (kinara in Hindi) frame the cloth and give it a finished edge.</p>
+            <div class="bk-read"><span>Traditionally read as</span><p>Zigzags are often read as water or hills, and a border says: the picture is complete.</p></div>
+            
+          </div>
+        </div>
+      </article>
+      <article class="bk-card" id="block-16" data-type="border">
+        <button class="bk-card-btn" type="button" aria-expanded="false" aria-controls="bk-panel-16">
+          <span class="bk-cover"><span class="bk-num" aria-hidden="true">16</span><img src="images/blocks/16-triangle-waves-1.jpg" width="1200" height="900" loading="lazy" decoding="async" alt=""></span>
+          <span class="bk-meta"><span class="bk-name">Hills &amp; Waves Border</span><span class="bk-type">Border block</span><span class="bk-plus" aria-hidden="true"></span></span>
+        </button>
+        <div class="bk-panel" id="bk-panel-16" role="region" aria-label="Hills &amp; Waves Border" hidden>
+          <div class="bk-strip-wrap">
+            <div class="bk-strip" tabindex="0" role="group" aria-label="Photos of Hills &amp; Waves Border, scroll sideways"><span class="bk-slide" style="--nh:900px"><img src="images/blocks/16-triangle-waves-1.jpg" width="1200" height="900" loading="lazy" decoding="async" alt="Carved wooden printing block, Hills &amp; Waves Border: photo 1 of 3"></span><span class="bk-slide" style="--nh:1200px"><img src="images/blocks/16-triangle-waves-2.jpg" width="900" height="1200" loading="lazy" decoding="async" alt="Carved wooden printing block, Hills &amp; Waves Border: photo 2 of 3"></span><span class="bk-slide" style="--nh:1200px"><img src="images/blocks/16-triangle-waves-3.jpg" width="900" height="1200" loading="lazy" decoding="async" alt="Carved wooden printing block, Hills &amp; Waves Border: photo 3 of 3"></span></div>
+            <div class="bk-strip-bar"><span class="bk-count-photo" aria-live="polite">Photo 1 of 3</span><span class="bk-navs"><button class="bk-nav bk-prev" type="button" aria-label="Previous photo">&#8249;</button><button class="bk-nav bk-next" type="button" aria-label="Next photo">&#8250;</button></span></div>
+          </div>
+          <div class="bk-text">
+            <h3>Hills &amp; Waves Border</h3>
+            <p>Triangles filled with wave lines, like hills with water between them.</p>
+            <div class="bk-read"><span>Traditionally read as</span><p>Hills and water appear again and again in border designs, and are often read as a landscape in miniature.</p></div>
+            
+          </div>
+        </div>
+      </article>
+      <article class="bk-card" id="block-17" data-type="border">
+        <button class="bk-card-btn" type="button" aria-expanded="false" aria-controls="bk-panel-17">
+          <span class="bk-cover"><span class="bk-num" aria-hidden="true">17</span><img src="images/blocks/17-double-wave-1.jpg" width="1200" height="900" loading="lazy" decoding="async" alt=""></span>
+          <span class="bk-meta"><span class="bk-name">Double Wave Border</span><span class="bk-type">Border block</span><span class="bk-plus" aria-hidden="true"></span></span>
+        </button>
+        <div class="bk-panel" id="bk-panel-17" role="region" aria-label="Double Wave Border" hidden>
+          <div class="bk-strip-wrap">
+            <div class="bk-strip" tabindex="0" role="group" aria-label="Photos of Double Wave Border, scroll sideways"><span class="bk-slide" style="--nh:900px"><img src="images/blocks/17-double-wave-1.jpg" width="1200" height="900" loading="lazy" decoding="async" alt="Carved wooden printing block, Double Wave Border: photo 1 of 3"></span><span class="bk-slide" style="--nh:1200px"><img src="images/blocks/17-double-wave-2.jpg" width="900" height="1200" loading="lazy" decoding="async" alt="Carved wooden printing block, Double Wave Border: photo 2 of 3"></span><span class="bk-slide" style="--nh:1200px"><img src="images/blocks/17-double-wave-3.jpg" width="900" height="1200" loading="lazy" decoding="async" alt="Carved wooden printing block, Double Wave Border: photo 3 of 3"></span></div>
+            <div class="bk-strip-bar"><span class="bk-count-photo" aria-live="polite">Photo 1 of 3</span><span class="bk-navs"><button class="bk-nav bk-prev" type="button" aria-label="Previous photo">&#8249;</button><button class="bk-nav bk-next" type="button" aria-label="Next photo">&#8250;</button></span></div>
+          </div>
+          <div class="bk-text">
+            <h3>Double Wave Border</h3>
+            <p>Two rows of wave curls that mirror each other.</p>
+            <div class="bk-read"><span>Traditionally read as</span><p>Waves are often read as a river or the flow of time, and it is a border you can print in one long unbroken line.</p></div>
+            
+          </div>
+        </div>
+      </article>
+      <article class="bk-card" id="block-18" data-type="border">
+        <button class="bk-card-btn" type="button" aria-expanded="false" aria-controls="bk-panel-18">
+          <span class="bk-cover"><span class="bk-num" aria-hidden="true">18</span><img src="images/blocks/18-spiral-scroll-1.jpg" width="1200" height="900" loading="lazy" decoding="async" alt=""></span>
+          <span class="bk-meta"><span class="bk-name">Spiral Wave Border</span><span class="bk-type">Border block</span><span class="bk-plus" aria-hidden="true"></span></span>
+        </button>
+        <div class="bk-panel" id="bk-panel-18" role="region" aria-label="Spiral Wave Border" hidden>
+          <div class="bk-strip-wrap">
+            <div class="bk-strip" tabindex="0" role="group" aria-label="Photos of Spiral Wave Border, scroll sideways"><span class="bk-slide" style="--nh:900px"><img src="images/blocks/18-spiral-scroll-1.jpg" width="1200" height="900" loading="lazy" decoding="async" alt="Carved wooden printing block, Spiral Wave Border: photo 1 of 3"></span><span class="bk-slide" style="--nh:1200px"><img src="images/blocks/18-spiral-scroll-2.jpg" width="900" height="1200" loading="lazy" decoding="async" alt="Carved wooden printing block, Spiral Wave Border: photo 2 of 3"></span><span class="bk-slide" style="--nh:1200px"><img src="images/blocks/18-spiral-scroll-3.jpg" width="900" height="1200" loading="lazy" decoding="async" alt="Carved wooden printing block, Spiral Wave Border: photo 3 of 3"></span></div>
+            <div class="bk-strip-bar"><span class="bk-count-photo" aria-live="polite">Photo 1 of 3</span><span class="bk-navs"><button class="bk-nav bk-prev" type="button" aria-label="Previous photo">&#8249;</button><button class="bk-nav bk-next" type="button" aria-label="Next photo">&#8250;</button></span></div>
+          </div>
+          <div class="bk-text">
+            <h3>Spiral Wave Border</h3>
+            <p>A row of spiral curls joined like waves.</p>
+            <div class="bk-read"><span>Traditionally read as</span><p>It is a close cousin of the spiral block, and another sign of motion and growth.</p></div>
+            
+          </div>
+        </div>
+      </article>
+      <article class="bk-card" id="block-19" data-type="border">
+        <button class="bk-card-btn" type="button" aria-expanded="false" aria-controls="bk-panel-19">
+          <span class="bk-cover"><span class="bk-num" aria-hidden="true">19</span><img src="images/blocks/19-vine-scroll-1.jpg" width="1200" height="900" loading="lazy" decoding="async" alt=""></span>
+          <span class="bk-meta"><span class="bk-name">Creeper Border</span><span class="bk-type">Border block</span><span class="bk-plus" aria-hidden="true"></span></span>
+        </button>
+        <div class="bk-panel" id="bk-panel-19" role="region" aria-label="Creeper Border" hidden>
+          <div class="bk-strip-wrap">
+            <div class="bk-strip" tabindex="0" role="group" aria-label="Photos of Creeper Border, scroll sideways"><span class="bk-slide" style="--nh:900px"><img src="images/blocks/19-vine-scroll-1.jpg" width="1200" height="900" loading="lazy" decoding="async" alt="Carved wooden printing block, Creeper Border: photo 1 of 3"></span><span class="bk-slide" style="--nh:1200px"><img src="images/blocks/19-vine-scroll-2.jpg" width="900" height="1200" loading="lazy" decoding="async" alt="Carved wooden printing block, Creeper Border: photo 2 of 3"></span><span class="bk-slide" style="--nh:900px"><img src="images/blocks/19-vine-scroll-3.jpg" width="1200" height="900" loading="lazy" decoding="async" alt="Carved wooden printing block, Creeper Border: photo 3 of 3"></span></div>
+            <div class="bk-strip-bar"><span class="bk-count-photo" aria-live="polite">Photo 1 of 3</span><span class="bk-navs"><button class="bk-nav bk-prev" type="button" aria-label="Previous photo">&#8249;</button><button class="bk-nav bk-next" type="button" aria-label="Next photo">&#8250;</button></span></div>
+          </div>
+          <div class="bk-text">
+            <h3>Creeper Border</h3>
+            <p>A narrow vine with curling tendrils running along the block.</p>
+            <div class="bk-read"><span>Traditionally read as</span><p>The creeper is a classic border: life, growth and continuity along the edge of a cloth.</p></div>
+            
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ── CLOSING ────────────────────────────────────────────────── -->
+<section class="bk-section bk-close">
+  <div class="bk-inner bk-reveal">
+    <p class="s-tag" style="justify-content:center">See them at work</p>
+    <h2>Blocks you can <em>hold and print with.</em></h2>
+    <p class="bk-lead">Our blocks live on every Ghar block print piece, and you are welcome to press one yourself at a workshop.</p>
+    <div class="bk-close-cta"><a class="btn-dark" href="shop.html">Shop our prints</a><a class="btn-pri" href="workshops.html">Join a workshop</a></div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <img src="images/site/logo-white.png" alt="Ghar" style="height:96px;width:auto;">
+        </div>
+        <p>Crafted by artisans in India. Made for homes in Amsterdam and beyond. Slow living, honest things.</p>
+        <p style="margin-top:14px;color:rgba(255,255,255,0.25);font-size:0.78rem;">Dim in Dam · KVK 99282771<br>Amsterdam, Netherlands</p>
+      </div>
+      <div class="f-col">
+        <h4>Shop</h4>
+        <ul>
+          <li><a href="shop.html">Shop All</a></li>
+          <li><a href="shop.html#soon">Coming Soon</a></li>
+          <li><a href="cart.html">Your Bag</a></li>
+        </ul>
+      </div>
+      <div class="f-col">
+        <h4>Story</h4>
+        <ul>
+          <li><a href="about.html">About Ghar</a></li>
+          <li><a href="craft.html#makers">Our Makers</a></li>
+          <li><a href="craft.html">The Craft</a></li>
+          <li><a href="blocks.html">The Blocks</a></li>
+          <li><a href="care.html">Care Guide</a></li>
+        </ul>
+      </div>
+      <div class="f-col">
+        <h4>Help</h4>
+        <ul>
+          <li><a href="shipping.html">Shipping info</a></li>
+          <li><a href="returns.html">Returns</a></li>
+          <li><a href="#" class="ghar-contact">Contact us</a></li>
+          <li><a href="https://instagram.com/ghar_dam">@ghar_dam</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Dim in Dam · Ghar™ · All rights reserved · ghar.nl</p>
+      <div class="footer-socials">
+        <a href="https://instagram.com/ghar_dam">@ghar_dam</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var hasIO = 'IntersectionObserver' in window;
+  var $ = function (s, c) { return (c || document).querySelector(s); };
+  var $$ = function (s, c) { return Array.prototype.slice.call((c || document).querySelectorAll(s)); };
+  var raf = window.requestAnimationFrame || function (f) { return setTimeout(f, 16); };
+
+  /* reading progress bar */
+  var bar = $('.bk-progress');
+  function progress() {
+    var h = document.documentElement.scrollHeight - window.innerHeight;
+    bar.style.transform = 'scaleX(' + (h > 0 ? Math.min(1, window.scrollY / h) : 0) + ')';
+  }
+  window.addEventListener('scroll', progress, { passive: true });
+  progress();
+
+  /* fade-and-slide reveals + timeline */
+  function watch(els, cls, opts) {
+    if (!hasIO) { els.forEach(function (e) { e.classList.add(cls); }); return; }
+    var o = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (en.isIntersecting) { en.target.classList.add(cls); o.unobserve(en.target); }
+      });
+    }, opts);
+    els.forEach(function (e) { o.observe(e); });
+  }
+  watch($$('.bk-reveal'), 'in', { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
+  watch($$('.bk-timeline'), 'in', { threshold: 0.25 });
+
+  /* sticky "how a block is made" sequence */
+  var steps = $$('.bk-step'), scenes = $$('.bk-scene'), dots = $$('.bk-dots i');
+  var label = $('#bk-stage-label'), stage = $('.bk-stage');
+  var names = ["Wood", "Design", "Carve", "Ink", "Press"];
+  var current = 1;
+  function setStep(n) {
+    current = n;
+    scenes.forEach(function (s, i) { s.classList.toggle('on', i === n - 1); });
+    dots.forEach(function (d, i) { d.classList.toggle('on', i <= n - 1); });
+    steps.forEach(function (s, i) { s.classList.toggle('on', i === n - 1); });
+    stage.setAttribute('data-step', n);
+    label.textContent = '0' + n + ' · ' + names[n - 1];
+  }
+  steps[0].classList.add('on');
+  if (hasIO) {
+    var so = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) { if (en.isIntersecting) setStep(+en.target.getAttribute('data-step')); });
+    }, { rootMargin: '-45% 0px -45% 0px' });
+    steps.forEach(function (s) { so.observe(s); });
+  }
+
+  /* block gallery: filter, expand, photo strips, stamp-in */
+  var grid = $('.bk-grid'), cards = $$('.bk-card'), live = $('#bk-live');
+
+  function stampCover(cover) {
+    cover.classList.remove('pre');
+    cover.classList.remove('stamp');
+    void cover.offsetWidth;
+    cover.classList.add('stamp');
+  }
+  var covers = $$('.bk-cover');
+  if (hasIO) {
+    covers.forEach(function (c) { c.classList.add('pre'); });
+    var co = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (!en.isIntersecting) return;
+        var c = en.target, img = $('img', c);
+        co.unobserve(c);
+        if (img.complete && img.naturalWidth > 0) stampCover(c);
+        else {
+          img.addEventListener('load', function () { stampCover(c); });
+          img.addEventListener('error', function () { c.classList.remove('pre'); });
+        }
+      });
+    }, { threshold: 0.2 });
+    covers.forEach(function (c) { co.observe(c); });
+  }
+  covers.forEach(function (c) {
+    c.parentNode.addEventListener('pointerenter', function (e) {
+      if (e.pointerType === 'mouse' && !reduce && !c.classList.contains('pre')) stampCover(c);
+    });
+  });
+
+  function closeCard(card) {
+    $('.bk-card-btn', card).setAttribute('aria-expanded', 'false');
+    $('.bk-panel', card).hidden = true;
+    card.classList.remove('open');
+  }
+  function openCard(card, scroll) {
+    cards.forEach(function (c) { if (c !== card) closeCard(c); });
+    $('.bk-card-btn', card).setAttribute('aria-expanded', 'true');
+    $('.bk-panel', card).hidden = false;
+    card.classList.add('open');
+    $('.bk-strip', card).scrollLeft = 0;
+    updateCount(card);
+    if (scroll) raf(function () { card.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' }); });
+  }
+  function indexOf(card) {
+    var strip = $('.bk-strip', card), slides = $$('.bk-slide', strip);
+    var mid = strip.scrollLeft + strip.clientWidth / 2, best = 0, bd = 1e9;
+    slides.forEach(function (s, i) {
+      var d = Math.abs(s.offsetLeft + s.offsetWidth / 2 - mid);
+      if (d < bd) { bd = d; best = i; }
+    });
+    if (strip.scrollLeft <= 2) best = 0;
+    if (strip.scrollLeft + strip.clientWidth >= strip.scrollWidth - 2) best = slides.length - 1;
+    return best;
+  }
+  function updateCount(card) {
+    var n = $$('.bk-slide', card).length;
+    $('.bk-count-photo', card).textContent = 'Photo ' + (indexOf(card) + 1) + ' of ' + n;
+  }
+  function slide(card, dir) {
+    var strip = $('.bk-strip', card), slides = $$('.bk-slide', strip);
+    var i = Math.max(0, Math.min(slides.length - 1, indexOf(card) + dir)), s = slides[i];
+    strip.scrollTo({ left: s.offsetLeft - (strip.clientWidth - s.offsetWidth) / 2, behavior: reduce ? 'auto' : 'smooth' });
+  }
+  cards.forEach(function (card) {
+    $('.bk-card-btn', card).addEventListener('click', function () {
+      if (card.classList.contains('open')) {
+        closeCard(card);
+        if (history.replaceState) history.replaceState(null, '', '#meet');
+      } else {
+        openCard(card, true);
+        if (history.replaceState) history.replaceState(null, '', '#' + card.id);
+      }
+    });
+    card.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && card.classList.contains('open')) { closeCard(card); $('.bk-card-btn', card).focus(); }
+    });
+    var ticking = false;
+    $('.bk-strip', card).addEventListener('scroll', function () {
+      if (ticking) return;
+      ticking = true;
+      raf(function () { ticking = false; updateCount(card); });
+    }, { passive: true });
+    $('.bk-prev', card).addEventListener('click', function () { slide(card, -1); });
+    $('.bk-next', card).addEventListener('click', function () { slide(card, 1); });
+  });
+
+  var pills = $$('.bk-filters .pill');
+  pills.forEach(function (p) {
+    p.addEventListener('click', function () {
+      var f = p.getAttribute('data-f'), shown = 0;
+      pills.forEach(function (q) {
+        q.classList.toggle('active', q === p);
+        q.setAttribute('aria-pressed', q === p ? 'true' : 'false');
+      });
+      grid.classList.remove('bk-filtering');
+      cards.forEach(function (c) {
+        var show = f === 'all' || c.getAttribute('data-type') === f;
+        c.hidden = !show;
+        if (show) shown++;
+        else if (c.classList.contains('open')) closeCard(c);
+      });
+      void grid.offsetWidth;
+      grid.classList.add('bk-filtering');
+      live.textContent = 'Showing ' + shown + ' ' + (f === 'all' ? '' : f + ' ') + 'blocks';
+    });
+  });
+
+  function fromHash() {
+    var m = /^#block-(\d+)$/.exec(location.hash);
+    if (!m) return;
+    var c = document.getElementById('block-' + m[1]);
+    if (c) { c.hidden = false; openCard(c, true); }
+  }
+  fromHash();
+  window.addEventListener('hashchange', fromHash);
+
+  /* "press a block" cloth */
+  var cloth = $('.bk-cloth'), wipe = $('.bk-clear');
+  var MARK = '<svg viewBox="-66 -66 132 132" aria-hidden="true" focusable="false"><use href="#bk-motif" stroke-width="5"/></svg>';
+  function press(x, y) {
+    var el = document.createElement('span');
+    el.className = 'bk-print';
+    el.style.left = x + '%';
+    el.style.top = y + '%';
+    el.style.setProperty('--r', (Math.random() * 12 - 6).toFixed(1) + 'deg');
+    el.style.setProperty('--o', (0.72 + Math.random() * 0.26).toFixed(2));
+    el.innerHTML = MARK;
+    cloth.appendChild(el);
+    cloth.classList.add('has-prints');
+    var all = $$('.bk-print', cloth);
+    if (all.length > 36) all[0].parentNode.removeChild(all[0]);
+  }
+  cloth.addEventListener('click', function (e) {
+    var r = cloth.getBoundingClientRect(), x, y;
+    if (e.detail === 0 || (!e.clientX && !e.clientY)) { x = 15 + Math.random() * 70; y = 15 + Math.random() * 70; }
+    else { x = (e.clientX - r.left) / r.width * 100; y = (e.clientY - r.top) / r.height * 100; }
+    press(Math.max(8, Math.min(92, x)), Math.max(8, Math.min(92, y)));
+  });
+  wipe.addEventListener('click', function () {
+    $$('.bk-print', cloth).forEach(function (p) { p.parentNode.removeChild(p); });
+    cloth.classList.remove('has-prints');
+  });
+})();
+
+</script>
+</body>
+</html>
