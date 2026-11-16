@@ -797,7 +797,7 @@ window.addEventListener('pageshow', gharUpdateBadge); // covers back/forward cac
      ('gharConsent' = 'yes' | 'no') and can be changed via "Cookie settings"
      in the footer of every page. Empty IDs = nothing loads, no banner. */
 const GHAR_CF_TOKEN = '155c5d5aca0f434cb9dfd591e5ce1378';  // token from the Cloudflare Web Analytics JS snippet
-const GHAR_GA_ID = '';     // Google Analytics 4 Measurement ID, e.g. 'G-XXXXXXXXXX'
+const GHAR_GA_ID = 'G-QMZ2F52Z77';     // Google Analytics 4 Measurement ID, e.g. 'G-XXXXXXXXXX'
 
 function gharLoadCloudflare() {
   if (!GHAR_CF_TOKEN || document.querySelector('script[data-cf-beacon]')) return;
