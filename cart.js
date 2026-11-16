@@ -788,3 +788,90 @@ function gharInit() {
 if (document.readyState !== 'loading') gharInit();
 else document.addEventListener('DOMContentLoaded', gharInit);
 window.addEventListener('pageshow', gharUpdateBadge); // covers back/forward cache restores
+
+/* ── ANALYTICS + COOKIE CONSENT ─────────────────────────────────
+   Fill in the two IDs below to switch analytics on.
+   - Cloudflare Web Analytics is cookie-free, so it runs for every visitor.
+   - Google Analytics sets cookies, so it only loads after the visitor clicks
+     "Accept" in the cookie banner. The choice is kept in localStorage
+     ('gharConsent' = 'yes' | 'no') and can be changed via "Cookie settings"
+     in the footer of every page. Empty IDs = nothing loads, no banner. */
+const GHAR_CF_TOKEN = '155c5d5aca0f434cb9dfd591e5ce1378';  // token from the Cloudflare Web Analytics JS snippet
+const GHAR_GA_ID = '';     // Google Analytics 4 Measurement ID, e.g. 'G-XXXXXXXXXX'
+
+function gharLoadCloudflare() {
+  if (!GHAR_CF_TOKEN || document.querySelector('script[data-cf-beacon]')) return;
+  const s = document.createElement('script');
+  s.defer = true;
+  s.src = 'https://static.cloudflareinsights.com/beacon.min.js';
+  s.setAttribute('data-cf-beacon', JSON.stringify({ token: GHAR_CF_TOKEN }));
+  document.head.appendChild(s);
+}
+function gharLoadGA() {
+  if (!GHAR_GA_ID || window.gharGALoaded) return;
+  window.gharGALoaded = true;
+  const s = document.createElement('script');
+  s.async = true;
+  s.src = 'https://www.googletagmanager.com/gtag/js?id=' + encodeURIComponent(GHAR_GA_ID);
+  document.head.appendChild(s);
+  window.dataLayer = window.dataLayer || [];
+  window.gtag = function () { window.dataLayer.push(arguments); };
+  window.gtag('js', new Date());
+  window.gtag('config', GHAR_GA_ID);
+}
+function gharConsent() { try { return localStorage.getItem('gharConsent'); } catch (e) { return null; } }
+function gharSetConsent(v) {
+  const was = gharConsent();
+  try { localStorage.setItem('gharConsent', v); } catch (e) {}
+  if (v === 'yes') gharLoadGA();
+  else if (was === 'yes') {
+    // withdrawn: remove the Google Analytics cookies and reload without them
+    document.cookie.split(';').forEach(function (c) {
+      const n = c.split('=')[0].trim();
+      if (n.indexOf('_ga') !== 0) return;
+      [location.hostname, '.' + location.hostname.replace(/^www\./, '')].forEach(function (d) {
+        document.cookie = n + '=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/; domain=' + d;
+      });
+      document.cookie = n + '=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/';
+    });
+    location.reload();
+  }
+}
+function gharCookieBanner() {
+  if (document.getElementById('ghar-cookies')) return;
+  const b = document.createElement('div');
+  b.id = 'ghar-cookies';
+  b.className = 'gcookie';
+  b.setAttribute('role', 'dialog');
+  b.setAttribute('aria-label', 'Cookie choice');
+  b.innerHTML =
+    '<p>May we use Google Analytics cookies to see how people find and use Ghar? No ads, and we never sell your data. <a href="privacy.html">Privacy</a></p>' +
+    '<div class="gcookie-btns"><button type="button" class="btn-pri" data-c="yes">Accept</button>' +
+    '<button type="button" class="gcookie-no" data-c="no">No thanks</button></div>';
+  b.addEventListener('click', function (e) {
+    const btn = e.target.closest('button[data-c]');
+    if (!btn) return;
+    b.remove();
+    gharSetConsent(btn.getAttribute('data-c'));
+  });
+  document.body.appendChild(b);
+}
+function gharInitAnalytics() {
+  gharLoadCloudflare();
+  // footer links: Privacy (always) and Cookie settings (only when Google Analytics is set up)
+  const fb = document.querySelector('.footer-bottom');
+  if (fb && !fb.querySelector('.gcookie-links')) {
+    const p = document.createElement('p');
+    p.className = 'gcookie-links';
+    p.innerHTML = '<a href="privacy.html">Privacy</a>' + (GHAR_GA_ID ? ' · <a href="#" class="gcookie-settings">Cookie settings</a>' : '');
+    fb.appendChild(p);
+    const cs = p.querySelector('.gcookie-settings');
+    if (cs) cs.addEventListener('click', function (e) { e.preventDefault(); gharCookieBanner(); });
+  }
+  if (!GHAR_GA_ID) return;
+  const c = gharConsent();
+  if (c === 'yes') gharLoadGA();
+  else if (c !== 'no') gharCookieBanner();
+}
+if (document.readyState !== 'loading') gharInitAnalytics();
+else document.addEventListener('DOMContentLoaded', gharInitAnalytics);

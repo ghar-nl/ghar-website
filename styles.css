@@ -1036,3 +1036,15 @@ nav.nav-open .nav-burger span:nth-child(3){transform:translateY(-7px) rotate(-45
   .ws-venue-apple{margin:16px 0 0;}
   .bk-hero-cta .ws-reserve{width:100%;text-align:center;}
 }
+
+/* ── COOKIE BANNER + PRIVACY LINKS (cart.js: gharCookieBanner) ── */
+.gcookie{position:fixed;left:20px;bottom:20px;z-index:600;max-width:420px;background:var(--linen);color:var(--text);padding:22px 24px 20px;border:1px solid rgba(20,54,89,0.14);box-shadow:0 14px 40px rgba(20,54,89,0.22);}
+.gcookie p{font-size:0.88rem;line-height:1.6;color:var(--text-mid);margin:0 0 14px;}
+.gcookie p a{color:var(--blue-dark);}
+.gcookie-btns{display:flex;gap:12px;flex-wrap:wrap;}
+.gcookie .btn-pri{padding:11px 26px;border:0;cursor:pointer;font-family:inherit;}
+.gcookie-no{background:transparent;border:1px solid var(--blue-dark);color:var(--blue-dark);padding:10px 22px;font-family:inherit;font-size:0.78rem;letter-spacing:0.12em;text-transform:uppercase;cursor:pointer;}
+.gcookie-no:hover{background:var(--blue-dark);color:var(--white);}
+.footer-bottom .gcookie-links{margin-top:8px;font-size:0.78rem;}
+.footer-bottom .gcookie-links a{color:inherit;}
+@media (max-width:600px){.gcookie{left:12px;right:12px;bottom:12px;max-width:none;}}
