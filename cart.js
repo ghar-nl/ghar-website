@@ -775,7 +775,7 @@ function gharWireSite() {
 }
 
 /* ── EVENTS POPUP (workshop 28 Nov + Westergas market 6 Dec) ─────────────
-   Shows once per browser visit on every page except workshops/cart, until the
+   Shows once per browser visit on every page except workshops/cart/markets, until the
    last event is over. Each event card disappears by itself once it has started
    (workshop) or ended (market). "I'll check later" hides it for this visit. */
 const GHAR_EVENTS = [
@@ -794,11 +794,11 @@ const GHAR_EVENTS = [
     primary: { label: 'I’m interested · save the date', ics: true,
       start: '20261206T110000Z', end: '20261206T170000Z',
       summary: 'Ghar at Sunday Market Westergas', where: 'Westergas, Pazzanistraat 41, Amsterdam' },
-    secondary: { label: 'Directions', href: 'https://maps.google.com/?q=Westergas+Pazzanistraat+41+Amsterdam' } }
+    secondary: { label: 'More about the market', href: 'markets.html' } }
 ];
 function gharEventsPopup() {
   const page = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
-  if (page === 'workshops.html' || page === 'cart.html') return;
+  if (page === 'workshops.html' || page === 'cart.html' || page === 'markets.html') return;
   if (page === 'shop.html') { try { if (!localStorage.getItem('gharNotifySeen')) return; } catch (e) {} }
   try { if (sessionStorage.getItem('gharEventsSeen')) return; } catch (e) {}
   const now = Date.now();
