@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Block Printing Workshop, Amsterdam, 28 November — Ghar</title>
-<meta name="description" content="Hand block printing workshop at De Steek Amsterdam, Saturday 28 November 2026. Print up to two tote bags with hand-carved wooden blocks, with homemade chai. €38 per person.">
+<meta name="description" content="Hand block printing workshop at De Steek Amsterdam, Saturday 28 November 2026. Print up to two tote bags with hand-carved wooden blocks, with homemade chai. €45 per person.">
 <link rel="icon" type="image/png" href="images/site/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&family=Noto+Serif+Devanagari:wght@400;500&display=swap" rel="stylesheet">
@@ -36,7 +36,7 @@
   "offers": {
     "@type": "Offer",
     "url": "https://ghar.nl/workshops.html",
-    "price": "38",
+    "price": "45",
     "priceCurrency": "EUR",
     "availability": "https://schema.org/InStock"
   },
@@ -81,7 +81,7 @@
       <ul class="ws-meta">
         <li><span class="ws-k">When</span><span><span data-ws="dateText">Saturday 28 November 2026</span><small data-ws="time">Start time announced soon</small></span></li>
         <li><span class="ws-k">Where</span><span><a href="https://desteekamsterdam.com/en/" target="_blank" rel="noopener">De Steek Amsterdam</a><small>Van der Hoopstraat 70HS, Amsterdam West</small></span></li>
-        <li><span class="ws-k">Price</span><span><span><span data-ws="price">€38</span> per person, incl. 21% VAT</span><small>Our very first workshop</small></span></li>
+        <li><span class="ws-k">Price</span><span><span><span data-ws="price">€45</span> per person, incl. 21% VAT</span><small>Our very first workshop</small></span></li>
         <li data-ws-row="spots" hidden><span class="ws-k">Spots</span><span data-ws="spots"></span></li>
       </ul>
       <div class="bk-hero-cta" style="margin-top:32px">
@@ -277,7 +277,7 @@
       <h2>A few <em>questions.</em></h2>
       <details class="ws-q"><summary>Do I need any experience?</summary><p>None at all. If you can press a stamp, you can block print. We guide you through every step, and there is no wrong way to make a pattern.</p></details>
       <details class="ws-q"><summary>Can I come with friends?</summary><p>Yes, please do. Each person signs up with their own name and email, so everyone in your group gets a spot on the list.</p></details>
-      <details class="ws-q"><summary>What does my ticket include?</summary><p>Your ticket is <span data-ws="price">€38</span> per person, incl. 21% VAT. It includes printing up to two tote bags, all of our blocks, colours, brushes and tools, the illustrated opening session and homemade chai. Water and other drinks are available from the venue's menu.</p></details>
+      <details class="ws-q"><summary>What does my ticket include?</summary><p>Your ticket is <span data-ws="price">€45</span> per person, incl. 21% VAT. It includes printing up to two tote bags, all of our blocks, colours, brushes and tools, the illustrated opening session and homemade chai. Water and other drinks are available from the venue's menu.</p></details>
       <details class="ws-q"><summary>Where does it take place?</summary><p>At <a href="https://desteekamsterdam.com/en/" target="_blank" rel="noopener">De Steek Amsterdam</a>, Van der Hoopstraat 70HS, 1051 VK Amsterdam, in Amsterdam West.</p></details>
       <details class="ws-q"><summary>I have a question. Who do I ask?</summary><p>We would love to hear from you. Message us on Instagram at <a href="https://instagram.com/ghar_dam" target="_blank" rel="noopener">@ghar_dam</a> or write to <a href="mailto:dimple@ghar.nl" data-ws="mail">dimple@ghar.nl</a>.</p></details>
     </div>
@@ -289,7 +289,7 @@
   <div class="bk-inner bk-reveal">
     <p class="s-tag" style="justify-content:center">Join us</p>
     <h2>Come and press <em>your own pattern.</em></h2>
-    <p class="bk-lead"><span data-ws="dateText">Saturday 28 November 2026</span> at De Steek Amsterdam. <span data-ws="price">€38</span> per person, incl. 21% VAT.</p>
+    <p class="bk-lead"><span data-ws="dateText">Saturday 28 November 2026</span> at De Steek Amsterdam. <span data-ws="price">€45</span> per person, incl. 21% VAT.</p>
     <div class="bk-close-cta"><a class="btn-pri ws-reserve" href="#interest" data-ws-reserve data-ws-live>Sign up, no payment yet</a><a class="btn-dark" href="blocks.html">Meet the blocks</a></div>
     <p class="ws-fine" data-ws-past>This workshop has taken place. Tell us below and we will let you know about the next one.</p>
   </div>
@@ -362,7 +362,7 @@
 
 <!-- ── STICKY MOBILE BAR ──────────────────────────────────────── -->
 <div class="ws-sticky" id="ws-sticky" data-ws-live>
-  <p class="ws-sticky-info">Block printing workshop<span class="ws-sticky-sub"><span data-ws="dateShort">Sat 28 Nov</span> · <span data-ws="price">€38</span> per person</span></p>
+  <p class="ws-sticky-info">Block printing workshop<span class="ws-sticky-sub"><span data-ws="dateShort">Sat 28 Nov</span> · <span data-ws="price">€45</span> per person</span></p>
   <a class="btn-pri ws-reserve" href="#interest" data-ws-reserve>Sign up, no payment yet</a>
 </div>
 
@@ -389,8 +389,8 @@ const WORKSHOP = {
   dateText: 'Saturday 28 November 2026',
   startTime: '',
   endTime: '',
-  priceEur: 38,
-  paymentLink: '',
+  priceEur: 45,
+  paymentLink: 'https://buy.stripe.com/9B65kw0bkfW267ad0FfnO00',
   spots: null,
   contactEmail: 'dimple@ghar.nl'
 };
@@ -452,6 +452,13 @@ const WORKSHOP = {
     if (hasLink) { b.setAttribute('href', link); b.setAttribute('rel', 'noopener'); b.textContent = 'Reserve your spot'; }
     else b.addEventListener('click', function (e) { e.preventDefault(); showSoon(); });
   });
+  /* once bookings are open, the interest form becomes "next workshop" */
+  if (hasLink) {
+    var ih = $('#interest h2'), il = $('#interest .bk-lead'), it = $('#interest .s-tag');
+    if (it) it.textContent = 'Next time';
+    if (ih) ih.innerHTML = 'Can\u2019t make it? <em>Join the next one.</em>';
+    if (il) il.textContent = 'Leave your name and email and we will let you know as soon as the next workshop is announced.';
+  }
 
   /* ── reading progress bar ── */
   var bar = $('.bk-progress');
@@ -508,9 +515,9 @@ const WORKSHOP = {
     if (!name || !gharEmailOk(email)) { status.textContent = 'Please fill in your name and a valid email.'; return; }
     this.disabled = true;
     try {
-      await fetch(GHAR_API, { method: 'POST', body: JSON.stringify({ type: 'workshop_interest', name: name, email: email, secret: GHAR_SECRET }) });
+      await fetch(GHAR_API, { method: 'POST', body: JSON.stringify({ type: 'workshop_interest', name: name, email: email, workshop: hasLink ? 'Next workshop' : '28 Nov 2026 · De Steek', secret: GHAR_SECRET }) });
     } catch (err) { /* optimistic */ }
-    status.textContent = 'Thank you! You are on the list. We will email you the details and a payment link soon.';
+    status.textContent = hasLink ? 'Thank you! We will let you know about the next workshop.' : 'Thank you! You are on the list. We will email you the details and a payment link soon.';
   });
 })();
 </script>
