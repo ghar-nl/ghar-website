@@ -1048,3 +1048,24 @@ nav.nav-open .nav-burger span:nth-child(3){transform:translateY(-7px) rotate(-45
 .footer-bottom .gcookie-links{margin-top:8px;font-size:0.78rem;}
 .footer-bottom .gcookie-links a{color:inherit;}
 @media (max-width:600px){.gcookie{left:12px;right:12px;bottom:12px;max-width:none;}}
+
+/* ── EVENTS POPUP (workshop + market) ─────────────────────── */
+.gev-overlay{z-index:700;}
+.gev{max-width:760px;padding:40px 36px 26px;}
+.gev-kicker{font-size:0.72rem !important;letter-spacing:0.2em;text-transform:uppercase;color:var(--terra) !important;margin-bottom:6px !important;font-weight:500 !important;}
+.gev-cards{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:6px;}
+.gev-cards.one{grid-template-columns:1fr;}
+.gev-card{background:var(--white);border:1px solid rgba(20,54,89,0.12);border-top:4px solid var(--terra);padding:20px 20px 18px;display:flex;flex-direction:column;}
+.gev-card + .gev-card{border-top-color:var(--blue-dark);}
+.gev-tag{font-size:0.7rem !important;letter-spacing:0.16em;text-transform:uppercase;color:var(--terra) !important;margin-bottom:6px !important;font-weight:500 !important;}
+.gev-card h4{font-family:'Playfair Display',serif;font-weight:400;font-size:1.3rem;color:var(--blue-dark);line-height:1.25;margin-bottom:6px;}
+.gev-meta{font-size:0.86rem !important;color:var(--blue-dark) !important;font-weight:400 !important;margin-bottom:8px !important;line-height:1.5 !important;}
+.gev-text{font-size:0.86rem !important;margin-bottom:16px !important;line-height:1.6 !important;flex:1;}
+.gev-btn{display:block;width:100%;text-align:center;background:var(--terra);color:var(--white);border:none;padding:13px 14px;font-family:'Jost',sans-serif;font-size:0.76rem;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;cursor:pointer;}
+.gev-btn:hover{background:var(--terra-light);}
+.gev-card + .gev-card .gev-btn{background:var(--blue-dark);}
+.gev-card + .gev-card .gev-btn:hover{background:var(--terra);}
+.gev-link{display:block;text-align:center;margin-top:10px;font-size:0.8rem;color:var(--text-mid);}
+.gev-link:hover{color:var(--terra);}
+.gev-later{display:block;margin:18px auto 0;}
+@media (max-width:640px){.gev{padding:36px 18px 20px;}.gev-cards{grid-template-columns:1fr;}}

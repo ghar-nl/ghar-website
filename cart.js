@@ -774,11 +774,84 @@ function gharWireSite() {
   });
 }
 
+/* ── EVENTS POPUP (workshop 28 Nov + Westergas market 6 Dec) ─────────────
+   Shows once per browser visit on every page except workshops/cart, until the
+   last event is over. Each event card disappears by itself once it has started
+   (workshop) or ended (market). "I'll check later" hides it for this visit. */
+const GHAR_EVENTS = [
+  { id: 'ws28', until: '2026-11-28T11:00:00Z',
+    tag: 'Workshop · Sat 28 Nov',
+    title: 'Block printing workshop',
+    meta: '12:00 to 15:00 · De Steek Amsterdam · €45',
+    text: 'Print up to two tote bags with our hand-carved wooden blocks, with chai, coffee and homemade vegetarian snacks.',
+    primary: { label: 'Yes, I’m in · book my spot', href: 'https://buy.stripe.com/9B65kw0bkfW267ad0FfnO00' },
+    secondary: { label: 'See the details', href: 'workshops.html' } },
+  { id: 'mk06', until: '2026-12-06T17:00:00Z',
+    tag: 'Market · Sun 6 Dec',
+    title: 'Find us at Sunday Market Westergas',
+    meta: '12:00 to 18:00 · Westergas, Pazzanistraat 41, Amsterdam',
+    text: 'See the whole collection in person, feel the cotton, and try a block print yourself at our stall.',
+    primary: { label: 'I’m interested · save the date', ics: true,
+      start: '20261206T110000Z', end: '20261206T170000Z',
+      summary: 'Ghar at Sunday Market Westergas', where: 'Westergas, Pazzanistraat 41, Amsterdam' },
+    secondary: { label: 'Directions', href: 'https://maps.google.com/?q=Westergas+Pazzanistraat+41+Amsterdam' } }
+];
+function gharEventsPopup() {
+  const page = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
+  if (page === 'workshops.html' || page === 'cart.html') return;
+  if (page === 'shop.html') { try { if (!localStorage.getItem('gharNotifySeen')) return; } catch (e) {} }
+  try { if (sessionStorage.getItem('gharEventsSeen')) return; } catch (e) {}
+  const now = Date.now();
+  const live = GHAR_EVENTS.filter(function (ev) { return now < Date.parse(ev.until); });
+  if (!live.length) return;
+  const esc = function (s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); };
+  const cards = live.map(function (ev, i) {
+    const p = ev.primary;
+    const prim = p.ics
+      ? '<button type="button" class="gev-btn" data-ics="' + i + '">' + esc(p.label) + '</button>'
+      : '<a class="gev-btn" href="' + esc(p.href) + '" data-go>' + esc(p.label) + '</a>';
+    const ext = /^https?:/.test(ev.secondary.href) ? ' target="_blank" rel="noopener"' : '';
+    return '<div class="gev-card"><p class="gev-tag">' + esc(ev.tag) + '</p><h4>' + esc(ev.title) + '</h4>' +
+      '<p class="gev-meta">' + esc(ev.meta) + '</p><p class="gev-text">' + esc(ev.text) + '</p>' + prim +
+      '<a class="gev-link" href="' + esc(ev.secondary.href) + '"' + ext + ' data-go>' + esc(ev.secondary.label) + '</a></div>';
+  }).join('');
+  const ov = document.createElement('div');
+  ov.className = 'gpop-overlay gev-overlay';
+  ov.setAttribute('role', 'dialog'); ov.setAttribute('aria-modal', 'true'); ov.setAttribute('aria-labelledby', 'gev-h');
+  ov.innerHTML = '<div class="gpop gev"><button class="gpop-close" aria-label="Close" type="button">×</button>' +
+    '<p class="gev-kicker">Come and find us</p><h3 id="gev-h">' + (live.length > 1 ? 'Two dates with Ghar' : 'A date with Ghar') + '</h3>' +
+    '<div class="gev-cards' + (live.length > 1 ? '' : ' one') + '">' + cards + '</div>' +
+    '<button type="button" class="gpop-skip gev-later">I’ll check later</button></div>';
+  document.body.appendChild(ov);
+  function close() { ov.remove(); try { sessionStorage.setItem('gharEventsSeen', '1'); } catch (e) {} }
+  ov.querySelector('.gpop-close').onclick = close;
+  ov.querySelector('.gev-later').onclick = close;
+  ov.addEventListener('click', function (e) { if (e.target === ov) close(); });
+  document.addEventListener('keydown', function k(e) { if (e.key === 'Escape') { close(); document.removeEventListener('keydown', k); } });
+  ov.querySelectorAll('[data-go]').forEach(function (a) { a.addEventListener('click', function () { try { sessionStorage.setItem('gharEventsSeen', '1'); } catch (e) {} }); });
+  ov.querySelectorAll('[data-ics]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      const p = live[+b.dataset.ics].primary;
+      const ics = ['BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//Ghar//ghar.nl//EN', 'BEGIN:VEVENT',
+        'UID:' + p.start + '-ghar@ghar.nl', 'DTSTAMP:' + new Date().toISOString().replace(/[-:]/g, '').split('.')[0] + 'Z',
+        'DTSTART:' + p.start, 'DTEND:' + p.end, 'SUMMARY:' + p.summary, 'LOCATION:' + p.where.replace(/,/g, '\\,'),
+        'URL:https://ghar.nl', 'END:VEVENT', 'END:VCALENDAR'].join('\r\n');
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(new Blob([ics], { type: 'text/calendar' }));
+      a.download = 'ghar-westergas-6-dec.ics';
+      document.body.appendChild(a); a.click(); a.remove();
+      b.textContent = 'Saved · see you there!';
+    });
+  });
+  const first = ov.querySelector('.gev-btn'); if (first) { try { first.focus({ preventScroll: true }); } catch (e) {} }
+}
+
 /* ── init ── */
 function gharInit() {
   gharUpdateBadge();
   gharBurger();
   gharWireSite();
+  gharEventsPopup();
   if (document.querySelector('.btn-add') || document.getElementById('cart-items')) {
     gharLoadStock(function () {
       if (typeof renderCart === 'function') renderCart();
