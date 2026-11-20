@@ -785,7 +785,7 @@ const GHAR_EVENTS = [
     meta: '12:00 to 15:00 · De Steek Amsterdam · €45',
     text: 'Print up to two tote bags with our hand-carved wooden blocks, with chai, coffee and homemade vegetarian snacks.',
     primary: { label: 'Yes, I’m in · book my spot', href: 'https://buy.stripe.com/9B65kw0bkfW267ad0FfnO00' },
-    secondary: { label: 'See the details', href: 'workshops.html' } },
+    secondary: { label: 'Can’t make it? Join 4 Dec', href: 'workshops.html#interest' } },
   { id: 'mk06', until: '2026-12-06T17:00:00Z',
     tag: 'Market · Sun 6 Dec',
     title: 'Find us at Sunday Market Westergas',

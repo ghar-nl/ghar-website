@@ -915,6 +915,9 @@ nav.nav-open .nav-burger span:nth-child(3){transform:translateY(-7px) rotate(-45
 .ws-past [data-ws-past]{display:revert;}
 .ws-past [data-ws-live]{display:none !important;}
 .ws-fine{margin-top:14px;font-size:0.8rem;color:var(--text-soft);font-style:italic;}
+.ws-alt{flex-basis:100%;margin:14px 0 0;font-size:0.92rem;color:rgba(255,255,255,0.85);}
+.ws-alt a{color:inherit;text-decoration:underline;text-underline-offset:3px;}
+.ws-fine a{color:inherit;}
 
 /* what you get */
 .ws-included{background:var(--linen);}

@@ -8,8 +8,8 @@
 <link rel="icon" type="image/png" href="images/site/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&family=Noto+Serif+Devanagari:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=20261119b">
-<script src="cart.js?v=20261119b" defer></script>
+<link rel="stylesheet" href="styles.css?v=20261120a">
+<script src="cart.js?v=20261120a" defer></script>
 <script>if("IntersectionObserver" in window)document.documentElement.className+=" bk-js";</script>
 <script type="application/ld+json" id="ws-ld">
 {
@@ -91,6 +91,7 @@
         <span class="ws-past-note" data-ws-past>This workshop has taken place</span>
         <a class="btn-sec" href="#interest" data-ws-past>Tell us about the next one</a>
       </div>
+      <p class="ws-alt" data-ws-alt hidden>Can't make the 28th? <a href="#interest">Sign up for Friday 4 December</a></p>
     </div>
     <div class="bk-hero-art"><svg viewBox="0 0 420 250" role="img" aria-label="A wooden block pressing a flower pattern onto cloth three times in a row">
   <rect class="hs-cloth" x="14" y="96" width="392" height="124"/>
@@ -295,6 +296,7 @@
     <p class="bk-lead"><span data-ws="dateText">Saturday 28 November 2026</span>, <span data-ws="time">12:00 to 15:00 · 3 hours</span>, at De Steek Amsterdam. Chai, coffee and homemade vegetarian snacks included. <span data-ws="price">€45</span> per person, incl. 21% VAT.</p>
     <p class="bk-lead">Food allergies? Write them at checkout and we will adapt the food for you. Can't make it after booking? Contact us and we will move you to our January workshop.</p>
     <div class="bk-close-cta"><a class="btn-pri ws-reserve" href="#interest" data-ws-reserve data-ws-live>Sign up, no payment yet</a><a class="btn-dark" href="blocks.html">Meet the blocks</a></div>
+    <p class="ws-fine" data-ws-alt hidden>Can't make the 28th? <a href="#interest">Sign up for our second workshop on Friday 4 December.</a></p>
     <p class="ws-fine" data-ws-past>This workshop has taken place. Tell us below and we will let you know about the next one.</p>
   </div>
 </section>
@@ -458,12 +460,20 @@ const WORKSHOP = {
     else b.addEventListener('click', function (e) { e.preventDefault(); showSoon(); });
   });
   /* once bookings are open, the interest form becomes "next workshop" */
+  /* second date: people who can't make 28 Nov sign up for Fri 4 Dec (own tab in the Sheet).
+     After NEXT.until the form falls back to a plain "next workshop" list. */
+  var NEXT = { label: '4 Dec 2026', until: '2026-12-04T09:00:00Z' };
+  var nextOpen = hasLink && Date.now() < Date.parse(NEXT.until);
   if (hasLink) {
     var ih = $('#interest h2'), il = $('#interest .bk-lead'), it = $('#interest .s-tag');
-    if (it) it.textContent = 'Next time';
-    if (ih) ih.innerHTML = 'Can\u2019t make it? <em>Join the next one.</em>';
-    if (il) il.textContent = 'Leave your name and email and we will let you know as soon as the next workshop is announced.';
+    if (it) it.textContent = nextOpen ? 'Another date' : 'Next time';
+    if (ih) ih.innerHTML = nextOpen ? 'Can\u2019t make the 28th? <em>Join us on Friday 4 December.</em>' : 'Can\u2019t make it? <em>Join the next one.</em>';
+    if (il) il.textContent = nextOpen
+      ? 'We are adding a second workshop on Friday 4 December. No payment needed now: leave your name and email and we will send you the time, place and a payment link.'
+      : 'Leave your name and email and we will let you know as soon as the next workshop is announced.';
+    var bt = $('#ws-send'); if (bt && nextOpen) bt.textContent = 'Sign me up for 4 Dec';
   }
+  $$('[data-ws-alt]').forEach(function (el) { el.hidden = !nextOpen; });
 
   /* ── reading progress bar ── */
   var bar = $('.bk-progress');
@@ -520,9 +530,9 @@ const WORKSHOP = {
     if (!name || !gharEmailOk(email)) { status.textContent = 'Please fill in your name and a valid email.'; return; }
     this.disabled = true;
     try {
-      await fetch(GHAR_API, { method: 'POST', body: JSON.stringify({ type: 'workshop_interest', name: name, email: email, workshop: hasLink ? 'Next workshop' : '28 Nov 2026 · De Steek', secret: GHAR_SECRET }) });
+      await fetch(GHAR_API, { method: 'POST', body: JSON.stringify({ type: 'workshop_interest', name: name, email: email, workshop: nextOpen ? NEXT.label : (hasLink ? 'Next workshop' : '28 Nov 2026 · De Steek'), secret: GHAR_SECRET }) });
     } catch (err) { /* optimistic */ }
-    status.textContent = hasLink ? 'Thank you! We will let you know about the next workshop.' : 'Thank you! You are on the list. We will email you the details and a payment link soon.';
+    status.textContent = nextOpen ? 'Thank you! You are on the list for Friday 4 December. We will email you the time, place and a payment link soon.' : hasLink ? 'Thank you! We will let you know about the next workshop.' : 'Thank you! You are on the list. We will email you the details and a payment link soon.';
   });
 })();
 </script>
