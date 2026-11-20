@@ -5,8 +5,21 @@
 const GHAR_API = 'https://script.google.com/macros/s/AKfycbwPyxknSnMjppLX_leBgCdiEBlrzqYHj98iEMJHjgbmeNtes_BQjEHx3Pa51t-MuOEdDw/exec';
 const GHAR_SECRET = '47d80edaf79922927989f72c'; // must match Apps Script
 
-const GHAR_SHIPPING = 5;            // € flat shipping
-const GHAR_FREE_SHIP_MIN = 59.99;   // € free shipping threshold
+/* Shipping zones (Nov 2026). Strict JSON on purpose: the Apps Script reads this
+   block from the live site to charge the same shipping at Stripe, so keep the
+   `]; // end GHAR_SHIP_ZONES` marker. First zone listing the country wins; the
+   zone with an empty `countries` list covers every other EU country.
+   `freeMin` = free shipping when the subtotal (before discount) is at least this. */
+const GHAR_SHIP_ZONES = [
+  { "label": "Netherlands", "price": 5, "freeMin": 59.99, "countries": ["Netherlands"] },
+  { "label": "Belgium, Germany and Luxembourg", "price": 8, "freeMin": 100, "countries": ["Belgium", "Germany", "Luxembourg"] },
+  { "label": "Rest of the EU", "price": 13, "freeMin": 150, "countries": [] }
+]; // end GHAR_SHIP_ZONES
+function gharShipZone(country) {
+  return GHAR_SHIP_ZONES.find(function (z) { return z.countries.indexOf(country) >= 0; }) ||
+    GHAR_SHIP_ZONES.find(function (z) { return !z.countries.length; });
+}
+function gharCountry() { try { return localStorage.getItem('gharCountry') || ''; } catch (e) { return ''; } }
 const GHAR_PROMO_CODE = 'GHARPREORDER20';
 const GHAR_PROMO_RATE = 0.20;       // 20% off
 const GHAR_PROMO_MIN = 100;         // on orders above €100
@@ -350,13 +363,15 @@ function gharClearCart() {
 
 /* ── pricing (shipping + discount) ── */
 function gharPromoStored() { return localStorage.getItem('gharPromo') === GHAR_PROMO_CODE; }
-function gharTotals() {
+function gharTotals(country) {
+  /* no country chosen yet → show the Netherlands rate (zone 0) */
+  const zone = country ? gharShipZone(country) : GHAR_SHIP_ZONES[0];
   const sub = Math.round(gharCartTotal() * 100) / 100;
   const promo = gharPromoStored() && sub >= GHAR_PROMO_MIN;
   const discount = promo ? Math.round(sub * GHAR_PROMO_RATE * 100) / 100 : 0;
-  const shipping = sub === 0 ? 0 : (sub >= GHAR_FREE_SHIP_MIN ? 0 : GHAR_SHIPPING);
+  const shipping = sub === 0 ? 0 : (sub >= zone.freeMin ? 0 : zone.price);
   const total = Math.round((sub - discount + shipping) * 100) / 100;
-  return { sub: sub, discount: discount, shipping: shipping, total: total, promo: promo };
+  return { sub: sub, discount: discount, shipping: shipping, total: total, promo: promo, zone: zone, country: country || '' };
 }
 
 /* ── nav badge ── */

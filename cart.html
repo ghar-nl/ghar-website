@@ -9,8 +9,8 @@
 <link rel="icon" type="image/png" href="images/site/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&family=Noto+Serif+Devanagari:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=20261120b">
-<script src="cart.js?v=20261120b" defer></script>
+<link rel="stylesheet" href="styles.css?v=20261120c">
+<script src="cart.js?v=20261120c" defer></script>
 </head>
 <body>
 
@@ -67,10 +67,10 @@
         <div class="sum-lines">
           <div class="sum-line"><span>Subtotal (<span id="cart-count">0</span> items)</span><span id="sum-sub">€0</span></div>
           <div class="sum-line" id="sum-discount-row" style="display:none;"><span>Discount (20%)</span><span id="sum-discount">−€0</span></div>
-          <div class="sum-line"><span>Shipping</span><span id="sum-ship">€5</span></div>
+          <div class="sum-line"><span>Shipping <small id="sum-ship-where" class="sum-ship-where">to the Netherlands</small></span><span id="sum-ship">€5</span></div>
           <div class="sum-line sum-total"><span>Total</span><span class="price" id="sum-total">€0</span></div>
         </div>
-        <p class="sum-note">Launch perk: 20% off with code <strong>GHARPREORDER20</strong> on orders above €100, and free shipping on orders above €59.99. Orders are limited to 6 items per person.</p>
+        <p class="sum-note">Launch perk: 20% off with code <strong>GHARPREORDER20</strong> on orders above €100. Shipping: Netherlands €5 (free from €59.99), Belgium, Germany and Luxembourg €8 (free from €100), rest of the EU €13 (free from €150). Orders are limited to 6 items per person.</p>
       </div>
 
       <!-- RIGHT: delivery details / checkout -->
@@ -218,7 +218,8 @@ function renderCart() {
     list.appendChild(row);
   });
 
-  const t = gharTotals();
+  const t = gharTotals(gharCountry());
+  document.getElementById('sum-ship-where').textContent = t.country ? 'to ' + t.country : 'to the Netherlands';
   document.getElementById('cart-count').textContent = gharCartCount();
   document.getElementById('sum-sub').textContent = gharFmt(t.sub);
   document.getElementById('sum-discount-row').style.display = t.promo ? 'flex' : 'none';
@@ -247,6 +248,14 @@ function gharStripeReturn() {
     history.replaceState(null, '', 'cart.html');
   }
 }
+/* shipping follows the country the customer picks */
+(function () {
+  var sel = document.querySelector('#preorder-form select[name="country"]');
+  function setCountry() { try { localStorage.setItem('gharCountry', sel.value); } catch (e) {} renderCart(); }
+  sel.addEventListener('change', setCountry);
+  function restore() { var c = gharCountry(); if (c && !sel.value) { sel.value = c; } }
+  if (document.readyState !== 'loading') restore(); else document.addEventListener('DOMContentLoaded', restore);
+})();
 /* cart.js loads with defer, so wait for it before touching the bag */
 if (document.readyState !== 'loading') gharStripeReturn();
 else document.addEventListener('DOMContentLoaded', gharStripeReturn);
@@ -288,7 +297,7 @@ document.getElementById('preorder-form').addEventListener('submit', async functi
   const items = Object.keys(cart).map(function (id) {
     return cart[id] + '× ' + GHAR_PRODUCTS[id].name;
   }).join('; ');
-  const t = gharTotals();
+  const t = gharTotals(form.country.value);
 
   const fd = new FormData(form);
   const payload = Object.fromEntries(fd.entries());
