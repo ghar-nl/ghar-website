@@ -4,13 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Your Bag — Ghar</title>
-<meta name="description" content="Review your bag and place a pre-order for hand block print and ikat Ghar home textiles.">
+<meta name="description" content="Review your bag and order hand block print and ikat Ghar home textiles. Pay securely with iDEAL, card and more.">
 <meta name="robots" content="noindex">
 <link rel="icon" type="image/png" href="images/site/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&family=Noto+Serif+Devanagari:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=20261120a">
-<script src="cart.js?v=20261120a" defer></script>
+<link rel="stylesheet" href="styles.css?v=20261120b">
+<script src="cart.js?v=20261120b" defer></script>
 </head>
 <body>
 
@@ -35,6 +35,15 @@
 <!-- ── CART ───────────────────────────────────────────────────── -->
 <section class="cart-section" style="padding-top:112px;min-height:70vh;">
   <div>
+
+    <div id="cart-paid" class="cart-paid" hidden>
+      <p class="s-tag" style="justify-content:center">Order received</p>
+      <h2>Thank you, <em>it's on its way to you.</em></h2>
+      <p id="cart-paid-msg">Your payment went through. Stripe is emailing you a receipt, and we will email you again as soon as your order ships.</p>
+      <a href="shop.html" class="btn-dark">Back to the shop</a>
+    </div>
+
+    <p id="cart-cancelled" class="cart-cancelled" hidden>Payment cancelled. Your bag is still here, so you can try again whenever you like.</p>
 
     <div id="cart-empty" style="display:none;text-align:center;padding:40px 0 20px;">
       <p style="color:var(--text-mid);font-weight:300;margin-bottom:24px;">Your bag is empty.</p>
@@ -61,13 +70,13 @@
           <div class="sum-line"><span>Shipping</span><span id="sum-ship">€5</span></div>
           <div class="sum-line sum-total"><span>Total</span><span class="price" id="sum-total">€0</span></div>
         </div>
-        <p class="sum-note">Pre-order perk: 20% off with code <strong>GHARPREORDER20</strong> on orders above €100, and free shipping on orders above €59.99. Pre-orders are limited to 6 items per person.</p>
+        <p class="sum-note">Launch perk: 20% off with code <strong>GHARPREORDER20</strong> on orders above €100, and free shipping on orders above €59.99. Orders are limited to 6 items per person.</p>
       </div>
 
       <!-- RIGHT: delivery details / checkout -->
       <aside class="cart-card">
         <h2>Delivery details</h2>
-        <p class="card-sub">We currently only operate in the EU. These are pre-orders — once your products are ready, we'll reach out with a payment link.</p>
+        <p class="card-sub">We deliver within the EU, from Amsterdam. Fill in your details, then pay securely on the next page with iDEAL, card and more.</p>
 
         <form id="preorder-form" class="po-form" novalidate>
           <input class="po-full" name="name" placeholder="Full name *" required autocomplete="name">
@@ -96,7 +105,8 @@
           <!-- Honeypot: hidden from users, catches bots -->
           <input name="company" style="display:none" tabindex="-1" autocomplete="off">
 
-          <button type="submit" class="btn-pri po-full" id="po-submit" style="border:none;cursor:pointer;font-family:'Jost',sans-serif;">Place pre-order</button>
+          <button type="submit" class="btn-pri po-full" id="po-submit" style="border:none;cursor:pointer;font-family:'Jost',sans-serif;">Continue to payment</button>
+          <p class="po-full po-secure">Secure payment by Stripe. You will see the final total before you pay.</p>
           <p id="po-status" class="po-full" role="status"></p>
         </form>
       </aside>
@@ -160,8 +170,8 @@ function renderCart() {
   const ids = Object.keys(cart);
   const empty = document.getElementById('cart-empty');
   const content = document.getElementById('cart-content');
-  if (ids.length === 0) { empty.style.display = 'block'; content.style.display = 'none'; return; }
-  empty.style.display = 'none'; content.style.display = 'grid';
+  if (ids.length === 0) { if (empty) empty.style.display = 'block'; content.style.display = 'none'; return; }
+  if (empty) empty.style.display = 'none'; content.style.display = 'grid';
 
   const list = document.getElementById('cart-items');
   list.innerHTML = '';
@@ -191,7 +201,7 @@ function renderCart() {
     btns[0].onclick = function () { gharSetQty(id, qty - 1); renderCart(); };
     btns[1].onclick = function () {
       if (gharCartCount() + 1 > GHAR_MAX_PER_ORDER) {
-        document.getElementById('promo-msg').textContent = 'Pre-orders are limited to ' + GHAR_MAX_PER_ORDER + ' items per person.';
+        document.getElementById('promo-msg').textContent = 'Orders are limited to ' + GHAR_MAX_PER_ORDER + ' items per person.';
         return;
       }
       if (p.maxPerOrder && qty + 1 > p.maxPerOrder) {
@@ -217,6 +227,29 @@ function renderCart() {
   document.getElementById('sum-total').textContent = gharFmt(t.total);
   if (gharPromoStored()) document.getElementById('promo-input').value = GHAR_PROMO_CODE;
 }
+function gharStripeReturn() {
+  var q = new URLSearchParams(location.search), sid = q.get('paid') || '';
+  if (/^cs_(test|live)_[A-Za-z0-9]+$/.test(sid)) {
+    gharClearCart();
+    localStorage.removeItem('gharPromo');
+    document.getElementById('cart-paid').hidden = false;
+    document.getElementById('cart-content').style.display = 'none';
+    document.getElementById('cart-empty').remove();
+    fetch(GHAR_API, { method: 'POST', body: JSON.stringify({ type: 'confirm', session: sid, secret: GHAR_SECRET }) })
+      .then(function (r) { return r.json(); })
+      .then(function (o) {
+        if (o && o.status === 'processing') document.getElementById('cart-paid-msg').textContent =
+          'Your payment is being processed. Stripe will email you as soon as it is complete, and we will email you when your order ships.';
+      }).catch(function () {});
+    history.replaceState(null, '', 'cart.html');
+  } else if (q.get('cancelled')) {
+    document.getElementById('cart-cancelled').hidden = false;
+    history.replaceState(null, '', 'cart.html');
+  }
+}
+/* cart.js loads with defer, so wait for it before touching the bag */
+if (document.readyState !== 'loading') gharStripeReturn();
+else document.addEventListener('DOMContentLoaded', gharStripeReturn);
 if (document.readyState !== 'loading') renderCart();
 else document.addEventListener('DOMContentLoaded', renderCart);
 window.addEventListener('pageshow', renderCart); // covers back/forward cache restores
@@ -268,7 +301,8 @@ document.getElementById('preorder-form').addEventListener('submit', async functi
   payload.shipping = t.shipping;
   payload.total = t.total;
 
-  status.textContent = 'Placing your pre-order…';
+  payload.type = 'checkout';
+  status.textContent = 'Taking you to secure payment…';
   submitBtn.disabled = true;
   try {
     const res = await fetch(GHAR_API, {
@@ -280,28 +314,23 @@ document.getElementById('preorder-form').addEventListener('submit', async functi
     try { out = await res.json(); } catch (e) { /* unreadable response — assume ok */ }
     if (out && out.ok === false) {
       if (out.error === 'max_exceeded') {
-        status.textContent = 'Pre-orders are limited to ' + GHAR_MAX_PER_ORDER + ' items per person — please adjust your bag.';
+        status.textContent = 'Orders are limited to ' + GHAR_MAX_PER_ORDER + ' items per person — please adjust your bag.';
       } else if (out.error === 'sold_out') {
         const p = GHAR_PRODUCTS[out.id];
         status.textContent = 'So sorry — ' + (p ? p.name : 'one of your items') + ' has ' +
           (out.left > 0 ? 'only ' + out.left + ' piece(s) left' : 'just sold out') + '. Please adjust your bag.';
         gharLoadStock(function () { renderCart(); });
+      } else if (out.error === 'payments_off') {
+        status.textContent = 'Online payment is briefly unavailable. Please try again in a little while, or email dimple@ghar.nl.';
       } else {
         status.textContent = 'Something went wrong — please try again.';
       }
       submitBtn.disabled = false;
       return;
     }
-    status.textContent = 'Thank you! Your pre-order is in — we\'ll be in touch shortly. We currently operate in the EU only, and we\'ll reach out with a payment link once your order is ready.';
-    form.reset();
-    gharClearCart();
-    localStorage.removeItem('gharPromo');
-    document.getElementById('cart-items').innerHTML = '';
-    document.getElementById('cart-count').textContent = '0';
-    document.getElementById('sum-sub').textContent = '€0';
-    document.getElementById('sum-discount-row').style.display = 'none';
-    document.getElementById('sum-ship').textContent = '—';
-    document.getElementById('sum-total').textContent = '€0';
+    if (out && out.url) { window.location.href = out.url; return; }
+    status.textContent = 'Something went wrong — please try again.';
+    submitBtn.disabled = false;
   } catch (err) {
     status.textContent = 'Something went wrong — please try again.';
     submitBtn.disabled = false;

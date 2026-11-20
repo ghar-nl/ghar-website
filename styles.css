@@ -1102,3 +1102,11 @@ nav.nav-open .nav-burger span:nth-child(3){transform:translateY(-7px) rotate(-45
 .mk-cta p{font-size:0.92rem;color:var(--text-mid);font-weight:300;line-height:1.75;margin-bottom:20px;}
 @media (max-width:900px){.mk-section{padding:60px 22px;}.mk-feature{grid-template-columns:1fr;}.mk-date{flex-direction:row;gap:12px;padding:18px;}.mk-day{font-size:2.6rem;margin:0;}.mk-body{padding:28px 22px;}.mk-grid{grid-template-columns:1fr 1fr;}.mk-two{grid-template-columns:1fr;}.mk-photos{grid-template-columns:1fr 1fr;}}
 @media (max-width:560px){.mk-grid{grid-template-columns:1fr;}.mk-facts li{grid-template-columns:1fr;gap:2px;}}
+
+/* ── Stripe checkout: thank-you + cancelled notes on cart.html (Nov 2026) ── */
+.cart-paid{max-width:620px;margin:20px auto 40px;text-align:center;}
+.cart-paid h2{font-family:'Playfair Display',serif;font-weight:400;font-size:clamp(1.8rem,4vw,2.6rem);color:var(--blue-dark);margin:10px 0 16px;}
+.cart-paid h2 em{color:var(--terra);}
+.cart-paid p{color:var(--text-mid);font-weight:300;margin-bottom:26px;line-height:1.7;}
+.cart-cancelled{max-width:1100px;margin:0 auto 18px;padding:12px 16px;border:1px solid var(--terra);color:var(--terra);font-size:0.92rem;}
+.po-secure{font-size:0.78rem;color:var(--text-soft);text-align:center;margin-top:-4px;}
