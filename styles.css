@@ -1117,3 +1117,60 @@ nav.nav-open .nav-burger span:nth-child(3){transform:translateY(-7px) rotate(-45
 .ws-special{color:var(--terra-light)}
 .ws-urgent{display:inline-block;margin-top:22px;padding:8px 16px;border-radius:30px;background:var(--terra);color:#fff;font-size:0.9rem;letter-spacing:.02em}
 .ws-urgent-c{margin:6px 0 14px}
+
+/* new collections (Nov 2026): Made-by block in the product pop-up + soon cards */
+.pm-made{margin:18px 0 6px;padding:14px 16px;background:var(--linen);border-left:3px solid var(--terra)}
+.pm-made-tag{font-size:0.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--terra);margin-bottom:6px}
+.pm-made p{font-size:0.9rem;line-height:1.6;color:var(--text-mid)}
+.pm-made a{display:inline-block;margin-top:8px;font-size:0.85rem;color:var(--blue-dark);text-decoration:underline;text-underline-offset:3px}
+.soon-made{font-size:0.82rem;opacity:.8;font-style:italic}
+#filter-print{flex-wrap:wrap}
+
+/* ── Artisan stories, Nostalgia page, home band (Nov 2026) ── */
+.hands-band{background:var(--blue-dark);color:#fff;padding:88px 52px;text-align:center}
+.hands-inner{max-width:760px;margin:0 auto}
+.hands-band .s-tag{color:var(--terra-light);justify-content:center}
+.hands-band h2{font-family:'Playfair Display',serif;font-weight:400;font-size:clamp(1.7rem,3.4vw,2.5rem);line-height:1.3;margin:12px 0 18px}
+.hands-band h2 em{color:var(--terra-light)}
+.hands-band p{color:rgba(255,255,255,.78);font-weight:300;line-height:1.8;margin-bottom:30px}
+.st-journey{background:var(--white);padding:96px 52px}
+.st-journey .container{max-width:1180px;margin:0 auto}
+.st-steps{list-style:none;padding:0;margin:40px 0 0;display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.st-steps li{background:var(--linen);padding:26px 24px}
+.st-num{display:inline-flex;width:34px;height:34px;align-items:center;justify-content:center;border-radius:50%;background:var(--terra);color:#fff;font-size:.9rem;margin-bottom:12px}
+.st-steps h3{font-family:'Playfair Display',serif;font-weight:400;font-size:1.3rem;color:var(--blue-dark);margin-bottom:8px}
+.st-steps p{color:var(--text-mid);font-weight:300;line-height:1.7;font-size:.95rem}
+.st-videos{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px}
+.st-videos figure{margin:0}
+.st-videos video{width:100%;aspect-ratio:4/5;object-fit:cover;display:block}
+.st-videos figcaption{font-size:.82rem;color:var(--text-soft);margin-top:8px;font-style:italic}
+.st-print{background:var(--linen);padding:80px 52px}
+.st-print.st-flip{background:var(--almond)}
+.st-print-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.st-flip .st-print-photo{order:2}
+.st-print-photo{aspect-ratio:4/3}
+.st-print-photo img{width:100%;height:100%;object-fit:cover}
+.st-print-text h2{font-family:'Playfair Display',serif;font-weight:400;font-size:clamp(1.8rem,3.2vw,2.4rem);color:var(--blue-dark);margin:6px 0 18px}
+.st-print-text p{color:var(--text-mid);font-weight:300;line-height:1.85;margin-bottom:16px}
+.st-print-text .btn-dark{margin-top:8px}
+.nos-grid-wrap{background:var(--white);padding:24px 52px 96px}
+.nos-grid-wrap .container{max-width:1180px;margin:0 auto}
+.nos-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
+.nos-photo{aspect-ratio:1/1;cursor:zoom-in}
+.nos-photo img{width:100%;height:100%;object-fit:cover}
+.nos-ph{display:flex;align-items:center;justify-content:center;background:var(--almond);color:var(--text-soft);cursor:default;font-size:.85rem}
+.nos-card h3{font-family:'Playfair Display',serif;font-weight:400;font-size:1.35rem;color:var(--blue-dark);margin:16px 0 6px}
+.nos-what{color:var(--text-mid);font-size:.9rem;font-weight:300}
+.nos-memory{font-family:'Playfair Display',serif;font-style:italic;color:var(--terra);margin:12px 0 14px;line-height:1.5}
+.nos-foot{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.nos-left{font-size:.78rem;color:var(--text-soft)}
+.nos-foot .btn-add{margin-left:auto}
+.nos-more{text-align:center;margin-top:48px;color:var(--text-mid)}
+.nos-more a{color:var(--blue-dark);text-decoration:underline}
+@media(max-width:900px){
+  .st-steps,.st-videos,.nos-grid{grid-template-columns:1fr 1fr}
+  .st-print-grid{grid-template-columns:1fr;gap:28px}
+  .st-flip .st-print-photo{order:0}
+  .st-journey,.st-print,.hands-band,.nos-grid-wrap{padding-left:20px;padding-right:20px}
+}
+@media(max-width:560px){.st-steps,.st-videos,.nos-grid{grid-template-columns:1fr}}

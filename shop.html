@@ -8,8 +8,8 @@
 <link rel="icon" type="image/png" href="images/site/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&family=Noto+Serif+Devanagari:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=20261122a">
-<script src="cart.js?v=20261122a" defer></script>
+<link rel="stylesheet" href="styles.css?v=20261122b">
+<script src="cart.js?v=20261122b" defer></script>
 </head>
 <body>
 
@@ -58,11 +58,15 @@
         </div>
       </div>
       <div class="filter-group">
-        <span class="filter-label">Shop by print</span>
+        <span class="filter-label">Shop by collection</span>
         <div class="filter-pills" id="filter-print">
-          <button class="pill active" type="button" data-value="all">All prints</button>
+          <button class="pill active" type="button" data-value="all">All</button>
+          <button class="pill" type="button" data-value="delftpur">Delftpur</button>
+          <button class="pill" type="button" data-value="gulabi">Gulabi</button>
+          <button class="pill" type="button" data-value="haldi">Haldi</button>
           <button class="pill" type="button" data-value="ikat">Ikat</button>
-          <button class="pill" type="button" data-value="block">Block print</button>
+          <button class="pill" type="button" data-value="classic">Classic block prints</button>
+          <button class="pill" type="button" data-value="nostalgia">Nostalgia</button>
         </div>
       </div>
       <div class="filter-group filter-sort">
@@ -83,22 +87,7 @@
         <p class="s-tag">In the making</p>
         <h2 class="s-h">More <em>Ghar</em> is coming.</h2>
       </div>
-      <div class="soon-grid">
-        <div class="soon-card">
-          <h4>Makeup / Everyday Pouch</h4>
-          <p>A small piece of Ghar for your bag — zip it, toss it in, take the print everywhere.</p>
-          <p class="soon-tag">Coming soon</p>
-        </div>
-        <div class="soon-card dark">
-          <h4>Wine / Bottle Holder</h4>
-          <p>Block printed armour for the bottle you're bringing to dinner.</p>
-          <p class="soon-tag">Coming soon</p>
-        </div>
-        <div class="soon-card almond">
-          <h4>Kitchen Apron</h4>
-          <p>Made for flour-dusted hands and long Sunday cooking — ties included.</p>
-          <p class="soon-tag">Coming soon</p>
-        </div>
+      <div class="soon-grid" id="soon-grid">
         <div class="soon-card">
           <h4>Ikat Wall Art Square</h4>
           <p>Ikat cotton, cut into perfect squares — we're just finishing sourcing the right frames before these are ready to hang.</p>
@@ -124,10 +113,42 @@ const GHAR_ROOM_MESSAGE = {
   kids: "Ghar for kids’ rooms is coming soon"
 };
 const gharShopState = { room: 'all', print: 'all', sort: 'fav' };
+(function () {
+  var c = new URLSearchParams(location.search).get('collection');
+  if (c && /^[a-z]+$/.test(c)) {
+    gharShopState.print = c;
+    document.addEventListener('DOMContentLoaded', function () {
+      document.querySelectorAll('#filter-print .pill').forEach(function (b) { b.classList.toggle('active', b.dataset.value === c); });
+    });
+  }
+})();
 
 /* One entry per card: normal products as-is, the 4 tote variants collapsed into
    a single "Everyday Tote Bag" card (opens the variant picker instead of adding
    straight to bag — see gharProductModal in cart.js). */
+/* collection of a product: new pieces carry `collection`; older ones map from printType */
+function gharCollectionOf(p) { return p.collection || (p.printType === 'ikat' ? 'ikat' : 'classic'); }
+
+/* coming-soon pieces of the new collections: shown without a price */
+function gharRenderSoon() {
+  const grid = document.getElementById('soon-grid');
+  if (!grid || grid.dataset.done) return;
+  const tones = ['', ' dark', ' almond'];
+  let i = 0;
+  Object.keys(GHAR_PRODUCTS).forEach(function (id) {
+    const p = GHAR_PRODUCTS[id];
+    if (!p.comingSoon || !p.collection) return;
+    const card = document.createElement('div');
+    card.className = 'soon-card' + tones[i++ % 3];
+    card.innerHTML = '<h4>' + p.name + '</h4>' +
+      '<p>' + p.desc[1] + '</p>' +
+      '<p class="soon-made">' + p.made.split('. ')[0] + '. Small quantities are being made right now.</p>' +
+      '<p class="soon-tag">Coming soon</p>';
+    grid.appendChild(card);
+  });
+  grid.dataset.done = '1';
+}
+
 function gharShopEntries() {
   const seenGroups = {};
   const entries = [];
@@ -174,9 +195,10 @@ function gharCardHtml(entry) {
 }
 
 function gharRenderShop() {
+  gharRenderSoon();
   const mount = document.getElementById('products-grid');
   const entries = gharShopEntries().filter(function (e) {
-    if (gharShopState.print !== 'all' && e.p.printType !== gharShopState.print) return false;
+    if (gharShopState.print !== 'all' && gharCollectionOf(e.p) !== gharShopState.print) return false;
     if (gharShopState.room !== 'all' && e.p.rooms.indexOf(gharShopState.room) === -1) return false;
     return true;
   });
@@ -265,6 +287,8 @@ document.addEventListener('DOMContentLoaded', function () {
         <ul>
           <li><a href="about.html">About Ghar</a></li>
           <li><a href="craft.html#makers">Our Makers</a></li>
+          <li><a href="stories.html">Artisan Stories</a></li>
+          <li><a href="nostalgia.html">Nostalgia</a></li>
           <li><a href="craft.html">The Craft</a></li>
           <li><a href="blocks.html">The Blocks</a></li>
           <li><a href="care.html">Care Guide</a></li>

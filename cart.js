@@ -280,6 +280,431 @@ const GHAR_PRODUCTS = {
     category: 'tote-bag', printType: 'ikat', rooms: [], favRank: 33,
     variantGroup: 'totebag', variantLabel: 'Vertical · Contrast strap (white)', mini: "Our very first tote bag. A sturdier, better one is on its way.",
     desc: null
+  },
+  /* ── New collections, Nov 2026 (photos from the 30 Oct shoot). collection: delftpur | gulabi | haldi | ikat | nostalgia.
+     `made` = the "Made by hand" lines in the product pop-up. Coming-soon pieces show no price. ── */
+  'delftpur-cushion': {
+    name: 'Delftpur Cushion Cover', price: 29.99,
+    img: 'images/products/delftpur-cushion/1.jpg', images: ['images/products/delftpur-cushion/1.jpg','images/products/delftpur-cushion/2.jpg','images/products/delftpur-cushion/3.jpg','images/products/delftpur-cushion/4.jpg','images/products/delftpur-cushion/5.jpg','images/products/delftpur-cushion/6.jpg','images/products/delftpur-cushion/7.jpg'],
+    size: '50 × 50 cm', material: '100% pure cotton · hand block printed',
+    category: 'cushion-large', printType: 'block', collection: 'delftpur', rooms: ['living'], favRank: 101,
+    mini: "A generous 50 × 50 cm cover, printed by hand.",
+    made: "Hand block printed in India, one block and one colour at a time. Around five pairs of hands shape it: the block carver, the printer, the dyer who washes and sets the colour, the tailor who stitches it, and the person who checks and folds it. About 4 days from plain cotton to finished cover.",
+    desc: [
+      "Blue triangles that sit somewhere between India's blue cities and the blue-and-white tiles of Delft: two homes, one colour.",
+      "Sized for the big, soft cushions that make a sofa feel lived in. The print runs edge to edge, finished with a neat hem and a zip that keeps the cover easy to wash.",
+      "This is a cover only: no cushion insert included. A full insert gives a plump look, a softer one a relaxed fold."
+    ]
+  },
+  'gulabi-cushion': {
+    name: 'Gulabi Cushion Cover', price: 29.99,
+    img: 'images/products/gulabi-cushion/1.jpg', images: ['images/products/gulabi-cushion/1.jpg','images/products/gulabi-cushion/2.jpg','images/products/gulabi-cushion/3.jpg','images/products/gulabi-cushion/4.jpg','images/products/gulabi-cushion/5.jpg','images/products/gulabi-cushion/6.jpg','images/products/gulabi-cushion/7.jpg','images/products/gulabi-cushion/8.jpg','images/products/gulabi-cushion/9.jpg','images/products/gulabi-cushion/10.jpg'],
+    size: '50 × 50 cm', material: '100% pure cotton · hand block printed',
+    category: 'cushion-large', printType: 'block', collection: 'gulabi', rooms: ['living'], favRank: 102,
+    mini: "A generous 50 × 50 cm cover, printed by hand.",
+    made: "Hand block printed in India, one block and one colour at a time. Around five pairs of hands shape it: the block carver, the printer, the dyer who washes and sets the colour, the tailor who stitches it, and the person who checks and folds it. About 4 days from plain cotton to finished cover.",
+    desc: [
+      "A soft rose-and-leaf pattern printed by hand in peachy pinks and garden greens.",
+      "Sized for the big, soft cushions that make a sofa feel lived in. The print runs edge to edge, finished with a neat hem and a zip that keeps the cover easy to wash.",
+      "This is a cover only: no cushion insert included. A full insert gives a plump look, a softer one a relaxed fold."
+    ]
+  },
+  'haldi-cushion': {
+    name: 'Haldi Cushion Cover', price: 29.99,
+    img: 'images/products/haldi-cushion/1.jpg', images: ['images/products/haldi-cushion/1.jpg','images/products/haldi-cushion/2.jpg','images/products/haldi-cushion/3.jpg','images/products/haldi-cushion/4.jpg','images/products/haldi-cushion/5.jpg','images/products/haldi-cushion/6.jpg'],
+    size: '50 × 50 cm', material: '100% pure cotton · hand block printed',
+    category: 'cushion-large', printType: 'block', collection: 'haldi', rooms: ['living'], favRank: 103,
+    mini: "A generous 50 × 50 cm cover, printed by hand.",
+    made: "Hand block printed in India, one block and one colour at a time. Around five pairs of hands shape it: the block carver, the printer, the dyer who washes and sets the colour, the tailor who stitches it, and the person who checks and folds it. About 4 days from plain cotton to finished cover.",
+    desc: [
+      "A pink trellis scattered with orange rosebuds, finished with a warm turmeric-yellow edge.",
+      "Sized for the big, soft cushions that make a sofa feel lived in. The print runs edge to edge, finished with a neat hem and a zip that keeps the cover easy to wash.",
+      "This is a cover only: no cushion insert included. A full insert gives a plump look, a softer one a relaxed fold."
+    ]
+  },
+  'nostalgia-rani': {
+    name: 'Nostalgia Cushion Cover · Rani', price: 26.99,
+    img: 'images/products/nostalgia-rani/1.jpg', images: ['images/products/nostalgia-rani/1.jpg','images/products/nostalgia-rani/2.jpg','images/products/nostalgia-rani/3.jpg','images/products/nostalgia-rani/4.jpg','images/products/nostalgia-rani/5.jpg','images/products/nostalgia-rani/6.jpg','images/products/nostalgia-rani/7.jpg','images/products/nostalgia-rani/8.jpg','images/products/nostalgia-rani/9.jpg','images/products/nostalgia-rani/10.jpg'],
+    size: '45 × 45 cm', material: '100% pure cotton · hand block printed',
+    category: 'cushion-large', printType: 'block', collection: 'nostalgia', rooms: ['living'], favRank: 104,
+    mini: "Deep red flowers inside a printed border. Only 10 exist.",
+    made: "Hand block printed in India by a small artisan-run workshop, from their own designs. We chose it, we did not design it: it simply felt like home.",
+    desc: [
+      "Part of Nostalgia, a collection of what home felt like: prints we did not design, chosen from artisan entrepreneurs because they remind us of the homes we grew up in.",
+      "Rani is all reds and pinks, a bold flower print framed by a border. Only 10 of these covers exist.",
+      "Sized for the big, soft cushions that make a sofa feel lived in. The print runs edge to edge, finished with a neat hem and a zip that keeps the cover easy to wash.",
+      "This is a cover only: no cushion insert included. A full insert gives a plump look, a softer one a relaxed fold."
+    ]
+  },
+  'nostalgia-chameli-pink': {
+    name: 'Nostalgia Cushion Cover · Chameli Pink', price: 26.99,
+    img: 'images/products/nostalgia-chameli-pink/1.jpg', images: ['images/products/nostalgia-chameli-pink/1.jpg','images/products/nostalgia-chameli-pink/2.jpg','images/products/nostalgia-chameli-pink/3.jpg','images/products/nostalgia-chameli-pink/4.jpg','images/products/nostalgia-chameli-pink/5.jpg'],
+    size: '45 × 45 cm', material: '100% pure cotton · hand block printed',
+    category: 'cushion-large', printType: 'block', collection: 'nostalgia', rooms: ['living'], favRank: 105,
+    mini: "Dark climbing vines on a rosy pink ground. Only 10 exist.",
+    made: "Hand block printed in India by a small artisan-run workshop, from their own designs. We chose it, we did not design it: it simply felt like home.",
+    desc: [
+      "Part of Nostalgia, a collection of what home felt like: prints we did not design, chosen from artisan entrepreneurs because they remind us of the homes we grew up in.",
+      "Chameli is named after jasmine: dark vines and bright flowers climbing over a rosy pink ground, with a printed border. Only 10 of these covers exist.",
+      "Sized for the big, soft cushions that make a sofa feel lived in. The print runs edge to edge, finished with a neat hem and a zip that keeps the cover easy to wash.",
+      "This is a cover only: no cushion insert included. A full insert gives a plump look, a softer one a relaxed fold."
+    ]
+  },
+  'nostalgia-chameli-ivory': {
+    name: 'Nostalgia Cushion Cover · Chameli Ivory', price: 26.99,
+    img: 'images/products/nostalgia-chameli-ivory/1.jpg', images: ['images/products/nostalgia-chameli-ivory/1.jpg','images/products/nostalgia-chameli-ivory/2.jpg','images/products/nostalgia-chameli-ivory/3.jpg','images/products/nostalgia-chameli-ivory/4.jpg','images/products/nostalgia-chameli-ivory/5.jpg','images/products/nostalgia-chameli-ivory/6.jpg'],
+    size: '45 × 45 cm', material: '100% pure cotton · hand block printed',
+    category: 'cushion-large', printType: 'block', collection: 'nostalgia', rooms: ['living'], favRank: 106,
+    mini: "The same climbing vines on ivory, with a sunny yellow border. Only 10 exist.",
+    made: "Hand block printed in India by a small artisan-run workshop, from their own designs. We chose it, we did not design it: it simply felt like home.",
+    desc: [
+      "Part of Nostalgia, a collection of what home felt like: prints we did not design, chosen from artisan entrepreneurs because they remind us of the homes we grew up in.",
+      "The Chameli print again, this time on ivory with a sunny yellow border. Only 10 of these covers exist.",
+      "Sized for the big, soft cushions that make a sofa feel lived in. The print runs edge to edge, finished with a neat hem and a zip that keeps the cover easy to wash.",
+      "This is a cover only: no cushion insert included. A full insert gives a plump look, a softer one a relaxed fold."
+    ]
+  },
+  'gulabi-runner': {
+    name: 'Gulabi Table Runner', price: 26.99,
+    img: 'images/products/gulabi-runner/1.jpg', images: ['images/products/gulabi-runner/1.jpg','images/products/gulabi-runner/2.jpg','images/products/gulabi-runner/3.jpg','images/products/gulabi-runner/4.jpg','images/products/gulabi-runner/5.jpg','images/products/gulabi-runner/6.jpg','images/products/gulabi-runner/7.jpg','images/products/gulabi-runner/8.jpg','images/products/gulabi-runner/9.jpg','images/products/gulabi-runner/10.jpg'],
+    size: '32 × 150 cm', material: '100% pure cotton · hand block printed',
+    category: 'table-runner', printType: 'block', collection: 'gulabi', rooms: ['living','dining'], favRank: 107,
+    mini: "Down the middle of the table, and the whole room changes colour.",
+    made: "Hand block printed in India, one block and one colour at a time. Around five pairs of hands shape it: the block carver, the printer, the dyer who washes and sets the colour, the tailor who stitches it, and the person who checks and folds it. About 5 days from plain cotton to finished runner.",
+    desc: [
+      "A soft rose-and-leaf pattern printed by hand in peachy pinks and garden greens.",
+      "Lay it along a dining table for dinner, or across a sideboard in the living room. At 32 × 150 cm it suits the long tables in so many Dutch homes.",
+      "Wash under cold water and dry in the shade; it softens beautifully with use."
+    ]
+  },
+  'haldi-runner': {
+    name: 'Haldi Table Runner', price: 26.99,
+    img: 'images/products/haldi-runner/1.jpg', images: ['images/products/haldi-runner/1.jpg','images/products/haldi-runner/2.jpg','images/products/haldi-runner/3.jpg','images/products/haldi-runner/4.jpg','images/products/haldi-runner/5.jpg','images/products/haldi-runner/6.jpg','images/products/haldi-runner/7.jpg','images/products/haldi-runner/8.jpg'],
+    size: '32 × 150 cm', material: '100% pure cotton · hand block printed',
+    category: 'table-runner', printType: 'block', collection: 'haldi', rooms: ['living','dining'], favRank: 108,
+    mini: "Down the middle of the table, and the whole room changes colour.",
+    made: "Hand block printed in India, one block and one colour at a time. Around five pairs of hands shape it: the block carver, the printer, the dyer who washes and sets the colour, the tailor who stitches it, and the person who checks and folds it. About 5 days from plain cotton to finished runner.",
+    desc: [
+      "A pink trellis scattered with orange rosebuds, finished with a warm turmeric-yellow edge.",
+      "Lay it along a dining table for dinner, or across a sideboard in the living room. At 32 × 150 cm it suits the long tables in so many Dutch homes.",
+      "Wash under cold water and dry in the shade; it softens beautifully with use."
+    ]
+  },
+  'delftpur-roundmat': {
+    name: 'Delftpur Round Table Mat', price: 14.99, bulk: { extra: 11.99 },
+    img: 'images/products/delftpur-roundmat/1.jpg', images: ['images/products/delftpur-roundmat/1.jpg','images/products/delftpur-roundmat/2.jpg','images/products/delftpur-roundmat/3.jpg','images/products/delftpur-roundmat/4.jpg','images/products/delftpur-roundmat/5.jpg'],
+    size: '30 cm diameter', material: '100% pure cotton · hand block printed',
+    category: 'placemat', printType: 'block', collection: 'delftpur', rooms: ['dining'], favRank: 109,
+    mini: "A round mat for a round plate. Every extra mat is €11.99.",
+    made: "Hand block printed in India, one block and one colour at a time. Around five pairs of hands shape it: the block carver, the printer, the dyer who washes and sets the colour, the tailor who stitches it, and the person who checks and folds it. About 4 days from plain cotton to finished mat.",
+    desc: [
+      "Blue triangles that sit somewhere between India's blue cities and the blue-and-white tiles of Delft: two homes, one colour.",
+      "Cut round and finished with a contrast edge, it sits under a full place setting and protects the table beneath.",
+      "The first mat is €14.99, and every mat after that is €11.99."
+    ]
+  },
+  'gulabi-roundmat': {
+    name: 'Gulabi Round Table Mat', price: 14.99, bulk: { extra: 11.99 },
+    img: 'images/products/gulabi-roundmat/1.jpg', images: ['images/products/gulabi-roundmat/1.jpg','images/products/gulabi-roundmat/2.jpg','images/products/gulabi-roundmat/3.jpg','images/products/gulabi-roundmat/4.jpg'],
+    size: '30 cm diameter', material: '100% pure cotton · hand block printed',
+    category: 'placemat', printType: 'block', collection: 'gulabi', rooms: ['dining'], favRank: 110,
+    mini: "A round mat for a round plate. Every extra mat is €11.99.",
+    made: "Hand block printed in India, one block and one colour at a time. Around five pairs of hands shape it: the block carver, the printer, the dyer who washes and sets the colour, the tailor who stitches it, and the person who checks and folds it. About 4 days from plain cotton to finished mat.",
+    desc: [
+      "A soft rose-and-leaf pattern printed by hand in peachy pinks and garden greens.",
+      "Cut round and finished with a contrast edge, it sits under a full place setting and protects the table beneath.",
+      "The first mat is €14.99, and every mat after that is €11.99."
+    ]
+  },
+  'haldi-roundmat': {
+    name: 'Haldi Round Table Mat', price: 14.99, bulk: { extra: 11.99 },
+    img: 'images/products/haldi-roundmat/1.jpg', images: ['images/products/haldi-roundmat/1.jpg','images/products/haldi-roundmat/2.jpg','images/products/haldi-roundmat/3.jpg','images/products/haldi-roundmat/4.jpg','images/products/haldi-roundmat/5.jpg','images/products/haldi-roundmat/6.jpg'],
+    size: '30 cm diameter', material: '100% pure cotton · hand block printed',
+    category: 'placemat', printType: 'block', collection: 'haldi', rooms: ['dining'], favRank: 111,
+    mini: "A round mat for a round plate. Every extra mat is €11.99.",
+    made: "Hand block printed in India, one block and one colour at a time. Around five pairs of hands shape it: the block carver, the printer, the dyer who washes and sets the colour, the tailor who stitches it, and the person who checks and folds it. About 4 days from plain cotton to finished mat.",
+    desc: [
+      "A pink trellis scattered with orange rosebuds, finished with a warm turmeric-yellow edge.",
+      "Cut round and finished with a contrast edge, it sits under a full place setting and protects the table beneath.",
+      "The first mat is €14.99, and every mat after that is €11.99."
+    ]
+  },
+  'delftpur-rectmat': {
+    name: 'Delftpur Rectangle Table Mat', price: 14.99, bulk: { extra: 11.99 },
+    img: 'images/products/delftpur-rectmat/1.jpg', images: ['images/products/delftpur-rectmat/1.jpg','images/products/delftpur-rectmat/2.jpg','images/products/delftpur-rectmat/3.jpg','images/products/delftpur-rectmat/4.jpg','images/products/delftpur-rectmat/5.jpg','images/products/delftpur-rectmat/6.jpg','images/products/delftpur-rectmat/7.jpg','images/products/delftpur-rectmat/8.jpg','images/products/delftpur-rectmat/9.jpg','images/products/delftpur-rectmat/10.jpg'],
+    size: '32 × 45 cm', material: '100% pure cotton · hand block printed',
+    category: 'placemat', printType: 'block', collection: 'delftpur', rooms: ['dining'], favRank: 112,
+    mini: "Dress the table, protect the wood. Every extra mat is €11.99.",
+    made: "Hand block printed in India, one block and one colour at a time. Around five pairs of hands shape it: the block carver, the printer, the dyer who washes and sets the colour, the tailor who stitches it, and the person who checks and folds it. About 4 days from plain cotton to finished mat.",
+    desc: [
+      "Blue triangles that sit somewhere between India's blue cities and the blue-and-white tiles of Delft: two homes, one colour.",
+      "Sized to sit under a full place setting, with a contrast hem that gives each mat a clean edge on bare wood or a tablecloth.",
+      "The first mat is €14.99, and every mat after that is €11.99."
+    ]
+  },
+  'gulabi-rectmat': {
+    name: 'Gulabi Rectangle Table Mat', price: 14.99, bulk: { extra: 11.99 },
+    img: 'images/products/gulabi-rectmat/1.jpg', images: ['images/products/gulabi-rectmat/1.jpg','images/products/gulabi-rectmat/2.jpg','images/products/gulabi-rectmat/3.jpg','images/products/gulabi-rectmat/4.jpg','images/products/gulabi-rectmat/5.jpg','images/products/gulabi-rectmat/6.jpg','images/products/gulabi-rectmat/7.jpg','images/products/gulabi-rectmat/8.jpg','images/products/gulabi-rectmat/9.jpg','images/products/gulabi-rectmat/10.jpg'],
+    size: '32 × 45 cm', material: '100% pure cotton · hand block printed',
+    category: 'placemat', printType: 'block', collection: 'gulabi', rooms: ['dining'], favRank: 113,
+    mini: "Dress the table, protect the wood. Every extra mat is €11.99.",
+    made: "Hand block printed in India, one block and one colour at a time. Around five pairs of hands shape it: the block carver, the printer, the dyer who washes and sets the colour, the tailor who stitches it, and the person who checks and folds it. About 4 days from plain cotton to finished mat.",
+    desc: [
+      "A soft rose-and-leaf pattern printed by hand in peachy pinks and garden greens.",
+      "Sized to sit under a full place setting, with a contrast hem that gives each mat a clean edge on bare wood or a tablecloth.",
+      "The first mat is €14.99, and every mat after that is €11.99."
+    ]
+  },
+  'gulabi-napkin': {
+    name: 'Gulabi Napkins, Set of 2', price: 12.99,
+    img: 'images/products/gulabi-napkin/1.jpg', images: ['images/products/gulabi-napkin/1.jpg','images/products/gulabi-napkin/2.jpg','images/products/gulabi-napkin/3.jpg','images/products/gulabi-napkin/4.jpg','images/products/gulabi-napkin/5.jpg','images/products/gulabi-napkin/6.jpg','images/products/gulabi-napkin/7.jpg','images/products/gulabi-napkin/8.jpg','images/products/gulabi-napkin/9.jpg'],
+    size: '30 × 30 cm each', material: '100% pure cotton · hand block printed',
+    category: 'napkin', printType: 'block', collection: 'gulabi', rooms: ['dining'], favRank: 114,
+    mini: "Two napkins for the table, printed by hand.",
+    made: "Hand block printed in India, one block and one colour at a time. Around five pairs of hands shape it: the block carver, the printer, the dyer who washes and sets the colour, the tailor who stitches it, and the person who checks and folds it. About 3 days from plain cotton to finished napkins.",
+    desc: [
+      "A soft rose-and-leaf pattern printed by hand in peachy pinks and garden greens.",
+      "Two 30 × 30 cm napkins, soft enough for every day and pretty enough for guests.",
+      "Wash under cold water and dry in the shade; the colours stay bright and the cotton gets softer."
+    ]
+  },
+  'gulabi-coaster': {
+    name: 'Gulabi Coasters, Set of 4', price: 15.99,
+    img: 'images/products/gulabi-coaster/1.jpg', images: ['images/products/gulabi-coaster/1.jpg','images/products/gulabi-coaster/2.jpg','images/products/gulabi-coaster/3.jpg','images/products/gulabi-coaster/4.jpg','images/products/gulabi-coaster/5.jpg'],
+    size: '10 × 10 cm each', material: '100% pure cotton · hand block printed',
+    category: 'coaster', printType: 'block', collection: 'gulabi', rooms: ['dining','living'], favRank: 115,
+    mini: "Four little squares for cups, mugs and glasses.",
+    made: "Hand block printed in India, one block and one colour at a time. Around five pairs of hands shape it: the block carver, the printer, the dyer who washes and sets the colour, the tailor who stitches it, and the person who checks and folds it. About 2 days from plain cotton to finished coasters.",
+    desc: [
+      "A soft rose-and-leaf pattern printed by hand in peachy pinks and garden greens.",
+      "A set of four 10 × 10 cm coasters, layered cotton so they soak up the drip from a cold glass or a hot cup of chai."
+    ]
+  },
+  'gulabi-pouch': {
+    name: 'Gulabi Everyday Pouch', price: 17.99,
+    img: 'images/products/gulabi-pouch/1.jpg', images: ['images/products/gulabi-pouch/1.jpg','images/products/gulabi-pouch/2.jpg','images/products/gulabi-pouch/3.jpg','images/products/gulabi-pouch/4.jpg','images/products/gulabi-pouch/5.jpg','images/products/gulabi-pouch/6.jpg','images/products/gulabi-pouch/7.jpg','images/products/gulabi-pouch/8.jpg','images/products/gulabi-pouch/9.jpg','images/products/gulabi-pouch/10.jpg'],
+    size: '28 × 16 × 12 cm', material: 'Quilted 100% pure cotton · hand block printed',
+    category: 'pouch', printType: 'block', collection: 'gulabi', rooms: [], favRank: 116,
+    mini: "A quilted zip pouch for make-up, pens, chargers: everything that rattles in your bag.",
+    made: "Hand block printed in India, one block and one colour at a time. Around five pairs of hands shape it: the block carver, the printer, the dyer who washes and sets the colour, the tailor who stitches it, and the person who checks and folds it. About a week from plain cotton to finished pouch, as the quilting takes time.",
+    desc: [
+      "A soft rose-and-leaf pattern printed by hand in peachy pinks and garden greens.",
+      "Quilted, lined and zipped, with room for make-up, a toothbrush and a charger, or pens and notebooks for the desk.",
+      "It stands up on its own and opens wide, so you can see what is inside."
+    ]
+  },
+  'delftpur-pouch': {
+    name: 'Delftpur Everyday Pouch', price: 17.99,
+    img: 'images/products/delftpur-pouch/1.jpg', images: ['images/products/delftpur-pouch/1.jpg','images/products/delftpur-pouch/2.jpg','images/products/delftpur-pouch/3.jpg'],
+    size: '28 × 16 × 12 cm', material: 'Quilted 100% pure cotton · hand block printed',
+    category: 'pouch', printType: 'block', collection: 'delftpur', rooms: [], favRank: 117,
+    mini: "A quilted zip pouch for make-up, pens, chargers: everything that rattles in your bag.",
+    made: "Hand block printed in India, one block and one colour at a time. Around five pairs of hands shape it: the block carver, the printer, the dyer who washes and sets the colour, the tailor who stitches it, and the person who checks and folds it. About a week from plain cotton to finished pouch, as the quilting takes time.",
+    desc: [
+      "Blue triangles that sit somewhere between India's blue cities and the blue-and-white tiles of Delft: two homes, one colour.",
+      "Quilted, lined and zipped, with room for make-up, a toothbrush and a charger, or pens and notebooks for the desk.",
+      "It stands up on its own and opens wide, so you can see what is inside."
+    ]
+  },
+  'delftpur-apron': {
+    name: 'Delftpur Kitchen Apron', price: 54.99,
+    img: 'images/products/delftpur-apron/1.jpg', images: ['images/products/delftpur-apron/1.jpg','images/products/delftpur-apron/2.jpg','images/products/delftpur-apron/3.jpg','images/products/delftpur-apron/4.jpg','images/products/delftpur-apron/5.jpg','images/products/delftpur-apron/6.jpg','images/products/delftpur-apron/7.jpg','images/products/delftpur-apron/8.jpg','images/products/delftpur-apron/9.jpg'],
+    size: 'One size, adjustable ties', material: '100% pure cotton',
+    category: 'apron', printType: 'block', collection: 'delftpur', rooms: ['kitchen'], favRank: 118,
+    mini: "Made for flour-dusted hands and long Sunday cooking.",
+    made: "Hand block printed in India, one block and one colour at a time. Around five pairs of hands shape it: the block carver, the printer, the dyer who washes and sets the colour, the tailor who stitches it, and the person who checks and folds it. About a week from plain cotton to finished apron.",
+    desc: [
+      "Blue triangles that sit somewhere between India's blue cities and the blue-and-white tiles of Delft: two homes, one colour.",
+      "A full apron with long ties and a big front pocket, made for real cooking and baking.",
+      "Wash it as often as you need: the cotton only gets softer."
+    ]
+  },
+  'ikat-apron': {
+    name: 'Ikat Kitchen Apron · Lal', price: 54.99,
+    img: 'images/products/ikat-apron/1.jpg', images: ['images/products/ikat-apron/1.jpg','images/products/ikat-apron/2.jpg','images/products/ikat-apron/3.jpg'],
+    size: 'One size, adjustable ties', material: 'Handwoven ikat · 100% pure cotton',
+    category: 'apron', printType: 'ikat', collection: 'ikat', rooms: ['kitchen'], favRank: 119,
+    mini: "Handwoven ikat in chilli red, with a big front pocket.",
+    made: "Handwoven ikat from India: the threads are tied and dyed before weaving, so the pattern appears as the cloth is woven. Weeks of work from thread to fabric, then cut and stitched by hand.",
+    desc: [
+      "Handwoven ikat in a deep chilli red.",
+      "A full apron with long ties and a big front pocket, made for real cooking and baking.",
+      "Wash it as often as you need: the cotton only gets softer."
+    ]
+  },
+  'delftpur-runner': {
+    name: 'Delftpur Table Runner', price: 26.99, comingSoon: true,
+    img: '', images: [],
+    size: '32 × 150 cm', material: '100% pure cotton · hand block printed',
+    category: 'table-runner', printType: 'block', collection: 'delftpur', rooms: ['living','dining'], favRank: 120,
+    mini: "Small quantities are being made by hand right now. Photos and price follow very soon.",
+    made: "Hand block printed in India, one block and one colour at a time. Around five pairs of hands shape it: the block carver, the printer, the dyer who washes and sets the colour, the tailor who stitches it, and the person who checks and folds it. About 5 days from plain cotton to finished runner.",
+    desc: [
+      "Small quantities are being made by hand right now. Photos and price follow very soon.",
+      "Blue triangles that sit somewhere between India's blue cities and the blue-and-white tiles of Delft: two homes, one colour.",
+      "Lay it along a dining table for dinner, or across a sideboard in the living room. At 32 × 150 cm it suits the long tables in so many Dutch homes.",
+      "Wash under cold water and dry in the shade; it softens beautifully with use."
+    ]
+  },
+  'delftpur-napkin': {
+    name: 'Delftpur Napkins, Set of 2', price: 12.99, comingSoon: true,
+    img: '', images: [],
+    size: '30 × 30 cm each', material: '100% pure cotton · hand block printed',
+    category: 'napkin', printType: 'block', collection: 'delftpur', rooms: ['dining'], favRank: 121,
+    mini: "Small quantities are being made by hand right now. Photos and price follow very soon.",
+    made: "Hand block printed in India, one block and one colour at a time. Around five pairs of hands shape it: the block carver, the printer, the dyer who washes and sets the colour, the tailor who stitches it, and the person who checks and folds it. About 3 days from plain cotton to finished napkins.",
+    desc: [
+      "Small quantities are being made by hand right now. Photos and price follow very soon.",
+      "Blue triangles that sit somewhere between India's blue cities and the blue-and-white tiles of Delft: two homes, one colour.",
+      "Two 30 × 30 cm napkins, soft enough for every day and pretty enough for guests.",
+      "Wash under cold water and dry in the shade; the colours stay bright and the cotton gets softer."
+    ]
+  },
+  'delftpur-coaster': {
+    name: 'Delftpur Coasters, Set of 4', price: 15.99, comingSoon: true,
+    img: '', images: [],
+    size: '10 × 10 cm each', material: '100% pure cotton · hand block printed',
+    category: 'coaster', printType: 'block', collection: 'delftpur', rooms: ['dining','living'], favRank: 122,
+    mini: "Small quantities are being made by hand right now. Photos and price follow very soon.",
+    made: "Hand block printed in India, one block and one colour at a time. Around five pairs of hands shape it: the block carver, the printer, the dyer who washes and sets the colour, the tailor who stitches it, and the person who checks and folds it. About 2 days from plain cotton to finished coasters.",
+    desc: [
+      "Small quantities are being made by hand right now. Photos and price follow very soon.",
+      "Blue triangles that sit somewhere between India's blue cities and the blue-and-white tiles of Delft: two homes, one colour.",
+      "A set of four 10 × 10 cm coasters, layered cotton so they soak up the drip from a cold glass or a hot cup of chai."
+    ]
+  },
+  'haldi-rectmat': {
+    name: 'Haldi Rectangle Table Mat', price: 14.99, comingSoon: true,
+    img: '', images: [],
+    size: '32 × 45 cm', material: '100% pure cotton · hand block printed',
+    category: 'placemat', printType: 'block', collection: 'haldi', rooms: ['dining'], favRank: 123,
+    mini: "Small quantities are being made by hand right now. Photos and price follow very soon.",
+    made: "Hand block printed in India, one block and one colour at a time. Around five pairs of hands shape it: the block carver, the printer, the dyer who washes and sets the colour, the tailor who stitches it, and the person who checks and folds it. About 4 days from plain cotton to finished mat.",
+    desc: [
+      "Small quantities are being made by hand right now. Photos and price follow very soon.",
+      "A pink trellis scattered with orange rosebuds, finished with a warm turmeric-yellow edge.",
+      "Sized to sit under a full place setting, with a contrast hem that gives each mat a clean edge on bare wood or a tablecloth.",
+      "The first mat is €14.99, and every mat after that is €11.99."
+    ]
+  },
+  'haldi-coaster': {
+    name: 'Haldi Coasters, Set of 4', price: 15.99, comingSoon: true,
+    img: '', images: [],
+    size: '10 × 10 cm each', material: '100% pure cotton · hand block printed',
+    category: 'coaster', printType: 'block', collection: 'haldi', rooms: ['dining','living'], favRank: 124,
+    mini: "Small quantities are being made by hand right now. Photos and price follow very soon.",
+    made: "Hand block printed in India, one block and one colour at a time. Around five pairs of hands shape it: the block carver, the printer, the dyer who washes and sets the colour, the tailor who stitches it, and the person who checks and folds it. About 2 days from plain cotton to finished coasters.",
+    desc: [
+      "Small quantities are being made by hand right now. Photos and price follow very soon.",
+      "A pink trellis scattered with orange rosebuds, finished with a warm turmeric-yellow edge.",
+      "A set of four 10 × 10 cm coasters, layered cotton so they soak up the drip from a cold glass or a hot cup of chai."
+    ]
+  },
+  'haldi-pouch': {
+    name: 'Haldi Everyday Pouch', price: 17.99, comingSoon: true,
+    img: '', images: [],
+    size: '28 × 16 × 12 cm', material: 'Quilted 100% pure cotton · hand block printed',
+    category: 'pouch', printType: 'block', collection: 'haldi', rooms: [], favRank: 125,
+    mini: "Small quantities are being made by hand right now. Photos and price follow very soon.",
+    made: "Hand block printed in India, one block and one colour at a time. Around five pairs of hands shape it: the block carver, the printer, the dyer who washes and sets the colour, the tailor who stitches it, and the person who checks and folds it. About a week from plain cotton to finished pouch, as the quilting takes time.",
+    desc: [
+      "Small quantities are being made by hand right now. Photos and price follow very soon.",
+      "A pink trellis scattered with orange rosebuds, finished with a warm turmeric-yellow edge.",
+      "Quilted, lined and zipped, with room for make-up, a toothbrush and a charger, or pens and notebooks for the desk.",
+      "It stands up on its own and opens wide, so you can see what is inside."
+    ]
+  },
+  'haldi-napkin': {
+    name: 'Haldi Napkins, Set of 2', price: 12.99, comingSoon: true,
+    img: '', images: [],
+    size: '30 × 30 cm each', material: '100% pure cotton · hand block printed',
+    category: 'napkin', printType: 'block', collection: 'haldi', rooms: ['dining'], favRank: 126,
+    mini: "Small quantities are being made by hand right now. Photos and price follow very soon.",
+    made: "Hand block printed in India, one block and one colour at a time. Around five pairs of hands shape it: the block carver, the printer, the dyer who washes and sets the colour, the tailor who stitches it, and the person who checks and folds it. About 3 days from plain cotton to finished napkins.",
+    desc: [
+      "Small quantities are being made by hand right now. Photos and price follow very soon.",
+      "A pink trellis scattered with orange rosebuds, finished with a warm turmeric-yellow edge.",
+      "Two 30 × 30 cm napkins, soft enough for every day and pretty enough for guests.",
+      "Wash under cold water and dry in the shade; the colours stay bright and the cotton gets softer."
+    ]
+  },
+  'delftpur-bottle': {
+    name: 'Delftpur Bottle Holder', price: 19.99, comingSoon: true,
+    img: '', images: [],
+    size: '30 × 11 × 11 cm', material: '100% pure cotton · hand block printed',
+    category: 'bottle', printType: 'block', collection: 'delftpur', rooms: ['kitchen','dining'], favRank: 127,
+    mini: "Small quantities are being made by hand right now. Photos and price follow very soon.",
+    made: "Hand block printed in India, one block and one colour at a time. Around five pairs of hands shape it: the block carver, the printer, the dyer who washes and sets the colour, the tailor who stitches it, and the person who checks and folds it. About 4 days from plain cotton to finished holder.",
+    desc: [
+      "Small quantities are being made by hand right now. Photos and price follow very soon.",
+      "Blue triangles that sit somewhere between India's blue cities and the blue-and-white tiles of Delft: two homes, one colour.",
+      "Slip in a bottle of wine or olive oil and it becomes a gift, no wrapping needed."
+    ]
+  },
+  'gulabi-bottle': {
+    name: 'Gulabi Bottle Holder', price: 19.99, comingSoon: true,
+    img: '', images: [],
+    size: '30 × 11 × 11 cm', material: '100% pure cotton · hand block printed',
+    category: 'bottle', printType: 'block', collection: 'gulabi', rooms: ['kitchen','dining'], favRank: 128,
+    mini: "Small quantities are being made by hand right now. Photos and price follow very soon.",
+    made: "Hand block printed in India, one block and one colour at a time. Around five pairs of hands shape it: the block carver, the printer, the dyer who washes and sets the colour, the tailor who stitches it, and the person who checks and folds it. About 4 days from plain cotton to finished holder.",
+    desc: [
+      "Small quantities are being made by hand right now. Photos and price follow very soon.",
+      "A soft rose-and-leaf pattern printed by hand in peachy pinks and garden greens.",
+      "Slip in a bottle of wine or olive oil and it becomes a gift, no wrapping needed."
+    ]
+  },
+  'haldi-bottle': {
+    name: 'Haldi Bottle Holder', price: 19.99, comingSoon: true,
+    img: '', images: [],
+    size: '30 × 11 × 11 cm', material: '100% pure cotton · hand block printed',
+    category: 'bottle', printType: 'block', collection: 'haldi', rooms: ['kitchen','dining'], favRank: 129,
+    mini: "Small quantities are being made by hand right now. Photos and price follow very soon.",
+    made: "Hand block printed in India, one block and one colour at a time. Around five pairs of hands shape it: the block carver, the printer, the dyer who washes and sets the colour, the tailor who stitches it, and the person who checks and folds it. About 4 days from plain cotton to finished holder.",
+    desc: [
+      "Small quantities are being made by hand right now. Photos and price follow very soon.",
+      "A pink trellis scattered with orange rosebuds, finished with a warm turmeric-yellow edge.",
+      "Slip in a bottle of wine or olive oil and it becomes a gift, no wrapping needed."
+    ]
+  },
+  'nostalgia-tablecover-grey': {
+    name: 'Nostalgia Table Cover · Monsoon Grey', price: 79.99, comingSoon: true,
+    img: '', images: [],
+    size: '150 × 230 cm', material: '100% pure cotton · hand block printed',
+    category: 'tablecloth', printType: 'block', collection: 'nostalgia', rooms: ['dining'], favRank: 130,
+    mini: "Small quantities are being made by hand right now. Photos and price follow very soon.",
+    made: "Hand block printed in India by a small artisan-run workshop, from their own designs. We chose it, we did not design it: it simply felt like home.",
+    desc: [
+      "Small quantities are being made by hand right now. Photos and price follow very soon.",
+      "Part of Nostalgia, a collection of what home felt like: prints we did not design, chosen from artisan entrepreneurs because they remind us of the homes we grew up in.",
+      "Big enough for a six-seater table: a whole family, or a long dinner with friends."
+    ]
+  },
+  'nostalgia-tablecover-yellow': {
+    name: 'Nostalgia Table Cover · Sunlit Yellow', price: 79.99, comingSoon: true,
+    img: '', images: [],
+    size: '150 × 230 cm', material: '100% pure cotton · hand block printed',
+    category: 'tablecloth', printType: 'block', collection: 'nostalgia', rooms: ['dining'], favRank: 131,
+    mini: "Small quantities are being made by hand right now. Photos and price follow very soon.",
+    made: "Hand block printed in India by a small artisan-run workshop, from their own designs. We chose it, we did not design it: it simply felt like home.",
+    desc: [
+      "Small quantities are being made by hand right now. Photos and price follow very soon.",
+      "Part of Nostalgia, a collection of what home felt like: prints we did not design, chosen from artisan entrepreneurs because they remind us of the homes we grew up in.",
+      "Big enough for a six-seater table: a whole family, or a long dinner with friends."
+    ]
+  },
+  'nostalgia-tablecover-tulip': {
+    name: 'Nostalgia Table Cover · Tulip', price: 79.99, comingSoon: true,
+    img: '', images: [],
+    size: '150 × 230 cm', material: '100% pure cotton · hand block printed',
+    category: 'tablecloth', printType: 'block', collection: 'nostalgia', rooms: ['dining'], favRank: 132,
+    mini: "Small quantities are being made by hand right now. Photos and price follow very soon.",
+    made: "Hand block printed in India by a small artisan-run workshop, from their own designs. We chose it, we did not design it: it simply felt like home.",
+    desc: [
+      "Small quantities are being made by hand right now. Photos and price follow very soon.",
+      "Part of Nostalgia, a collection of what home felt like: prints we did not design, chosen from artisan entrepreneurs because they remind us of the homes we grew up in.",
+      "Big enough for a six-seater table: a whole family, or a long dinner with friends."
+    ]
   }
 };
 
@@ -401,7 +826,27 @@ const GHAR_STATIC_STOCK = {
   stone: 8,
   forest: 8,
   golden: 8,
-  'napkin-set2': 6
+  'napkin-set2': 6,
+  /* new collections (Nov 2026 count; pouches capped at 10 per colour until counted) */
+  'delftpur-cushion': 30,
+  'gulabi-cushion': 31,
+  'haldi-cushion': 6,
+  'nostalgia-rani': 10,
+  'nostalgia-chameli-pink': 10,
+  'nostalgia-chameli-ivory': 10,
+  'gulabi-runner': 24,
+  'haldi-runner': 5,
+  'delftpur-roundmat': 10,
+  'gulabi-roundmat': 10,
+  'haldi-roundmat': 6,
+  'delftpur-rectmat': 10,
+  'gulabi-rectmat': 10,
+  'gulabi-napkin': 20,
+  'gulabi-coaster': 12,
+  'gulabi-pouch': 10,
+  'delftpur-pouch': 10,
+  'delftpur-apron': 3,
+  'ikat-apron': 3
 };
 function gharRemaining(id) {
   if (gharStock && (id in gharStock)) return gharStock[id];
@@ -598,6 +1043,8 @@ function gharProductModal(id) {
           (gharBulkNote(id) ? '<p class="pm-bulk">' + gharBulkNote(id) + '</p>' : '') +
           (p.maxPerOrder ? '<p class="pm-bulk">Just ' + p.maxPerOrder + ' per person — this batch is tiny.</p>' : '')) +
         '<div class="pm-desc">' + p.desc.map(function (d) { return '<p>' + d + '</p>'; }).join('') + '</div>' +
+        (p.made ? '<div class="pm-made"><p class="pm-made-tag">Made by hand</p><p>' + p.made + '</p>' +
+          '<a href="stories.html#' + (p.collection || 'journey') + '">Meet the hands behind it</a></div>' : '') +
         (p.notForSale ? '' : '<p class="pm-note">Every batch here is intentionally small — what you choose to buy tells us what to make more of next.</p>') +
         '<div id="pm-action"></div>' +
       '</div>' +
