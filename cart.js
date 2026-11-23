@@ -86,7 +86,7 @@ const GHAR_PRODUCTS = {
   },
   forest: {
     name: 'Forest Arabesque Cushion Cover', price: 26.99, bulk: { extra: 24.00 },
-    img: 'images/products/forest/4.jpg', images: ['images/products/forest/4.jpg','images/products/forest/1.jpg','images/products/forest/2.jpg','images/products/forest/3.jpg','images/products/forest/5.jpg','images/products/forest/6.jpg'],
+    img: 'images/products/forest/4.jpg', images: ['images/products/forest/4.jpg','images/products/forest/1.jpg','images/products/forest/2.jpg','images/products/forest/3.jpg','images/products/forest/5.jpg','images/products/forest/6.jpg','images/products/forest/7.jpg','images/products/forest/8.jpg'],
     size: '30 × 30 cm',
     material: 'Hand block printed · 100% pure cotton',
     category: 'cushion-small', printType: 'block', rooms: ['living'], favRank: 13,
@@ -97,7 +97,7 @@ const GHAR_PRODUCTS = {
   },
   golden: {
     name: 'Golden Trellis Cushion Cover', price: 26.99, bulk: { extra: 24.00 },
-    img: 'images/products/golden/5.jpg', images: ['images/products/golden/5.jpg','images/products/golden/1.jpg','images/products/golden/2.jpg','images/products/golden/3.jpg','images/products/golden/4.jpg','images/products/golden/6.jpg'],
+    img: 'images/products/golden/5.jpg', images: ['images/products/golden/5.jpg','images/products/golden/1.jpg','images/products/golden/2.jpg','images/products/golden/3.jpg','images/products/golden/4.jpg','images/products/golden/6.jpg','images/products/golden/7.jpg','images/products/golden/8.jpg','images/products/golden/9.jpg','images/products/golden/10.jpg'],
     videos: ['images/products/golden/video1.mp4'],
     size: '30 × 30 cm',
     material: 'Hand block printed · 100% pure cotton',
@@ -126,7 +126,7 @@ const GHAR_PRODUCTS = {
   },
   largecushion: {
     name: 'Ikat Extra-Large Cushion Cover', price: 32.99, bulk: { extra: 28.00 },
-    img: 'images/products/largecushion/1.jpg', images: ['images/products/largecushion/1.jpg','images/products/largecushion/2.jpg','images/products/largecushion/3.jpg','images/products/largecushion/4.jpg','images/products/largecushion/5.jpg'],
+    img: 'images/products/largecushion/1.jpg', images: ['images/products/largecushion/1.jpg','images/products/largecushion/2.jpg','images/products/largecushion/3.jpg','images/products/largecushion/4.jpg','images/products/largecushion/5.jpg','images/products/largecushion/6.jpg','images/products/largecushion/7.jpg','images/products/largecushion/8.jpg','images/products/largecushion/9.jpg'],
     size: '60 × 60 cm', material: 'Ikat woven cotton',
     category: 'cushion-large', printType: 'ikat', rooms: ['living'], favRank: 40,
     mini: "Our cushion covers, scaled all the way up. A very small batch — grab it before it's gone.",
@@ -151,7 +151,7 @@ const GHAR_PRODUCTS = {
   },
   rectmat: {
     name: 'Ikat Rectangle Table Mat', price: 15.99, bulk: { extra: 11.00 },
-    img: 'images/products/rectmat/1.jpg', images: ['images/products/rectmat/1.jpg','images/products/rectmat/2.jpg'],
+    img: 'images/products/rectmat/1.jpg', images: ['images/products/rectmat/1.jpg','images/products/rectmat/2.jpg','images/products/rectmat/3.jpg'],
     size: '32 × 45 cm', material: 'Ikat woven cotton',
     category: 'placemat', printType: 'ikat', rooms: ['dining'], favRank: 20,
     mini: "A well-dressed table starts here — hemmed in a soft contrast colour. Buy 2 or more and every extra mat is just €11.",
@@ -176,7 +176,7 @@ const GHAR_PRODUCTS = {
   },
   'napkin-set2': {
     name: 'Ikat Napkins — Set of 2', price: 14.99, maxPerOrder: 1,
-    img: 'images/products/napkin/1.jpg', images: ['images/products/napkin/1.jpg','images/products/napkin/2.jpg','images/products/napkin/3.jpg','images/products/napkin/4.jpg','images/products/napkin/5.jpg'],
+    img: 'images/products/napkin/1.jpg', images: ['images/products/napkin/1.jpg','images/products/napkin/2.jpg','images/products/napkin/3.jpg','images/products/napkin/4.jpg','images/products/napkin/5.jpg','images/products/napkin/6.jpg'],
     size: '30 × 30 cm · set of 2', material: 'Ikat woven · 100% organic cotton',
     category: 'napkin', printType: 'ikat', rooms: ['dining'], favRank: 1,
     mini: "A tiny first batch — just a handful of sets exist. One set per person, so more of you get to try them.",
@@ -244,7 +244,7 @@ const GHAR_PRODUCTS = {
   'totebag-h-same': {
     name: 'Everyday Tote Bag — Horizontal, Same-colour Strap', price: 24.99, wasPrice: 39.99, notForSale: true,
     img: 'images/products/totebag/14.jpg', demo: 'images/products/totebag/demo-embed.html',
-    images: ['images/products/totebag/14.jpg','images/products/totebag/8.jpg','images/products/totebag/1.jpg','images/products/totebag/2.jpg','images/products/totebag/3.jpg','images/products/totebag/4.jpg','images/products/totebag/5.jpg','images/products/totebag/6.jpg','images/products/totebag/7.jpg','images/products/totebag/9.jpg','images/products/totebag/10.jpg','images/products/totebag/11.jpg','images/products/totebag/12.jpg','images/products/totebag/13.jpg'],
+    images: ['images/products/totebag/14.jpg','images/products/totebag/8.jpg','images/products/totebag/1.jpg','images/products/totebag/2.jpg','images/products/totebag/3.jpg','images/products/totebag/4.jpg','images/products/totebag/5.jpg','images/products/totebag/6.jpg','images/products/totebag/7.jpg','images/products/totebag/9.jpg','images/products/totebag/10.jpg','images/products/totebag/11.jpg','images/products/totebag/12.jpg','images/products/totebag/13.jpg','images/products/totebag/15.jpg'],
     videos: ['images/products/totebag/video1.mp4','images/products/totebag/video2.mp4'],
     size: '52 × 36 × 10 cm · 35 cm strap (same colour)', material: 'Ikat woven · 100% organic cotton',
     category: 'tote-bag', printType: 'ikat', rooms: [], favRank: 30,
@@ -254,7 +254,7 @@ const GHAR_PRODUCTS = {
   'totebag-h-contrast': {
     name: 'Everyday Tote Bag — Horizontal, Contrast Strap (White)', price: 24.99, wasPrice: 39.99, notForSale: true,
     img: 'images/products/totebag/14.jpg', demo: 'images/products/totebag/demo-embed.html',
-    images: ['images/products/totebag/14.jpg','images/products/totebag/8.jpg','images/products/totebag/1.jpg','images/products/totebag/2.jpg','images/products/totebag/3.jpg','images/products/totebag/4.jpg','images/products/totebag/5.jpg','images/products/totebag/6.jpg','images/products/totebag/7.jpg','images/products/totebag/9.jpg','images/products/totebag/10.jpg','images/products/totebag/11.jpg','images/products/totebag/12.jpg','images/products/totebag/13.jpg'],
+    images: ['images/products/totebag/14.jpg','images/products/totebag/8.jpg','images/products/totebag/1.jpg','images/products/totebag/2.jpg','images/products/totebag/3.jpg','images/products/totebag/4.jpg','images/products/totebag/5.jpg','images/products/totebag/6.jpg','images/products/totebag/7.jpg','images/products/totebag/9.jpg','images/products/totebag/10.jpg','images/products/totebag/11.jpg','images/products/totebag/12.jpg','images/products/totebag/13.jpg','images/products/totebag/15.jpg'],
     videos: ['images/products/totebag/video1.mp4','images/products/totebag/video2.mp4'],
     size: '52 × 36 × 10 cm · 35 cm white contrast strap', material: 'Ikat woven · 100% organic cotton',
     category: 'tote-bag', printType: 'ikat', rooms: [], favRank: 31,
@@ -264,7 +264,7 @@ const GHAR_PRODUCTS = {
   'totebag-v-same': {
     name: 'Everyday Tote Bag — Vertical, Same-colour Strap', price: 24.99, wasPrice: 39.99, notForSale: true,
     img: 'images/products/totebag/14.jpg', demo: 'images/products/totebag/demo-embed.html',
-    images: ['images/products/totebag/14.jpg','images/products/totebag/8.jpg','images/products/totebag/1.jpg','images/products/totebag/2.jpg','images/products/totebag/3.jpg','images/products/totebag/4.jpg','images/products/totebag/5.jpg','images/products/totebag/6.jpg','images/products/totebag/7.jpg','images/products/totebag/9.jpg','images/products/totebag/10.jpg','images/products/totebag/11.jpg','images/products/totebag/12.jpg','images/products/totebag/13.jpg'],
+    images: ['images/products/totebag/14.jpg','images/products/totebag/8.jpg','images/products/totebag/1.jpg','images/products/totebag/2.jpg','images/products/totebag/3.jpg','images/products/totebag/4.jpg','images/products/totebag/5.jpg','images/products/totebag/6.jpg','images/products/totebag/7.jpg','images/products/totebag/9.jpg','images/products/totebag/10.jpg','images/products/totebag/11.jpg','images/products/totebag/12.jpg','images/products/totebag/13.jpg','images/products/totebag/15.jpg'],
     videos: ['images/products/totebag/video1.mp4','images/products/totebag/video2.mp4'],
     size: '40 × 42 × 10 cm · 35 cm strap (same colour)', material: 'Ikat woven · 100% organic cotton',
     category: 'tote-bag', printType: 'ikat', rooms: [], favRank: 32,
@@ -274,7 +274,7 @@ const GHAR_PRODUCTS = {
   'totebag-v-contrast': {
     name: 'Everyday Tote Bag — Vertical, Contrast Strap (White)', price: 24.99, wasPrice: 39.99, notForSale: true,
     img: 'images/products/totebag/14.jpg', demo: 'images/products/totebag/demo-embed.html',
-    images: ['images/products/totebag/14.jpg','images/products/totebag/8.jpg','images/products/totebag/1.jpg','images/products/totebag/2.jpg','images/products/totebag/3.jpg','images/products/totebag/4.jpg','images/products/totebag/5.jpg','images/products/totebag/6.jpg','images/products/totebag/7.jpg','images/products/totebag/9.jpg','images/products/totebag/10.jpg','images/products/totebag/11.jpg','images/products/totebag/12.jpg','images/products/totebag/13.jpg'],
+    images: ['images/products/totebag/14.jpg','images/products/totebag/8.jpg','images/products/totebag/1.jpg','images/products/totebag/2.jpg','images/products/totebag/3.jpg','images/products/totebag/4.jpg','images/products/totebag/5.jpg','images/products/totebag/6.jpg','images/products/totebag/7.jpg','images/products/totebag/9.jpg','images/products/totebag/10.jpg','images/products/totebag/11.jpg','images/products/totebag/12.jpg','images/products/totebag/13.jpg','images/products/totebag/15.jpg'],
     videos: ['images/products/totebag/video1.mp4','images/products/totebag/video2.mp4'],
     size: '40 × 42 × 10 cm · 35 cm white contrast strap', material: 'Ikat woven · 100% organic cotton',
     category: 'tote-bag', printType: 'ikat', rooms: [], favRank: 33,
@@ -284,7 +284,7 @@ const GHAR_PRODUCTS = {
   /* ── New collections, Nov 2026 (photos from the 30 Oct shoot). collection: delftpur | gulabi | haldi | ikat | nostalgia.
      `made` = the "Made by hand" lines in the product pop-up. Coming-soon pieces show no price. ── */
   'delftpur-cushion': {
-    name: 'Delftpur Cushion Cover', price: 29.99,
+    name: 'Delftpur Cushion Cover', price: 30.00,
     img: 'images/products/delftpur-cushion/1.jpg', images: ['images/products/delftpur-cushion/1.jpg','images/products/delftpur-cushion/2.jpg','images/products/delftpur-cushion/3.jpg','images/products/delftpur-cushion/4.jpg','images/products/delftpur-cushion/5.jpg','images/products/delftpur-cushion/6.jpg','images/products/delftpur-cushion/7.jpg'],
     size: '50 × 50 cm', material: '100% pure cotton · hand block printed',
     category: 'cushion-large', printType: 'block', collection: 'delftpur', rooms: ['living'], favRank: 101,
@@ -297,7 +297,7 @@ const GHAR_PRODUCTS = {
     ]
   },
   'gulabi-cushion': {
-    name: 'Gulabi Cushion Cover', price: 29.99,
+    name: 'Gulabi Cushion Cover', price: 30.00,
     img: 'images/products/gulabi-cushion/1.jpg', images: ['images/products/gulabi-cushion/1.jpg','images/products/gulabi-cushion/2.jpg','images/products/gulabi-cushion/3.jpg','images/products/gulabi-cushion/4.jpg','images/products/gulabi-cushion/5.jpg','images/products/gulabi-cushion/6.jpg','images/products/gulabi-cushion/7.jpg','images/products/gulabi-cushion/8.jpg','images/products/gulabi-cushion/9.jpg','images/products/gulabi-cushion/10.jpg'],
     size: '50 × 50 cm', material: '100% pure cotton · hand block printed',
     category: 'cushion-large', printType: 'block', collection: 'gulabi', rooms: ['living'], favRank: 102,
@@ -310,7 +310,7 @@ const GHAR_PRODUCTS = {
     ]
   },
   'haldi-cushion': {
-    name: 'Haldi Cushion Cover', price: 29.99,
+    name: 'Haldi Cushion Cover', price: 30.00,
     img: 'images/products/haldi-cushion/1.jpg', images: ['images/products/haldi-cushion/1.jpg','images/products/haldi-cushion/2.jpg','images/products/haldi-cushion/3.jpg','images/products/haldi-cushion/4.jpg','images/products/haldi-cushion/5.jpg','images/products/haldi-cushion/6.jpg'],
     size: '50 × 50 cm', material: '100% pure cotton · hand block printed',
     category: 'cushion-large', printType: 'block', collection: 'haldi', rooms: ['living'], favRank: 103,
@@ -323,7 +323,7 @@ const GHAR_PRODUCTS = {
     ]
   },
   'nostalgia-rani': {
-    name: 'Nostalgia Cushion Cover · Rani', price: 26.99,
+    name: 'Nostalgia Cushion Cover · Rani', price: 20.00,
     img: 'images/products/nostalgia-rani/1.jpg', images: ['images/products/nostalgia-rani/1.jpg','images/products/nostalgia-rani/2.jpg','images/products/nostalgia-rani/3.jpg','images/products/nostalgia-rani/4.jpg','images/products/nostalgia-rani/5.jpg','images/products/nostalgia-rani/6.jpg','images/products/nostalgia-rani/7.jpg','images/products/nostalgia-rani/8.jpg','images/products/nostalgia-rani/9.jpg','images/products/nostalgia-rani/10.jpg'],
     size: '45 × 45 cm', material: '100% pure cotton · hand block printed',
     category: 'cushion-large', printType: 'block', collection: 'nostalgia', rooms: ['living'], favRank: 104,
@@ -337,7 +337,7 @@ const GHAR_PRODUCTS = {
     ]
   },
   'nostalgia-chameli-pink': {
-    name: 'Nostalgia Cushion Cover · Chameli Pink', price: 26.99,
+    name: 'Nostalgia Cushion Cover · Chameli Pink', price: 20.00,
     img: 'images/products/nostalgia-chameli-pink/1.jpg', images: ['images/products/nostalgia-chameli-pink/1.jpg','images/products/nostalgia-chameli-pink/2.jpg','images/products/nostalgia-chameli-pink/3.jpg','images/products/nostalgia-chameli-pink/4.jpg','images/products/nostalgia-chameli-pink/5.jpg'],
     size: '45 × 45 cm', material: '100% pure cotton · hand block printed',
     category: 'cushion-large', printType: 'block', collection: 'nostalgia', rooms: ['living'], favRank: 105,
@@ -351,7 +351,7 @@ const GHAR_PRODUCTS = {
     ]
   },
   'nostalgia-chameli-ivory': {
-    name: 'Nostalgia Cushion Cover · Chameli Ivory', price: 26.99,
+    name: 'Nostalgia Cushion Cover · Chameli Ivory', price: 20.00,
     img: 'images/products/nostalgia-chameli-ivory/1.jpg', images: ['images/products/nostalgia-chameli-ivory/1.jpg','images/products/nostalgia-chameli-ivory/2.jpg','images/products/nostalgia-chameli-ivory/3.jpg','images/products/nostalgia-chameli-ivory/4.jpg','images/products/nostalgia-chameli-ivory/5.jpg','images/products/nostalgia-chameli-ivory/6.jpg'],
     size: '45 × 45 cm', material: '100% pure cotton · hand block printed',
     category: 'cushion-large', printType: 'block', collection: 'nostalgia', rooms: ['living'], favRank: 106,
@@ -481,7 +481,7 @@ const GHAR_PRODUCTS = {
     ]
   },
   'gulabi-pouch': {
-    name: 'Gulabi Everyday Pouch', price: 17.99,
+    name: 'Gulabi Everyday Pouch', price: 20.00,
     img: 'images/products/gulabi-pouch/1.jpg', images: ['images/products/gulabi-pouch/1.jpg','images/products/gulabi-pouch/2.jpg','images/products/gulabi-pouch/3.jpg','images/products/gulabi-pouch/4.jpg','images/products/gulabi-pouch/5.jpg','images/products/gulabi-pouch/6.jpg','images/products/gulabi-pouch/7.jpg','images/products/gulabi-pouch/8.jpg','images/products/gulabi-pouch/9.jpg','images/products/gulabi-pouch/10.jpg'],
     size: '28 × 16 × 12 cm', material: 'Quilted 100% pure cotton · hand block printed',
     category: 'pouch', printType: 'block', collection: 'gulabi', rooms: [], favRank: 116,
@@ -494,7 +494,7 @@ const GHAR_PRODUCTS = {
     ]
   },
   'delftpur-pouch': {
-    name: 'Delftpur Everyday Pouch', price: 17.99,
+    name: 'Delftpur Everyday Pouch', price: 20.00,
     img: 'images/products/delftpur-pouch/1.jpg', images: ['images/products/delftpur-pouch/1.jpg','images/products/delftpur-pouch/2.jpg','images/products/delftpur-pouch/3.jpg'],
     size: '28 × 16 × 12 cm', material: 'Quilted 100% pure cotton · hand block printed',
     category: 'pouch', printType: 'block', collection: 'delftpur', rooms: [], favRank: 117,
@@ -601,7 +601,7 @@ const GHAR_PRODUCTS = {
     ]
   },
   'haldi-pouch': {
-    name: 'Haldi Everyday Pouch', price: 17.99, comingSoon: true,
+    name: 'Haldi Everyday Pouch', price: 20.00, comingSoon: true,
     img: '', images: [],
     size: '28 × 16 × 12 cm', material: 'Quilted 100% pure cotton · hand block printed',
     category: 'pouch', printType: 'block', collection: 'haldi', rooms: [], favRank: 125,
