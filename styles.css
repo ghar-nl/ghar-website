@@ -1173,7 +1173,7 @@ nav.nav-open .nav-burger span:nth-child(3){transform:translateY(-7px) rotate(-45
 .nos-grid-wrap .container{max-width:1180px;margin:0 auto}
 .nos-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
 .nos-photo{aspect-ratio:1/1;cursor:zoom-in}
-.nos-photo img{width:100%;height:100%;object-fit:cover}
+.nos-photo img,.nos-photo video{width:100%;height:100%;object-fit:cover;display:block}
 .nos-ph{display:flex;align-items:center;justify-content:center;background:var(--almond);color:var(--text-soft);cursor:default;font-size:.85rem}
 .nos-card h3{font-family:'Playfair Display',serif;font-weight:400;font-size:1.35rem;color:var(--blue-dark);margin:16px 0 6px}
 .nos-what{color:var(--text-mid);font-size:.9rem;font-weight:300}
