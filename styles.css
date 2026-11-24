@@ -262,6 +262,22 @@ section{padding:100px 52px;}
 .product{background:var(--white);cursor:pointer;}
 .product-img{aspect-ratio:3/4;overflow:hidden;position:relative;}
 .product-img .photo{height:100%;}
+.product-img .photo-fit{position:relative;overflow:hidden;background:#2b2b22;}
+.product-img .photo-fit .card-fill{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:blur(18px) brightness(.8);transform:scale(1.15);}
+.product-img .photo-fit .card-fit{position:absolute;top:50%;left:50%;width:calc(var(--z,1) * 100%);height:auto;object-fit:fill;transform:translate(calc(-1 * var(--fx,50%)),-50%);}
+/* free coasters band (shop.html) */
+.gift-band{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:40px;align-items:center;background:var(--white);padding:28px;margin-bottom:48px;border-left:3px solid var(--terra);}
+.gift-photos{display:grid;grid-template-columns:1fr 1fr;gap:4px;}
+.gift-photos img{aspect-ratio:1/1;height:auto;object-fit:cover;}
+.gift-text h2{font-size:clamp(1.6rem,2.6vw,2.2rem);font-weight:400;color:var(--blue-dark);line-height:1.2;margin-bottom:20px;}
+.gift-text h2 em{color:var(--terra);}
+.gift-tiers{display:grid;gap:10px;margin-bottom:18px;}
+.gift-tiers p{display:flex;align-items:baseline;gap:16px;font-size:0.98rem;color:var(--text);font-weight:300;}
+.gift-amt{font-family:'Playfair Display',serif;font-size:1.4rem;color:var(--terra);min-width:74px;}
+.gift-note{font-size:0.85rem;color:var(--text-mid);font-weight:300;line-height:1.7;max-width:440px;}
+.sum-gift{font-size:0.85rem;color:var(--blue-dark);background:var(--almond);padding:10px 12px;margin-top:12px;line-height:1.5;}
+.sum-gift strong{color:var(--terra);font-weight:500;}
+@media(max-width:700px){.gift-band{grid-template-columns:1fr;gap:22px;padding:20px;}}
 .product-badge{position:absolute;top:14px;left:14px;background:var(--blue-dark);color:var(--white);padding:4px 10px;font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;z-index:2;}
 .product-body{padding:20px 20px 24px;}
 .product-body h3{font-size:1rem;font-weight:500;color:var(--blue-dark);margin-bottom:4px;}

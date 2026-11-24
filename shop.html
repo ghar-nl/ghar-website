@@ -8,8 +8,8 @@
 <link rel="icon" type="image/png" href="images/site/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&family=Noto+Serif+Devanagari:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=20261123a">
-<script src="cart.js?v=20261123a" defer></script>
+<link rel="stylesheet" href="styles.css?v=20261124a">
+<script src="cart.js?v=20261124a" defer></script>
 </head>
 <body>
 
@@ -43,6 +43,23 @@
 <!-- ── PRODUCTS ───────────────────────────────────────────────── -->
 <section class="products" id="cushions">
   <div class="container">
+
+    <!-- free coasters with every order from €50 (coasters are no longer sold) -->
+    <div class="gift-band">
+      <div class="gift-photos">
+        <img src="images/products/gulabi-coaster/5.jpg" alt="Gulabi block printed coaster under a cup" loading="lazy">
+        <img src="images/products/coaster/4.jpg" alt="Ikat coaster under a cup of coffee" loading="lazy">
+      </div>
+      <div class="gift-text">
+        <p class="s-tag">A little thank-you</p>
+        <h2>Coasters are <em>on us.</em></h2>
+        <div class="gift-tiers">
+          <p><span class="gift-amt">€50+</span><span>a set of coasters, free in your parcel</span></p>
+          <p><span class="gift-amt">€100+</span><span>two sets of coasters, free</span></p>
+        </div>
+        <p class="gift-note">Our coasters aren't for sale. They are cut from what's left of our own fabric, so nothing goes to waste, and we tuck them into your parcel as a thank-you.</p>
+      </div>
+    </div>
 
     <div class="shop-filters">
       <div class="filter-group">
@@ -137,7 +154,7 @@ function gharRenderSoon() {
   let i = 0;
   Object.keys(GHAR_PRODUCTS).forEach(function (id) {
     const p = GHAR_PRODUCTS[id];
-    if (!p.comingSoon || !p.collection) return;
+    if (!p.comingSoon || !p.collection || p.freeGift) return;
     const card = document.createElement('div');
     card.className = 'soon-card' + tones[i++ % 3];
     card.innerHTML = '<h4>' + p.name + '</h4>' +
@@ -154,7 +171,7 @@ function gharShopEntries() {
   const entries = [];
   Object.keys(GHAR_PRODUCTS).forEach(function (id) {
     const p = GHAR_PRODUCTS[id];
-    if (p.comingSoon) return;
+    if (p.comingSoon || p.freeGift) return;
     if (p.variantGroup) {
       if (seenGroups[p.variantGroup]) return;
       seenGroups[p.variantGroup] = true;
@@ -168,9 +185,14 @@ function gharShopEntries() {
 
 function gharCardHtml(entry) {
   const id = entry.id, p = entry.p;
-  const photo = p.images.length > 0
-    ? '<img src="' + p.images[0] + '" alt="' + p.name + '">'
-    : gharPhotoPlaceholder();
+  /* cardZoom/cardX: show a flat-lay zoomed out and centred on the product,
+     with a blurred copy of the same photo filling the space above and below */
+  const fit = p.cardZoom
+    ? ' style="--z:' + p.cardZoom + ';--fx:' + (p.cardX || 50) + '%"' : '';
+  const photo = p.images.length === 0 ? gharPhotoPlaceholder()
+    : p.cardZoom
+      ? '<img class="card-fill" src="' + p.images[0] + '" alt="" aria-hidden="true"><img class="card-fit" src="' + p.images[0] + '" alt="' + p.name + '">'
+      : '<img src="' + p.images[0] + '" alt="' + p.name + '">';
   const nfs = !!p.notForSale;
   const badge = (entry.isVariant && !nfs) ? '<span class="stock-badge low">Only ' + GHAR_STOCK_GROUPS[p.variantGroup].limit + ' in this batch</span>' : '';
   const name = entry.isVariant ? 'Everyday Tote Bag' : p.name;
@@ -182,7 +204,7 @@ function gharCardHtml(entry) {
     : '<button class="btn-add" onclick="gharAdd(\'' + id + '\', this)">Yes, I\'m in</button>';
   return (
     '<div class="product" data-id="' + id + '">' +
-      '<div class="product-img"><div class="photo">' + photo + '</div>' + badge + '</div>' +
+      '<div class="product-img"><div class="photo' + (p.cardZoom ? ' photo-fit' : '') + '"' + fit + '>' + photo + '</div>' + badge + '</div>' +
       '<div class="product-body">' +
         '<h3>' + name + '</h3>' +
         (nfs ? '' : '<p class="product-size">' + p.size + ' · ' + p.material + '</p>') +

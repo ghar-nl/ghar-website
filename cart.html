@@ -9,8 +9,8 @@
 <link rel="icon" type="image/png" href="images/site/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&family=Noto+Serif+Devanagari:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=20261123a">
-<script src="cart.js?v=20261123a" defer></script>
+<link rel="stylesheet" href="styles.css?v=20261124a">
+<script src="cart.js?v=20261124a" defer></script>
 </head>
 <body>
 
@@ -70,6 +70,7 @@
           <div class="sum-line"><span>Shipping <small id="sum-ship-where" class="sum-ship-where">to the Netherlands</small></span><span id="sum-ship">€5</span></div>
           <div class="sum-line sum-total"><span>Total</span><span class="price" id="sum-total">€0</span></div>
         </div>
+        <p class="sum-gift" id="sum-gift"></p>
         <p class="sum-note">Launch perk: 20% off with code <strong>GHARPREORDER20</strong> on orders above €100. Shipping: Netherlands €5 (free from €59.99), Belgium, Germany and Luxembourg €8 (free from €100), rest of the EU €13 (free from €150). Orders are limited to 6 items per person.</p>
       </div>
 
@@ -228,6 +229,11 @@ function renderCart() {
   document.getElementById('sum-discount').textContent = '−' + gharFmt(t.discount);
   document.getElementById('sum-ship').textContent = t.shipping === 0 ? 'FREE' : gharFmt(t.shipping);
   document.getElementById('sum-total').textContent = gharFmt(t.total);
+  // free coasters: one set from €50, two sets from €100 (products, before shipping)
+  var gift = document.getElementById('sum-gift');
+  if (t.sub >= 100) gift.innerHTML = '🎁 <strong>Two sets of coasters</strong> will be tucked into your parcel, free.';
+  else if (t.sub >= 50) gift.innerHTML = '🎁 <strong>A set of coasters</strong> comes free in your parcel. Add ' + gharFmt(100 - t.sub) + ' more for a second set.';
+  else gift.innerHTML = 'Add ' + gharFmt(50 - t.sub) + ' more and we\'ll add <strong>a set of coasters</strong> to your parcel, free.';
   if (gharPromoStored()) document.getElementById('promo-input').value = GHAR_PROMO_CODE;
 }
 function gharStripeReturn() {
