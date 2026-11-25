@@ -1256,18 +1256,18 @@ function gharWireSite() {
   });
 }
 
-/* ── EVENTS POPUP (workshop 28 Nov + Westergas market 6 Dec) ─────────────
+/* ── EVENTS POPUP (workshop 5 Dec + Westergas market 6 Dec) ──────────────
    Shows once per browser visit on every page except workshops/cart/markets, until the
    last event is over. Each event card disappears by itself once it has started
    (workshop) or ended (market). "I'll check later" hides it for this visit. */
 const GHAR_EVENTS = [
-  { id: 'ws28', until: '2026-11-28T11:00:00Z',
-    tag: 'Workshop · Sat 28 Nov',
+  { id: 'ws05', until: '2026-12-05T10:00:00Z',
+    tag: 'Workshop · Sat 5 Dec',
     title: 'Block printing workshop',
-    meta: '12:00 to 15:00 · De Steek Amsterdam · €40 special price',
-    text: 'Very limited spots! Print up to two tote bags with our hand-carved wooden blocks, with chai, coffee and homemade vegetarian snacks.',
+    meta: 'From 11:00 · Kringloop West, Amsterdam · €40 special price',
+    text: 'Very limited spots! Print up to two tote bags with our hand-carved wooden blocks. Everything is included, and your first drink from the café is on us.',
     primary: { label: 'Yes, I’m in · book my spot', href: 'https://buy.stripe.com/9B65kw0bkfW267ad0FfnO00' },
-    secondary: { label: 'Can’t make it? Join 5 Dec', href: 'workshops.html#interest' } },
+    secondary: { label: 'More about the workshop', href: 'workshops.html' } },
   { id: 'mk06', until: '2026-12-06T17:00:00Z',
     tag: 'Market · Sun 6 Dec',
     title: 'Find us at Sunday Market Westergas',
