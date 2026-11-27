@@ -1265,7 +1265,7 @@ const GHAR_EVENTS = [
     tag: 'Workshop · Sat 5 Dec',
     title: 'Block printing workshop',
     meta: 'From 11:00 · Kringloop West, Amsterdam · €40 special price',
-    text: 'Very limited spots! Print up to two tote bags with our hand-carved wooden blocks. Everything is included, and your first drink from the café is on us.',
+    text: 'Very limited spots! Print your own 100% cotton tote bag with our hand-carved wooden blocks. Everything is included, and your first drink from the café is on us.',
     primary: { label: 'Yes, I’m in · book my spot', href: 'https://buy.stripe.com/9B65kw0bkfW267ad0FfnO00' },
     secondary: { label: 'More about the workshop', href: 'workshops.html' } },
   { id: 'mk06', until: '2026-12-06T17:00:00Z',
